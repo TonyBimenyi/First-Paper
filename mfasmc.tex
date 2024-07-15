@@ -13,6 +13,8 @@
 \usepackage{graphicx}
 \usepackage{amsthm}
 \usepackage{subfigure}
+\usepackage{amsmath}
+\usepackage{amsfonts}
 \allowdisplaybreaks[4]
 
 \title{\LARGE Data-Driven Model Free Adaptive Sliding Mode Control For Multi DC Motors Speed Regulation}
@@ -41,7 +43,7 @@
     Finally, the integration of these two methodologies facilitates a control strategy that is both adaptive and resilient. MFAC continiously adjusts the control parameters based on real-time system feedback, while SMC provides a robust framework to manage system uncertainties and external disturbances. This combination is particularly well-suited for the complex dynamics and interactions inherent in multi-agent systems, offering a comprehensive solution to the challenges of robust speed control.
 
     The following sections will outline the remaining content of this paper:
-    section 2 provides.--------------. Section 3 ---------------------. Section 4 presents simulation results and performance analysis , demonstrating the efficacy of the proposed method under various operating conditions.
+    section 2 provides-----. Section 3 ---------------------. Section 4 presents simulation results and performance analysis , demonstrating the efficacy of the proposed method under various operating conditions.
     Finally, Section 5 concludes the paper, summarizing the key findings potential avenues for future research, including the extension of the proposed approach to other types of multi-agent systems and exploring further enhancements to the control algorithms.
 
 % -----------------------------------------------------------------------------
@@ -49,6 +51,12 @@
 
 \section{Preliminaries and problem formulation}\label{section:2}
 \subsection{Preliminaries}
+
+The set of real numbers is denoted by \(\mathbb{R}\). For a given matrix \(A \in \mathbb{R}^{n \times n}\), \(\|A\|\) represents its matrix norm. The notation \(\text{diag}(\cdot)\) refers to a diagonal matrix, and \(I\) signifies an identity matrix of appropriate dimensions. In the context of multi-agent systems, graph theory serves as a powerful tool to model interaction topologies. We will now provide a brief introduction to directed graphs within algebraic graph theory. Let \(G = (V, E, A)\) be a weighted directed graph, where \(V = \{1, 2, \ldots, N\}\) represents the set of vertices, \(E \subseteq V \times V\) denotes the set of edges, and \(A\) is the adjacency matrix. Here, \(V\) also indexes the agents. If agent \(j\) can receive a message from agent \(i\), then \((i, j) \in E\), making \(j\) the child of \(i\) and \(i\) the parent of \(j\). The neighborhood of agent \(i\) is given by \(N_i = \{j \in V \mid (j, i) \in E\}\).
+
+The weighted adjacency matrix \(A = (a_{i,j}) \in \mathbb{R}^{N \times N}\) is defined such that \(a_{i,i} = 0\), \(a_{i,j} = 1\) if \((j, i) \in E\); otherwise, \(a_{i,j} = 0\). The Laplacian matrix of \(G\) is defined as \(L = D - A\), where \(D = \text{diag}(d_1^{\text{in}}, d_2^{\text{in}}, \ldots, d_N^{\text{in}})\) and \(d_i^{\text{in}} = \sum_{j=1}^N a_{i,j}\) is called the in-degree of vertex \(i\). A graph is said to be strongly connected if there exists a path between any pair of vertices.
+
+\subsection{Problem Formulation}
 
 
 \end{document}
