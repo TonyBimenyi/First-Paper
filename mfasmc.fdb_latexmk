@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1721038243.45553 "c:/Users/TonyBim/Documents/DATA DRIVEN CONTROL/Fist Paper Sim/LATEX/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1721038244.34471 0
-  "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1721013441 82507 a9eef8696c92627b87e9975edea03b2a ""
+["pdflatex"] 1721095676.21833 "c:/Users/TonyBim/Documents/DATA DRIVEN CONTROL/Fist Paper Sim/LATEX/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1721095677.75277 0
+  "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1721095605 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1721009637 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1721009638 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs7.tfm" 1721014202 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
@@ -68,12 +68,16 @@
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/jknappen/mathrsfs.sty" 930764892 300 12fa6f636b617656f2810ee82cb05015 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/jknappen/ursfs.fd" 930764886 548 cc4e3557704bfed27c7002773fad6c90 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1716480499 29785 9f93ab201fe5dd053afcc6c1bcf7d266 ""
+  "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/l3kernel/expl3.sty" 1717574659 6565 9112779ee7624275fd04efaf61c82420 ""
+  "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/l3packages/xfp/xfp.sty" 1716378382 1249 c60443975d4db23c5591a108f23953c4 ""
+  "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/lettrine/lettrine.cfg" 1719652107 1356 149eccf72b7ea44e1177064e94d14638 ""
+  "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/lettrine/lettrine.sty" 1719652107 10408 2fedf4bd94c28c3a78630c552bb851aa ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/ot1ptm.fd" 1585253778 1007 15056f4a61917ceed3a44e4ac11fcc52 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/subfigure/subfigure.cfg" 1114257370 2114 42ba738bf6f1cec796106a69840777a4 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/subfigure/subfigure.sty" 1114257370 14815 1d3da78e0f66f3c62133fbabffd13cf5 ""
-  "c:/Users/TonyBim/Documents/DATA DRIVEN CONTROL/Fist Paper Sim/LATEX/mfasmc.tex" 1721038242 5685 68c86589570dec200c3c049663db3796 ""
-  "mfasmc.aux" 1721038244 567 596003a8c34c855d59661c42521580c8 "pdflatex"
-  "mfasmc.tex" 1721038242 5685 68c86589570dec200c3c049663db3796 ""
+  "c:/Users/TonyBim/Documents/DATA DRIVEN CONTROL/Fist Paper Sim/LATEX/mfasmc.tex" 1721095675 5762 08f8ece63e5554ed33ea89004c2cf640 ""
+  "mfasmc.aux" 1721095677 567 596003a8c34c855d59661c42521580c8 "pdflatex"
+  "mfasmc.tex" 1721095675 5762 08f8ece63e5554ed33ea89004c2cf640 ""
   (generated)
   "mfasmc.aux"
   "mfasmc.log"
