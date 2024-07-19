@@ -105,6 +105,56 @@ For this equation, we assume that \(d_i = 0\), meaning the agent \(i\) does not 
 
 Let \(e_i(k) = y_d(k) - y_i(k)\) denote the tracking error. The objective of this paper is to find an good control law using I/O data of the agents(DC motors), such that the outputs of all agents can track the reference trajectory \(y_d(k)\) when only some of agents can access the desired trajectory.
 
+Assumption 3: The communication graph $\bar{G}$ is fixed and strognly connected, with at least one follower agent able to access the leader's trajectory.
+
+Remark 2: This assumption ensures the solvability the tracking problem. An isolated agent, oblivious of the control objective, cannot follow the leader's reference trajectory.
+
+Assumption 4 : The PPD \(phi_i(k) > \varsigma,i = 1,2,3 \dots N\) holds for all \(k\), where \( \varsigma \)is an rondomly small positive constant. Without loss of generality, in this paper we assume that \(phi_i(k) \varsigma\).
+
+Remark 3: This indicatesthat the agent output does not decrease with encreasing control input, resembling a linear characteristic. It implies the control direction is known and unchanging Similar assumptions are common in model-based control and are reasonable for practical systems like mobile robots and UAVs.
+
+\section{Main Results}
+
+Considering the following PPD criterion function:
+
+\begin{equation}
+    \label{model 4}
+    J(\phi_i(k)) = | \Delta y_i(k) - \hat{\phi}_i(k)  \Delta u_i(k-1)|^2 + \mu |\hat{\phi}_i(k) - \hat{\phi}_i(k-1)|\
+\end{equation}
+
+Differentiating equation (\ref{model 4}) with respect to PPD parameter \(\phi_i(k)\) and make it equal to zero:
+
+\begin{equation}
+    \label{model 5}
+    \frac{\partial J({\phi}_i(k))}{\partial {\phi}_i(k)} = | \Delta y_i(k) - \hat{\phi}_i(k)  \Delta u_i(k-1)|^2 + \mu |\hat{\phi}_i(k) - \hat{\phi}_i(k-1)| = 0
+\end{equation}
+
+
+And, let's compute the derivative of \( J(\hat{\phi}_i(k)) \), we obtain:
+
+\begin{equation}
+    \label{model 6}
+    2 [ \Delta y_i(k) - \phi_i(k-1)] - [\Delta u_i(k-1)] + 2 \mu [\phi_i(k) -  \hat{\phi}_i(k-1)] = 0
+\end{equation}
+
+Then , the following distributed MFAC algorithms is presented:
+
+\begin{equation}
+    \label{eq:ppd_parameter}
+    \hat{\phi}_i(k) = \hat{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1) (\Delta y_i(k) - \hat{phi}_i(k-1) \Delta u_i(k-1))}{\mu + \Delta u_i(k-1)}
+\end{equation}
+
+\begin{equation}
+    \label{model 8}
+    \hat{\phi}_i(k) = \hat{\phi}_i(1), if |\hat{\phi}_i(k) | \leq \epsilon \ or \ sign(\hat{\phi}_i(k)) \neq  sign(\hat{\phi}_i(1))
+\end{equation}
+
+\subsection{Model Free Adaptiive Controller Design}
+
+
+
+
+
 
 
 
