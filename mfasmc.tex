@@ -84,12 +84,19 @@ Assumption 2: The model \( y_i(k + 1) = f_i(y_i(k), u_i(k)) \) is generalized Li
 This paper delves into the Compact Form Dynamic Linearization (CFDL) technique, this method simplifies the dynamic of nonlinear systems into a linear form that is easier to handle and control. The CFDL is particularly useful when the control input \(u_i(k) = 0\) holds, enabling the system to be described through a compact dynamic linearization model. The system under consideration is governed by the following equation:
 
 
-% \begin{equation}
-%     \label{model 2}
-%     ( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \)
-% \end{equation}
-     
+\begin{equation}
+    \label{model 2}
+    \Delta y_i(k+1)=\phi_i(k)\Delta u_i(k)
+\end{equation}
 
+Where \( | \phi_i(k) | \leq b\). b is a positive constant and the variable \(phi_i(k)\) named pseudo-partial-derivative.
+
+We define the distributed measurement output of \(xi_i(k)\) for \(i\)-th agents as follow:
+
+\begin{equation}
+    \label{model 3}
+    \xi_i(k) = \sum_{j \in Ni} a_i,_j( y_j(k)-y_i(k)) + d_i(yd(k) - y_i(k ))
+\end{equation}
 
  
 
