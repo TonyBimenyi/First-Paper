@@ -1,6 +1,6 @@
-PWD c:\Users\TonyBim\Documents\DATA DRIVEN CONTROL\Fist Paper Sim\LATEX
+PWD c:\Users\TonyBim\Documents\DATA DRIVEN\First Paper\First-Paper
 INPUT C:\Users\TonyBim\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\TonyBim\Documents\DATA DRIVEN CONTROL\Fist Paper Sim\LATEX\mfasmc.tex
+INPUT c:\Users\TonyBim\Documents\DATA DRIVEN\First Paper\First-Paper\mfasmc.tex
 OUTPUT mfasmc.log
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\ieeetran\IEEEtran.cls
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\ieeetran\IEEEtran.cls
@@ -153,10 +153,10 @@ INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr7t
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
-INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmbi7t.vf
-INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmbi8r.tfm
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmrc7t.vf
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
@@ -186,8 +186,6 @@ INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
-INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmbi8a.pfb
-INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmbi8a.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmri8a.pfb
