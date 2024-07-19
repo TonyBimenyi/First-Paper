@@ -95,10 +95,16 @@ We define the distributed measurement output of \(xi_i(k)\) for \(i\)-th agents 
 
 \begin{equation}
     \label{model 3}
-    \xi_i(k) = \sum_{j \in Ni} a_i,_j( y_j(k)-y_i(k)) + d_i(yd(k) - y_i(k ))
+    \xi_i(k) = \sum_{j \in N_i} a_i,_j( y_j(k)-y_i(k)) + d_i(yd(k) - y_i(k ))
 \end{equation}
 
  
+In this equation \(xi_i(k)\) represents the distributed measurement output of the \(i\)-th agent at time step k , \(N_i\) denotes the set of the neighboring agents of the \(i\)-th agent and \(a_i,_j\) are elemnents of the adjancecy matrix representing the weights between agents \(i\) and \(j\).   
+For this equation, we assume that \(d_i = 0\), meaning the agent \(i\) does not directly consider the disired trajectory \(yd(k)\) in the distributed measurement output. However if agent \(i\) can receive the disired trajectory ,setting \(d_i\) to a non-zero value allows it to align its output with the desired trajectory , improving the control performance.
+
+
+Let \(e_i(k) = y_d(k) - y_i(k)\) denote the tracking error. The objective of this paper is to find an good control law using I/O data of the agents(DC motors), such that the outputs of all agents can track the reference trajectory \(y_d(k)\) when only some of agents can access the desired trajectory.
+
 
 
 
