@@ -151,9 +151,16 @@ Then , the following distributed MFAC algorithms is presented:
 
 \subsection{Model Free Adaptiive Controller Design}
 
+To design the MFAC alogrithm, a performance function \(J(u_i(k))\) is set a:
 
+\begin{equation}
+    \label{model 9}
+    J(u_i(k)) = |\xi_i(k)|^2 + \lambda|u_i(k) - u_i(k-1)|^2
+\end{equation}
 
+This function used to evaluate the effectiveness of the control input \(u_i(k)\) for the \(i\)-th agents in a control function, with two terms , the first one is the tracking error term \(|\xi_i(k)|^2\) where \(\xi_i(k)\) represents the distributed measurement output, and by minimizing \(|\xi_i(k)|^2\) ensures thet the agent's output closely matches the disired trajectory. The second one is control effect term \(\lambda|u_i(k) - u_i(k-1)|^2\) where \(u_i(k)\) is the current control input, and \(u_i(k-1)\) is the previous control input, and \(\lambda\) is a weighted factor that balances the importance of the control effort.
 
+Subtituting \(ref
 
 
 
