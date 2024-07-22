@@ -160,8 +160,14 @@ To design the MFAC alogrithm, a performance function \(J(u_i(k))\) is set a:
 
 This function used to evaluate the effectiveness of the control input \(u_i(k)\) for the \(i\)-th agents in a control function, with two terms , the first one is the tracking error term \(|\xi_i(k)|^2\) where \(\xi_i(k)\) represents the distributed measurement output, and by minimizing \(|\xi_i(k)|^2\) ensures thet the agent's output closely matches the disired trajectory. The second one is control effect term \(\lambda|u_i(k) - u_i(k-1)|^2\) where \(u_i(k)\) is the current control input, and \(u_i(k-1)\) is the previous control input, and \(\lambda\) is a weighted factor that balances the importance of the control effort.
 
-Subtituting \(ref
+Subtituting (\ref{model 2}) and (\ref{model 3}) into (\ref{model 9}), then differentiating (\ref{model 9}) with respect to \(u_i(k)\), and letting it zero, gives:
 
+\begin{equation}
+    \label{model eq:mfac}
+    \mathbf{u_i}_{\text{MFA}}(k) = \mathbf{u_i}_{\text{MFA}}(k - 1) + \frac{\rho \phi_i(k)}{\lambda + |\phi_i(k)|^2} \xi_i(k)
+\end{equation}
+
+Where \(\rho\) 
 
 
 
