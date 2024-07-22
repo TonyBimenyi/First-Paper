@@ -140,7 +140,7 @@ And, let's compute the derivative of \( J(\hat{\phi}_i(k)) \), we obtain:
 Then , the following distributed MFAC algorithms is presented:
 
 \begin{equation}
-    \label{eq:ppd_parameter}
+    \label{model eq:ppd_parameter}
     \hat{\phi}_i(k) = \hat{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1) (\Delta y_i(k) - \hat{\phi}_i(k-1) \Delta u_i(k-1))}{\mu + \Delta u_i(k-1)}
 \end{equation}
 
@@ -167,7 +167,7 @@ Subtituting (\ref{model 2}) and (\ref{model 3}) into (\ref{model 9}), then diffe
     \mathbf{u_i}_{\text{MFA}}(k) = \mathbf{u_i}_{\text{MFA}}(k - 1) + \frac{\rho \phi_i(k)}{\lambda + |\phi_i(k)|^2} \xi_i(k)
 \end{equation}
 
-Where \(\rho\) 
+Where \(\rho\) \(\varepsilon\) (0,1) is a step-size constant, which is added to make (\ref{model eq:mfac}) general. Using the parameter estimation algorithm (\ref{model eq:ppd_parameter}) and the control law algorithm (\ref{model eq:mfac}), the MFAC scheme is constructed. 
 
 
 
