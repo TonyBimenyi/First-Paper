@@ -182,7 +182,14 @@ Where \(\rho\) \(\varepsilon\) (0,1) is a step-size constant, which is added to 
 
 To design the sliding mode control (SMC) for this system, we first define the sliding mode surface, this one guides the system's behavior to ensure robust and accurate tracking of the desired trajectory.
 
+The sliding mode surface is defined as:
 
+\begin{equation}
+    \label{model eq:sms}
+    S_i(k+1) = S_i(k)+e(k+1)+\alpha e(k) 
+\end{equation}
+
+Where
 
 
 \end{document}
