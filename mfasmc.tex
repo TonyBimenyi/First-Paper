@@ -186,17 +186,35 @@ The sliding mode surface is defined as:
 
 \begin{equation}
     \label{model eq:sms}
-    S_i(k+1) = S_i(k)+e(k+1)+\alpha e(k) 
+    S_i(k+1) = S_i(k)+e_i(k+1)+\alpha e_i(k) 
 \end{equation}
 
-Where \(S_i(k)\) represents the sliding surface at the current time step \(k\), \(e(k)\) is the tracking error , \(\alpha\) is a positive constant that influences the dynamics of the sliding surface. The error \(e(k)\) is defined as the difference between the desired output \(y_d(k)\) and the actual output \(y_i(k)\).
+Where \(S_i(k)\) represents the sliding surface at the current time step \(k\), \(e_i(k)\) is the tracking error , \(\alpha\) is a positive constant that influences the dynamics of the sliding surface. The error \(e_i(k)\) is defined as the difference between the desired output \(y_d(k)\) and the actual output \(y_i(k)\).
 
 To ensure that the systm's trajectory is driven toward and remains on the sliding surface, we define a reaching law. The reaching law dictates how quickly the system state converges to the sliding surface and is given by:
 
 \begin{equation}
     \label{model eq:reaching_law}
-    \delta 
+    \Delta S_i(k+1) = - \varepsilon T Sign(k) 
 \end{equation}
 
+Where,
+
+\begin{equation}
+    \label{model 13}
+    y_d(k+1) - y_i(k+1) = - \alpha e_i(k) - \varepsilon T Sign(k) 
+\end{equation}
+
+
+In that equation, \(\varepsilon\) is a small positive constant that controls the rate of the convergence, \(T\) is the sampling period, and \(Sign(k)\) indicates the direction in which the system should move to reach the sliding surface.
+
+By combining the sliding surface definition and the reaching law, we can derive the control law that ensures the desired tracking performance while maintaining robustness.
+
+The final sliding mode control input \(\mathbf{u_i}_{\text{SM}}(k)\) is designed to be :
+
+\begin{equation}
+    \label{model eq:smc}
+    \mathbf{u_i}_{\text{SM}}(k) = u_i(k-1) + \frac{y_d(k+1)-y(k) + \alpha e_i(k) + \varepsilon T Sign(k)}{\phi_i(k)}
+\end{equation}
 
 \end{document}
