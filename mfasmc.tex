@@ -221,7 +221,13 @@ To enhance the robutness and adaptibility of the control system , the Model Free
 
 \begin{equation}
     \label{model eq:mfasmc}
-    u_i(k) = \mathbf{u_i}_{\text{MFA}}(k) + \Gamma_i \mathbf{u_i}_{\text{SM}}
+    u_i(k) = \mathbf{u_i}_{\text{MFA}}(k) + \gamma_i \mathbf{u_i}_{\text{SM}}
 \end{equation}
+
+Where the parameter \(\gamma\) is a gain factor that adjusts the contribution of the sliding mode control in the control effort and tunes the convergence rate.
+
+\subsection{Stability Analysis}
+
+\section{Dc Motor Speed Mechanism}
 
 \end{document}
