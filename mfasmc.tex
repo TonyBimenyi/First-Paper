@@ -217,4 +217,11 @@ The final sliding mode control input \(\mathbf{u_i}_{\text{SM}}(k)\) is designed
     \mathbf{u_i}_{\text{SM}}(k) = u_i(k-1) + \frac{y_d(k+1)-y(k) + \alpha e_i(k) + \varepsilon T Sign(k)}{\phi_i(k)}
 \end{equation}
 
+To enhance the robutness and adaptibility of the control system , the Model Free Adaptive Sliding Mode Control (MFASMC) approach is employed. In this approach, the conrol input of the system will be:
+
+\begin{equation}
+    \label{model eq:mfasmc}
+    u_i(k) = \mathbf{u_i}_{\text{MFA}}(k) + \Gamma_i \mathbf{u_i}_{\text{SM}}
+\end{equation}
+
 \end{document}
