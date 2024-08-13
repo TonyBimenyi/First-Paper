@@ -235,7 +235,34 @@ Step 1 : The establishment of the bounds of the error between the estimated and 
 
 \begin{equation}
     \label{model 16}
-    \tilde{\phi_i}(k) = \hat{\phi_i}(k+1) +   
+    \tilde{\phi_i}(k) = \hat{\phi_i}(k+1) + \frac{\eta \Delta u_i(k-1)}{\mu + | \Delta u_i(k-1)|^2} * ((\Delta y_i(k) - \hat{\phi_i}(k-1)\Delta u_i(k-1) )) - \phi_i(k)
+\end{equation}
+
+\begin{equation}
+    \label{model 17}
+    \phi_i(k) = \phi_i(k-1) + (\phi_i(k)-\phi_i(k-1))
+\end{equation}
+
+\begin{equation}
+    \label{model 18}
+    \tilde{\phi_i}(k) = (\hat{\phi_i}(k+1) - \phi_i(k-1))+ \frac{\eta \Delta u_i(k-1)}{\mu + | \Delta u_i(k-1)|^2} * ((\Delta y_i(k) - \hat{\phi_i}(k-1)\Delta u_i(k-1) )) -(\phi_i(k) - \phi_i(k-1))
+\end{equation}
+
+\begin{equation}
+    \label{model 19}
+    \beta_i(k) =  \frac{\eta \Delta u_i(k-1)}{\mu + | \Delta u_i(k-1)|^2}
+\end{equation}
+
+Using equation (\ref{model 19}) in equation (\ref{model 18}), we get:
+
+\begin{equation}
+    \label{model 20}
+    \tilde{\phi_i}(k) = \tilde{\phi_i}(k-1)+\beta_i(k) * (\Delta y_i(k) - \hat{\phi_i}(k-1)\Delta u_i(k-1) -\phi_i(k) - \phi_i(k-1))
+\end{equation}
+
+\begin{equation}
+    \label{model 21}
+    \tilde{\phi_i}(k) = (\frac{}{3})
 \end{equation}
 
 \section{Dc Motor Speed Mechanism}
