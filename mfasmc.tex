@@ -262,8 +262,51 @@ Using equation (\ref{model 19}) in equation (\ref{model 18}), we get:
 
 \begin{equation}
     \label{model 21}
-    \tilde{\phi_i}(k) = (\frac{}{3})
+    \tilde{\phi_i}(k) = (1-\frac{\eta(\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2})*\tilde{\phi_i}(k-1) + \phi_i(k-1) - \phi_i(k)
 \end{equation}
+
+\begin{equation}
+    \label{model 22}
+    \tilde{\phi_i}(k) = (1-\frac{\eta(\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2})*\tilde{\phi_i}(k-1) - \Delta \phi_i(k)
+\end{equation}
+
+To prove the boundedness of the error, we begin by taking the absolute value of each term in the error equation (\ref{model 22}). This step is crucial as it allows us to establish an inequality that provides an upper bound on the error.
+
+Taking the absolute value on both sides and applying the triangle inequality to the right-hand side, we obtain:
+
+\begin{equation}
+    \label{model 23}
+    |\tilde{\phi_i}(k)| \leq  |(1-\frac{\eta(\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2})|*|\tilde{\phi_i}(k-1) |- |\Delta \phi_i(k)|
+\end{equation}
+
+Let,
+\begin{equation}
+    \label{model 24}
+    \alpha(k-1) = \frac{\eta(\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2}
+\end{equation}
+
+So:
+
+\begin{equation}
+    \label{model 25}
+    |\tilde{\phi_i}(k)| \leq  |(1-\alpha(k-1))|*|\tilde{\phi_i}(k-1) |- |\Delta \phi_i(k)|
+\end{equation}
+
+Since \(\Delta u_i(k) \neq  0\), \(0 < \eta \leq 1 \) and \(\mu \geq 0 \), \(0 < \alpha(k-1) \leq q_1 < 1  \)
+
+Upper bound for \(1-\alpha(k-1) \) by replacing it with constant \(q_1\), we get:
+
+\begin{equation}
+    \label{model 26}
+\end{equation}
+
+
+
+
+
+
+
+
 
 \section{Dc Motor Speed Mechanism}
 
