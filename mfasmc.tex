@@ -296,10 +296,25 @@ Since \(\Delta u_i(k) \neq  0\), \(0 < \eta \leq 1 \) and \(\mu \geq 0 \), \(0 <
 
 Upper bound for \(1-\alpha(k-1) \) by replacing it with constant \(q_1\), we get:
 
-\begin{equation}
+\begin{align}
     \label{model 26}
-    |1-\alpha(k-1)| \leq
+    |1-\alpha(k-1)| &\leq 1-q_1 \\
+    |\Delta \phi_i(k)| \leq |\phi_i(k-1) - \phi_i(k)| \leq b 
+\end{align}
+
+By combining the inequalities and applying an iterative process, we obtain the following expression:
+
+\begin{equation}
+    \label{model 28}
+    |\tilde{\phi_i}(k) \leq |1-q_1||\tilde{\phi_i}(k-1)|+b
 \end{equation}
+\begin{equation}
+    \label{model 29}
+    |\tilde{\phi_i}(k-1) \leq |1-q_1||\tilde{\phi_i}(k-2)|+b
+\end{equation}
+
+continuing the process back to the initial condition(0) , with sum of geometric series of \(\sum_{j=1}^N a_{i,j}\)
+
 
 
 
