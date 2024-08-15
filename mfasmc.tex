@@ -393,6 +393,86 @@ As \(k \rightarrow \infty\), the term \((1-q_1)^k\) tends to zero, simplifying t
 
 Therefore, \(\tilde{\phi_i}(k)\) is bounded by \(\frac{b}{q_1}\), proving that the error remains within this bound as \(k\) approaches infinity.
 
+Part 2: The convergence of tracking error , from (\ref{model 3}). \(\xi_i(k)\) can be rewritten in terms of tracking errors as follows:
+
+\begin{equation}
+    \label{model 32}
+    \xi_i(k) = \sum_{j\epsilon N_i} (e_i(k) - e_j(k))+d_i e_i (k)
+\end{equation}
+
+\(y(k) =  \begin{pmatrix} y_1 \\ y_2 \\ y_3 \\ \vdots \\ y_n \end{pmatrix} , e(k) =  \begin{pmatrix} e_1 \\ e_2 \\ e_3 \\ \vdots \\ e_n \end{pmatrix}, \xi(k) =  \begin{pmatrix} \xi_1 \\ \xi_2 \\ \xi_3 \\ \vdots \\  \xi_n \end{pmatrix}, u(k) =  \begin{pmatrix} u_1 \\ u_2 \\ u_3 \\ \vdots \\ u_n \end{pmatrix}
+\)
+
+\begin{equation}
+    \label{model 33}
+    \xi_i(k) = (L+D)e(k) 
+\end{equation}
+
+with \(D = diag(d_1,d_2,d_3,\dots,d_n)\)
+
+Where \(u(k) = u(k-1) + \rho*diag(\frac{\hat{\phi_1}(k)}{\lambda + |\hat{\phi_1}(k)|^2},\frac{\hat{\phi_2}(k)}{\lambda + |\hat{\phi_2}(k)|^2},\frac{\hat{\phi_3}(k)}{\lambda + |\hat{\phi_3}(k)|^2},\dots, \frac{\hat{\phi_n}(k)}{\lambda + |\hat{\phi_n}(k)|^2}) (L+D)e(k)\)
+
+\begin{equation}
+    \label{model 34}
+    u(k) = u(k-1)+\rho H_1(k)(L+D)e(k)  
+\end{equation}
+
+We can describe (\ref{model 2}) as \(y(k+1) = y(k) + \phi(k) \Delta u(k) \)
+
+So:
+
+\(y(k+1) = y(k) + diag(\phi_1(k) \phi_2(k) \phi_3(k) \dots \phi_n(k)) \Delta u(k)\)
+
+\begin{equation}
+    \label{model 35}
+    y(k+1) = y(k) + H_\phi(k) \Delta u(k)
+\end{equation}
+
+Where \(\Delta u(k) = u(k)-u(k-1) , H_\phi(k) = diag(\phi_1(k) \phi_2(k) \phi_2(k) \dots \phi_n(k) ) \)
+
+By Subtituting (\ref{model 34}) into (\ref{model 35}) we can get: \\
+\(e(k+1)-e(k) = y(k) - y(k+1) \) 
+
+\(e(k+1) = e(k) + y(k) - y(k+1) \\
+e(k+1) = e(k) - H_\phi(k) \rho H_1(k) (L+D) e(k)  
+\)
+
+Which give as the following equation:
+
+\begin{equation}
+    \label{model 36}
+    e(k+1) = (I-\rho \sum(k) (L+D))e(k)
+\end{equation}
+
+Where \(\sum(k) = H_\phi(k) H_1(k) = diag(\frac{\hat{\phi_1}(k)}{\lambda + |\hat{\phi_1}(k)|^2},\frac{\hat{\phi_2}(k)}{\lambda + |\hat{\phi_2}(k)|^2},\frac{\hat{\phi_3}(k)}{\lambda + |\hat{\phi_3}(k)|^2},\dots, \frac{\hat{\phi_n}(k)}{\lambda + |\hat{\phi_n}(k)|^2})
+\\
+=diag(\mathcal{V}_1(k) \mathcal{V}_2(k) \mathcal{V}_3(k) \dots \mathcal{V}_n(k) )
+\)
+
+With 
+
+\(\mathcal{V}_i(k) =\frac{\hat{\phi_i}(k)}{\lambda + |\hat{\phi_i}(k)|^2} , i=1,2,3,\dots,n\) 
+
+Let \(\Theta(k) = \sum(k) (L+D) \) , we get \(e(k+1) = (I-\rho \Theta(k))e(k) \)
+
+Finnaly , we have:
+
+\begin{equation}
+    \label{model 37}
+    
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
