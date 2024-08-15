@@ -393,91 +393,210 @@ As \(k \rightarrow \infty\), the term \((1-q_1)^k\) tends to zero, simplifying t
 
 Therefore, \(\tilde{\phi_i}(k)\) is bounded by \(\frac{b}{q_1}\), proving that the error remains within this bound as \(k\) approaches infinity.
 
-Part 2: The convergence of tracking error , from (\ref{model 3}). \(\xi_i(k)\) can be rewritten in terms of tracking errors as follows:
+% Part 2: The convergence of tracking error , from (\ref{model 3}). \(\xi_i(k)\) can be rewritten in terms of tracking errors as follows:
+
+% \begin{equation}
+%     \label{model 32}
+%     \xi_i(k) = \sum_{j\epsilon N_i} (e_i(k) - e_j(k))+d_i e_i (k)
+% \end{equation}
+
+% \(y(k) =  \begin{pmatrix} y_1 \\ y_2 \\ y_3 \\ \vdots \\ y_n \end{pmatrix} , e(k) =  \begin{pmatrix} e_1 \\ e_2 \\ e_3 \\ \vdots \\ e_n \end{pmatrix}, \xi(k) =  \begin{pmatrix} \xi_1 \\ \xi_2 \\ \xi_3 \\ \vdots \\  \xi_n \end{pmatrix}, u(k) =  \begin{pmatrix} u_1 \\ u_2 \\ u_3 \\ \vdots \\ u_n \end{pmatrix}
+% \)
+
+% \begin{equation}
+%     \label{model 33}
+%     \xi_i(k) = (L+D)e(k) 
+% \end{equation}
+
+% with \(D = diag(d_1,d_2,d_3,\dots,d_n)\)
+
+% Where \(u(k) = u(k-1) + \rho*diag(\frac{\hat{\phi_1}(k)}{\lambda + |\hat{\phi_1}(k)|^2},\frac{\hat{\phi_2}(k)}{\lambda + |\hat{\phi_2}(k)|^2},\frac{\hat{\phi_3}(k)}{\lambda + |\hat{\phi_3}(k)|^2},\dots, \frac{\hat{\phi_n}(k)}{\lambda + |\hat{\phi_n}(k)|^2}) (L+D)e(k)\)
+
+% \begin{equation}
+%     \label{model 34}
+%     u(k) = u(k-1)+\rho H_1(k)(L+D)e(k)  
+% \end{equation}
+
+% We can describe (\ref{model 2}) as \(y(k+1) = y(k) + \phi(k) \Delta u(k) \)
+
+% So:
+
+% \(y(k+1) = y(k) + diag(\phi_1(k) \phi_2(k) \phi_3(k) \dots \phi_n(k)) \Delta u(k)\)
+
+% \begin{equation}
+%     \label{model 35}
+%     y(k+1) = y(k) + H_\phi(k) \Delta u(k)
+% \end{equation}
+
+% Where \(\Delta u(k) = u(k)-u(k-1) , H_\phi(k) = diag(\phi_1(k) \phi_2(k) \phi_2(k) \dots \phi_n(k) ) \)
+
+% By Subtituting (\ref{model 34}) into (\ref{model 35}) we can get: \\
+% \(e(k+1)-e(k) = y(k) - y(k+1) \) 
+
+% \(e(k+1) = e(k) + y(k) - y(k+1) \\
+% e(k+1) = e(k) - H_\phi(k) \rho H_1(k) (L+D) e(k)  
+% \)
+
+% Which give as the following equation:
+
+% \begin{equation}
+%     \label{model 36}
+%     e(k+1) = (I-\rho \sum(k) (L+D))e(k)
+% \end{equation}
+
+% Where \(\sum(k) = H_\phi(k) H_1(k) = diag(\frac{\hat{\phi_1}(k)}{\lambda + |\hat{\phi_1}(k)|^2},\frac{\hat{\phi_2}(k)}{\lambda + |\hat{\phi_2}(k)|^2},\frac{\hat{\phi_3}(k)}{\lambda + |\hat{\phi_3}(k)|^2},\dots, \frac{\hat{\phi_n}(k)}{\lambda + |\hat{\phi_n}(k)|^2})
+% \\
+% =diag(\mathcal{V}_1(k) \mathcal{V}_2(k) \mathcal{V}_3(k) \dots \mathcal{V}_n(k) )
+% \)
+
+% With 
+
+% \(\mathcal{V}_i(k) =\frac{\hat{\phi_i}(k)}{\lambda + |\hat{\phi_i}(k)|^2} , i=1,2,3,\dots,n\) 
+
+% Let \(\Theta(k) = \sum(k) (L+D) \) , we get \(e(k+1) = (I-\rho \Theta(k))e(k) \)
+
+% Finnaly , we have:
+
+% \begin{equation}
+%     \label{model 37}
+%     ||I-\rho \ \Theta(k)|| < 1
+% \end{equation}
+
+% so :
+
+% \(\lim{k \rightarrow \infty} ||e(k+1)|| = 0\)
+
+% \section*{Part 2: Convergence of Tracking Error}
+
+Part 2: In this part, we delve into the convergence properties of the tracking error \(\xi_i(k)\). To understand this convergence, we start with the expression for \(\xi_i(k)\) as given in equation (\ref{model 3}). We aim to express \(\xi_i(k)\) in terms of the individual tracking errors \(e_i(k)\) and the errors associated with neighboring systems.
+
+The expression for \(\xi_i(k)\) is formulated as follows:
 
 \begin{equation}
     \label{model 32}
-    \xi_i(k) = \sum_{j\epsilon N_i} (e_i(k) - e_j(k))+d_i e_i (k)
+    \xi_i(k) = \sum_{j \in N_i} (e_i(k) - e_j(k)) + d_i e_i(k)
 \end{equation}
 
-\(y(k) =  \begin{pmatrix} y_1 \\ y_2 \\ y_3 \\ \vdots \\ y_n \end{pmatrix} , e(k) =  \begin{pmatrix} e_1 \\ e_2 \\ e_3 \\ \vdots \\ e_n \end{pmatrix}, \xi(k) =  \begin{pmatrix} \xi_1 \\ \xi_2 \\ \xi_3 \\ \vdots \\  \xi_n \end{pmatrix}, u(k) =  \begin{pmatrix} u_1 \\ u_2 \\ u_3 \\ \vdots \\ u_n \end{pmatrix}
-\)
+In this equation, \(\xi_i(k)\) represents the tracking error of the \(i\)-th system at time \(k\), taking into account the deviations from its neighbors \(j\) in the set \(N_i\) and an additional term \(d_i e_i(k)\) that depends on the specific characteristics of the \(i\)-th system. The parameter \(d_i\) is a diagonal matrix term that adjusts the impact of the individual error \(e_i(k)\) on the overall error \(\xi_i(k)\).
+
+To facilitate analysis, we define the following vectors that aggregate the tracking errors, outputs, and control inputs for all systems:
+
+\[
+y(k) = \begin{pmatrix} y_1 \\ y_2 \\ y_3 \\ \vdots \\ y_n \end{pmatrix}, \quad 
+e(k) = \begin{pmatrix} e_1 \\ e_2 \\ e_3 \\ \vdots \\ e_n \end{pmatrix}, \quad 
+\xi(k) = \begin{pmatrix} \xi_1 \\ \xi_2 \\ \xi_3 \\ \vdots \\ \xi_n \end{pmatrix}, \quad 
+u(k) = \begin{pmatrix} u_1 \\ u_2 \\ u_3 \\ \vdots \\ u_n \end{pmatrix}
+\]
+
+Using these definitions, the expression for \(\xi_i(k)\) can be compactly rewritten as:
 
 \begin{equation}
     \label{model 33}
-    \xi_i(k) = (L+D)e(k) 
+    \xi_i(k) = (L + D) e(k)
 \end{equation}
 
-with \(D = diag(d_1,d_2,d_3,\dots,d_n)\)
+Here, \(L\) represents the interaction matrix that describes how each system interacts with its neighbors, while \(D\) is a diagonal matrix defined by \(D = \text{diag}(d_1, d_2, d_3, \dots, d_n)\). This formulation helps us to analyze how the overall system's tracking error is influenced by the individual tracking errors and the interaction structure.
 
-Where \(u(k) = u(k-1) + \rho*diag(\frac{\hat{\phi_1}(k)}{\lambda + |\hat{\phi_1}(k)|^2},\frac{\hat{\phi_2}(k)}{\lambda + |\hat{\phi_2}(k)|^2},\frac{\hat{\phi_3}(k)}{\lambda + |\hat{\phi_3}(k)|^2},\dots, \frac{\hat{\phi_n}(k)}{\lambda + |\hat{\phi_n}(k)|^2}) (L+D)e(k)\)
+Next, the control input \(u(k)\) is updated according to the following rule:
+
+\[
+u(k) = u(k-1) + \rho \cdot \text{diag}\left(\frac{\hat{\phi_1}(k)}{\lambda + |\hat{\phi_1}(k)|^2}, \frac{\hat{\phi_2}(k)}{\lambda + |\hat{\phi_2}(k)|^2}, \frac{\hat{\phi_3}(k)}{\lambda + |\hat{\phi_3}(k)|^2}, \dots, \frac{\hat{\phi_n}(k)}{\lambda + |\hat{\phi_n}(k)|^2}\right) (L + D) e(k)
+\]
+
+This update rule accounts for the adjustment of control inputs based on the estimation \(\hat{\phi_i}(k)\) of the parameters, where \(\lambda\) is a regularization parameter that ensures stability. This formulation leads to:
 
 \begin{equation}
     \label{model 34}
-    u(k) = u(k-1)+\rho H_1(k)(L+D)e(k)  
+    u(k) = u(k-1) + \rho H_1(k) (L + D) e(k)
 \end{equation}
 
-We can describe (\ref{model 2}) as \(y(k+1) = y(k) + \phi(k) \Delta u(k) \)
+where \(H_1(k)\) is a diagonal matrix whose elements are functions of the estimated parameters \(\hat{\phi_i}(k)\). The evolution of the output \(y(k)\) is described by:
 
-So:
+\[
+y(k+1) = y(k) + \phi(k) \Delta u(k)
+\]
 
-\(y(k+1) = y(k) + diag(\phi_1(k) \phi_2(k) \phi_3(k) \dots \phi_n(k)) \Delta u(k)\)
+In this context, \(\Delta u(k)\) represents the change in the control input:
 
-\begin{equation}
-    \label{model 35}
-    y(k+1) = y(k) + H_\phi(k) \Delta u(k)
-\end{equation}
+\[
+\Delta u(k) = u(k) - u(k-1)
+\]
 
-Where \(\Delta u(k) = u(k)-u(k-1) , H_\phi(k) = diag(\phi_1(k) \phi_2(k) \phi_2(k) \dots \phi_n(k) ) \)
+and \(H_\phi(k)\) is defined as:
 
-By Subtituting (\ref{model 34}) into (\ref{model 35}) we can get: \\
-\(e(k+1)-e(k) = y(k) - y(k+1) \) 
+\[
+H_\phi(k) = \text{diag}(\phi_1(k), \phi_2(k), \phi_3(k), \dots, \phi_n(k))
+\]
 
-\(e(k+1) = e(k) + y(k) - y(k+1) \\
-e(k+1) = e(k) - H_\phi(k) \rho H_1(k) (L+D) e(k)  
-\)
+By substituting the expression for \(u(k)\) from equation (\ref{model 34}) into the output evolution equation, we obtain:
 
-Which give as the following equation:
+\[
+e(k+1) - e(k) = y(k) - y(k+1)
+\]
+
+Rearranging the terms, we get:
+
+\[
+e(k+1) = e(k) + y(k) - y(k+1)
+\]
+
+Substituting the previously derived expression for \(y(k+1)\), we have:
+
+\[
+e(k+1) = e(k) - H_\phi(k) \rho H_1(k) (L + D) e(k)
+\]
+
+This can be rewritten as:
 
 \begin{equation}
     \label{model 36}
-    e(k+1) = (I-\rho \sum(k) (L+D))e(k)
+    e(k+1) = (I - \rho \Theta(k)) e(k)
 \end{equation}
 
-Where \(\sum(k) = H_\phi(k) H_1(k) = diag(\frac{\hat{\phi_1}(k)}{\lambda + |\hat{\phi_1}(k)|^2},\frac{\hat{\phi_2}(k)}{\lambda + |\hat{\phi_2}(k)|^2},\frac{\hat{\phi_3}(k)}{\lambda + |\hat{\phi_3}(k)|^2},\dots, \frac{\hat{\phi_n}(k)}{\lambda + |\hat{\phi_n}(k)|^2})
-\\
-=diag(\mathcal{V}_1(k) \mathcal{V}_2(k) \mathcal{V}_3(k) \dots \mathcal{V}_n(k) )
-\)
+where \(\Theta(k)\) is defined by:
 
-With 
+\[
+\Theta(k) = \sum(k) (L + D) = H_\phi(k) H_1(k) (L + D)
+\]
 
-\(\mathcal{V}_i(k) =\frac{\hat{\phi_i}(k)}{\lambda + |\hat{\phi_i}(k)|^2} , i=1,2,3,\dots,n\) 
+with:
 
-Let \(\Theta(k) = \sum(k) (L+D) \) , we get \(e(k+1) = (I-\rho \Theta(k))e(k) \)
+\[
+\sum(k) = \text{diag}\left(\frac{\hat{\phi_1}(k)}{\lambda + |\hat{\phi_1}(k)|^2}, \frac{\hat{\phi_2}(k)}{\lambda + |\hat{\phi_2}(k)|^2}, \frac{\hat{\phi_3}(k)}{\lambda + |\hat{\phi_3}(k)|^2}, \dots, \frac{\hat{\phi_n}(k)}{\lambda + |\hat{\phi_n}(k)|^2}\right)
+\]
 
-Finnaly , we have:
+which can be expressed in diagonal form as:
+
+\[
+\sum(k) = \text{diag}(\mathcal{V}_1(k), \mathcal{V}_2(k), \mathcal{V}_3(k), \dots, \mathcal{V}_n(k))
+\]
+
+where each \(\mathcal{V}_i(k)\) is given by:
+
+\[
+\mathcal{V}_i(k) = \frac{\hat{\phi_i}(k)}{\lambda + |\hat{\phi_i}(k)|^2}, \quad i = 1, 2, 3, \dots, n
+\]
+
+Thus, we have:
+
+\[
+\Theta(k) = \text{diag}(\mathcal{V}_1(k), \mathcal{V}_2(k), \mathcal{V}_3(k), \dots, \mathcal{V}_n(k)) (L + D)
+\]
+
+To ensure convergence of the tracking error, we impose the condition:
 
 \begin{equation}
     \label{model 37}
-    
+    \|I - \rho \Theta(k)\| < 1
 \end{equation}
 
+This condition guarantees that the tracking error \(e(k)\) will approach zero as \(k \to \infty\). Consequently, we have:
 
+\[
+\lim_{k \to \infty} \|e(k+1)\| = 0
+\]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+This result indicates that the tracking error will converge to zero, demonstrating the effectiveness of the proposed control strategy in achieving desired tracking performance.
 
 
 
