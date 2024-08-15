@@ -272,6 +272,59 @@ Using equation (\ref{model 19}) in equation (\ref{model 18}), we get:
     \tilde{\phi_i}(k) = (1-\frac{\eta(\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2})*\tilde{\phi_i}(k-1) - \Delta \phi_i(k)
 \end{equation}
 
+% To prove the boundedness of the error, we begin by taking the absolute value of each term in the error equation (\ref{model 22}). This step is crucial as it allows us to establish an inequality that provides an upper bound on the error.
+
+% Taking the absolute value on both sides and applying the triangle inequality to the right-hand side, we obtain:
+
+% \begin{equation}
+%     \label{model 23}
+%     |\tilde{\phi_i}(k)| \leq  |(1-\frac{\eta(\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2})|*|\tilde{\phi_i}(k-1) |- |\Delta \phi_i(k)|
+% \end{equation}
+
+% Let,
+% \begin{equation}
+%     \label{model 24}
+%     \alpha(k-1) = \frac{\eta(\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2}
+% \end{equation}
+
+% So:
+
+% \begin{equation}
+%     \label{model 25}
+%     |\tilde{\phi_i}(k)| \leq  |(1-\alpha(k-1))|*|\tilde{\phi_i}(k-1) |- |\Delta \phi_i(k)|
+% \end{equation}
+
+% Since \(\Delta u_i(k) \neq  0\), \(0 < \eta \leq 1 \) and \(\mu \geq 0 \), \(0 < \alpha(k-1) \leq q_1 < 1  \)
+
+% Upper bound for \(1-\alpha(k-1) \) by replacing it with constant \(q_1\), we get:
+
+% \begin{align}
+%     \label{model 26}
+%     |1-\alpha(k-1)| &\leq 1-q_1 \\
+%     |\Delta \phi_i(k)| \leq |\phi_i(k-1) - \phi_i(k)| \leq b 
+% \end{align}
+
+% By combining the inequalities and applying an iterative process, we obtain the following expression:
+
+% \begin{equation}
+%     \label{model 28}
+%     |\tilde{\phi_i}(k) \leq |1-q_1||\tilde{\phi_i}(k-1)|+b
+% \end{equation}
+% \begin{equation}
+%     \label{model 29}
+%     |\tilde{\phi_i}(k-1) \leq |1-q_1||\tilde{\phi_i}(k-2)|+b
+% \end{equation}
+
+% continuing the process back to the initial condition(0) , with sum of geometric series of \(\sum_{j=o}^{k-1} (1-q_1)^j = \frac{1-(1-q_1)^k}{q_1} \)
+
+% Thus:
+% \begin{equation}
+%     \label{model 30}
+%     |\tilde{\phi_i}(k) \leq (1-q_1)^k ((\tilde{phi_i}(0))) + \frac{b}{q_1} (1-(1-q_1)^k)
+% \end{equation}
+
+% Simplifying the bound, as \(k=\infty\), so\((1-q_1)^k=0\), therefore \(\tilde{\phi_i}(k) \) is bounded, because if satifies: \(|\tilde{\phi_i}(k) \leq \frac{b}{q_1} \)
+
 To demonstrate the boundedness of the error, we start by taking the absolute value of both sides of the error equation (\ref{model 22}). This is a crucial step, as it allows us to establish an inequality that provides an upper bound on the error term.
 
 Taking the absolute value on both sides and applying the triangle inequality to the right-hand side, we have:
@@ -339,9 +392,6 @@ As \(k \rightarrow \infty\), the term \((1-q_1)^k\) tends to zero, simplifying t
 \end{equation}
 
 Therefore, \(\tilde{\phi_i}(k)\) is bounded by \(\frac{b}{q_1}\), proving that the error remains within this bound as \(k\) approaches infinity.
-
-
-
 
 
 
