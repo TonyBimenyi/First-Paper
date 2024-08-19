@@ -598,44 +598,62 @@ This condition guarantees that the tracking error \(e(k)\) will approach zero as
 
 This result indicates that the tracking error will converge to zero, demonstrating the effectiveness of the proposed control strategy in achieving desired tracking performance.
 
+\section{Quadriple-Frequency Data Processing Method for DC Motors Speed Regulation}
+
+To regulate the speed of DC motors accurately, we employ a sophisticated data-driven binary containment control method, which requires precise measurement and processing of encoder data. This section describes the methodology and hardware used for speed regulation, including the calculation of motor speed using the quadriple-frequency data processing (QFDP) method.
+
+\subsection{Hardware Implementation}
+
+The DC brushed motors have a rated voltage of 12V, an unloaded speed of 293 ± 21 RPM, and a rated current of 0.36 A. The gear ratio of 20 means that the output speed of the motor is 1/20 of the rotor speed, resulting in higher torque with a higher gear ratio. The Hall encoders used have 13 pulses per revolution (ppr), meaning each full rotation generates 13 pulse signals. 
+
+To enhance measurement accuracy, we employed a quadruple-frequency data processing method. This technique quadruples the effective resolution of the encoder by processing the output pulse signals at four times the frequency, thus increasing measurement precision by a factor of four.
+
+\subsection{Data Processing Method}
+
+The motor speed is measured in revolutions per second (r/s). The following equations are used to calculate the speed based on encoder measurements and sampling:
+
+1. Calculation of Rounds:
+
+   The total number of "rounds" that the encoder measures is given by:
+   \begin{equation}
+       \label{model 38}
+       T = \text{Encoder line count} \times \text{Reduction Ratio} \times 4
+   \end{equation}
+   Here, the **Encoder line count** is 13, and the **Reduction Ratio** is 20. The factor of 4 accounts for the quadrature encoding, which effectively quadruples the resolution.
+
+2. Calculation of Number of Rotations:
+
+   The number of rotations can be determined using:
+   \begin{equation}
+       \label{model 39}
+       \text{Number of Rotations} = \frac{m}{\text{Rounds Per T}}
+   \end{equation}
+   Where \( m \) is the total count from the encoder, and **Rounds Per T** is the number of encoder counts per revolution, derived from Equation (\ref{model 38}).
+
+3. Calculation of Speed:
+
+   The speed of the motor in resolution per second (\( r/s \)) is given by:
+   \begin{equation}
+       \label{model 40}
+       v = \frac{\text{Number of Rotations}}{T}
+   \end{equation}
+   Here, \( v \) represents the speed, calculated by dividing the number of rotations by the time \( T \) it takes to complete those rotations.
+
+4. Combining the Equations:
+
+   Substituting Equation (\ref{model 39}) into Equation (\ref{model 40}), we obtain:
+   \begin{equation}
+       \label{model 41}
+       v = \frac{m}{\text{Rounds Per T} \times T}
+   \end{equation}
+   This final equation integrates encoder measurements and the sampling period to provide an accurate speed regulation formula using the QFDP method.
+
+In our system, the sampling period, which is set by a timer, defines how frequently speed measurements are taken. Each sampling interval triggers an interrupt where the controller samples the motor speed and updates control commands accordingly.
+
+The quadruple-frequency method, implemented through software, is crucial for maximizing encoder measurement precision, resulting in more accurate speed control for the motor system.
 
 
-
-
-\section{Quadriple-Frequency Data Processing Method for DC Motors speed Regulation}
-
-
-Let's start with the calculation of Rounds, which gives the following equation:
-
-\begin{equation}
-    \label{model 38}
-    T = Encoder line count * Reduction Ratio * 4
-\end{equation}
-
-Where the encoder line count is 13 and the reduction ratio is 20 .
-
-Next we will calculate the number of rotations which is give us to the following equation:
-
-\begin{equation}
-    \label{model 39}
-    \text{Number of Rotations} = \frac{m}{\text{Rounds Per T}}
-\end{equation}
-
-And then thhe speed will be calculated in resolution per second \(r/s\) using this equation:
-
-\begin{equation}
-    \label{model 40}
-    v = \frac{\text{Number of rotations}}{T}
-\end{equation}
-
-Then combining equation (\ref{model 39}) and equation  (\ref{model 40}) , we get:
-
-\begin{equation}
-    \label{model 41}
-    v = \frac{m}{\text{Rounds Per T}* T}
-\end{equation}
-
-Which will be the final equation for the speed regulation using QFDP Method.
+\section{Extension to Switching Topology}
 
 
 \end{document}

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1724054696.03203 "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1724054696.75805 0
+["pdflatex"] 1724057305.10445 "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1724057305.851 0
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1723431065 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1723431067 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1723431069 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -10,6 +10,7 @@
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmb8r.tfm" 1136743454 4524 6bce29db5bc272ba5f332261583fee9c ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmbi7t.tfm" 1136743454 2228 e564491c42a4540b5ebb710a75ff306c ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmr7t.tfm" 1136743454 2124 2601a75482e9426d33db523edf23570a ""
+  "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmr8c.tfm" 1136743454 1352 fa28a7e6d323c65ce7d13d5342ff6be2 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmr8r.tfm" 1136743454 4408 25b74d011a4c66b7f212c0cc3c90061b ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmrc7t.tfm" 1136743454 2680 312a2d12b1f1df8ee0212e7ba1962402 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmri7t.tfm" 1136743454 2288 f478fc8fed18759effb59f3dad7f3084 ""
@@ -41,6 +42,7 @@
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb" 1136824548 45458 504e2b06fa82109d168c7a0afb09e145 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmb7t.vf" 1136743454 1372 788387fea833ef5963f4c5bffe33eb89 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmr7t.vf" 1136743454 1380 0ea3a3370054be6da6acd929ec569f06 ""
+  "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmr8c.vf" 1136743454 3556 8a9a6dcbcd146ef985683f677f4758a6 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmrc7t.vf" 1136743454 1948 7330aeef3af211edff3b35fb2c12a0fd ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmri7t.vf" 1136743454 1384 a9d8adaf491ce34e5fba99dc7bbe5f39 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -77,11 +79,12 @@
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/lettrine/lettrine.cfg" 1719652107 1356 149eccf72b7ea44e1177064e94d14638 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/lettrine/lettrine.sty" 1719652107 10408 2fedf4bd94c28c3a78630c552bb851aa ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/ot1ptm.fd" 1585253778 1007 15056f4a61917ceed3a44e4ac11fcc52 ""
+  "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/ts1ptm.fd" 1585253778 653 96f56dc5d1ef1fe1121f1cfeec70ee0c ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/subfigure/subfigure.cfg" 1114257370 2114 42ba738bf6f1cec796106a69840777a4 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/subfigure/subfigure.sty" 1114257370 14815 1d3da78e0f66f3c62133fbabffd13cf5 ""
-  "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" 1724054695 32297 601915e5327074589f160e65c56befbe ""
-  "mfasmc.aux" 1724054696 2773 0ae48253107fd6c2998504517103a2b6 "pdflatex"
-  "mfasmc.tex" 1724054695 32297 601915e5327074589f160e65c56befbe ""
+  "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" 1724057303 34675 e7d9316f2638d8e370f3531a1428dcb9 ""
+  "mfasmc.aux" 1724057305 3145 9bfc8b1db272b1ce1bdd200db7e96667 "pdflatex"
+  "mfasmc.tex" 1724057303 34675 e7d9316f2638d8e370f3531a1428dcb9 ""
   (generated)
   "mfasmc.aux"
   "mfasmc.log"
