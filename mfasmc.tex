@@ -618,22 +618,24 @@ Next we will calculate the number of rotations which is give us to the following
 
 \begin{equation}
     \label{model 39}
-    Number of Rotations = \frac{m}{rounds per T}
+    \text{Number of Rotations} = \frac{m}{\text{Rounds Per T}}
 \end{equation}
 
 And then thhe speed will be calculated in resolution per second \(r/s\) using this equation:
 
 \begin{equation}
     \label{model 40}
-    v = \frac{Number of rotations}{T}
+    v = \frac{\text{Number of rotations}}{T}
 \end{equation}
 
 Then combining equation (\ref{model 39}) and equation  (\ref{model 40}) , we get:
 
-\[
-\lim_{k \to \infty} \|e(k+1)\| = 0
-\]
+\begin{equation}
+    \label{model 41}
+    v = \frac{m}{\text{Rounds Per T}* T}
+\end{equation}
 
+Which will be the final equation for the speed regulation using QFDP Method.
 
 
 \end{document}
