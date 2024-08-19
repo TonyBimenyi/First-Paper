@@ -612,6 +612,27 @@ Let's start with the calculation of Rounds, which gives the following equation:
     T = Encoder line count * Reduction Ratio * 4
 \end{equation}
 
+Where the encoder line count is 13 and the reduction ratio is 20 .
+
+Next we will calculate the number of rotations which is give us to the following equation:
+
+\begin{equation}
+    \label{model 39}
+    Number of Rotations = \frac{m}{rounds per T}
+\end{equation}
+
+And then thhe speed will be calculated in resolution per second \(r/s\) using this equation:
+
+\begin{equation}
+    \label{model 40}
+    v = \frac{Number of rotations}{T}
+\end{equation}
+
+Then combining equation (\ref{model 39}) and equation  (\ref{model 40}) , we get:
+
+\[
+\lim_{k \to \infty} \|e(k+1)\| = 0
+\]
 
 
 
