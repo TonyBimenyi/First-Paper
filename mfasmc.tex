@@ -549,7 +549,7 @@ e(k+1) = e(k) - H_\phi(k) \rho H_1(k) (L + D) e(k)
 This can be rewritten as:
 
 \begin{equation}
-    \label{model 36}
+    \label{model 35}
     e(k+1) = (I - \rho \Theta(k)) e(k)
 \end{equation}
 
@@ -586,7 +586,7 @@ Thus, we have:
 To ensure convergence of the tracking error, we impose the condition:
 
 \begin{equation}
-    \label{model 37}
+    \label{model 36}
     \|I - \rho \Theta(k)\| < 1
 \end{equation}
 
@@ -616,7 +616,7 @@ The motor speed is measured in revolutions per second (r/s). The following equat
 
    The total number of "rounds" that the encoder measures is given by:
    \begin{equation}
-       \label{model 38}
+       \label{model 37}
        T = \text{Encoder line count} \times \text{Reduction Ratio} \times 4
    \end{equation}
    Here, the Encoder line count is 13, and the Reduction Ratio is 20. The factor of 4 accounts for the quadrature encoding, which effectively quadruples the resolution.
@@ -625,7 +625,7 @@ The motor speed is measured in revolutions per second (r/s). The following equat
 
    The number of rotations can be determined using:
    \begin{equation}
-       \label{model 39}
+       \label{model 38}
        \text{Number of Rotations} = \frac{m}{\text{Rounds Per T}}
    \end{equation}
    Where \( m \) is the total count from the encoder, and Rounds Per T is the number of encoder counts per revolution, derived from Equation (\ref{model 38}).
@@ -634,7 +634,7 @@ The motor speed is measured in revolutions per second (r/s). The following equat
 
    The speed of the motor in resolution per second (\( r/s \)) is given by:
    \begin{equation}
-       \label{model 40}
+       \label{model 39}
        v = \frac{\text{Number of Rotations}}{T}
    \end{equation}
    Here, \( v \) represents the speed, calculated by dividing the number of rotations by the time \( T \) it takes to complete those rotations.
@@ -643,7 +643,7 @@ The motor speed is measured in revolutions per second (r/s). The following equat
 
    Substituting Equation (\ref{model 39}) into Equation (\ref{model 40}), we obtain:
    \begin{equation}
-       \label{model 41}
+       \label{model 40}
        v = \frac{m}{\text{Rounds Per T} \times T}
    \end{equation}
    This final equation integrates encoder measurements and the sampling period to provide an accurate speed regulation formula using the QFDP method.
@@ -655,6 +655,28 @@ The quadruple-frequency method, implemented through software, is crucial for max
 
 \section{Extension to Switching Topology}
 
-In this section, the proposed design is extendend to the multiagent system with switching topology
+In this section, the proposed design is extendend to the multiagent system with switching topology.
 
+Let \(\mathcal{G}\) denote a time-varying graph depend on \(k\). The adjacency matrix associated with \(\mathcal{G}(k)\) is denoted by \(\mathcal{A}(k) = (a_{i,j}(k)) \varepsilon R^{N \times N} \) and the Laplacian of \(\mathcal{G}(k)\) is denoted by \(L(k)\). The neighborhood of the \(i\)th agent is denoted by the set \(N_i(k)\). To describe the switching topology, let \(\mathcal{G}_\varrho  =\mathcal{G}_1, \mathcal{G}_2, \dots ,\mathcal{G}_M \) denote the set of all directed graphs for the agents, where \(M \varepsilon Z^+\) denotes the total number of possible interaction graphs. The Laplacian of \(\mathcal{G}_l\) is denoted by \(L-l\) for \(l = 1,2, \dots, M\). We also view the disired trajectory as a virtual leader and, index it by the vertex 0 in the graph representation. In this case, the complete information flow of the whole interation topology can be described as \( \bar{\mathcal{G}}(k)\). 
+In addition \(\bar{\mathcal{G}}_\varrho  =\bar{\mathcal{G}}_1 , \bar{\mathcal{G}}_2 , \dots ,\bar{\mathcal{G}}_M  \) denotes the set of the finite possible interaction graphs for \(\bar{\mathcal{G}}(k)\).
+In this cas, the equation (\ref{model 3}) becomes:
+\begin{equation}
+    \label{model 41}
+    \xi_i(k) = \sum_{j \in N_i(k)} a_i,_j(k)( y_j(k)-y_i(k)) + d_i(k)(yd(k) - y_i(k ))
+\end{equation}
+
+Assumption 4: The communication graph \(\bar{\mathcal{G}}_l\) is a fixed strongly connected graph and at least one of the follower agents can access the leader's trajectory for all \(l = 1,2,\dots,M\).
+
+Theorem (?):Consider that the multiagent system (\ref{model 1}) satisfies Assumptios 1,2,3  and communication graph assumption 4. Let the proposed MFAC algorith be used. Assume that the desired trajectory \(y_d(k)\) is time invariable, that is \(yd(k) = const \). If we select \(\rho\) such that it satisfies the condition
+\[
+    \rho < \frac{1}{max_{i=1,2,\dots,N,l=1,2,\dots,M}\sum_{j=1}^{N}a_{i,j}^l + d_i^l}
+\]
+
+where \(a_{i,j}^l\) is the element of \(L_1\) and \(d_i^l\) is the element of \(D_l\). Then there exists a \(\lambda_min > 0 and \lambda > \lambda_min\) such that the tracking errors \(e_i(k)\) converge to 0 as \(k \rightarrow \infty\) for all \(i = 1,2,\dots, N\). so:
+
+\[
+    \xi_i(k)  = (L(k) + D(k))e(k)
+\]
+
+ 
 \end{document}
