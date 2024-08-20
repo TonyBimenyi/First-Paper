@@ -678,5 +678,30 @@ where \(a_{i,j}^l\) is the element of \(L_1\) and \(d_i^l\) is the element of \(
     \xi_i(k)  = (L(k) + D(k))e(k)
 \]
 
+Remark 9: From Theorem 4, we can observe that, it is possible to derive consensus tracking for multiagent systems with
+a time invariable desired trajectory, although the interaction
+graph between agents is time varying. Similarly, the tracking
+results for a time varying desired trajectory can also be given
+by following the result of Theorem 3, which has been omitted
+here.
+Remark 10: From Theorems 2 and 3, we can conclude that
+the distributed MFAC has several attractive properties. First,
+distributed MFAC uses only the real time measurement I/O
+data of the each agent. No mathematical model of the agent’s
+dynamic is needed, which implies that we can develop a
+generic consensus control algorithm for a certain class of multiagent systems. Second, distributed MFAC does not require
+any training process and external testing signals, which are
+necessary for NN-based nonlinear adaptive consensus tracking
+control approaches. Third, since the agent’s dynamic model
+information does not include in the distributed MFAC scheme,
+and then it has strong robustness for traditional unmodeled
+dynamics comparing with the other model based consensus
+control methods. Finally, the distributed MFAC is simple and
+easily implemented with small computational cost.
+
+\section{Simulation Results}
+
+In this simulation results, we perform numerical simulation
+
  
 \end{document}
