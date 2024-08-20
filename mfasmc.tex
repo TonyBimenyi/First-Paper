@@ -619,7 +619,7 @@ The motor speed is measured in revolutions per second (r/s). The following equat
        \label{model 38}
        T = \text{Encoder line count} \times \text{Reduction Ratio} \times 4
    \end{equation}
-   Here, the **Encoder line count** is 13, and the **Reduction Ratio** is 20. The factor of 4 accounts for the quadrature encoding, which effectively quadruples the resolution.
+   Here, the Encoder line count is 13, and the Reduction Ratio is 20. The factor of 4 accounts for the quadrature encoding, which effectively quadruples the resolution.
 
 2. Calculation of Number of Rotations:
 
@@ -628,7 +628,7 @@ The motor speed is measured in revolutions per second (r/s). The following equat
        \label{model 39}
        \text{Number of Rotations} = \frac{m}{\text{Rounds Per T}}
    \end{equation}
-   Where \( m \) is the total count from the encoder, and **Rounds Per T** is the number of encoder counts per revolution, derived from Equation (\ref{model 38}).
+   Where \( m \) is the total count from the encoder, and Rounds Per T is the number of encoder counts per revolution, derived from Equation (\ref{model 38}).
 
 3. Calculation of Speed:
 
@@ -655,5 +655,6 @@ The quadruple-frequency method, implemented through software, is crucial for max
 
 \section{Extension to Switching Topology}
 
+In this section, the proposed design is extendend to the multiagent system with switching topology
 
 \end{document}
