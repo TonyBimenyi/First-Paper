@@ -53,6 +53,12 @@ INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\cite\cite.sty
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\cite\cite.sty
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption.sty
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption.sty
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption3.sty
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption3.sty
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
@@ -89,8 +95,6 @@ INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\graphics\epsfig.s
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\graphics\epsfig.sty
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex\latex\subfigure\subfigure.sty
@@ -182,7 +186,6 @@ INPUT .\communication.png
 INPUT .\communication.png
 INPUT .\communication.png
 INPUT .\communication.png
-INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
 INPUT mfasmc.aux
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb

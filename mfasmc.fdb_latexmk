@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1724143016.86159 "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1724143017.7445 0
-  "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1723431065 82507 a9eef8696c92627b87e9975edea03b2a ""
+["pdflatex"] 1724143412.83295 "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1724143413.7608 0
+  "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1724143127 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1723431067 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1723431069 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs7.tfm" 1723431068 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
@@ -58,6 +58,8 @@
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsopn.sty" 1718270739 4474 23ca1d3a79a57b405388059456d0a8df ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amstext.sty" 1718270740 2444 71618ea5f2377e33b04fb97afdd0eac2 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/booktabs/booktabs.sty" 1579093635 6253 f1cb470c9199e7110a27851508ed7a5c ""
+  "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption.sty" 1696169587 56128 c2ccf1a29d78c33bc553880402e4fb9a ""
+  "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption3.sty" 1696169587 72619 ee90b6612147680fd73c3b1406a74245 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/cite/cite.sty" 1425353482 26218 19edeff8cdc2bcb704e8051dc55eb5a7 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1623003186 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/color.cfg" 1465894292 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
@@ -83,9 +85,9 @@
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/subfigure/subfigure.cfg" 1114257370 2114 42ba738bf6f1cec796106a69840777a4 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/subfigure/subfigure.sty" 1114257370 14815 1d3da78e0f66f3c62133fbabffd13cf5 ""
   "communication.png" 1724142981 44217 246b77cd5584027ad750dd0c0ef4047e ""
-  "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" 1724143016 38764 8849aef72ff2702d68ec56dddfce3b01 ""
-  "mfasmc.aux" 1724143017 3483 d211ad26f4aaef4f9c252823215fbb2c "pdflatex"
-  "mfasmc.tex" 1724143016 38764 8849aef72ff2702d68ec56dddfce3b01 ""
+  "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" 1724143412 38971 5986cb38e4ed69332bad8b898dc85de9 ""
+  "mfasmc.aux" 1724143413 3550 c477d33e68068e5704a0f5f9442e0864 "pdflatex"
+  "mfasmc.tex" 1724143412 38971 5986cb38e4ed69332bad8b898dc85de9 ""
   (generated)
   "mfasmc.aux"
   "mfasmc.log"

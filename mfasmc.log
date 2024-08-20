@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.12)  20 AUG 2024 16:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.12)  20 AUG 2024 16:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -130,11 +130,38 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+\caption@tempdima=\dimen178
+\captionmargin=\dimen179
+\caption@leftmargin=\dimen180
+\caption@rightmargin=\dimen181
+\caption@width=\dimen182
+\caption@indent=\dimen183
+\caption@parindent=\dimen184
+\caption@hangindent=\dimen185
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEtablestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\normalfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptionsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\normalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONconference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi \fi  on input line 1175.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count279
+\c@continuedfloat=\count280
 ) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks18
+\@emptytoks=\toks19
 \symAMSa=\mathgroup5
 \symAMSb=\mathgroup6
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
@@ -149,22 +176,22 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2021/08/26 v2.01 AMS text
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks19
-\ex@=\dimen178
+\@emptytoks=\toks20
+\ex@=\dimen186
 )) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen179
+\pmbraise@=\dimen187
 ) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count279
+\inf@bad=\count281
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count280
-\leftroot@=\count281
+\uproot@=\count282
+\leftroot@=\count283
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count282
-\DOTSCASE@=\count283
+\classnum@=\count284
+\DOTSCASE@=\count285
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -174,34 +201,34 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen180
+\big@size=\dimen188
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count284
+\macc@depth=\count286
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count285
+\c@MaxMatrixCols=\count287
 \dotsspace@=\muskip17
-\c@parentequation=\count286
-\dspbrk@lvl=\count287
-\tag@help=\toks20
-\row@=\count288
-\column@=\count289
-\maxfields@=\count290
-\andhelp@=\toks21
-\eqnshift@=\dimen181
-\alignsep@=\dimen182
-\tagshift@=\dimen183
-\tagwidth@=\dimen184
-\totwidth@=\dimen185
-\lineht@=\dimen186
-\@envbody=\toks22
+\c@parentequation=\count288
+\dspbrk@lvl=\count289
+\tag@help=\toks21
+\row@=\count290
+\column@=\count291
+\maxfields@=\count292
+\andhelp@=\toks22
+\eqnshift@=\dimen189
+\alignsep@=\dimen190
+\tagshift@=\dimen191
+\tagwidth@=\dimen192
+\totwidth@=\dimen193
+\lineht@=\dimen194
+\@envbody=\toks23
 \multlinegap=\skip53
 \multlinetaggap=\skip54
-\mathdisplay@stack=\toks23
+\mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 ) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
@@ -224,15 +251,11 @@ Package color Info: Driver file: pdftex.def on input line 149.
 Package: epsfig 2024/01/14 v1.7b (e)psfig emulation (SPQR)
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks24
+\Gin@req@height=\dimen195
+\Gin@req@width=\dimen196
 )
-\Gin@req@height=\dimen187
-\Gin@req@width=\dimen188
-)
-\epsfxsize=\dimen189
-\epsfysize=\dimen190
+\epsfxsize=\dimen197
+\epsfysize=\dimen198
 ) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks25
@@ -248,14 +271,14 @@ Package: amsthm 2020/05/29 v2.20.6
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip58
 \subfigcapskip=\skip59
-\subfigcaptopadj=\dimen191
+\subfigcaptopadj=\dimen199
 \subfigbottomskip=\skip60
-\subfigcapmargin=\dimen192
+\subfigcapmargin=\dimen256
 \subfiglabelskip=\skip61
-\c@subfigure=\count291
-\c@lofdepth=\count292
-\c@subtable=\count293
-\c@lotdepth=\count294
+\c@subfigure=\count293
+\c@lofdepth=\count294
+\c@subtable=\count295
+\c@lotdepth=\count296
 
 ****************************************
 * Local config file subfigure.cfg used *
@@ -269,38 +292,38 @@ File: lettrine.sty 2024-06-26 v2.61 (Daniel Flipo)
 Package: expl3 2024-07-20 L3 programming layer (loader) 
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count295
+\l__color_backend_stack_int=\count297
 \l__pdf_internal_box=\box56
 ))
 Package: xfp 2024-05-08 L3 Floating point unit
 )
-\c@DefaultLines=\count296
-\c@DefaultDepth=\count297
-\DefaultFindent=\dimen193
-\DefaultNindent=\dimen194
-\DefaultSlope=\dimen195
-\DiscardVskip=\dimen196
+\c@DefaultLines=\count298
+\c@DefaultDepth=\count299
+\DefaultFindent=\dimen257
+\DefaultNindent=\dimen258
+\DefaultSlope=\dimen259
+\DiscardVskip=\dimen260
 \L@lettrine=\box57
 \L@lbox=\box58
 \L@tbox=\box59
-\c@L@lines=\count298
-\c@L@depth=\count299
-\L@Pindent=\dimen197
-\L@Findent=\dimen198
-\L@Nindent=\dimen199
-\L@lraise=\dimen256
-\L@first=\dimen257
-\L@next=\dimen258
-\L@slope=\dimen259
-\L@height=\dimen260
-\L@novskip=\dimen261
-\L@ruleht=\dimen262
-\L@target@ht=\dimen263
-\L@target@dp=\dimen264
-\L@target@tht=\dimen265
-\LettrineWidth=\dimen266
-\LettrineHeight=\dimen267
-\LettrineDepth=\dimen268
+\c@L@lines=\count300
+\c@L@depth=\count301
+\L@Pindent=\dimen261
+\L@Findent=\dimen262
+\L@Nindent=\dimen263
+\L@lraise=\dimen264
+\L@first=\dimen265
+\L@next=\dimen266
+\L@slope=\dimen267
+\L@height=\dimen268
+\L@novskip=\dimen269
+\L@ruleht=\dimen270
+\L@target@ht=\dimen271
+\L@target@dp=\dimen272
+\L@target@tht=\dimen273
+\LettrineWidth=\dimen274
+\LettrineHeight=\dimen275
+\LettrineDepth=\dimen276
 
 Loading lettrine.cfg
 (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/lettrine\lettrine.cfg)
@@ -324,18 +347,21 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 
 -- Lines per column: 40 (approximate, difference = 5.40143pt).
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfigure package is loaded.
+Package caption Info: End \AtBeginDocument code.
 (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count300
-\scratchdimen=\dimen269
+\scratchcounter=\count302
+\scratchdimen=\dimen277
 \scratchbox=\box60
-\nofMPsegments=\count301
-\nofMParguments=\count302
+\nofMPsegments=\count303
+\nofMParguments=\count304
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count303
-\MPscratchDim=\dimen270
-\MPnumerator=\count304
-\makeMPintoPDFobject=\count305
+\MPscratchCnt=\count305
+\MPscratchDim=\dimen278
+\MPnumerator=\count306
+\makeMPintoPDFobject=\count307
 \everyMPtoPDFconversion=\toks33
 ) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -389,7 +415,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 File: communication.png Graphic file (type png)
 <use communication.png>
 Package pdftex.def Info: communication.png  used on input line 708.
-(pdftex.def)             Requested size: 258.0pt x 174.17259pt.
+(pdftex.def)             Requested size: 309.60315pt x 209.00528pt.
 
 
 [10]
@@ -405,15 +431,15 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4240 strings out of 473898
- 70669 string characters out of 5725535
+ 5581 strings out of 473898
+ 96604 string characters out of 5725535
  1942960 words of memory out of 5000000
- 27050 multiletter control sequences out of 15000+600000
+ 28386 multiletter control sequences out of 15000+600000
  595130 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,8n,93p,1084b,235s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,8n,93p,1084b,299s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (11 pages, 245051 bytes).
+Output written on mfasmc.pdf (11 pages, 245139 bytes).
 PDF statistics:
  117 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
