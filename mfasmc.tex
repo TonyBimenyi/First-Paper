@@ -712,15 +712,15 @@ In this simulation results, we perform numerical simulations to illustrate the p
 
 Four follower DC motors and the models for each DC motor governed by:
 
-DC Motor 1 :
+DC Motor 1: \(y_1(k+1)=\frac{m}{rT \times 0.1} \times u_1(k)\)
 
-DC Motor 2:
+DC Motor 2: \(y_2(k+1)=\frac{m}{rT \times 0.1} \times u_2(k)\)
 
-DC Motor 3:
+DC Motor 3: \(y_3(k+1)=\frac{m}{rT \times 0.3} \times u_3(k)\)
 
-DC Motor 4:
+DC Motor 4: \(y_4(k+1)=\frac{m}{rT \times 0.3 } \times u_4(k)\)
 
-
+Here, \(m\) is the total count from the encoder, which captures the number of pulses as the motor shaft rotates. The variable \(rT\) represents the number of encoder counts per revolution, indicating how many counts correspond to a full rotation. The variable TT is time, which can vary, affecting the motor's speed depending on the duration of each control input.
 
  
 \end{document}
