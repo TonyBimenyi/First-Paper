@@ -720,7 +720,22 @@ DC Motor 3: \(y_3(k+1)=\frac{m}{rT \times 0.3} \times u_3(k)\)
 
 DC Motor 4: \(y_4(k+1)=\frac{m}{rT \times 0.3 } \times u_4(k)\)
 
-Here, \(m\) is the total count from the encoder, which captures the number of pulses as the motor shaft rotates. The variable \(rT\) represents the number of encoder counts per revolution, indicating how many counts correspond to a full rotation. The variable TT is time, which can vary, affecting the motor's speed depending on the duration of each control input.
+Here, \(m\) is the total count from the encoder, which captures the number of pulses as the motor shaft rotates. The variable \(rT\) represents the number of encoder counts per revolution, indicating how many counts correspond to a full rotation. The variable \(T\) is time, which can vary, affecting the motor's speed depending on the duration of each control input. The models are provided from the expression (\ref{model 40}).
+
+It can be seen that the considered agents are heterogeneous since their dynamics are different from each other. In this example, the dynamics are all unknown. They are given here only to generate the I/O data for the multiagent system and no model information is used in the distributed MFSMAC algorithm.
+
+As the illustration shows in Fig. 1, the virtual leader is denoted as vertex 0. It can be observe that only agent 1 and 3 can receive information of the leader, the communication graph is strongly connected. Assume that the information exchange among agents is directed and fixed. Then the Laplacian  matrix of the graph is given as follows: 
+
+\[
+    L = \begin{bmatrix}
+    1 & 0 & 0 & -1 \\
+    -1 & 2 & -1 & 0 \\
+    0 & -1 & 1 & 0 \\
+    -1 & 0 & -1 & 2
+    \end{bmatrix}
+\]
+
+
 
  
 \end{document}
