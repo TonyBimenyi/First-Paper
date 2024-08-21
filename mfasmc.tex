@@ -720,11 +720,11 @@ DC Motor 3: \(y_3(k+1)=\frac{m}{rT \times 0.3} \times u_3(k)\)
 
 DC Motor 4: \(y_4(k+1)=\frac{m}{rT \times 0.3 } \times u_4(k)\)
 
-Here, \(m\) is the total count from the encoder, which captures the number of pulses as the motor shaft rotates. The variable \(rT\) represents the number of encoder counts per revolution, indicating how many counts correspond to a full rotation. The variable \(T\) is time, which can vary, affecting the motor's speed depending on the duration of each control input. The models are provided from the expression (\ref{model 40}).
+In this context, \( m \) represents the total pulse count from the encoder, which measures the rotation of the motor shaft. The variable \( rT \) stands for the number of encoder counts per revolution, indicating how many counts correspond to one full rotation of the motor shaft. The variable \( T \) denotes time, which can vary and directly influences the motor's speed depending on the duration of each control input. These models are derived from the expression (\ref{model 40}).
 
-It can be seen that the considered agents are heterogeneous since their dynamics are different from each other. In this example, the dynamics are all unknown. They are given here only to generate the I/O data for the multiagent system and no model information is used in the distributed MFSMAC algorithm.
+It is evident that the agents considered are heterogeneous, as their dynamics differ from one another. In this scenario, the dynamics are assumed to be unknown and are only provided here to generate the I/O data for the multi-agent system. No model information is utilized in the distributed MFSMAC algorithm.
 
-As the illustration shows in Fig. 1, the virtual leader is denoted as vertex 0. It can be observe that only agent 1 and 3 can receive information of the leader, the communication graph is strongly connected. Assume that the information exchange among agents is directed and fixed. Then the Laplacian  matrix of the graph is given as follows: 
+As illustrated in Fig. 1, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. Assume that the information exchange among agents is directed and fixed. The Laplacian matrix of the graph is given as follows:
 
 \[
     L = \begin{bmatrix}
@@ -734,6 +734,23 @@ As the illustration shows in Fig. 1, the virtual leader is denoted as vertex 0. 
     -1 & 0 & -1 & 2
     \end{bmatrix}
 \]
+
+with \( D = \text{diag}(1, 0, 1, 0) \). The reciprocal of the greatest diagonal entry of \( L + D \) is 0.5. By selecting the controller parameters as \( \rho = 1 \), the convergence condition in Theorem 2 and Theorem 3 is satisfied for all \( i = 1, 2, 3, 4 \). We then consider the following two distinct desired trajectories.
+
+
+\subsection{Time Invariable Desired Trajectory}
+
+where \( L + 1 \) accounts for the range from 0 to 100. The expression for \( y_d(k) \) is:
+
+\[
+y_d(k) = 0.5 \cdot \sin\left(\frac{k \pi}{30}\right) + 0.3 \cdot \cos\left(\frac{k \pi}{10}\right)
+\]
+
+for \( k \) in the range \( 0 \leq k \leq 100 \).
+
+The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\), \(\phi_i(0)=1 \) for all agents in this simulation ,\(\gamma_{1,2}=0.15\) and \(\gamma_{3,4}=0.45\),\(T=0.1\),\(m=350\), \(\eta=1\),\(\mu=1\). The MFA Controller parameters are given as \(\rho=1\),\(\lambda=50\) and the SM Controller parameters are 
+\(\alpha=1\) with \(\epsilon=10^-5\).
+
 
 
 
