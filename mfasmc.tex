@@ -712,13 +712,13 @@ In this simulation results, we perform numerical simulations to illustrate the p
 
 Four follower DC motors and the models for each DC motor governed by:
 
-DC Motor 1: \(y_1(k+1)=\frac{m}{rT \times 0.1} \times u_1(k)\)
+DC Motor 1 (Agent 1): \(y_1(k+1)=\frac{m}{rT \times 0.1} \times u_1(k)\)
 
-DC Motor 2: \(y_2(k+1)=\frac{m}{rT \times 0.1} \times u_2(k)\)
+DC Motor 2 (Agent 2): \(y_2(k+1)=\frac{m}{rT \times 0.1} \times u_2(k)\)
 
-DC Motor 3: \(y_3(k+1)=\frac{m}{rT \times 0.3} \times u_3(k)\)
+DC Motor 3 (Agent 3): \(y_3(k+1)=\frac{m}{rT \times 0.3} \times u_3(k)\)
 
-DC Motor 4: \(y_4(k+1)=\frac{m}{rT \times 0.3 } \times u_4(k)\)
+DC Motor 4 (Agent 4): \(y_4(k+1)=\frac{m}{rT \times 0.3 } \times u_4(k)\)
 
 In this context, \( m \) represents the total pulse count from the encoder, which measures the rotation of the motor shaft. The variable \( rT \) stands for the number of encoder counts per revolution, indicating how many counts correspond to one full rotation of the motor shaft. The variable \( T \) denotes time, which can vary and directly influences the motor's speed depending on the duration of each control input. These models are derived from the expression (\ref{model 40}).
 
@@ -756,6 +756,27 @@ The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\), \(\phi_i(0)
     \includegraphics[width=0.6\textwidth]{Figure_2.png}
     \caption{Tracking Errors for time varying desired trajectory.}
     \label{fig:figure_2} % Label for referencing the figure
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7 \textwidth]{Figure_3.png}
+    \caption{Tracking performance of all ageents for time varying desired trajectory.}
+    \label{fig:figure_3} % Label for referencing the figure
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6 \textwidth]{Figure_5.png}
+    \caption{Tracking Errors  for time Invariable desired trajectory.}
+    \label{fig:figure_4} % Label for referencing the figure
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7 \textwidth]{Figure_4.png}
+    \caption{Tracking performance of all agents for time Invariable desired trajectory.}
+    \label{fig:figure_5} % Label for referencing the figure
 \end{figure}
 
  

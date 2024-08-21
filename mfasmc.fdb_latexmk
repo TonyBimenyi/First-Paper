@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1724228472.61552 "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1724228473.60409 0
+["pdflatex"] 1724232762.86151 "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1724232764.19209 0
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1724143127 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1723431067 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1723431069 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -85,10 +85,13 @@
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/subfigure/subfigure.cfg" 1114257370 2114 42ba738bf6f1cec796106a69840777a4 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/subfigure/subfigure.sty" 1114257370 14815 1d3da78e0f66f3c62133fbabffd13cf5 ""
   "Figure_2.png" 1724228319 35245 e53c02eb9cd728259239f298a32879c3 ""
+  "Figure_3.png" 1724229854 190447 79f935a1b8c933640bb66a0b47cedf59 ""
+  "Figure_4.png" 1724232092 66230 97b82e975316da0a279af7e864132328 ""
+  "Figure_5.png" 1724232504 27884 507a350f494facd0bcbf8ed4b9c8b911 ""
   "communication.png" 1724142981 44217 246b77cd5584027ad750dd0c0ef4047e ""
-  "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" 1724228470 41697 3f2576a1470cc05c0f805352189f4b64 ""
-  "mfasmc.aux" 1724228473 3883 9bf788f90b34fff94f6ac1acf6a347f6 "pdflatex"
-  "mfasmc.tex" 1724228470 41697 3f2576a1470cc05c0f805352189f4b64 ""
+  "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" 1724232762 42500 f200e9dee374d3fd6eff976980f7d9a5 ""
+  "mfasmc.aux" 1724232764 4513 2f74b20e6e1b17eed6e3f22007f71a56 "pdflatex"
+  "mfasmc.tex" 1724232762 42500 f200e9dee374d3fd6eff976980f7d9a5 ""
   (generated)
   "mfasmc.aux"
   "mfasmc.log"
