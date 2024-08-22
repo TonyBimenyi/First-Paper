@@ -756,14 +756,22 @@ The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\), \(\phi_i(0)
     \includegraphics[width=0.6\textwidth]{Figure_2.png}
     \caption{Tracking Errors for time varying desired trajectory.}
     \label{fig:figure_2} % Label for referencing the figure
+
+    As shown in Figure 2, the tracking errors between the actual and desired trajectories for agents a1, a2, a3, and a4 are relatively small and converge to zero over time, indicating satisfactory performance. However, the individual agents exhibit varying levels of tracking error, suggesting that their unique dynamics or initial conditions may influence their performance.
 \end{figure}
+
+
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7 \textwidth]{Figure_3.png}
     \caption{Tracking performance of all ageents for time varying desired trajectory.}
     \label{fig:figure_3} % Label for referencing the figure
+
+    Figure 3 presents a detailed analysis of the tracking performance for all agents.  As illustrated, all agents successfully track the time-varying desired trajectory, confirming the effectiveness of the proposed control system. While minor variations in individual trajectories are evident, they generally adhere to the desired path. Factors such as agent dynamics, communication delays, and environmental disturbances could potentially influence the tracking performance.
 \end{figure}
+
+
 
 \begin{figure}[h!]
     \centering
@@ -781,7 +789,7 @@ The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\), \(\phi_i(0)
 
 \section{Conclusion}
 
-This paper introduces a Model-Free Adaptiive Sliding Mode Control(MFASMC) system. The proposed approach is the speed regulation of multiple DC motors. Model-Free Adaptive Control(MFAC), combined with Sliding Mode Control(SMC), ensures a robust performance despite varying motor characteristics and uncertainties. The system uses encoder counts for feedback and employs mathematical techniques, including Laplacian matrices, to handle interconnections and maintain desired speed control. This is demonstrated through the simulation results presented in figure 1 to figure 5.
+This paper introduces a Model-Free Adaptiive Sliding Mode Control(MFASMC) system. The proposed approach is the speed regulation of multiple DC motors. Model-Free Adaptive Control(MFAC), combined with Sliding Mode Control(SMC), ensures a robust performance despite varying motor characteristics and uncertainties. The system utilizes a fixed topology with Laplacian matrices to effectively handle the interconnections between multiple DC motors and maintain precise speed control. This is demonstrated through the simulation results presented in figure 1 to figure 5.
 
  
 \end{document}
