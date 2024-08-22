@@ -214,6 +214,14 @@ INPUT .\Figure_4.png
 INPUT .\Figure_4.png
 INPUT .\Figure_4.png
 INPUT .\Figure_4.png
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmro7t.tfm
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmro7t.vf
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmro8r.tfm
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmri7t.vf
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
 INPUT mfasmc.aux
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
@@ -241,6 +249,8 @@ INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
+INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmri8a.pfb
