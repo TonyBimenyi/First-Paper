@@ -678,26 +678,26 @@ where \(a_{i,j}^l\) is the element of \(L_1\) and \(d_i^l\) is the element of \(
     \xi_i(k)  = (L(k) + D(k))e(k)
 \]
 
-Remark 9: From Theorem 4, we can observe that, it is possible to derive consensus tracking for multiagent systems with
-a time invariable desired trajectory, although the interaction
-graph between agents is time varying. Similarly, the tracking
-results for a time varying desired trajectory can also be given
-by following the result of Theorem 3, which has been omitted
-here.
-Remark 10: From Theorems 2 and 3, we can conclude that
-the distributed MFAC has several attractive properties. First,
-distributed MFAC uses only the real time measurement I/O
-data of the each agent. No mathematical model of the agent’s
-dynamic is needed, which implies that we can develop a
-generic consensus control algorithm for a certain class of multiagent systems. Second, distributed MFAC does not require
-any training process and external testing signals, which are
-necessary for NN-based nonlinear adaptive consensus tracking
-control approaches. Third, since the agent’s dynamic model
-information does not include in the distributed MFAC scheme,
-and then it has strong robustness for traditional unmodeled
-dynamics comparing with the other model based consensus
-control methods. Finally, the distributed MFAC is simple and
-easily implemented with small computational cost.
+% Remark 9: From Theorem 4, we can observe that, it is possible to derive consensus tracking for multiagent systems with
+% a time invariable desired trajectory, although the interaction
+% graph between agents is time varying. Similarly, the tracking
+% results for a time varying desired trajectory can also be given
+% by following the result of Theorem 3, which has been omitted
+% here.
+% Remark 10: From Theorems 2 and 3, we can conclude that
+% the distributed MFAC has several attractive properties. First,
+% distributed MFAC uses only the real time measurement I/O
+% data of the each agent. No mathematical model of the agent’s
+% dynamic is needed, which implies that we can develop a
+% generic consensus control algorithm for a certain class of multiagent systems. Second, distributed MFAC does not require
+% any training process and external testing signals, which are
+% necessary for NN-based nonlinear adaptive consensus tracking
+% control approaches. Third, since the agent’s dynamic model
+% information does not include in the distributed MFAC scheme,
+% and then it has strong robustness for traditional unmodeled
+% dynamics comparing with the other model based consensus
+% control methods. Finally, the distributed MFAC is simple and
+% easily implemented with small computational cost.
 
 \section{Simulation Results}
 
@@ -756,22 +756,18 @@ The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\), \(\phi_i(0)
     \includegraphics[width=0.6\textwidth]{Figure_2.png}
     \caption{Tracking Errors for time varying desired trajectory.}
     \label{fig:figure_2} % Label for referencing the figure
-
-    As shown in Figure 2, the tracking errors between the actual and desired trajectories for agents a1, a2, a3, and a4 are relatively small and converge to zero over time, indicating satisfactory performance. However, the individual agents exhibit varying levels of tracking error, suggesting that their unique dynamics or initial conditions may influence their performance.
 \end{figure}
 
-
+As shown in Figure 2, the tracking errors between the actual and desired trajectories for agents a1, a2, a3, and a4 are relatively small and converge to zero over time, indicating satisfactory performance. However, the individual agents exhibit varying levels of tracking error, suggesting that their unique dynamics or initial conditions may influence their performance.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7 \textwidth]{Figure_3.png}
     \caption{Tracking performance of all ageents for time varying desired trajectory.}
     \label{fig:figure_3} % Label for referencing the figure
-
-    Figure 3 presents a detailed analysis of the tracking performance for all agents.  As illustrated, all agents successfully track the time-varying desired trajectory, confirming the effectiveness of the proposed control system. While minor variations in individual trajectories are evident, they generally adhere to the desired path. Factors such as agent dynamics, communication delays, and environmental disturbances could potentially influence the tracking performance.
 \end{figure}
 
-
+Figure 3 presents a detailed analysis of the tracking performance for all agents.  As illustrated, all agents successfully track the time-varying desired trajectory, confirming the effectiveness of the proposed control system. While minor variations in individual trajectories are evident, they generally adhere to the desired path. Factors such as agent dynamics, communication delays, and environmental disturbances could potentially influence the tracking performance.
 
 \begin{figure}[h!]
     \centering
@@ -787,9 +783,11 @@ The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\), \(\phi_i(0)
     \label{fig:figure_5} % Label for referencing the figure
 \end{figure}
 
+Overall, both figures suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While there may be initial transient errors, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
+
 \section{Conclusion}
 
-This paper introduces a Model-Free Adaptiive Sliding Mode Control(MFASMC) system. The proposed approach is the speed regulation of multiple DC motors. Model-Free Adaptive Control(MFAC), combined with Sliding Mode Control(SMC), ensures a robust performance despite varying motor characteristics and uncertainties. The system utilizes a fixed topology with Laplacian matrices to effectively handle the interconnections between multiple DC motors and maintain precise speed control. This is demonstrated through the simulation results presented in figure 1 to figure 5.
+This paper introduces a Model-Free Adaptiive Sliding Mode Control(MFASMC) system. The proposed approach is the speed regulation of multiple DC motors. Model-Free Adaptive Control(MFAC), combined with Sliding Mode Control(SMC), ensures a robust performance despite varying motor characteristics and uncertainties. The system utilizes a fixed topology with Laplacian matrices to effectively handle the interconnections between multiple DC motors and maintain precise speed control. This is demonstrated through the simulation results presented.
 
  
 \end{document}
