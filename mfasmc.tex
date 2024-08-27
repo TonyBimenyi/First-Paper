@@ -241,7 +241,7 @@ To enhance the robutness and adaptibility of the control system , the Model Free
     u_i(k) = \mathbf{u_i}_{\text{MFA}}(k) + \Gamma_i \mathbf{u_i}_{\text{SM}}
 \end{equation}
 
-Where the parameter \(\gamma\) is a gain factor that adjusts the contribution of the sliding mode control in the control effort and tunes the convergence rate.
+Where the parameter \(\Gamma\) is a gain factor that adjusts the contribution of the sliding mode control in the control effort and tunes the convergence rate.
 
 \subsection{Stability Analysis}
 
@@ -774,7 +774,7 @@ y_d(k) = 0.5 \cdot \sin\left(\frac{k \pi}{30}\right) + 0.3 \cdot \cos\left(\frac
 
 for \( k \) in the range \( 0 \leq k \leq 100 \).
 
-The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\), \(\phi_i(0)=1 \) for all agents in this simulation ,\(\gamma_{1,2}=0.15\) and \(\gamma_{3,4}=0.45\),\(T=0.1\),\(m=350\), \(\eta=1\),\(\mu=1\). The MFA Controller parameters are given as \(\rho=1\),\(\lambda=50\) and the SM Controller parameters are 
+The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\), \(\phi_i(0)=1 \) for all agents in this simulation ,\(\Gamma_{1,2}=0.15\) and \(\Gamma_{3,4}=0.45\),\(T=0.1\),\(m=350\), \(\eta=1\),\(\mu=1\). The MFA Controller parameters are given as \(\rho=1\),\(\lambda=50\) and the SM Controller parameters are 
 \(\alpha=1\) with \(\epsilon=10^-5\).
 \begin{figure}[h!]
     \centering
