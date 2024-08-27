@@ -30,7 +30,7 @@
 % ---------------------------------------------------------------
 
 \begin{abstract}
-    This paper introduces a Model Free Adaptiive Sliding Mode Control (MFASMC) system for multi DC motors speed regulation. first, the proposed control system consists of a model-free adaptive control (MFAC) and sliding mode control (SMC) system. Secondly, the control law is derived by combining the sliding surface definition and reaching law. Then, to enhance measurement accuracy, a quadruple-frequency data processing method is utilized to ensure the accuracy of encoder measurements of the DC motor and sampling period.Additionaly, to ensure the accuracy of the speed regulation, we employ a non-linear multi-agent system with a switching topology. To further enhance the system's performance, a Compact Form Dynamic Linearization (CFDL) method is incorporated to optimize the control gains and improve the system's adaptability to changing conditions. Finally, The simulation results are presented to demonstrate to show that the proposed system is capable of tracking a desired trajectory, confirming the effectiveness of the proposed design.
+    This paper introduces a Model Free Adaptiive Sliding Mode Control (MFASMC) system for multi DC motors speed regulation. first, the proposed control system consists of a model-free adaptive control (MFAC) and sliding mode control (SMC) system. Secondly, the control law is derived by combining the sliding surface definition and reaching law. Then, to enhance measurement accuracy, a quadruple-frequency data processing method is utilized to ensure the accuracy of encoder measurements of the DC motor and sampling period.Additionaly, to ensure the accuracy of the speed regulation, we employ a non-linear multi-agent system with a fixed communication topology. To further enhance the system's performance, a Compact Form Dynamic Linearization (CFDL) method is incorporated to optimize the control gains and improve the system's adaptability to changing conditions. Finally, The simulation results are presented to demonstrate to show that the proposed system is capable of tracking a desired trajectory, confirming the effectiveness of the proposed design.
 \end{abstract}
 
 \section*{Keywords}
@@ -43,17 +43,17 @@ Model-Free Adaptive Sliding Mode Control (MFASMC), Quadruple-Frequency Data Proc
 
 \lettrine{T}he field of multi-agent systems has witnessed significant advancements, with many different applications in several areas such as satellite formations, autonomous vehicles, and distributed robotics. Robust speed regulation is a critical aspect of these systems, especially when dealing with multiple DC motors. Traditional control methods, such as Proportional-Integral-Derivative (PID) and Linear Quadratic Regulator (LQR), often fall short in handling the complex dynamics and uncertainties inherent in multi-agent systems.
 
-This paper proposes a novel control strategy that combines the strengths of Model-Free Adaptive Control (MFAC) and Sliding Mode Control (SMC). MFAC, as demonstrated in [2], offers adaptability to real-time changes, while SMC ensures robustness against uncertainties and disturbances [13]. This synergistic approach aims to enhance the performance, stability, and reliability of multi-DC motor speed regulation within multi-agent systems.
+This paper proposes a novel control strategy that combines the strengths of Model-Free Adaptive Control (MFAC) and Sliding Mode Control (SMC). MFAC, as demonstrated in \cite{2}, offers adaptability to real-time changes, while SMC ensures robustness against uncertainties and disturbances \cite{13}. This synergistic approach aims to enhance the performance, stability, and reliability of multi-DC motor speed regulation within multi-agent systems.
 
-As highlighted in [3], conventional control methods often rely on accurate mathematical models of the system. However, due to the complexity and unpredictability of real-world scenarios, obtaining such models can be challenging. The proposed data-driven control strategy leverages the MFAC framework to circumvent this limitation, offering a model-free solution that is highly adaptable to changes in system dynamics as explored in [4, 6].
+As highlighted in \cite{3}, conventional control methods often rely on accurate mathematical models of the system. However, due to the complexity and unpredictability of real-world scenarios, obtaining such models can be challenging. The proposed data-driven control strategy leverages the MFAC framework to circumvent this limitation, offering a model-free solution that is highly adaptable to changes in system dynamics as explored in \cite{4} , \cite{6}.
 
-By combining MFAC and SMC, this paper addresses the limitations of both individual methods. MFAC provides adaptability, while SMC ensures robustness. This integrated approach offers a comprehensive solution to the challenges of robust speed regulation in multi-agent systems, as demonstrated in [7-11].
+By combining MFAC and SMC, this paper addresses the limitations of both individual methods. MFAC provides adaptability, while SMC ensures robustness. This integrated approach offers a comprehensive solution to the challenges of robust speed regulation in multi-agent systems, as demonstrated in \cite{7} - \cite{11}.
 
-Recent studies have explored the application of MFAC and SMC for various control problems in multi-agent systems. In [1], MFAC was used for consensus control in multi-agent systems with unknown dynamics. In [5], SMC was employed for fault-tolerant control in multi-agent systems. The combination of MFAC and SMC has been shown to be effective in addressing complex control challenges, such as those encountered in multi-DC motor systems.
+Recent studies have explored the application of MFAC and SMC for various control problems in multi-agent systems. In \cite{1}, MFAC was used for consensus control in multi-agent systems with unknown dynamics. In \cite{5}, SMC was employed for fault-tolerant control in multi-agent systems. The combination of MFAC and SMC has been shown to be effective in addressing complex control challenges, such as those encountered in multi-DC motor systems.
 
 This paper utilizes the implementation of a fixed topology using Laplacian matrices, which effectively handle the interconnections between multiple agents (DC Motors) and maintain precise desired speed control. Encoder counts are employed as feedback to ensure high-resolution performance monitoring, thereby reinforcing the accuracy and reliability of the control system.
 
-In summary, the proposed data-driven model-free adaptive sliding mode control strategy is expected to outperform traditional methods in terms of accuracy, stability, and robustness based on the MFAC method [2]. By leveraging the advantages of MFAC and SMC, this approach can enhance the performance and reliability of multi-DC motor speed regulation in various applications, such as autonomous vehicles, robotics, and industrial automation.
+In summary, the proposed data-driven model-free adaptive sliding mode control strategy is expected to outperform traditional methods in terms of accuracy, stability, and robustness based on the MFAC method \cite{2}. By leveraging the advantages of MFAC and SMC, this approach can enhance the performance and reliability of multi-DC motor speed regulation in various applications, such as autonomous vehicles, robotics, and industrial automation.
 
     The following sections will outline the remaining content of this paper:
     section 2 provides Preliminaries and problem formulation, Section 3 The main results, Section 4 presents simulation results and performance analysis , demonstrating the efficacy of the proposed method under various operating conditions.
@@ -87,7 +87,7 @@ Assumption 1: The partial derivative of the nonlinear function \( f_i(\cdot) \) 
 
 Assumption 2: The model \( y_i(k + 1) = f_i(y_i(k), u_i(k)) \) is generalized Lipschitz, meaning that if \( \Delta u_i(k) = u_i(k) - u_i(k - 1) \neq 0 \), then \( | \Delta y_i(k + 1) | \leq b |\Delta u_i(k)| \) holds for any \( k \), where \( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \) and \( b \) is a positive constant.
 
-\textbf{Remark 1:} The practical applicability of the aforementioned assumptions to nonlinear systems has been extensively discussed in \cite{reference24}, affirming their suitability for practical multi-agent systems. \textbf{Assumption 1} establishes a foundational criterion for controller design, ensuring the continuity of the partial derivative of the nonlinear function $f_i(\cdot)$ with respect to $u_i(k)$. \textbf{Assumption 2} implies that the rate of change in an agent's output in response to changes in its control input is bounded. This constraint ensures that, from an energetic perspective, finite changes in control input energy correspond to bounded changes in output energy rates, a crucial consideration for system stability and performance.
+\textbf{Remark 1:} The practical applicability of the aforementioned assumptions to nonlinear systems has been extensively discussed in \cite{1}, affirming their suitability for practical multi-agent systems. \textbf{Assumption 1} establishes a foundational criterion for controller design, ensuring the continuity of the partial derivative of the nonlinear function $f_i(\cdot)$ with respect to $u_i(k)$. \textbf{Assumption 2} implies that the rate of change in an agent's output in response to changes in its control input is bounded. This constraint ensures that, from an energetic perspective, finite changes in control input energy correspond to bounded changes in output energy rates, a crucial consideration for system stability and performance.
 
 \subsection{Linearization Technique}
 
@@ -161,7 +161,12 @@ Then , the following distributed MFAC algorithms is presented:
 
 \subsection{Model Free Adaptiive Controller Design}
 
-
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{diagram.png}
+    \caption{Block diagram of the data-driven MFASMC control.}
+    \label{fig:diagram} % Label for referencing the figure
+\end{figure}
 
 To design the MFAC alogrithm, a performance function \(J(u_i(k))\) is set a:
 
@@ -403,7 +408,12 @@ As \(k \rightarrow \infty\), the term \((1-q_1)^k\) tends to zero, simplifying t
 |\tilde{\phi_i}(k)| \leq \frac{b}{q_1}
 \end{equation}
 
-Therefore, \(\tilde{\phi_i}(k)\) is bounded by \(\frac{b}{q_1}\), proving that the error remains within this bound as \(k\) approaches infinity.
+% Therefore, \(\tilde{\phi_i}(k)\) is bounded by \(\frac{b}{q_1}\), proving that the error remains within this bound as \(k\) approaches infinity.
+
+
+Remark 4: The inequality in \eqref{model 30} shows that \(\tilde{\phi_i}(k)\) is bounded by \(\frac{b}{q_1}\). This result implies that the error \(\tilde{\phi_i}(k)\) will remain within this bound, even as \(k\) approaches infinity. Thus, the system's error behavior is effectively controlled and constrained.
+
+    
 
 % Part 2: The convergence of tracking error , from (\ref{model 3}). \(\xi_i(k)\) can be rewritten in terms of tracking errors as follows:
 
@@ -479,6 +489,8 @@ Therefore, \(\tilde{\phi_i}(k)\) is bounded by \(\frac{b}{q_1}\), proving that t
 % \(\lim{k \rightarrow \infty} ||e(k+1)|| = 0\)
 
 % \section*{Part 2: Convergence of Tracking Error}
+
+
 
 Part 2: In this part, we delve into the convergence properties of the tracking error \(\xi_i(k)\). To understand this convergence, we start with the expression for \(\xi_i(k)\) as given in equation (\ref{model 3}). We aim to express \(\xi_i(k)\) in terms of the individual tracking errors \(e_i(k)\) and the errors associated with neighboring systems.
 
@@ -665,30 +677,30 @@ In our system, the sampling period, which is set by a timer, defines how frequen
 The quadruple-frequency method, implemented through software, is crucial for maximizing encoder measurement precision, resulting in more accurate speed control for the motor system.
 
 
-\section{Extension to Switching Topology}
+% \section{Extension to Switching Topology}
 
-In this section, the proposed design is extendend to the multiagent system with switching topology.
+% In this section, the proposed design is extendend to the multiagent system with switching topology.
 
-Let \(\mathcal{G}\) denote a time-varying graph depend on \(k\). The adjacency matrix associated with \(\mathcal{G}(k)\) is denoted by \(\mathcal{A}(k) = (a_{i,j}(k)) \varepsilon R^{N \times N} \) and the Laplacian of \(\mathcal{G}(k)\) is denoted by \(L(k)\). The neighborhood of the \(i\)th agent is denoted by the set \(N_i(k)\). To describe the switching topology, let \(\mathcal{G}_\varrho  =\mathcal{G}_1, \mathcal{G}_2, \dots ,\mathcal{G}_M \) denote the set of all directed graphs for the agents, where \(M \varepsilon Z^+\) denotes the total number of possible interaction graphs. The Laplacian of \(\mathcal{G}_l\) is denoted by \(L-l\) for \(l = 1,2, \dots, M\). We also view the disired trajectory as a virtual leader and, index it by the vertex 0 in the graph representation. In this case, the complete information flow of the whole interation topology can be described as \( \bar{\mathcal{G}}(k)\). 
-In addition \(\bar{\mathcal{G}}_\varrho  =\bar{\mathcal{G}}_1 , \bar{\mathcal{G}}_2 , \dots ,\bar{\mathcal{G}}_M  \) denotes the set of the finite possible interaction graphs for \(\bar{\mathcal{G}}(k)\).
-In this cas, the equation (\ref{model 3}) becomes:
-\begin{equation}
-    \label{model 41}
-    \xi_i(k) = \sum_{j \in N_i(k)} a_i,_j(k)( y_j(k)-y_i(k)) + d_i(k)(yd(k) - y_i(k ))
-\end{equation}
+% Let \(\mathcal{G}\) denote a time-varying graph depend on \(k\). The adjacency matrix associated with \(\mathcal{G}(k)\) is denoted by \(\mathcal{A}(k) = (a_{i,j}(k)) \varepsilon R^{N \times N} \) and the Laplacian of \(\mathcal{G}(k)\) is denoted by \(L(k)\). The neighborhood of the \(i\)th agent is denoted by the set \(N_i(k)\). To describe the switching topology, let \(\mathcal{G}_\varrho  =\mathcal{G}_1, \mathcal{G}_2, \dots ,\mathcal{G}_M \) denote the set of all directed graphs for the agents, where \(M \varepsilon Z^+\) denotes the total number of possible interaction graphs. The Laplacian of \(\mathcal{G}_l\) is denoted by \(L-l\) for \(l = 1,2, \dots, M\). We also view the disired trajectory as a virtual leader and, index it by the vertex 0 in the graph representation. In this case, the complete information flow of the whole interation topology can be described as \( \bar{\mathcal{G}}(k)\). 
+% In addition \(\bar{\mathcal{G}}_\varrho  =\bar{\mathcal{G}}_1 , \bar{\mathcal{G}}_2 , \dots ,\bar{\mathcal{G}}_M  \) denotes the set of the finite possible interaction graphs for \(\bar{\mathcal{G}}(k)\).
+% In this cas, the equation (\ref{model 3}) becomes:
+% \begin{equation}
+%     \label{model 41}
+%     \xi_i(k) = \sum_{j \in N_i(k)} a_i,_j(k)( y_j(k)-y_i(k)) + d_i(k)(yd(k) - y_i(k ))
+% \end{equation}
 
-Assumption 4: The communication graph \(\bar{\mathcal{G}}_l\) is a fixed strongly connected graph and at least one of the follower agents can access the leader's trajectory for all \(l = 1,2,\dots,M\).
+% Assumption 5: The communication graph \(\bar{\mathcal{G}}_l\) is a fixed strongly connected graph and at least one of the follower agents can access the leader's trajectory for all \(l = 1,2,\dots,M\).
 
-Theorem (?):Consider that the multiagent system (\ref{model 1}) satisfies Assumptios 1,2,3  and communication graph assumption 4. Let the proposed MFAC algorith be used. Assume that the desired trajectory \(y_d(k)\) is time invariable, that is \(yd(k) = const \). If we select \(\rho\) such that it satisfies the condition
-\[
-    \rho < \frac{1}{max_{i=1,2,\dots,N,l=1,2,\dots,M}\sum_{j=1}^{N}a_{i,j}^l + d_i^l}
-\]
+% Theorem (?):Consider that the multiagent system (\ref{model 1}) satisfies Assumptios 1,2,3  and communication graph assumption 4. Let the proposed MFAC algorith be used. Assume that the desired trajectory \(y_d(k)\) is time invariable, that is \(yd(k) = const \). If we select \(\rho\) such that it satisfies the condition
+% \[
+%     \rho < \frac{1}{max_{i=1,2,\dots,N,l=1,2,\dots,M}\sum_{j=1}^{N}a_{i,j}^l + d_i^l}
+% \]
 
-where \(a_{i,j}^l\) is the element of \(L_1\) and \(d_i^l\) is the element of \(D_l\). Then there exists a \(\lambda_min > 0 and \lambda > \lambda_min\) such that the tracking errors \(e_i(k)\) converge to 0 as \(k \rightarrow \infty\) for all \(i = 1,2,\dots, N\). so:
+% where \(a_{i,j}^l\) is the element of \(L_1\) and \(d_i^l\) is the element of \(D_l\). Then there exists a \(\lambda_min > 0 and \lambda > \lambda_min\) such that the tracking errors \(e_i(k)\) converge to 0 as \(k \rightarrow \infty\) for all \(i = 1,2,\dots, N\). so:
 
-\[
-    \xi_i(k)  = (L(k) + D(k))e(k)
-\]
+% \[
+%     \xi_i(k)  = (L(k) + D(k))e(k)
+% \]
 
 % Remark 9: From Theorem 4, we can observe that, it is possible to derive consensus tracking for multiagent systems with
 % a time invariable desired trajectory, although the interaction
@@ -713,6 +725,8 @@ where \(a_{i,j}^l\) is the element of \(L_1\) and \(d_i^l\) is the element of \(
 
 \section{Simulation Results}
 
+Assumption 5: The communication graph \(\bar{\mathcal{G}}_l\) is a fixed strongly connected graph and at least one of the follower agents can access the leader's trajectory for all \(l = 1,2,\dots,M\).
+
 In this simulation results, we perform numerical simulations to illustrate the proposed speed tracking results for fixed communication topology. Consider a network comprising
 
 \begin{figure}[h!]
@@ -736,7 +750,7 @@ In this context, \( m \) represents the total pulse count from the encoder, whic
 
 It is evident that the agents considered are heterogeneous, as their dynamics differ from one another. In this scenario, the dynamics are assumed to be unknown and are only provided here to generate the I/O data for the multi-agent system. No model information is utilized in the distributed MFSMAC algorithm.
 
-As illustrated in Fig. 1, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. Assume that the information exchange among agents is directed and fixed. The Laplacian matrix of the graph is given as follows:
+As illustrated in Figure 2, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. Assume that the information exchange among agents is directed and fixed. The Laplacian matrix of the graph is given as follows:
 
 \[
     L = \begin{bmatrix}
@@ -770,7 +784,7 @@ The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\), \(\phi_i(0)
     \label{fig:figure_2} % Label for referencing the figure
 \end{figure}
 
-As shown in Figure 2, the tracking errors between the actual and desired trajectories for agents a1, a2, a3, and a4 are relatively small and converge to zero over time, indicating satisfactory performance. However, the individual agents exhibit varying levels of tracking error, suggesting that their unique dynamics or initial conditions may influence their performance.
+As shown in Figure 3, the tracking errors between the actual and desired trajectories for agents a1, a2, a3, and a4 are relatively small and converge to zero over time, indicating satisfactory performance. However, the individual agents exhibit varying levels of tracking error, suggesting that their unique dynamics or initial conditions may influence their performance.
 
 \begin{figure}[h!]
     \centering
@@ -779,7 +793,8 @@ As shown in Figure 2, the tracking errors between the actual and desired traject
     \label{fig:figure_3} % Label for referencing the figure
 \end{figure}
 
-Figure 3 presents a detailed analysis of the tracking performance for all agents.  As illustrated, all agents successfully track the time-varying desired trajectory, confirming the effectiveness of the proposed control system. While minor variations in individual trajectories are evident, they generally adhere to the desired path. Factors such as agent dynamics, communication delays, and environmental disturbances could potentially influence the tracking performance.
+
+Figure 4 presents a detailed analysis of the tracking performance for all agents.  As illustrated, all agents successfully track the time-varying desired trajectory, confirming the effectiveness of the proposed control system. While minor variations in individual trajectories are evident, they generally adhere to the desired path. Factors such as agent dynamics, communication delays, and environmental disturbances could potentially influence the tracking performance.
 
 \begin{figure}[h!]
     \centering
@@ -819,64 +834,64 @@ This paper introduces a Model-Free Adaptiive Sliding Mode Control(MFASMC) system
     \bibitem{1}
     Bu, XH; Hou, ZS and Zhang, HW. Data-Driven Multiagent Systems Consensus Tracking Using Model Free Adaptive Control. \textit{IEEE Transactions on Neural Networks and Learning Systems}, May 2018, 29(5): 1514-1524.
     
-    \bibitem{hou2011}
+    \bibitem{2}
     Z. Hou and S. Jin, "A novel data-driven control approach for a class of SISO nonlinear systems," \textit{IEEE Transactions on Control Systems Technology}, vol. 19, no. 6, pp. 1549-1558, 2011.
     
-    \bibitem{olfati2007}
+    \bibitem{3}
     R. Olfati-Saber, J. A. Fax, and R. M. Murray, "Consensus and cooperation in networked multi-agent systems," \textit{Proceedings of the IEEE}, vol. 95, no. 1, pp. 215-233, 2007.
     
     \bibitem{4}
     Wang, XF (Wang, Xiaofeng); Li, X (Li, Xing); Wang, JH (Wang, Jianhui); Fang, XK (Fang, Xiaoke); Zhu, XF (Zhu, Xuefeng), "\textit{Information Sciences}", vol. 327, pp. 246-257, January 2016.
     
-    \bibitem{ren2007}
+    \bibitem{5}
     W. Ren, R. W. Beard, and E. M. Atkins, "Information consensus in multivehicle cooperative control," \textit{IEEE Control Systems}, vol. 27, no. 2, pp. 71-82, 2007.
     
-    \bibitem{xu2014}
+    \bibitem{6}
     D. Xu, B. Jiang, and P. Shi, "Adaptive observer based data-driven control for nonlinear discrete-time processes," \textit{IEEE Transactions on Automation Science and Engineering}, vol. 11, no. 4, pp. 1037-1045, 2014.
     
-    \bibitem{chi2015}
+    \bibitem{7}
     R. Chi, Z. Hou, S. Jin, D. Wang, and C.-J. Chien, "Enhanced data-driven optimal terminal ILC using current iteration control knowledge," \textit{IEEE Transactions on Neural Networks and Learning Systems}, vol. 26, no. 11, pp. 2939-2948, 2015.
     
-    \bibitem{zhang2012a}
+    \bibitem{8}
     H. Zhang and F. L. Lewis, "Adaptive cooperative tracking control of higher-order nonlinear systems with unknown dynamics," \textit{Automatica}, vol. 48, no. 7, pp. 1432-1439, 2012.
     
-    \bibitem{chen2014}
+    \bibitem{9}
     C. L. P. Chen, G.-X. Wen, Y.-J. Liu, and F.-Y. Wang, "Adaptive consensus control for a class of nonlinear multiagent time-delay systems using neural networks," \textit{IEEE Transactions on Neural Networks and Learning Systems}, vol. 25, no. 6, pp. 1217-1226, 2014.
     
-    \bibitem{12}
+    \bibitem{10}
     Zhou, N (Zhou, Ning); Deng, WX (Deng, Wenxiang); Yang, XW (Yang, Xiaowei); Yao, JY (Yao, Jianyong), "Continuous adaptive integral recursive terminal sliding mode control for DC motors," \textit{International Journal of Control}, vol. 96, no. 9, pp. 2190-2200, June 2022.
     
-    \bibitem{Liu2016}
+    \bibitem{11}
     X. Liu, J. Lam, W. Yu, and G. Chen, "Finite-time consensus of multiagent systems with a switching protocol," \emph{IEEE Transactions on Neural Networks and Learning Systems}, vol. 27, no. 4, pp. 853–862, Apr. 2016.
     
-    \bibitem{Hou2009}
+    \bibitem{12}
     Z.-G. Hou, L. Cheng, and M. Tan, "Decentralized robust adaptive control for the multiagent system consensus problem using neural networks," \emph{IEEE Transactions on Systems, Man, and Cybernetics, Part B: Cybernetics}, vol. 39, no. 3, pp. 636–647, Jun. 2009.
     
-    \bibitem{Hou1997}
+    \bibitem{13}
     Z. Hou and W. Huang, "The model-free learning adaptive control of a class of SISO nonlinear systems," \emph{Proceedings of the American Control Conference}, Albuquerque, NM, USA, Jun. 1997, pp. 343–344.
     
-    \bibitem{Su2011}
+    \bibitem{14}
     H. Su, G. Chen, X. Wang, and Z. Lin, "Adaptive second-order consensus of networked mobile agents with nonlinear dynamics," \emph{Automatica}, vol. 47, no. 2, pp. 368–375, Feb. 2011.
     
-    \bibitem{Xu2014}
+    \bibitem{15}
     D. Xu, B. Jiang, and P. Shi, "Adaptive observer based data-driven control for nonlinear discrete-time processes," \emph{IEEE Transactions on Automation Science and Engineering}, vol. 11, no. 4, pp. 1037–1045, Oct. 2014.
     
-    \bibitem{Zhang2012}
+    \bibitem{16}
     H. Zhang and F. L. Lewis, "Adaptive cooperative tracking control of higher-order nonlinear systems with unknown dynamics," \emph{Automatica}, vol. 48, no. 7, pp. 1432–1439, Jul. 2012.
     
-    \bibitem{Meng2014}
+    \bibitem{17}
     D. Meng, Y. Jia, J. Du, and J. Zhang, "On iterative learning algorithms for the formation control of nonlinear multi-agent systems," \emph{Automatica}, vol. 50, no. 1, pp. 291–295, Jan. 2014.
 
-    \bibitem{sharafian2018}
+    \bibitem{18}
     A. Sharafian, V. Bagheri, and W. Zhang, "RBF neural network sliding mode consensus of multi-agent systems with unknown dynamical model of leader-follower agents," \textit{International Journal of Control, Automation and Systems}, vol. 16, no. 2, pp. 749–758, 2018.
 
-    \bibitem{ma2017}
+    \bibitem{19}
     X. Ma, F. Sun, H. Li, and B. He, "Neural-network-based integral sliding-mode tracking control of second-order multi-agent systems with unmatched disturbances and completely unknown dynamics," \textit{International Journal of Control, Automation and Systems}, vol. 15, no. 4, pp. 1925–1935, 2017.
 
-    \bibitem{rahmani2020}
+    \bibitem{20}
     R. Rahmani, H. Toshani, and S. Mobayen, "Consensus tracking of multi-agent systems using constrained neural-optimiser-based sliding mode control," \textit{International Journal of Systems Science}, vol. 51, no. 14, pp. 2653–2674, 2020.
 
-    \bibitem{peng2015}
+    \bibitem{21}
     Z. Peng, G. Wen, A. Rahmani, and Y. Yongguang, "Distributed consensus-based formation control for multiple nonholonomic mobile robots with a specified reference trajectory," \textit{International Journal of Systems Science}, vol. 46, no. 8, pp. 1447–1457, 2015.
     
     \end{thebibliography}

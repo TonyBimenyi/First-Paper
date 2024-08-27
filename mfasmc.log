@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.12)  27 AUG 2024 18:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.12)  27 AUG 2024 18:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -391,22 +391,28 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [2]
 
-LaTeX Warning: Citation `reference24' on page 3 undefined on input line 90.
-
-
-
 [3]
+<diagram.png, id=23, 1921.1775pt x 1160.83687pt>
+File: diagram.png Graphic file (type png)
+<use diagram.png>
+Package pdftex.def Info: diagram.png  used on input line 166.
+(pdftex.def)             Requested size: 412.80157pt x 249.41563pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 
 [4]
 
-[5]
+[5 <./diagram.png>]
 
 [6]
 
 [7]
 
 [8]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 619.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 631.
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
@@ -414,40 +420,40 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 [9]
 
 [10]
-<communication.png, id=48, 894.34125pt x 603.75563pt>
+<communication.png, id=51, 894.34125pt x 603.75563pt>
 File: communication.png Graphic file (type png)
 <use communication.png>
-Package pdftex.def Info: communication.png  used on input line 720.
+Package pdftex.def Info: communication.png  used on input line 734.
 (pdftex.def)             Requested size: 309.60315pt x 209.00528pt.
 
 
 [11 <./communication.png>]
-<Figure_2.png, id=54, 551.4201pt x 417.7206pt>
+<Figure_2.png, id=56, 551.4201pt x 417.7206pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
-Package pdftex.def Info: Figure_2.png  used on input line 768.
+Package pdftex.def Info: Figure_2.png  used on input line 782.
 (pdftex.def)             Requested size: 309.60315pt x 234.5402pt.
-<Figure_3.png, id=55, 1029.1248pt x 618.6312pt>
+<Figure_3.png, id=57, 1029.1248pt x 618.6312pt>
 File: Figure_3.png Graphic file (type png)
 <use Figure_3.png>
-Package pdftex.def Info: Figure_3.png  used on input line 777.
+Package pdftex.def Info: Figure_3.png  used on input line 791.
 (pdftex.def)             Requested size: 361.19843pt x 217.1283pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figure_5.png, id=56, 547.0839pt x 422.0568pt>
+<Figure_5.png, id=58, 547.0839pt x 422.0568pt>
 File: Figure_5.png Graphic file (type png)
 <use Figure_5.png>
-Package pdftex.def Info: Figure_5.png  used on input line 786.
+Package pdftex.def Info: Figure_5.png  used on input line 801.
 (pdftex.def)             Requested size: 309.60315pt x 238.85536pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figure_4.png, id=57, 906.9885pt x 589.0005pt>
+<Figure_4.png, id=59, 906.9885pt x 589.0005pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
-Package pdftex.def Info: Figure_4.png  used on input line 793.
+Package pdftex.def Info: Figure_4.png  used on input line 808.
 (pdftex.def)             Requested size: 361.19843pt x 234.56247pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -465,23 +471,19 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 5639 strings out of 473898
- 97516 string characters out of 5725535
- 1942960 words of memory out of 5000000
- 28443 multiletter control sequences out of 15000+600000
+ 5645 strings out of 473898
+ 97517 string characters out of 5725535
+ 1941960 words of memory out of 5000000
+ 28449 multiletter control sequences out of 15000+600000
  596266 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,8n,93p,1126b,299s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,8n,93p,1136b,301s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (15 pages, 532003 bytes).
+Output written on mfasmc.pdf (15 pages, 685797 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
+ 140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
