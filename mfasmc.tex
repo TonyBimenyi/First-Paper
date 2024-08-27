@@ -30,8 +30,14 @@
 % ---------------------------------------------------------------
 
 \begin{abstract}
-    This paper introduces a Model Free Adaptiive Sliding Mode Control (MFASMC) system for multi DC motors speed regulation. first, the proposed control system consists of a model-free adaptive control (MFAC) and sliding mode control (SMC) system. Secondly, the control law is derived by combining the sliding surface definition and reaching law. Then, to enhance measurement accuracy, a quadruple-frequency data processing method is utilized to ensure the accuracy of encoder measurements of the DC motor and sampling period.Additionaly, to ensure the accuracy of the speed regulation, we employ a multi-agent system with a switching topology. To further enhance the system's performance, a Cooperative Fuzzy Dynamic Learning (CFDL) method is incorporated to optimize the control gains and improve the system's adaptability to changing conditions. Finally, The simulation results are presented to demonstrate to show that the proposed system is capable of tracking a desired trajectory, confirming the effectiveness of the proposed design.
+    This paper introduces a Model Free Adaptiive Sliding Mode Control (MFASMC) system for multi DC motors speed regulation. first, the proposed control system consists of a model-free adaptive control (MFAC) and sliding mode control (SMC) system. Secondly, the control law is derived by combining the sliding surface definition and reaching law. Then, to enhance measurement accuracy, a quadruple-frequency data processing method is utilized to ensure the accuracy of encoder measurements of the DC motor and sampling period.Additionaly, to ensure the accuracy of the speed regulation, we employ a non-linear multi-agent system with a switching topology. To further enhance the system's performance, a Compact Form Dynamic Linearization (CFDL) method is incorporated to optimize the control gains and improve the system's adaptability to changing conditions. Finally, The simulation results are presented to demonstrate to show that the proposed system is capable of tracking a desired trajectory, confirming the effectiveness of the proposed design.
 \end{abstract}
+
+\section*{Keywords}
+Model-Free Adaptive Sliding Mode Control (MFASMC), Quadruple-Frequency Data Processing Method, Compact Form Dynamic Linearization (CFDL), Nonlinear Multiagent System., Multi-DC motor speed regulation
+
+
+
 
 \section{Introduction}\label{section:1}
 
@@ -154,6 +160,8 @@ Then , the following distributed MFAC algorithms is presented:
 \end{equation}
 
 \subsection{Model Free Adaptiive Controller Design}
+
+
 
 To design the MFAC alogrithm, a performance function \(J(u_i(k))\) is set a:
 

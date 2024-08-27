@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.12)  27 AUG 2024 17:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.12)  27 AUG 2024 18:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -372,26 +372,26 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package lettrine.sty Info: Targeted height = 22.74486pt
 (lettrine.sty)             (for loversize=0, accent excluded),
 (lettrine.sty)             Lettrine height = 22.74487pt (T);
-(lettrine.sty)             reported on input line 38.
+(lettrine.sty)             reported on input line 44.
 
 
 [1{C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 62.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 68.
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 68.
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 68.
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 [2]
 
-LaTeX Warning: Citation `reference24' on page 3 undefined on input line 84.
+LaTeX Warning: Citation `reference24' on page 3 undefined on input line 90.
 
 
 
@@ -406,7 +406,7 @@ LaTeX Warning: Citation `reference24' on page 3 undefined on input line 84.
 [7]
 
 [8]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 611.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 617.
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
@@ -417,7 +417,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 <communication.png, id=48, 894.34125pt x 603.75563pt>
 File: communication.png Graphic file (type png)
 <use communication.png>
-Package pdftex.def Info: communication.png  used on input line 712.
+Package pdftex.def Info: communication.png  used on input line 718.
 (pdftex.def)             Requested size: 309.60315pt x 209.00528pt.
 
 
@@ -425,12 +425,12 @@ Package pdftex.def Info: communication.png  used on input line 712.
 <Figure_2.png, id=54, 551.4201pt x 417.7206pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
-Package pdftex.def Info: Figure_2.png  used on input line 760.
+Package pdftex.def Info: Figure_2.png  used on input line 766.
 (pdftex.def)             Requested size: 309.60315pt x 234.5402pt.
 <Figure_3.png, id=55, 1029.1248pt x 618.6312pt>
 File: Figure_3.png Graphic file (type png)
 <use Figure_3.png>
-Package pdftex.def Info: Figure_3.png  used on input line 769.
+Package pdftex.def Info: Figure_3.png  used on input line 775.
 (pdftex.def)             Requested size: 361.19843pt x 217.1283pt.
 
 
@@ -439,7 +439,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <Figure_5.png, id=56, 547.0839pt x 422.0568pt>
 File: Figure_5.png Graphic file (type png)
 <use Figure_5.png>
-Package pdftex.def Info: Figure_5.png  used on input line 778.
+Package pdftex.def Info: Figure_5.png  used on input line 784.
 (pdftex.def)             Requested size: 309.60315pt x 238.85536pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -447,7 +447,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <Figure_4.png, id=57, 906.9885pt x 589.0005pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
-Package pdftex.def Info: Figure_4.png  used on input line 785.
+Package pdftex.def Info: Figure_4.png  used on input line 791.
 (pdftex.def)             Requested size: 361.19843pt x 234.56247pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -477,9 +477,9 @@ Here is how much of TeX's memory you used:
  28443 multiletter control sequences out of 15000+600000
  596266 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,8n,93p,1115b,299s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,8n,93p,1126b,299s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (15 pages, 531741 bytes).
+Output written on mfasmc.pdf (15 pages, 532003 bytes).
 PDF statistics:
  138 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
