@@ -30,7 +30,7 @@
 % ---------------------------------------------------------------
 
 \begin{abstract}
-    Here goes an Abstract
+    This paper introduces a Model Free Adaptiive Sliding Mode Control (MFASMC) system for multi DC motors speed regulation. first, the proposed control system consists of a model-free adaptive control (MFAC) and sliding mode control (SMC) system. Secondly, the control law is derived by combining the sliding surface definition and reaching law. Then, to enhance measurement accuracy, a quadruple-frequency data processing method is utilized to ensure the accuracy of encoder measurements of the DC motor and sampling period.Additionaly, to ensure the accuracy of the speed regulation, we employ a multi-agent system with a switching topology. To further enhance the system's performance, a Cooperative Fuzzy Dynamic Learning (CFDL) method is incorporated to optimize the control gains and improve the system's adaptability to changing conditions. Finally, The simulation results are presented to demonstrate to show that the proposed system is capable of tracking a desired trajectory, confirming the effectiveness of the proposed design.
 \end{abstract}
 
 \section{Introduction}\label{section:1}
@@ -225,7 +225,7 @@ To enhance the robutness and adaptibility of the control system , the Model Free
 
 \begin{equation}
     \label{model eq:mfasmc}
-    u_i(k) = \mathbf{u_i}_{\text{MFA}}(k) + \gamma_i \mathbf{u_i}_{\text{SM}}
+    u_i(k) = \mathbf{u_i}_{\text{MFA}}(k) + \Gamma_i \mathbf{u_i}_{\text{SM}}
 \end{equation}
 
 Where the parameter \(\gamma\) is a gain factor that adjusts the contribution of the sliding mode control in the control effort and tunes the convergence rate.

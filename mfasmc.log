@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.12)  25 AUG 2024 18:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.12)  27 AUG 2024 17:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -389,11 +389,11 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-LaTeX Warning: Citation `reference24' on page 2 undefined on input line 84.
-
-
-
 [2]
+
+LaTeX Warning: Citation `reference24' on page 3 undefined on input line 84.
+
+
 
 [3]
 
@@ -412,18 +412,14 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
 [9]
-<communication.png, id=45, 894.34125pt x 603.75563pt>
+
+[10]
+<communication.png, id=48, 894.34125pt x 603.75563pt>
 File: communication.png Graphic file (type png)
 <use communication.png>
 Package pdftex.def Info: communication.png  used on input line 712.
 (pdftex.def)             Requested size: 309.60315pt x 209.00528pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-[10]
 
 [11 <./communication.png>]
 <Figure_2.png, id=54, 551.4201pt x 417.7206pt>
@@ -438,22 +434,33 @@ Package pdftex.def Info: Figure_3.png  used on input line 769.
 (pdftex.def)             Requested size: 361.19843pt x 217.1283pt.
 
 
-[12 <./Figure_2.png> <./Figure_3.png>]
-<Figure_5.png, id=61, 547.0839pt x 422.0568pt>
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Figure_5.png, id=56, 547.0839pt x 422.0568pt>
 File: Figure_5.png Graphic file (type png)
 <use Figure_5.png>
 Package pdftex.def Info: Figure_5.png  used on input line 778.
 (pdftex.def)             Requested size: 309.60315pt x 238.85536pt.
-<Figure_4.png, id=62, 906.9885pt x 589.0005pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Figure_4.png, id=57, 906.9885pt x 589.0005pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
 Package pdftex.def Info: Figure_4.png  used on input line 785.
 (pdftex.def)             Requested size: 361.19843pt x 234.56247pt.
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13 <./Figure_5.png> <./Figure_4.png>]
 
-[14] (mfasmc.aux)
+
+[12 <./Figure_2.png>]
+
+[13 <./Figure_3.png> <./Figure_5.png>]
+
+[14 <./Figure_4.png>]
+
+[15] (mfasmc.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
@@ -470,11 +477,11 @@ Here is how much of TeX's memory you used:
  28443 multiletter control sequences out of 15000+600000
  596266 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,8n,93p,1084b,299s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,8n,93p,1115b,299s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (14 pages, 529850 bytes).
+Output written on mfasmc.pdf (15 pages, 531741 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
+ 138 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
