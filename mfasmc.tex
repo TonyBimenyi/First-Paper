@@ -95,7 +95,7 @@ Remark 1: The practical applicability of the aforementioned assumptions to nonli
 
 \subsection{Linearization Technique}
 
-This paper delves into the Compact Form Dynamic Linearization (CFDL) technique, this method simplifies the dynamic of nonlinear systems into a linear form that is easier to handle and control. The CFDL is particularly useful when the control input \(u_i(k) = 0\) holds, enabling the system to be described through a compact dynamic linearization model. The system under consideration is governed by the following equation:
+This paper delves into the CFDL technique, this method simplifies the dynamic of nonlinear systems into the linear form that is easier to handle and control. The CFDL is particularly useful when the control input \(u_i(k) = 0\) holds, enabling the system to be described through the compact dynamic linearization model. The system under consideration is governed by the following equation:
 
 
 \begin{equation}
@@ -103,17 +103,17 @@ This paper delves into the Compact Form Dynamic Linearization (CFDL) technique, 
     \Delta y_i(k+1)=\phi_i(k)\Delta u_i(k)
 \end{equation}
 
-Where \( | \phi_i(k) | \leq b\). b is a positive constant and the variable \(phi_i(k)\) named pseudo-partial-derivative.
+where \( | \phi_i(k) | \leq b\) with the variable \(\phi_i(k)\) named PPD.
 
-We define the distributed measurement output of \(xi_i(k)\) for \(i\)-th agents as follow:
+We define the distributed measurement output of \(\xi_i(k)\) for $i$th agents as follow:
 
 \begin{equation}
     \label{model 3}
-    \xi_i(k) = \sum_{j \in N_i} a_i,_j( y_j(k)-y_i(k)) + d_i(yd(k) - y_i(k ))
+    \xi_i(k) = \sum_{j \in N_i} a_{ij}( y_j(k)-y_i(k)) + d_i(y_d(k) - y_i(k ))
 \end{equation}
 
  
-In this equation \(xi_i(k)\) represents the distributed measurement output of the \(i\)-th agent at time step k , \(N_i\) denotes the set of the neighboring agents of the \(i\)-th agent and \(a_i,_j\) are elemnents of the adjancecy matrix representing the weights between agents \(i\) and \(j\).   
+In this equation \(\xi_i(k)\) represents the distributed measurement output of the $i$th agent at time step k , \(N_i\) denotes the set of the neighboring agents of the $i$th agent and \(a_{ij}\) are elemnents of the adjancecy matrix representing the weights between agents \(i\) and \(j\).   
 For this equation, we assume that \(d_i = 0\), meaning the agent \(i\) does not directly consider the disired trajectory \(yd(k)\) in the distributed measurement output. However if agent \(i\) can receive the disired trajectory ,setting \(d_i\) to a non-zero value allows it to align its output with the desired trajectory , improving the control performance.
 
 
