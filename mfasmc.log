@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.12)  6 SEP 2024 21:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.12)  7 SEP 2024 17:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -440,19 +440,19 @@ Package lettrine.sty Info: Targeted height = 22.74486pt
 
 [1{C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/
 TonyBim/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 68
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 70
 .
 
 (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 68.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
 
 
 (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 68.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
 
 
 (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -465,7 +465,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <diagram.png, id=23, 1921.1775pt x 1160.83687pt>
 File: diagram.png Graphic file (type png)
 <use diagram.png>
-Package pdftex.def Info: diagram.png  used on input line 166.
+Package pdftex.def Info: diagram.png  used on input line 170.
 (pdftex.def)             Requested size: 412.80157pt x 249.41563pt.
 
 
@@ -483,7 +483,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [8]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 6
-31.
+35.
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
@@ -494,7 +494,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 <communication.png, id=51, 894.34125pt x 603.75563pt>
 File: communication.png Graphic file (type png)
 <use communication.png>
-Package pdftex.def Info: communication.png  used on input line 734.
+Package pdftex.def Info: communication.png  used on input line 738.
 (pdftex.def)             Requested size: 309.60315pt x 209.00528pt.
 
 
@@ -502,12 +502,12 @@ Package pdftex.def Info: communication.png  used on input line 734.
 <Figure_2.png, id=56, 551.4201pt x 417.7206pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
-Package pdftex.def Info: Figure_2.png  used on input line 781.
+Package pdftex.def Info: Figure_2.png  used on input line 785.
 (pdftex.def)             Requested size: 309.60315pt x 234.5402pt.
 <Figure_3.png, id=57, 1029.1248pt x 618.6312pt>
 File: Figure_3.png Graphic file (type png)
 <use Figure_3.png>
-Package pdftex.def Info: Figure_3.png  used on input line 790.
+Package pdftex.def Info: Figure_3.png  used on input line 794.
 (pdftex.def)             Requested size: 361.19843pt x 217.1283pt.
 
 
@@ -516,7 +516,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <Figure_4.png, id=58, 906.9885pt x 589.0005pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
-Package pdftex.def Info: Figure_4.png  used on input line 799.
+Package pdftex.def Info: Figure_4.png  used on input line 803.
 (pdftex.def)             Requested size: 361.19843pt x 234.56247pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -524,7 +524,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <Figure_5.png, id=59, 547.0839pt x 422.0568pt>
 File: Figure_5.png Graphic file (type png)
 <use Figure_5.png>
-Package pdftex.def Info: Figure_5.png  used on input line 806.
+Package pdftex.def Info: Figure_5.png  used on input line 810.
 (pdftex.def)             Requested size: 309.60315pt x 238.85536pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -544,10 +544,10 @@ L3 programming layer <2024-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5645 strings out of 473898
- 97517 string characters out of 5725535
+ 5644 strings out of 473898
+ 97508 string characters out of 5725535
  1941960 words of memory out of 5000000
- 28449 multiletter control sequences out of 15000+600000
+ 28448 multiletter control sequences out of 15000+600000
  596266 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,8n,93p,1107b,303s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -568,7 +568,7 @@ TeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/TonyBim/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/TonyBim/AppData/
 Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/TonyBim/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (15 pages, 685793 bytes).
+Output written on mfasmc.pdf (15 pages, 685815 bytes).
 PDF statistics:
  140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

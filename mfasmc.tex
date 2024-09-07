@@ -41,7 +41,7 @@ Model-free adaptive sliding mode control, quadruple-frequency data processing me
 
 \section{Introduction}\label{section:1}
 
-\lettrine{T}he field of multi-agent systems has witnessed significant advancements, with many different applications in several areas such as satellite formations, autonomous vehicles, and distributed robotics. Robust speed regulation is a critical aspect of these systems, especially when dealing with multiple DC motors. Traditional control methods, such as Proportional-Integral-Derivative (PID) and Linear Quadratic Regulator (LQR), often fall short in handling the complex dynamics and uncertainties inherent in multi-agent systems.
+\lettrine{T}he field of MASs has witnessed significant advancements, with many different applications in several areas such as satellite formations, autonomous vehicles, and distributed robotics. Robust speed regulation is a critical aspect of these systems, especially when dealing with multiple DC motors. Traditional control methods, such as Proportional-Integral-Derivative (PID) and Linear Quadratic Regulator (LQR), often fall short in handling the complex dynamics and uncertainties inherent in multi-agent systems.
 
 This paper proposes a novel control strategy that combines the strengths of Model-Free Adaptive Control (MFAC) and Sliding Mode Control (SMC). MFAC, as demonstrated in \cite{2}, offers adaptability to real-time changes, while SMC ensures robustness against uncertainties and disturbances \cite{13}. This synergistic approach aims to enhance the performance, stability, and reliability of multi-DC motor speed regulation within multi-agent systems.
 
@@ -65,23 +65,27 @@ In summary, the proposed data-driven model-free adaptive sliding mode control st
 \section{Preliminaries and problem formulation}\label{section:2}
 \subsection{Preliminaries}
 
-The set of real numbers is denoted by \(\mathbb{R}\). For a given matrix \(A \in \mathbb{R}^{n \times n}\), \(\|A\|\) represents its matrix norm. The notation \(\text{diag}(\cdot)\) refers to a diagonal matrix, and \(I\) signifies an identity matrix of appropriate dimensions. In the context of multi-agent systems, graph theory serves as a powerful tool to model interaction topologies. We will now provide a brief introduction to directed graphs within algebraic graph theory. Let \(G = (V, E, A)\) be a weighted directed graph, where \(V = \{1, 2, \ldots, N\}\) represents the set of vertices, \(E \subseteq V \times V\) denotes the set of edges, and \(A\) is the adjacency matrix. Here, \(V\) also indexes the agents. If agent \(j\) can receive a message from agent \(i\), then \((i, j) \in E\), making \(j\) the child of \(i\) and \(i\) the parent of \(j\). The neighborhood of agent \(i\) is given by \(N_i = \{j \in V \mid (j, i) \in E\}\).
 
-The weighted adjacency matrix \(A = (a_{i,j}) \in \mathbb{R}^{N \times N}\) is defined such that \(a_{i,i} = 0\), \(a_{i,j} = 1\) if \((j, i) \in E\); otherwise, \(a_{i,j} = 0\). The Laplacian matrix of \(G\) is defined as \(L = D - A\), where \(D = \text{diag}(d_1^{\text{in}}, d_2^{\text{in}}, \ldots, d_N^{\text{in}})\) and \(d_i^{\text{in}} = \sum_{j=1}^N a_{i,j}\) is called the in-degree of vertex \(i\). A graph is said to be strongly connected if there exists a path between any pair of vertices.
 
-\subsection{Problem Formulation}
+The set of real numbers is denoted by $\mathbb{R}$. For a given matrix $A \in \mathbb{R}^{n \times n}$, $\|A\|$ represents the matrix norm. The notation $\text{diag}(\cdot)$ refers to a diagonal matrix, and $I$ signifies the identity matrix of appropriate dimensions. In the context of multi-agent systems, graph theory serves as an effective tool to model interaction topologies. A brief introduction to directed graphs within algebraic graph theory is provided. Let $G = (V, E, A)$ be the weighted directed graph, where $V = \{1, 2, \dots, N\}$ represents the set of vertices, $E \subseteq V \times V$ denotes the set of edges, and $A$ is the adjacency matrix. Here, $V$ also indexes the agents. If agent $j$ can receive a message from agent $i$, then $(i, j) \in E$, where $j$ is the child of $i$ . The neighborhood of agent $i$ is given by $N_i = \{j \in V | (j, i) \in E \}$.
 
-In this research, the speed regulation problem of DC motors is frequently examined under the assumption that all motors demonstrate identical dynamic characteristics. Nevertheless, heterogeneity is still a fundamental characteristic of systems comprising multi DC motors. Even if the motors are of the same type and have similar structural features, their parameters can never be exactly the same. This inherent variability makes acheiving coordinated speed regulation across heterogeneous motors a more complex task. Let consider a multi DC motors system consisting of \(N\) motors where the interaction topology is represented by \(G\). Assume that each motor \(i\) the following nonlinear dynamics is considered:
+The weighted adjacency matrix $A = (a_{i,j})$ is defined such that $a_{i,i} = 0$, $a_{i,j} = 1$ if $(j, i) \in E$; otherwise, $a_{i,j} = 0$. The Laplacian matrix of $G$ is defined as $L = D - A$, where $D = \text{diag}(d_1^{\text{in}}, d_2^{\text{in}}, \dots, d_N^{\text{in}})$ and $d_i^{\text{in}} = \sum_{j=1}^{N} a_{i,j}$ is the in-degree of vertex $i$. The graph is said to be strongly connected if there exists a path between any pair of vertices.
+
+\section{Problem Formulation}
+
+In this research, the speed regulation problem of DC motors is frequently examined under the assumption that all motors demonstrate identical dynamic characteristics. However, heterogeneity remains a fundamental characteristic of systems incorporating multi-DC motors. Even when motors are of the same type and share similar structural features, the parameters can never be exactly the same. This inherent variability complicates coordinated speed regulation across heterogeneous motors. Consider the multi-DC motor system consisting of $N$ motors, where the interaction topology is represented by $G$. Assume that each motor $i$ follows the nonlinear dynamics:
+
 \begin{equation}
-    \label{model 1}
-    y_i(k+1) = f_i(y_i(k),u_i(k)),\quad i = 1,2, \ldots, N \
+    y_i(k+1) = f_i(y_i(k), u_i(k)), \quad i = 1, 2, \dots, N
 \end{equation}
 
-Where \(y_i(k) \in \mathbb{R} \) represents the output (speed of DC motor), \(u_i(k) \in \mathbb{R} \) is the control input (the voltage) and \(f_i(\cdot)\) is an unknown nonlinear function, respectively. 
+where $y_i(k) \in \mathbb{R}$ represents the output (speed of the DC motor), $u_i(k) \in \mathbb{R}$ is the control input (the voltage), and $f_i(\cdot)$ is an unknown nonlinear function, respectively.
 
-We consider a scenario where multiple agents aim to track a consesus trajectory \(yd(k)\), which is exclusively accessible to a subset of agents. This trsajectory is assumed to be generated by a virtual leader designated as vertex 0. To model this interaction, we construct a direct graph \( G' = (V \cup \{0\}, E', A') \) where \( V \) denotes the set of agents, \( E' \) represents the edge set defining connections from agents to the virtual leader, and \( A' \) constitute a weighted adjacency matrix detailing these connections.
 
-This analysis prosupposes nonlinear dynamics governing each agent's evolution. encompassing dependencies on their respective states and inputs. These nonlinear dynamics accomodate various complexities, facilitating an investigation into how agents align with the desired trajectory \(yd(k)\).
+
+In this scenario, multiple agents aim to track the consensus trajectory \(y_d(k)\), which is exclusively accessible to the subset of agents. This trsajectory is assumed to be generated by a virtual leader designated as vertex 0. To model this interaction, the construction of the direct graph \( G' = (V \cup \{0\}, E', A') \) where \( V \) denotes the set of agents, \( E' \) represents the edge set defining connections from agents to the virtual leader, and \( A' \) constitute a weighted adjacency matrix detailing the above-mentioned connections.
+
+This analysis prosupposes nonlinear dynamics governing the evolution and encompassing dependencies on the respective states and inputs of each agent. The previously-mentioned nonlinear dynamics accomodate various complexities, facilitating an investigation into how agents align with the desired trajectory \(y_d(k)\).
 
 Assumption 1: The partial derivative of the nonlinear function \( f_i(\cdot) \) with respect to \( u_i(k) \) is continuous.
 
