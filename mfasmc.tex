@@ -89,9 +89,9 @@ This analysis prosupposes nonlinear dynamics governing the evolution and encompa
 
 Assumption 1: The partial derivative of the nonlinear function \( f_i(\cdot) \) with respect to \( u_i(k) \) is continuous.
 
-Assumption 2: The model \( y_i(k + 1) = f_i(y_i(k), u_i(k)) \) is generalized Lipschitz, meaning that if \( \Delta u_i(k) = u_i(k) - u_i(k - 1) \neq 0 \), then \( | \Delta y_i(k + 1) | \leq b |\Delta u_i(k)| \) holds for any \( k \), where \( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \) and \( b \) is a positive constant.
+Assumption 2: The model \( y_i(k + 1) = f_i(y_i(k), u_i(k)) \) is generalized lipschitz, meaning that if \( \Delta u_i(k) = u_i(k) - u_i(k - 1) \neq 0 \), then \( | \Delta y_i(k + 1) | \leq b |\Delta u_i(k)| \) holds for any \( k \), where \( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \) and \( b \) is a positive constant.
 
-\textbf{Remark 1:} The practical applicability of the aforementioned assumptions to nonlinear systems has been extensively discussed in \cite{1}, affirming their suitability for practical multi-agent systems. \textbf{Assumption 1} establishes a foundational criterion for controller design, ensuring the continuity of the partial derivative of the nonlinear function $f_i(\cdot)$ with respect to $u_i(k)$. \textbf{Assumption 2} implies that the rate of change in an agent's output in response to changes in its control input is bounded. This constraint ensures that, from an energetic perspective, finite changes in control input energy correspond to bounded changes in output energy rates, a crucial consideration for system stability and performance.
+Remark 1: The practical applicability of the aforementioned assumptions to nonlinear systems has been extensively discussed in \cite{1}, affirming their suitability for practical multi-agent systems. Assumption 1 establishes a foundational criterion for controller design, ensuring the continuity of the partial derivative of the nonlinear function $f_i(\cdot)$ with respect to $u_i(k)$. Assumption 2 implies that the rate of change in an agent's output in response to changes in its control input is bounded. This constraint ensures that, from an energetic perspective, finite changes in control input energy correspond to bounded changes in output energy rates, a crucial consideration for system stability and performance.
 
 \subsection{Linearization Technique}
 
