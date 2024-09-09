@@ -177,16 +177,16 @@ Additionaly, to ensure stability and adherence to constraints, the following con
     \label{fig:diagram} % Label for referencing the figure
 \end{figure}
 
-To design the MFAC alogrithm, a performance function \(J(u_i(k))\) is set a:
+To design the MFAC alogrithm, the performance function \(J(u_i(k))\) is set as:
 
 \begin{equation}
     \label{model 9}
     J(u_i(k)) = |\xi_i(k)|^2 + \lambda|u_i(k) - u_i(k-1)|^2
 \end{equation}
 
-This function used to evaluate the effectiveness of the control input \(u_i(k)\) for the \(i\)-th agents in a control function, with two terms , the first one is the tracking error term \(|\xi_i(k)|^2\) where \(\xi_i(k)\) represents the distributed measurement output, and by minimizing \(|\xi_i(k)|^2\) ensures thet the agent's output closely matches the disired trajectory. The second one is control effect term \(\lambda|u_i(k) - u_i(k-1)|^2\) where \(u_i(k)\) is the current control input, and \(u_i(k-1)\) is the previous control input, and \(\lambda\) is a weighted factor that balances the importance of the control effort.
+This function used to evaluate the effectiveness of the control input \(u_i(k)\) for the $i$th agent by considering two terms. The first term \(|\xi_i(k)|^2\), represents the tracking error and ensures that the output of agent closely follows the desired trajectory. The second term\(\lambda|u_i(k) - u_i(k-1)|^2\) where \(u_i(k)\) is the current control input, and \(u_i(k-1)\) is the previous control input, with \(\lambda\) serving as a weighting factor.
 
-Subtituting (\ref{model 2}) and (\ref{model 3}) into (\ref{model 9}), then differentiating (\ref{model 9}) with respect to \(u_i(k)\), and letting it zero, gives:
+Subtituting (\ref{model 2}) and (\ref{model 3}) into (\ref{model 9}), then differentiating (\ref{model 9}) with respect to \(u_i(k)\), and make it equal to zero, gives:
 
 \begin{equation}
     \label{model eq:mfac}
@@ -194,7 +194,7 @@ Subtituting (\ref{model 2}) and (\ref{model 3}) into (\ref{model 9}), then diffe
 \end{equation}
 
 
-Where \(\rho\) \(\varepsilon\) (0,1) is a step-size constant, which is added to make (\ref{model eq:mfac}) general. Using the parameter estimation algorithm (\ref{model eq:ppd_parameter}) and the control law algorithm (\ref{model eq:mfac}), the MFAC scheme is constructed. 
+where \(\rho\) \(\varepsilon\) (0,1) is a step-size constant, which is added to make (\ref{model eq:mfac}) general. Using the parameter estimation algorithm (\ref{model eq:ppd_parameter}) and the control law algorithm (\ref{model eq:mfac}), the MFAC scheme is constructed. 
 
 
 \subsection{Sliding Mode Controller Design}
