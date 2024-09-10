@@ -51,7 +51,7 @@ By combining MFAC and SMC, this paper addresses the limitations of both individu
 
 Recent studies have explored the application of MFAC and SMC for various control problems in multi-agent systems. In \cite{1}, MFAC was used for consensus control in multi-agent systems with unknown dynamics. In \cite{5}, SMC was employed for fault-tolerant control in multi-agent systems. The combination of MFAC and SMC has been shown to be effective in addressing complex control challenges, such as those encountered in multi-DC motor systems.
 
-This paper utilizes the implementation of a fixed topology using Laplacian matrices, which effectively handle the interconnections between multiple agents (DC Motors) and maintain precise desired speed control. Encoder counts are employed as feedback to ensure high-resolution performance monitoring, thereby reinforcing the accuracy and reliability of the control system.
+This paper utilizes the implementation of a fixed topology using laplacian matrices, which effectively handle the interconnections between multiple agents (DC Motors) and maintain precise desired speed control. Encoder counts are employed as feedback to ensure high-resolution performance monitoring, thereby reinforcing the accuracy and reliability of the control system.
 
 In summary, the proposed data-driven model-free adaptive sliding mode control strategy is expected to outperform traditional methods in terms of accuracy, stability, and robustness based on the MFAC method \cite{2}. By leveraging the advantages of MFAC and SMC, this approach can enhance the performance and reliability of multi-DC motor speed regulation in various applications, such as autonomous vehicles, robotics, and industrial automation.
 
@@ -69,7 +69,7 @@ In summary, the proposed data-driven model-free adaptive sliding mode control st
 
 The set of real numbers is denoted by $\mathbb{R}$. For a given matrix $A \in \mathbb{R}^{n \times n}$, $\|A\|$ represents the matrix norm. The notation $\text{diag}(\cdot)$ refers to a diagonal matrix, and $I$ signifies the identity matrix of appropriate dimensions. In the context of multi-agent systems, graph theory serves as an effective tool to model interaction topologies. A brief introduction to directed graphs within algebraic graph theory is provided. Let $G = (V, E, A)$ be the weighted directed graph, where $V = \{1, 2, \dots, N\}$ represents the set of vertices, $E \subseteq V \times V$ denotes the set of edges, and $A$ is the adjacency matrix. Here, $V$ also indexes the agents. If agent $j$ can receive a message from agent $i$, then $(i, j) \in E$, where $j$ is the child of $i$ . The neighborhood of agent $i$ is given by $N_i = \{j \in V | (j, i) \in E \}$.
 
-The weighted adjacency matrix $A = (a_{i,j})$ is defined such that $a_{i,i} = 0$, $a_{i,j} = 1$ if $(j, i) \in E$; otherwise, $a_{i,j} = 0$. The Laplacian matrix of $G$ is defined as $L = D - A$, where $D = \text{diag}(d_1^{\text{in}}, d_2^{\text{in}}, \dots, d_N^{\text{in}})$ and $d_i^{\text{in}} = \sum_{j=1}^{N} a_{i,j}$ is the in-degree of vertex $i$. The graph is said to be strongly connected if there exists a path between any pair of vertices.
+The weighted adjacency matrix $A = (a_{i,j})$ is defined such that $a_{i,i} = 0$, $a_{i,j} = 1$ if $(j, i) \in E$; otherwise, $a_{i,j} = 0$. The laplacian matrix of $G$ is defined as $L = D - A$, where $D = \text{diag}(d_1^{\text{in}}, d_2^{\text{in}}, \dots, d_N^{\text{in}})$ and $d_i^{\text{in}} = \sum_{j=1}^{N} a_{i,j}$ is the in-degree of vertex $i$. The graph is said to be strongly connected if there exists a path between any pair of vertices.
 
 \section{Problem Formulation}
 
@@ -221,7 +221,7 @@ To ensure that the system trajectory is driven toward and remains on the sliding
 
 \begin{equation}
     \label{model eq:reaching_law}
-    \Delta S_i(k+1) = - \varepsilon T Sign(k) 
+    \Delta S_i(k+1) = - \varepsilon T sign(k) 
 \end{equation}
 
 In that equation, \(\varepsilon\) is a small positive constant that controls the rate of the convergence, \(T\) is the sampling period, and \(sign(k)\) indicates the direction in which the system should move to reach the sliding surface.
@@ -272,7 +272,7 @@ Then by simplifying the previous equation, the result is:
 
 The control coefficient \(\beta_i(k)\) is expressed from the previous equation, plays a critical role in adjusting the control input for each agent at time step $k$. The following equation is expressed:
 
-
+ 
 \begin{equation}
     \label{model 17}
     \tilde{\phi_i}(k) = \tilde{\phi_i}(k-1)+\beta_i(k)  (\Delta y_i(k) - \hat{\phi_i}(k-1)\Delta u_i(k-1) -\phi_i(k) - \phi_i(k-1))
@@ -729,7 +729,7 @@ These models are derived from the expression (\ref{model 35}).
 
 It is evident that the agents considered are heterogeneous, as the dynamics differ from one another. In this scenario, the dynamics are assumed to be unknown and are only provided here to generate the I/O data for the MASs. 
 
-As illustrated in Figure 2, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. Assume that the information exchange among agents is directed and fixed. The Laplacian matrix of the graph is given as follows:
+As illustrated in Figure 2, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. Assume that the information exchange among agents is directed and fixed. The laplacian matrix of the graph is given as follows:
 
 \[
     L = \begin{bmatrix}
@@ -753,25 +753,24 @@ y_d(k) = 0.5 \sin\left(\frac{k \pi}{30}\right) + 0.3  \cos\left(\frac{k \pi}{10}
 
 as \( k \) in the range \( 0 \leq k \leq 140 \).
 
-The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\) and \(\phi_i(0)=1 \) for all agents in this simulation ,\(\Gamma_{1}=\Gamma_{2}=0.15\) and \(\Gamma_{3}=\Gamma_{4}=0.45\),\(T=0.1\),\(m=350\), \(\eta=1\),\(\mu=1\). The MFA Controller parameters are given as \(\rho=1\),\(\lambda=50\) and the SM Controller parameters are 
-\(\alpha=1\) with \(\epsilon=10^-5\).
+The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\) and \(\phi_i(0)=1 \) for all agents in this simulation ,\(\Gamma_{1}=\Gamma_{2}=0.15\) and \(\Gamma_{3}=\Gamma_{4}=0.45\), with \(T=0.1\), \(m=350\), \(\eta=1\), \(\mu=1\). The MFA Controller parameters are given as \(\rho=1\), \(\lambda=50\) and \(\alpha=1\) with \(\epsilon=10^{-5}\).
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.6\textwidth]{Figure_2.png}
-    \caption{Tracking Errors for time varying desired trajectory.}
+    \caption{Tracking errors for time varying desired trajectory.}
     \label{fig:figure_2} % Label for referencing the figure
 \end{figure}
 
-As shown in Figure \ref{fig:figure_2}, the tracking errors between the actual and desired trajectories for agents a1, a2, a3, and a4 are relatively small and converge to zero over time, indicating satisfactory performance. However, the individual agents exhibit varying levels of tracking error, suggesting that their unique dynamics or initial conditions may influence their performance.
+As shown in Fig. \ref{fig:figure_2}, the tracking errors between the actual and desired trajectories for agents $e_1$, $e_2$, $e_3$, and $e_4$ are relatively small and converge to zero over time. However, the individual agents exhibit varying levels of tracking error, suggesting that their unique dynamics or initial conditions may influence the performance.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{Figure_3.png}
+    \includegraphics[width=0.7\textwidth]{Figure_1.png}
     \caption{Tracking performance of all agents for time-varying desired trajectory.}
     \label{fig:figure_3} % Label for referencing the figure
 \end{figure}
 
-Figure \ref{fig:figure_3} presents a detailed analysis of the tracking performance for all agents. As illustrated, all agents successfully track the time-varying desired trajectory, confirming the effectiveness of the proposed control system. While minor variations in individual trajectories are evident, they generally adhere to the desired path. Factors such as agent dynamics, communication delays, and environmental disturbances could potentially influence the tracking performance.
+Fig.\ref{fig:figure_3} presents a detailed analysis of the tracking performance for all agents. All agents successfully track the time-varying desired trajectory, confirming the effectiveness of the proposed control system. While minor variations in individual trajectories are evident, each agent generally adheres to the desired path. Factors such as agent dynamics, communication delays, and environmental disturbances could potentially influence the tracking performance.
 
 \begin{figure}[h!]
     \centering
@@ -787,13 +786,13 @@ Figure \ref{fig:figure_3} presents a detailed analysis of the tracking performan
     \label{fig:figure_5} % Label for referencing the figure
 \end{figure}
 
-Figure \ref{fig:figure_4} demonstrates that all agents successfully track the time-invariable desired trajectory, further validating the robustness of the proposed control strategy. Meanwhile, Figure \ref{fig:figure_5} shows the PPD estimation for all agents, highlighting the accuracy of the adaptive estimation process within the control framework.
+Fig. \ref{fig:figure_4} demonstrates that all agents successfully track the time-invariable desired trajectory, further validating the robustness of the proposed control strategy. Meanwhile, Fig. \ref{fig:figure_5} shows the PPD estimation for all agents, highlighting the accuracy of the adaptive estimation process within the control framework.
 
-Overall, the simulation results suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While there may be initial transient errors, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
+Overall, the simulation results suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While there may be initial transient error, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
 
 \section{Conclusion}
 
-This paper introduces a Model-Free Adaptive Sliding Mode Control (MFASMC) system. The proposed approach is designed for the speed regulation of multiple DC motors. Model-Free Adaptive Control (MFAC), combined with Sliding Mode Control (SMC), ensures robust performance despite varying motor characteristics and uncertainties. The system utilizes a fixed topology with Laplacian matrices to effectively handle the interconnections between multiple DC motors and maintain precise speed control. This is demonstrated through the simulation results presented.
+This paper introduces the MFASMC system. The proposed approach is designed for the speed regulation of multiple DC motors. MFAC, combined with SMC, ensures robust performance despite varying motor characteristics and uncertainties. The system utilizes a fixed topology with laplacian matrices to effectively handle the interconnections between multiple DC motors and maintain precise speed control. This is demonstrated through the simulation results presented.
 
 
 % \begin{thebibliography}{99}
