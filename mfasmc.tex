@@ -505,116 +505,90 @@ In this equation, \(\xi_i(k)\) represents the distributed error of the $i$th sys
 
 To facilitate analysis, the following vectors that aggregate the tracking errors, outputs, and control inputs for all systems are defined as:
 
-\[
-y(k) = \begin{pmatrix} y_1 \\ y_2 \\ y_3 \\ \vdots \\ y_n \end{pmatrix}, \quad 
-e(k) = \begin{pmatrix} e_1 \\ e_2 \\ e_3 \\ \vdots \\ e_n \end{pmatrix}, \quad 
-\xi(k) = \begin{pmatrix} \xi_1 \\ \xi_2 \\ \xi_3 \\ \vdots \\ \xi_n \end{pmatrix}, \quad 
-u(k) = \begin{pmatrix} u_1 \\ u_2 \\ u_3 \\ \vdots \\ u_n \end{pmatrix}
-\]
+    
+\begin{align*}
+    y(k)   &= \left[ y_1(k) \quad y_2(k) \quad \dots \quad y_n(k) \right]^T \\
+    e(k)   &= \left[ e_1(k) \quad e_2(k) \quad \dots \quad e_n(k) \right]^T \\ 
+    \xi(k) &= \left[ \xi_1(k) \quad \xi_2(k) \quad \dots \quad \xi_n(k) \right]^T \\
+    u(k)   &= \left[ u_1(k) \quad u_2(k) \quad \dots \quad u_n(k) \right]^T
+    \end{align*}
+    
 
-Using these definitions, the expression for \(\xi_i(k)\) can be compactly rewritten as:
+Using the above-mentioned definitions, the expression for \(\xi_i(k)\) can be rewritten as:
 
 \begin{equation}
-    \label{model 33}
+    \label{model 28}
     \xi_i(k) = (L + D) e(k)
 \end{equation}
 
-Here, \(L\) represents the interaction matrix that describes how each system interacts with its neighbors, while \(D\) is a diagonal matrix defined by \(D = \text{diag}(d_1, d_2, d_3, \dots, d_n)\). This formulation helps us to analyze how the overall system's tracking error is influenced by the individual tracking errors and the interaction structure.
-
-Next, the control input \(u(k)\) is updated according to the following rule:
+\(L\) represents the interaction matrix that describes how each system interacts with its neighbors, while \(D\) is a diagonal matrix defined by \(D = \text{diag}(d_1, d_2, d_3, \dots, d_n)\). By noting the definition in (\ref{model 28}), the distributed MFAC algorithm (\ref{model eq:mfac}) is written as:
 
 \[
-u(k) = u(k-1) + \rho \cdot \text{diag}\left(\frac{\hat{\phi_1}(k)}{\lambda + |\hat{\phi_1}(k)|^2}, \frac{\hat{\phi_2}(k)}{\lambda + |\hat{\phi_2}(k)|^2}, \frac{\hat{\phi_3}(k)}{\lambda + |\hat{\phi_3}(k)|^2}, \dots, \frac{\hat{\phi_n}(k)}{\lambda + |\hat{\phi_n}(k)|^2}\right) (L + D) e(k)
+u(k) = u(k-1) + \rho   \text{diag}\left(\frac{\hat{\phi}_1(k)}{\lambda + |\hat{\phi}_1(k)|^2}, \frac{\hat{\phi}_2(k)}{\lambda + |\hat{\phi}_2(k)|^2}, \dots, \frac{\hat{\phi}_n(k)}{\lambda + |\hat{\phi}_n(k)|^2}\right) (L + D) e(k)
 \]
 
-This update rule accounts for the adjustment of control inputs based on the estimation \(\hat{\phi_i}(k)\) of the parameters, where \(\lambda\) is a regularization parameter that ensures stability. This formulation leads to:
+The above-mentioned update rule accounts for the adjustment of control inputs based on the estimation \(\hat{\phi}_i(k)\) of the parameters, where \(\lambda\) is a regularization parameter that ensures stability. This formulation leads to:
 
 \begin{equation}
-    \label{model 34}
+    \label{model 29}
     u(k) = u(k-1) + \rho H_1(k) (L + D) e(k)
 \end{equation}
 
-where \(H_1(k)\) is a diagonal matrix whose elements are functions of the estimated parameters \(\hat{\phi_i}(k)\). The evolution of the output \(y(k)\) is described by:
-
-\[
-y(k+1) = y(k) + \phi(k) \Delta u(k)
-\]
-
-In this context, \(\Delta u(k)\) represents the change in the control input:
-
-\[
-\Delta u(k) = u(k) - u(k-1)
-\]
-
-and \(H_\phi(k)\) is defined as:
+where \(H_1(k)\) is a diagonal matrix whose elements are functions of the estimated parameters \(\hat{\phi}_i(k)\), and \(H_\phi(k)\) is defined as:
 
 \[
 H_\phi(k) = \text{diag}(\phi_1(k), \phi_2(k), \phi_3(k), \dots, \phi_n(k))
 \]
 
-By substituting the expression for \(u(k)\) from equation (\ref{model 34}) into the output evolution equation, we obtain:
 
-\[
-e(k+1) - e(k) = y(k) - y(k+1)
-\]
-
-Rearranging the terms, we get:
-
-\[
-e(k+1) = e(k) + y(k) - y(k+1)
-\]
-
-Substituting the previously derived expression for \(y(k+1)\), we have:
-
-\[
-e(k+1) = e(k) - H_\phi(k) \rho H_1(k) (L + D) e(k)
-\]
-
-This can be rewritten as:
+this can be rewritten as:
 
 \begin{equation}
-    \label{model 35}
-    e(k+1) = (I - \rho \Theta(k)) e(k)
+    \label{model 30}
+    % e(k+1) = (I - \rho \Theta(k)) e(k)
+    e(k+1) = (I - \rho \sum(k) (L+D)) e(k)
 \end{equation}
 
-where \(\Theta(k)\) is defined by:
+where $\sum(k) = H_\phi(k)H_1(k) = \text{diag}(\mathcal{V}_1(k), \mathcal{V}_2(k), \mathcal{V}_3(k), \dots, \mathcal{V}_n(k))$, and each \(\mathcal{V}_i(k)\) is given by:
 
-\[
-\Theta(k) = \sum(k) (L + D) = H_\phi(k) H_1(k) (L + D)
-\]
+% where \(\Theta(k)\) is defined by:
 
-with:
+% \[
+% \Theta(k) = \sum(k) (L + D) = H_\phi(k) H_1(k) (L + D)
+% \]
 
-\[
-\sum(k) = \text{diag}\left(\frac{\hat{\phi_1}(k)}{\lambda + |\hat{\phi_1}(k)|^2}, \frac{\hat{\phi_2}(k)}{\lambda + |\hat{\phi_2}(k)|^2}, \frac{\hat{\phi_3}(k)}{\lambda + |\hat{\phi_3}(k)|^2}, \dots, \frac{\hat{\phi_n}(k)}{\lambda + |\hat{\phi_n}(k)|^2}\right)
-\]
+% with:
 
-which can be expressed in diagonal form as:
+% \[
+% \sum(k) = \text{diag}\left(\frac{\hat{\phi_1}(k)}{\lambda + |\hat{\phi_1}(k)|^2}, \frac{\hat{\phi_2}(k)}{\lambda + |\hat{\phi_2}(k)|^2}, \frac{\hat{\phi_3}(k)}{\lambda + |\hat{\phi_3}(k)|^2}, \dots, \frac{\hat{\phi_n}(k)}{\lambda + |\hat{\phi_n}(k)|^2}\right)
+% \]
 
-\[
-\sum(k) = \text{diag}(\mathcal{V}_1(k), \mathcal{V}_2(k), \mathcal{V}_3(k), \dots, \mathcal{V}_n(k))
-\]
+% which can be expressed in diagonal form as:
 
-where each \(\mathcal{V}_i(k)\) is given by:
+% \[
+% \sum(k) = \text{diag}(\mathcal{V}_1(k), \mathcal{V}_2(k), \mathcal{V}_3(k), \dots, \mathcal{V}_n(k))
+% \]
+
+
 
 \[
 \mathcal{V}_i(k) = \frac{\hat{\phi_i}(k)}{\lambda + |\hat{\phi_i}(k)|^2}, \quad i = 1, 2, 3, \dots, n
 \]
 
-Thus, we have:
+Thus :
 
 \[
 \Theta(k) = \text{diag}(\mathcal{V}_1(k), \mathcal{V}_2(k), \mathcal{V}_3(k), \dots, \mathcal{V}_n(k)) (L + D)
 \]
 
-To ensure convergence of the tracking error, we impose the condition:
+To ensure convergence of the tracking error, the following condition is imposed:
 
 \begin{equation}
-    \label{model 36}
+    \label{model 31}
     \|I - \rho \Theta(k)\| < 1
 \end{equation}
 
-This condition guarantees that the tracking error \(e(k)\) will approach zero as \(k \to \infty\). Consequently, we have:
+This condition guarantees that the tracking error \(e(k)\) will approach zero as \(k \to \infty\). Consequently:
 
 \[
 \lim_{k \to \infty} \|e(k+1)\| = 0
@@ -622,59 +596,8 @@ This condition guarantees that the tracking error \(e(k)\) will approach zero as
 
 This result indicates that the tracking error will converge to zero, demonstrating the effectiveness of the proposed control strategy in achieving desired tracking performance.
 
-\section{Quadriple-Frequency Data Processing Method for DC Motors Speed Regulation}
 
-To regulate the speed of DC motors accurately, we employ a sophisticated data-driven binary containment control method, which requires precise measurement and processing of encoder data. This section describes the methodology and hardware used for speed regulation, including the calculation of motor speed using the quadriple-frequency data processing (QFDP) method.
 
-\subsection{Hardware Implementation}
-
-The DC brushed motors have a rated voltage of 12V, an unloaded speed of 293 ± 21 RPM, and a rated current of 0.36 A. The gear ratio of 20 means that the output speed of the motor is 1/20 of the rotor speed, resulting in higher torque with a higher gear ratio. The Hall encoders used have 13 pulses per revolution (ppr), meaning each full rotation generates 13 pulse signals. 
-
-To enhance measurement accuracy, we employed a quadruple-frequency data processing method. This technique quadruples the effective resolution of the encoder by processing the output pulse signals at four times the frequency, thus increasing measurement precision by a factor of four.
-
-\subsection{Data Processing Method}
-
-The motor speed is measured in revolutions per second (r/s). The following equations are used to calculate the speed based on encoder measurements and sampling:
-
-1. Calculation of Rounds:
-
-   The total number of "rounds" that the encoder measures is given by:
-   \begin{equation}
-       \label{model 37}
-       T = \text{Encoder line count} \times \text{Reduction Ratio} \times 4
-   \end{equation}
-   Here, the Encoder line count is 13, and the Reduction Ratio is 20. The factor of 4 accounts for the quadrature encoding, which effectively quadruples the resolution.
-
-2. Calculation of Number of Rotations:
-
-   The number of rotations can be determined using:
-   \begin{equation}
-       \label{model 38}
-       \text{Number of Rotations} = \frac{m}{\text{Rounds Per T}}
-   \end{equation}
-   Where \( m \) is the total count from the encoder, and Rounds Per T is the number of encoder counts per revolution, derived from Equation (\ref{model 38}).
-
-3. Calculation of Speed:
-
-   The speed of the motor in resolution per second (\( r/s \)) is given by:
-   \begin{equation}
-       \label{model 39}
-       v = \frac{\text{Number of Rotations}}{T}
-   \end{equation}
-   Here, \( v \) represents the speed, calculated by dividing the number of rotations by the time \( T \) it takes to complete those rotations.
-
-4. Combining the Equations:
-
-   Substituting Equation (\ref{model 39}) into Equation (\ref{model 40}), we obtain:
-   \begin{equation}
-       \label{model 40}
-       v = \frac{m}{\text{Rounds Per T} \times T}
-   \end{equation}
-   This final equation integrates encoder measurements and the sampling period to provide an accurate speed regulation formula using the QFDP method.
-
-In our system, the sampling period, which is set by a timer, defines how frequently speed measurements are taken. Each sampling interval triggers an interrupt where the controller samples the motor speed and updates control commands accordingly.
-
-The quadruple-frequency method, implemented through software, is crucial for maximizing encoder measurement precision, resulting in more accurate speed control for the motor system.
 
 
 % \section{Extension to Switching Topology}
@@ -725,9 +648,11 @@ The quadruple-frequency method, implemented through software, is crucial for max
 
 \section{Simulation Results}
 
-Assumption 5: The communication graph \(\bar{\mathcal{G}}_l\) is a fixed strongly connected graph and at least one of the follower agents can access the leader's trajectory for all \(l = 1,2,\dots,M\).
 
-In this simulation results, we perform numerical simulations to illustrate the proposed speed tracking results for fixed communication topology. Consider a network comprising
+
+Assumption 5: The communication graph \(\bar{\mathcal{G}}_l\) is a fixed strongly connected graph and at least one of the follower agents can access the leader trajectory for all \(l = 1,2,\dots,M\).
+
+By performing numerical simulations to illustrate the proposed speed tracking results for fixed communication topology. Consider the network comprising:
 
 \begin{figure}[h!]
     \centering
@@ -736,19 +661,73 @@ In this simulation results, we perform numerical simulations to illustrate the p
     \label{fig:communication1} % Label for referencing the figure
 \end{figure}
 
+To regulate the speed of DC motors accurately, the sophisticated data-driven binary containment control method employed, which requires precise measurement and processing of encoder data. This section describes the methodology and hardware used for speed regulation, including the calculation of motor speed using the quadriple-frequency data processing  method.
+
+\subsection{Hardware Implementation}
+
+The DC brushed motors have a rated voltage of 12V, an unloaded speed of 293 ± 21 RPM, and a rated current of 0.36 A. The gear ratio of 20 means that the output speed of the motor is 1/20 of the rotor speed, resulting in higher torque with a higher gear ratio. The Hall encoders used have 13 pulses per revolution , meaning each full rotation generates 13 pulse signals. 
+
+To enhance measurement accuracy, employing the quadruple-frequency data processing method. This technique quadruples the effective resolution of the encoder by processing the output pulse signals at four times the frequency, thus increasing measurement precision by a factor of four.
+
+\subsection{Data Processing Method}
+
+The motor speed is measured in revolutions per second . The following equations are used to calculate the speed based on encoder measurements and sampling:
+
+1. Calculation of Rounds:
+
+   The total number of rounds that the encoder measures is given by:
+   \begin{equation}
+       \label{model 32}
+       T = N_e \times R_r \times 4
+   \end{equation}
+   where $N_e$ is the encoder line count equal to 13, and $R_r$ is the reduction ratio equal to 20. The factor of 4 accounts for the quadrature encoding, which effectively quadruples the resolution.
+
+2. Calculation of Number of Rotations:
+
+   The number of rotations can be determined using:
+   \begin{equation}
+       \label{model 33}
+       N_r = \frac{m}{ T}
+   \end{equation}
+   where \( m \) is the total count from the encoder, and T is the number of encoder counts per revolution, derived from (\ref{model 32}).
+
+3. Calculation of Speed:
+
+   The speed of the motor in resolution per second (\( r/s \)) is given by:
+   \begin{equation}
+       \label{model 34}
+       v = \frac{N_r}{t}
+   \end{equation}
+   where, \( v \) represents the speed, and \( t \) is the time interval it takes to complete those rotations.
+
+4. Combining the Equations:
+
+   Substituting (\ref{model 33}) into Equation (\ref{model 34}), we obtain:
+   \begin{equation}
+       \label{model 35}
+       v = \frac{m}{T \times t}
+   \end{equation}
+   The above final equation integrates encoder measurements and the sampling period to provide an accurate speed regulation.
+
+Each sampling interval triggers an interrupt where the controller samples the motor speed and updates control commands accordingly.
+
+The quadruple-frequency method,  is crucial for maximizing encoder measurement precision, resulting in more accurate speed control for the motor system.
+
 Four follower DC motors and the models for each DC motor governed by:
 
-DC Motor 1 (Agent 1): \(y_1(k+1)=\frac{m}{rT \times 0.1} \times u_1(k)\)
+\[
+\begin{array}{c}
+\text{DC Motor 1 (Agent 1)}: \quad y_1(k+1) = \frac{m}{T \times 0.1} \times u_1(k) \\
+\text{DC Motor 2 (Agent 2)}: \quad y_2(k+1) = \frac{m}{T \times 0.1} \times u_2(k) \\
+\text{DC Motor 3 (Agent 3)}: \quad y_3(k+1) = \frac{m}{T \times 0.3} \times u_3(k) \\
+\text{DC Motor 4 (Agent 4)}: \quad y_4(k+1) = \frac{m}{T \times 0.3} \times u_4(k)
+\end{array}
+\]
 
-DC Motor 2 (Agent 2): \(y_2(k+1)=\frac{m}{rT \times 0.1} \times u_2(k)\)
+    
+These models are derived from the expression (\ref{model 35}).
 
-DC Motor 3 (Agent 3): \(y_3(k+1)=\frac{m}{rT \times 0.3} \times u_3(k)\)
-
-DC Motor 4 (Agent 4): \(y_4(k+1)=\frac{m}{rT \times 0.3 } \times u_4(k)\)
-
-In this context, \( m \) represents the total pulse count from the encoder, which measures the rotation of the motor shaft. The variable \( rT \) stands for the number of encoder counts per revolution, indicating how many counts correspond to one full rotation of the motor shaft. The variable \( T \) denotes time, which can vary and directly influences the motor's speed depending on the duration of each control input. These models are derived from the expression (\ref{model 40}).
-
-It is evident that the agents considered are heterogeneous, as their dynamics differ from one another. In this scenario, the dynamics are assumed to be unknown and are only provided here to generate the I/O data for the multi-agent system. No model information is utilized in the distributed MFSMAC algorithm.
+It is evident that the agents considered are heterogeneous, as the dynamics differ from one another. In this scenario, the dynamics are assumed to be unknown and are only provided here to generate the I/O data for the MASs. 
 
 As illustrated in Figure 2, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. Assume that the information exchange among agents is directed and fixed. The Laplacian matrix of the graph is given as follows:
 
@@ -761,20 +740,20 @@ As illustrated in Figure 2, the virtual leader is designated as vertex 0. It can
     \end{bmatrix}
 \]
 
-with \( D = \text{diag}(1, 0, 1, 0) \). The reciprocal of the greatest diagonal entry of \( L + D \) is 0.5. By selecting the controller parameters as \( \rho = 1 \), the convergence condition in Theorem 2 and Theorem 3 is satisfied for all \( i = 1, 2, 3, 4 \). We then consider the following two distinct desired trajectories.
+with \( D = \text{diag}(1, 0, 1, 0) \). By selecting the controller parameters as \( \rho = 1 \), the convergence condition  is satisfied for all \( i = 1, 2, 3, 4 \). Then considering the following two distinct desired trajectories.
 
 
 \subsection{Time Invariable Desired Trajectory}
 
-where \( L + 1 \) accounts for the range from 0 to 100. The expression for \( y_d(k) \) is:
+The expression for \( y_d(k) \) is:
 
 \[
-y_d(k) = 0.5 \cdot \sin\left(\frac{k \pi}{30}\right) + 0.3 \cdot \cos\left(\frac{k \pi}{10}\right)
+y_d(k) = 0.5 \sin\left(\frac{k \pi}{30}\right) + 0.3  \cos\left(\frac{k \pi}{10}\right)
 \]
 
-for \( k \) in the range \( 0 \leq k \leq 100 \).
+as \( k \) in the range \( 0 \leq k \leq 140 \).
 
-The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\), \(\phi_i(0)=1 \) for all agents in this simulation ,\(\Gamma_{1,2}=0.15\) and \(\Gamma_{3,4}=0.45\),\(T=0.1\),\(m=350\), \(\eta=1\),\(\mu=1\). The MFA Controller parameters are given as \(\rho=1\),\(\lambda=50\) and the SM Controller parameters are 
+The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\) and \(\phi_i(0)=1 \) for all agents in this simulation ,\(\Gamma_{1}=\Gamma_{2}=0.15\) and \(\Gamma_{3}=\Gamma_{4}=0.45\),\(T=0.1\),\(m=350\), \(\eta=1\),\(\mu=1\). The MFA Controller parameters are given as \(\rho=1\),\(\lambda=50\) and the SM Controller parameters are 
 \(\alpha=1\) with \(\epsilon=10^-5\).
 \begin{figure}[h!]
     \centering
