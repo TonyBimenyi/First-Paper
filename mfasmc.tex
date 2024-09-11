@@ -22,7 +22,7 @@
 
 \allowdisplaybreaks[4]
 
-\title{\LARGE Data-Driven Model Free Adaptive Sliding Mode Control for Multi DC Motors Speed Regulation}
+\title{\LARGE Data-Driven Model Free Adaptive Sliding Mode Control for Multi DC-Motors Speed Regulation}
 
 \author{Tony Blaise Bimenyimana}
 
@@ -130,7 +130,7 @@ In this equation \(\xi_i(k)\) represents the distributed measurement output of t
 For this equation, we assume that \(d_i = 0\), meaning the agent \(i\) doesn't directly consider the desired trajectory \(y_d(k)\) in the distributed measurement output. However, if agent \(i\) can receive the disired trajectory, setting \(d_i\) to a non-zero value allows it to align the output with the desired trajectory, improving the control performance.
 
 
-Let \(e_i(k) = y_d(k) - y_i(k)\) denote the tracking error. The objective of this paper is to find an good control law using I/O data of the agents (DC motors), such that the outputs of all agents can track the reference trajectory \(y_d(k)\) when only some of agents can access the desired trajectory.
+Let \(e_i(k) = y_d(k) - y_i(k)\) denote the tracking error. The objective of this paper is to find an good control law using I/O data of the agents, such that the outputs of all agents can track the reference trajectory \(y_d(k)\) when only some of agents can access the desired trajectory.
 
 Assumption 3: The communication graph $\bar{G}$ is fixed and strognly connected, with at least one follower agent able to access the trajectory of the leader.
 
