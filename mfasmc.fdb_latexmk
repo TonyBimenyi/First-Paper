@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1726040556.968 "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1726040559.18411 0
-  "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1724143127 82507 a9eef8696c92627b87e9975edea03b2a ""
+["pdflatex"] 1726041289.27989 "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1726041307.54841 0
+  "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1726041301 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1723431067 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1723431069 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs7.tfm" 1723431068 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
@@ -80,6 +80,7 @@
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/l3packages/xfp/xfp.sty" 1716378382 1249 c60443975d4db23c5591a108f23953c4 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/lettrine/lettrine.cfg" 1719652107 1356 149eccf72b7ea44e1177064e94d14638 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/lettrine/lettrine.sty" 1719652107 10408 2fedf4bd94c28c3a78630c552bb851aa ""
+  "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/placeins/placeins.sty" 1113865200 4087 636308456f60d2b31cbf97867db5708d ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/ot1ptm.fd" 1585253778 1007 15056f4a61917ceed3a44e4ac11fcc52 ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/ts1ptm.fd" 1585253778 653 96f56dc5d1ef1fe1121f1cfeec70ee0c ""
   "C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/tex/latex/subfigure/subfigure.cfg" 1114257370 2114 42ba738bf6f1cec796106a69840777a4 ""
@@ -89,10 +90,10 @@
   "Figure_4.png" 1725952932 63294 7d501e6f755ec547e0a4d5d7d8692ab6 ""
   "Figure_5.png" 1725953555 26580 3e6e0dea4ce97b44204c46e517a8ad20 ""
   "communication.png" 1725961289 46200 ae1a637c5d9f76e81bafb7f397947817 ""
-  "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" 1726040556 52822 19125cec7d7c52ebe39c2c5bc4539644 ""
+  "d:/PC/DATA DRIVEN/First Paper/First-Paper/mfasmc.tex" 1726041288 52843 af8cbaca80cdad6fe77ae480f91dbb3b ""
   "diagram.png" 1725960468 283364 5f75b6b4444b3f6cf4eee4fc26ca95e0 ""
-  "mfasmc.aux" 1726040558 4812 50962b0865e5fa898156f7046d8c56d8 "pdflatex"
-  "mfasmc.tex" 1726040556 52822 19125cec7d7c52ebe39c2c5bc4539644 ""
+  "mfasmc.aux" 1726041307 4812 50962b0865e5fa898156f7046d8c56d8 "pdflatex"
+  "mfasmc.tex" 1726041288 52843 af8cbaca80cdad6fe77ae480f91dbb3b ""
   (generated)
   "mfasmc.aux"
   "mfasmc.log"

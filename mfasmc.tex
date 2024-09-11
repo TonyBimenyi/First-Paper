@@ -15,6 +15,7 @@
 \usepackage{subfigure}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{placeins}
 \usepackage{lettrine} % Package for dropped capital letters
 
 
@@ -78,9 +79,9 @@ This approach is expected to outperform traditional control methods in terms of 
 
 
 
-The set of real numbers is denoted by $\mathbb{R}$. For a given matrix $A \in \mathbb{R}^{n \times n}$, $\|A\|$ represents the matrix norm. The notation $\text{diag}(\cdot)$ refers to a diagonal matrix, and $I$ signifies the identity matrix of appropriate dimensions. In the context of multi-agent systems, graph theory serves as an effective tool to model interaction topologies. A brief introduction to directed graphs within algebraic graph theory is provided. Let $G = (V, E, A)$ be the weighted directed graph, where $V = \{1, 2, \dots, N\}$ represents the set of vertices, $E \subseteq V \times V$ denotes the set of edges, and $A$ is the adjacency matrix. Here, $V$ also indexes the agents. If agent $j$ can receive a message from agent $i$, then $(i j) \in E$, where $j$ is the child of $i$ . The neighborhood of agent $i$ is given by $N_i = \{j \in V | (j i) \in E \}$.
+The set of real numbers is denoted by $\mathbb{R}$. For a given matrix $A \in \mathbb{R}^{n \times n}$, $\|A\|$ represents the matrix norm. The notation $\text{diag}(\cdot)$ refers to a diagonal matrix, and $I$ signifies the identity matrix of appropriate dimensions. In the context of multi-agent systems, graph theory serves as an effective tool to model interaction topologies. A brief introduction to directed graphs within algebraic graph theory is provided. Let $G = (V, E, A)$ be the weighted directed graph, where $V = \{1, 2, \dots, N\}$ represents the set of vertices, $E \subseteq V \times V$ denotes the set of edges, and $A$ is the adjacency matrix. Here, $V$ also indexes the agents. If agent $j$ can receive a message from agent $i$, then $(i,j) \in E$, where $j$ is the child of $i$ . The neighborhood of agent $i$ is given by $N_i = \{j \in V | (j,i) \in E \}$.
 
-The weighted adjacency matrix $A = (a_{i j})$ is defined such that $a_{i,i} = 0$, $a_{i,j} = 1$ if $(j i) \in E$; otherwise, $a_{i,j} = 0$. The laplacian matrix of $G$ is defined as $L = D - A$, where $D = \text{diag}(d_1^{\text{in}}, d_2^{\text{in}}, \dots, d_N^{\text{in}})$ and $d_i^{\text{in}} = \sum_{j=1}^{N} a_{i j}$ is the in-degree of vertex $i$. The graph is said to be strongly connected if there exists a path between any pair of vertices.
+The weighted adjacency matrix $A = (a_{ij})$ is defined such that $a_{ii} = 0$, $a_{ij} = 1$ if $(j,i) \in E$; otherwise, $a_{ij} = 0$. The laplacian matrix of $G$ is defined as $L = D - A$, where $D = \text{diag}(d_1^{\text{in}}, d_2^{\text{in}}, \dots, d_N^{\text{in}})$ and $d_i^{\text{in}} = \sum_{j=1}^{N} a_{i j}$ is the in-degree of vertex $i$. The graph is said to be strongly connected if there exists a path between any pair of vertices.
 
 \section{Problem Formulation}
 
