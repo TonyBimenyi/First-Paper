@@ -12,6 +12,7 @@
 \usepackage{epsfig}
 \usepackage{graphicx}
 \usepackage{amsthm}
+\usepackage{float}
 \usepackage{subfigure}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -35,14 +36,14 @@
 \end{abstract}
 
 \section*{Keywords}
-Model-free adaptive sliding mode control, quadruple-frequency data processing method, compact form dynamic linearization, nonlinear multiagent system, multi-DC motor speed regulation.
+Model-free adaptive sliding mode control, quadruple-frequency data processing method, compact form dynamic linearization, nonlinear multiagent system, multi-DC motors speed regulation.
 
 
 
 
 \section{Introduction}\label{section:1}
 
-The control of DC motors is essential in numerious industrial and technological applications, with single DC motors serving as the foundation for systems in robotics, autonomous vehicles, and industrial machinery. Traditional control methods, such as Proportional-Integral-Derivate and linear quadratic regulator, have been widely used to regulate DC motor speed due to the simplicity and effectiveness. However, the methods heavily rely on accurate mathematical models and often fail to handle complex dynamics and uncertainties, especialy in MASs involving multi-DC motors \cite{1}.
+\lettrine{T}he control of DC motors is essential in numerious industrial and technological applications, with single DC motors serving as the foundation for systems in robotics, autonomous vehicles, and industrial machinery. Traditional control methods, such as Proportional-Integral-Derivate and linear quadratic regulator, have been widely used to regulate DC motor speed due to the simplicity and effectiveness. However, the methods heavily rely on accurate mathematical models and often fail to handle complex dynamics and uncertainties, especialy in MASs involving multi-DC motors \cite{1}.
 
 In recent years, the focus has shifted towards the regulation of multi-DC motor systems, which are integral in multi-agent setups, such as satellite formations, distributed robotics, and automated vehicles \cite{2}, \cite{3}. Multi-DC motor systems introduce challenges related to communication, coordination, and sychronization of motor speeds, particularly in the presence of uncertainties, nonlinearities, and inter-agent interactions \cite{4},\cite{5}. Traditional methods struglle with such complexities, necessitating more advanced, robust control strategies \cite{7}.
 
@@ -182,9 +183,9 @@ Additionaly, to ensure stability and adherence to constraints, the following con
 
 \subsection{Model Free Adaptiive Controller Design}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{diagram.png}
+    \includegraphics[width=0.9\textwidth]{diagram.png}
     \caption{Block diagram of the data-driven MFASMC control.}
     \label{fig:diagram} % Label for referencing the figure
 \end{figure}
@@ -202,7 +203,7 @@ Subtituting (\ref{model 2}) and (\ref{model 3}) into (\ref{model 9}), then diffe
 
 \begin{equation}
     \label{model eq:mfac}
-    \mathbf{u_i}_{\text{MFA}}(k) = \mathbf{u_i}_{\text{MFA}}(k - 1) + \frac{\rho \phi_i(k)}{\lambda + |\phi_i(k)|^2} \xi_i(k)
+    u_{i,\text{MFAC}}(k) = u_{i,\text{MFAC}}(k - 1) + \frac{\rho \phi_i(k)}{\lambda + |\phi_i(k)|^2} \xi_i(k)
 \end{equation}
 
 
@@ -244,14 +245,14 @@ The final sliding mode control input \(\mathbf{u_i}_{\text{SM}}(k)\) is designed
 
 \begin{equation}
     \label{model eq:smc}
-    \mathbf{u_i}_{\text{SM}}(k) = u_i(k-1) + \frac{y_d(k+1)-y(k) + \alpha e_i(k) + \varepsilon T sign(k)}{\phi_i(k)}
+    u_{i,\text{SMC}}(k) = u_i(k-1) + \frac{y_d(k+1)-y(k) + \alpha e_i(k) + \varepsilon T sign(k)}{\phi_i(k)}
 \end{equation}
 
 To enhance the robutness and adaptibility of the control system, the MFASMC approach is employed.  the conrol input of the system is defined as:
 
 \begin{equation}
     \label{model eq:mfasmc}
-    u_i(k) = \mathbf{u_i}_{\text{MFA}}(k) + \Gamma_i \mathbf{u_i}_{\text{SM}}
+    u_i(k) = u_{i,\text{MFAC}}(k) + \Gamma_i \times u_{i,\text{SMC}}(k)
 \end{equation}
 
 where the parameter \(\Gamma\) is a gain factor that adjusts the contribution of the sliding mode control in the control effort and tunes the convergence rate.
@@ -669,7 +670,7 @@ Assumption 5: The communication graph \(\bar{\mathcal{G}}_l\) is a fixed strongl
 
 By performing numerical simulations to illustrate the proposed speed tracking results for fixed communication topology. Consider the network comprising:
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{communication.png}
     \caption{Communication topology among agents (DC Motors).}
@@ -769,7 +770,7 @@ y_d(k) = 0.5 \sin\left(\frac{k \pi}{30}\right) + 0.3  \cos\left(\frac{k \pi}{10}
 as \( k \) in the range \( 0 \leq k \leq 200 \).
 
 The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\) and \(\phi_i(0)=1 \) for all agents in this simulation ,\(\Gamma_{1}=\Gamma_{2}=0.15\) and \(\Gamma_{3}=\Gamma_{4}=0.45\), with \(T=0.1\), \(m=350\), \(\eta=1\), \(\mu=1\). The MFA Controller parameters are given as \(\rho=1\), \(\lambda=50\) and \(\alpha=1\) with \(\epsilon=10^{-5}\).
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{Figure_2.png}
     \caption{Tracking errors for time varying desired trajectory.}
@@ -778,25 +779,25 @@ The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\) and \(\phi_i
 
 As shown in Fig. \ref{fig:figure_2}, the tracking errors between the actual and desired trajectories for agents $e_1$, $e_2$, $e_3$, and $e_4$ are relatively small and converge to zero over time. However, the individual agents exhibit varying levels of tracking error, suggesting that their unique dynamics or initial conditions may influence the performance.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{Figure_1.png}
+    \includegraphics[width=0.9\textwidth]{Figure_1.png}
     \caption{Tracking performance of all agents for time-varying desired trajectory.}
     \label{fig:figure_3} % Label for referencing the figure
 \end{figure}
 
 Fig.\ref{fig:figure_3} presents a detailed analysis of the tracking performance for all agents. All agents successfully track the time-varying desired trajectory, confirming the effectiveness of the proposed control system. While minor variations in individual trajectories are evident, each agent generally adheres to the desired path. Factors such as agent dynamics, communication delays, and environmental disturbances could potentially influence the tracking performance.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{Figure_4.png}
+    \includegraphics[width=0.8\textwidth]{Figure_4.png}
     \caption{Tracking performance of all agents for time-invariable desired trajectory.}
     \label{fig:figure_4} % Label for referencing the figure
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{Figure_5.png}
+    \includegraphics[width=0.7\textwidth]{Figure_5.png}
     \caption{PPD Estimation of all agents.}
     \label{fig:figure_5} % Label for referencing the figure
 \end{figure}
@@ -835,7 +836,8 @@ This paper introduces the MFASMC system. The proposed approach is designed for t
     R. Olfati-Saber, J. A. Fax, and R. M. Murray, "Consensus and cooperation in networked multi-agent systems," \textit{Proceedings of the IEEE}, vol. 95, no. 1, pp. 215-233, 2007.
     
     \bibitem{4}
-    Wang, XF (Wang, Xiaofeng); Li, X (Li, Xing); Wang, JH (Wang, Jianhui); Fang, XK (Fang, Xiaoke); Zhu, XF (Zhu, Xuefeng), "\textit{Information Sciences}", vol. 327, pp. 246-257, January 2016.
+    L. Moreau, "Stability of multiagent systems with time-dependent
+    communication links," \textit{IEEE Trans. Autom. Control}, vol. 50, no. 2, pp. 169-182, Feb. 2005.
     
     \bibitem{5}
     W. Ren, R. W. Beard, and E. M. Atkins, "Information consensus in multivehicle cooperative control," \textit{IEEE Control Systems}, vol. 27, no. 2, pp. 71-82, 2007.
