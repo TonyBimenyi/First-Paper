@@ -78,9 +78,9 @@ This approach is expected to outperform traditional control methods in terms of 
 
 
 
-The set of real numbers is denoted by $\mathbb{R}$. For a given matrix $A \in \mathbb{R}^{n \times n}$, $\|A\|$ represents the matrix norm. The notation $\text{diag}(\cdot)$ refers to a diagonal matrix, and $I$ signifies the identity matrix of appropriate dimensions. In the context of multi-agent systems, graph theory serves as an effective tool to model interaction topologies. A brief introduction to directed graphs within algebraic graph theory is provided. Let $G = (V, E, A)$ be the weighted directed graph, where $V = \{1, 2, \dots, N\}$ represents the set of vertices, $E \subseteq V \times V$ denotes the set of edges, and $A$ is the adjacency matrix. Here, $V$ also indexes the agents. If agent $j$ can receive a message from agent $i$, then $(i j) \in E$, where $j$ is the child of $i$ . The neighborhood of agent $i$ is given by $N_i = \{j \in V | (j, i) \in E \}$.
+The set of real numbers is denoted by $\mathbb{R}$. For a given matrix $A \in \mathbb{R}^{n \times n}$, $\|A\|$ represents the matrix norm. The notation $\text{diag}(\cdot)$ refers to a diagonal matrix, and $I$ signifies the identity matrix of appropriate dimensions. In the context of multi-agent systems, graph theory serves as an effective tool to model interaction topologies. A brief introduction to directed graphs within algebraic graph theory is provided. Let $G = (V, E, A)$ be the weighted directed graph, where $V = \{1, 2, \dots, N\}$ represents the set of vertices, $E \subseteq V \times V$ denotes the set of edges, and $A$ is the adjacency matrix. Here, $V$ also indexes the agents. If agent $j$ can receive a message from agent $i$, then $(i j) \in E$, where $j$ is the child of $i$ . The neighborhood of agent $i$ is given by $N_i = \{j \in V | (j i) \in E \}$.
 
-The weighted adjacency matrix $A = (a_{i,j})$ is defined such that $a_{i,i} = 0$, $a_{i,j} = 1$ if $(j, i) \in E$; otherwise, $a_{i,j} = 0$. The laplacian matrix of $G$ is defined as $L = D - A$, where $D = \text{diag}(d_1^{\text{in}}, d_2^{\text{in}}, \dots, d_N^{\text{in}})$ and $d_i^{\text{in}} = \sum_{j=1}^{N} a_{i,j}$ is the in-degree of vertex $i$. The graph is said to be strongly connected if there exists a path between any pair of vertices.
+The weighted adjacency matrix $A = (a_{i j})$ is defined such that $a_{i,i} = 0$, $a_{i,j} = 1$ if $(j i) \in E$; otherwise, $a_{i,j} = 0$. The laplacian matrix of $G$ is defined as $L = D - A$, where $D = \text{diag}(d_1^{\text{in}}, d_2^{\text{in}}, \dots, d_N^{\text{in}})$ and $d_i^{\text{in}} = \sum_{j=1}^{N} a_{i j}$ is the in-degree of vertex $i$. The graph is said to be strongly connected if there exists a path between any pair of vertices.
 
 \section{Problem Formulation}
 
@@ -368,7 +368,7 @@ Defining:
 \alpha(k-1) = \frac{\eta (\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2}
 \end{equation}
 
-So equation (\ref{model 23}) becomes:
+So  (\ref{model 23}) becomes:
 
 \begin{equation}
 \label{model 22}
@@ -378,7 +378,7 @@ So equation (\ref{model 23}) becomes:
 % Given that \(\Delta u_i(k) \neq 0\), \(0 < \eta \leq 1\), and \(\mu \geq 0\), it follows that \(0 < \alpha(k-1) \leq q_1 < 1\).
 
 
-Assumption 4: We assume that the control input increment \(\Delta u_i(k)\) is always non-zero, i.e., \(\Delta u_i(k) \neq 0\), at every time step \(k\). This assumption ensures that the system continues to receive meaningful input changes, which are necessary for the adaptive control mechanism to function. 
+Assumption 6: We assume that the control input increment \(\Delta u_i(k)\) is always non-zero, i.e., \(\Delta u_i(k) \neq 0\), at every time step \(k\). This assumption ensures that the system continues to receive meaningful input changes, which are necessary for the adaptive control mechanism to function. 
 
 Moreover, the parameters involved in the formulation of \(\alpha(k-1)\) are bounded as follows: the tuning parameter \(\eta\) is constrained within the range \(0 < \eta \leq 1\), ensuring that the influence of \(\Delta u_i(k-1)\) is appropriately scaled. The constant \(\mu\) is assumed to satisfy \(\mu \geq 0\), which provides numerical stability by preventing division by extremely small values. 
 
@@ -605,7 +605,10 @@ This condition guarantees that the tracking error \(e(k)\) will approach zero as
 \lim_{k \to \infty} \|e(k+1)\| = 0
 \]
 
-This result indicates that the tracking error will converge to zero, demonstrating the effectiveness of the proposed control strategy in achieving desired tracking performance.
+% This result indicates that the tracking error will converge to zero, demonstrating the effectiveness of the proposed control strategy in achieving desired tracking performance.
+
+Remark 5: This condition ensures that the tracking error decreases over time and eventually converges to zero as $k$ approaches infinity. The implication is under the proposed control strategy, the system will successfully align with the desireed performance, eliminating any discrepancies in tracking. This convergence demonstrates the robutness and effectiveness of the control method in achieving accurate and stable performance.
+
 
 
 
@@ -762,7 +765,7 @@ The expression for \( y_d(k) \) is:
 y_d(k) = 0.5 \sin\left(\frac{k \pi}{30}\right) + 0.3  \cos\left(\frac{k \pi}{10}\right)
 \]
 
-as \( k \) in the range \( 0 \leq k \leq 140 \).
+as \( k \) in the range \( 0 \leq k \leq 200 \).
 
 The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\) and \(\phi_i(0)=1 \) for all agents in this simulation ,\(\Gamma_{1}=\Gamma_{2}=0.15\) and \(\Gamma_{3}=\Gamma_{4}=0.45\), with \(T=0.1\), \(m=350\), \(\eta=1\), \(\mu=1\). The MFA Controller parameters are given as \(\rho=1\), \(\lambda=50\) and \(\alpha=1\) with \(\epsilon=10^{-5}\).
 \begin{figure}[h!]
