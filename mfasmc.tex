@@ -121,9 +121,9 @@ Lemma 1: Consider follower agents with dynamics (\ref{model 1}) satisfying Assum
 
 where \( | \phi_i(k) | \leq b\) with the variable \(\phi_i(k)\) named PPD, which is bounded for any time instant k.
 
-Remark 2: By virtual of CFDL technique, the unknown nonlinear agent dynamics (\ref{model 1}) are now transformed into an incremental form data description (\ref{model 2}) in every operation point with a bounded PPD. In Implementation, with good selected algorithms, PPD can be estimated by using the I/O data of the agents and the estimated value can also be proved to be bounded, which is shown in Theorem 1. Here, the CFDL data model is derived under the condition $ ||\Delta u_i(k) || \neq 0 $. In fact, if the case $ ||\Delta u_i(k) || = 0 $ happens at the some sampling time, a new CFDL data model can also be established after shifting $ \gamma_i $
+Remark 2: By virtual of CFDL technique, the unknown nonlinear agent dynamics (\ref{model 1}) are now transformed into an incremental form data description (\ref{model 2}) in every operation point with a bounded PPD. In Implementation, with good selected algorithms, PPD can be estimated by using the I/O data of the agents and the estimated value can also be proved to be bounded, which is shown in Theorem 1. Here, the CFDL data model is derived under the condition $ ||\Delta u_i(k) || \neq 0 $. In fact, if the case $ ||\Delta u_i(k) || = 0 $ happens at the some sampling time, a new CFDL data model can also be established after shifting $ \gamma_i \varepsilon \mathbb{Z}^+ $  time steps until $ u_i(k+\gamma_i) \neq u_i(k)$ holds. In the next section, the data model (\ref{model 2}) will be used to design the distributed control law and derive the stability analysis
  
-We define the distributed measurement output of \(\xi_i(k)\) for $i$th agents as follow:
+Let denote the following distributed measurement output of \(\xi_i(k)\) for $i$th agents as follow:
 
 \begin{equation}
     \label{model 3}
@@ -131,21 +131,12 @@ We define the distributed measurement output of \(\xi_i(k)\) for $i$th agents as
 \end{equation}
 
  
-In this equation \(\xi_i(k)\) represents the distributed measurement output of the $i$th agent at time step k , \(N_i\) denotes the set of the neighboring agents of the $i$th agent and \(a_{ij}\) are elements of the adjancecy matrix representing the weights between agents \(i\) and \(j\).   
-For this equation, we assume that \(d_i = 0\), meaning the agent \(i\) doesn't directly consider the desired trajectory \(y_d(k)\) in the distributed measurement output. However, if agent \(i\) can receive the disired trajectory, setting \(d_i\) to a non-zero value allows it to align the output with the desired trajectory, improving the control performance.
-
-
-Let \(e_i(k) = y_d(k) - y_i(k)\) denote the tracking error. The objective of this paper is to find an good control law using I/O data of the agents, such that the outputs of all agents can track the reference trajectory \(y_d(k)\) when only some of agents can access the desired trajectory.
 
 Assumption 3: The communication graph $\bar{G}$ is fixed and strognly connected, with at least one follower agent able to access the trajectory of the leader.
 
-Remark 2: This assumption ensures the solvability the tracking problem. An isolated agent, oblivious of the control objective, cannot follow the leader's reference trajectory.
-
-Assumption 4 : The PPD \(\phi_i(k) > \varsigma\) , \(i = 1,2,3, \dots, N\) holds for all \(k\), where \( \varsigma \) is an rondomly small positive constant without loss of generality, assume that \(\phi_i(k) > \varsigma\).
-
-Remark 3: This indicatesthat the agent output does not decrease with encreasing control input, resembling a linear characteristic. It implies the control direction is known and unchanging Similar assumptions are common in model-based control and are reasonable for practical systems like mobile robots and UAVs.
 
 \section{Main Results}
+
 
 Consider the following PPD criterion function, which is used to evaluate the performance of the parameter \(\phi_i(k)\):
 
@@ -153,6 +144,8 @@ Consider the following PPD criterion function, which is used to evaluate the per
     \label{model 4}
     J(\phi_i(k)) = | \Delta y_i(k) - \hat{\phi}_i(k)  \Delta u_i(k-1)|^2 + \mu |\hat{\phi}_i(k) - \hat{\phi}_i(k-1)|\
 \end{equation}
+
+Assumption 4 : The PPD \(\phi_i(k) > \varsigma\) , \(i = 1,2,3, \dots, N\) holds for all \(k\), where \( \varsigma \) is an rondomly small positive constant without loss of generality, assume that \(\phi_i(k) > \varsigma\).
 
 In the previous function, \(\Delta y_i(k)\) represents the change in the output, \(\hat{\phi}_i(k) \) is the estimated parameter at time $k$ and $\mu$ the regularization parameter that penalizes the deviation of the parameter estimate from the previous value.
 
