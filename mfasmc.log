@@ -1,0 +1,484 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.13)  13 NOV 2024 19:59
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**e:/PROGRAMMING/PAPERS/First-Paper/mfasmc.tex
+(e:/PROGRAMMING/PAPERS/First-Paper/mfasmc.tex
+LaTeX2e <2024-11-01>
+L3 programming layer <2024-11-02>
+(C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/ieeetran\IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen141
+\@IEEEtrantmpdimenB=\dimen142
+\@IEEEtrantmpdimenC=\dimen143
+\@IEEEtrantmpcountA=\count196
+\@IEEEtrantmpcountB=\count197
+\@IEEEtrantmpcountC=\count198
+\@IEEEtrantmptoksA=\toks17
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 503.
+(C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+** ATTENTION: Single column mode is not typically used with IEEE publications.
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen144
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen145
+\CLASSINFOnormalsizeunitybaselineskip=\dimen146
+\IEEEnormaljot=\dimen147
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+\IEEEquantizedlength=\dimen148
+\IEEEquantizedlengthdiff=\dimen149
+\IEEEquantizedtextheightdiff=\dimen150
+\IEEEilabelindentA=\dimen151
+\IEEEilabelindentB=\dimen152
+\IEEEilabelindent=\dimen153
+\IEEEelabelindent=\dimen154
+\IEEEdlabelindent=\dimen155
+\IEEElabelindent=\dimen156
+\IEEEiednormlabelsep=\dimen157
+\IEEEiedmathlabelsep=\dimen158
+\IEEEiedtopsep=\skip49
+\c@section=\count199
+\c@subsection=\count266
+\c@subsubsection=\count267
+\c@paragraph=\count268
+\c@IEEEsubequation=\count269
+\abovecaptionskip=\skip50
+\belowcaptionskip=\skip51
+\c@figure=\count270
+\c@table=\count271
+\@IEEEeqnnumcols=\count272
+\@IEEEeqncolcnt=\count273
+\@IEEEsubeqnnumrollback=\count274
+\@IEEEquantizeheightA=\dimen159
+\@IEEEquantizeheightB=\dimen160
+\@IEEEquantizeheightC=\dimen161
+\@IEEEquantizeprevdepth=\dimen162
+\@IEEEquantizemultiple=\count275
+\@IEEEquantizeboxA=\box52
+\@IEEEtmpitemindent=\dimen163
+\IEEEPARstartletwidth=\dimen164
+\c@IEEEbiography=\count276
+\@IEEEtranrubishbin=\box53
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup4
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen165
+\lightrulewidth=\dimen166
+\cmidrulewidth=\dimen167
+\belowrulesep=\dimen168
+\belowbottomsep=\dimen169
+\aboverulesep=\dimen170
+\abovetopsep=\dimen171
+\cmidrulesep=\dimen172
+\cmidrulekern=\dimen173
+\defaultaddspace=\dimen174
+\@cmidla=\count277
+\@cmidlb=\count278
+\@aboverulesep=\dimen175
+\@belowrulesep=\dimen176
+\@thisruleclass=\count279
+\@lastruleclass=\count280
+\@thisrulewidth=\dimen177
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+\caption@tempdima=\dimen178
+\captionmargin=\dimen179
+\caption@leftmargin=\dimen180
+\caption@rightmargin=\dimen181
+\caption@width=\dimen182
+\caption@indent=\dimen183
+\caption@parindent=\dimen184
+\caption@hangindent=\dimen185
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEtablestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\normalfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptionsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\normalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONconference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi \fi  on input line 1175.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count281
+\c@continuedfloat=\count282
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks19
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2024/11/05 v2.17t AMS math features
+\@mathmargin=\skip52
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks20
+\ex@=\dimen186
+)) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen187
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count283
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count284
+\leftroot@=\count285
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count286
+\DOTSCASE@=\count287
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen188
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count288
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count289
+\dotsspace@=\muskip17
+\c@parentequation=\count290
+\dspbrk@lvl=\count291
+\tag@help=\toks21
+\row@=\count292
+\column@=\count293
+\maxfields@=\count294
+\andhelp@=\toks22
+\eqnshift@=\dimen189
+\alignsep@=\dimen190
+\tagshift@=\dimen191
+\tagwidth@=\dimen192
+\totwidth@=\dimen193
+\lineht@=\dimen194
+\@envbody=\toks23
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+)) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+Package: color 2024/06/23 v1.3e Standard LaTeX Color (DPC)
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\epsfig.sty
+Package: epsfig 2024/01/14 v1.7b (e)psfig emulation (SPQR)
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen195
+\Gin@req@width=\dimen196
+)
+\epsfxsize=\dimen197
+\epsfysize=\dimen198
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks25
+\thm@bodyfont=\toks26
+\thm@headfont=\toks27
+\thm@notefont=\toks28
+\thm@headpunct=\toks29
+\thm@preskip=\skip55
+\thm@postskip=\skip56
+\thm@headsep=\skip57
+\dth@everypar=\toks30
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count295
+\float@exts=\toks31
+\float@box=\box56
+\@float@everytoks=\toks32
+\@floatcapt=\box57
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip58
+\subfigcapskip=\skip59
+\subfigcaptopadj=\dimen199
+\subfigbottomskip=\skip60
+\subfigcapmargin=\dimen256
+\subfiglabelskip=\skip61
+\c@subfigure=\count296
+\c@lofdepth=\count297
+\c@subtable=\count298
+\c@lotdepth=\count299
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.cfg)
+\subfig@top=\skip62
+\subfig@bottom=\skip63
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/placeins\placeins.sty
+Package: placeins 2005/04/18  v 2.2
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/lettrine\lettrine.sty
+File: lettrine.sty 2024-06-26 v2.61 (Daniel Flipo)
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xfp\xfp.sty (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-11-02 L3 programming layer (loader) 
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count300
+\l__pdf_internal_box=\box58
+))
+Package: xfp 2024-08-16 L3 Floating point unit
+)
+\c@DefaultLines=\count301
+\c@DefaultDepth=\count302
+\DefaultFindent=\dimen257
+\DefaultNindent=\dimen258
+\DefaultSlope=\dimen259
+\DiscardVskip=\dimen260
+\L@lettrine=\box59
+\L@lbox=\box60
+\L@tbox=\box61
+\c@L@lines=\count303
+\c@L@depth=\count304
+\L@Pindent=\dimen261
+\L@Findent=\dimen262
+\L@Nindent=\dimen263
+\L@lraise=\dimen264
+\L@first=\dimen265
+\L@next=\dimen266
+\L@slope=\dimen267
+\L@height=\dimen268
+\L@novskip=\dimen269
+\L@ruleht=\dimen270
+\L@target@ht=\dimen271
+\L@target@dp=\dimen272
+\L@target@tht=\dimen273
+\LettrineWidth=\dimen274
+\LettrineHeight=\dimen275
+\LettrineDepth=\dimen276
+
+Loading lettrine.cfg
+(C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/lettrine\lettrine.cfg)
+\Llist@everypar=\toks33
+) (mfasmc.aux)
+\openout1 = `mfasmc.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+
+-- Lines per column: 40 (approximate, difference = 5.40143pt).
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: subfigure package is loaded.
+Package caption Info: End \AtBeginDocument code.
+(C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count305
+\scratchdimen=\dimen277
+\scratchbox=\box62
+\nofMPsegments=\count306
+\nofMParguments=\count307
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count308
+\MPscratchDim=\dimen278
+\MPnumerator=\count309
+\makeMPintoPDFobject=\count310
+\everyMPtoPDFconversion=\toks35
+) (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package lettrine.sty Info: Targeted height = 22.74486pt
+(lettrine.sty)             (for loversize=0, accent excluded),
+(lettrine.sty)             Lettrine height = 22.74487pt (T);
+(lettrine.sty)             reported on input line 46.
+
+
+[1{C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 83.
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 83.
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 83.
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+[2]
+
+[3]
+<diagram.png, id=23, 1998.46625pt x 1175.39125pt>
+File: diagram.png Graphic file (type png)
+<use diagram.png>
+Package pdftex.def Info: diagram.png  used on input line 188.
+(pdftex.def)             Requested size: 464.39685pt x 273.13216pt.
+
+
+[4]
+
+[5 <./diagram.png>]
+
+[6]
+
+[7]
+
+[8]
+<communication.png, id=45, 928.46875pt x 603.75563pt>
+File: communication.png Graphic file (type png)
+<use communication.png>
+Package pdftex.def Info: communication.png  used on input line 675.
+(pdftex.def)             Requested size: 309.60315pt x 201.33122pt.
+
+
+[9 <./communication.png>]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 684.
+ (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+
+[10]
+<Figure_2.png, id=53, 622.2447pt x 424.2249pt>
+File: Figure_2.png Graphic file (type png)
+<use Figure_2.png>
+Package pdftex.def Info: Figure_2.png  used on input line 775.
+(pdftex.def)             Requested size: 309.60315pt x 211.08269pt.
+
+
+[11 <./Figure_2.png>]
+<Figure_1.png, id=58, 1071.0414pt x 613.5723pt>
+File: Figure_1.png Graphic file (type png)
+<use Figure_1.png>
+Package pdftex.def Info: Figure_1.png  used on input line 784.
+(pdftex.def)             Requested size: 464.39685pt x 266.04045pt.
+<Figure_4.png, id=59, 1086.2181pt x 574.5465pt>
+File: Figure_4.png Graphic file (type png)
+<use Figure_4.png>
+Package pdftex.def Info: Figure_4.png  used on input line 793.
+(pdftex.def)             Requested size: 412.80157pt x 218.34747pt.
+<Figure_5.png, id=60, 595.5048pt x 349.7868pt>
+File: Figure_5.png Graphic file (type png)
+<use Figure_5.png>
+Package pdftex.def Info: Figure_5.png  used on input line 800.
+(pdftex.def)             Requested size: 361.19843pt x 212.15807pt.
+
+
+[12 <./Figure_1.png> <./Figure_4.png>]
+
+[13 <./Figure_5.png>]
+
+[14] (mfasmc.aux)
+ ***********
+LaTeX2e <2024-11-01>
+L3 programming layer <2024-11-02>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 5744 strings out of 473682
+ 99392 string characters out of 5718263
+ 480840 words of memory out of 5000000
+ 28751 multiletter control sequences out of 15000+600000
+ 595159 words of font info for 104 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 79i,9n,93p,1005b,299s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on mfasmc.pdf (14 pages, 808769 bytes).
+PDF statistics:
+ 137 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+
