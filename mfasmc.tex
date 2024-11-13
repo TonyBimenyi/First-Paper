@@ -121,6 +121,8 @@ Lemma 1: Consider follower agents with dynamics (\ref{model 1}) satisfying Assum
 
 where \( | \phi_i(k) | \leq b\) with the variable \(\phi_i(k)\) named PPD, which is bounded for any time instant k.
 
+Remark 2: By virtual of CFDL technique, the unknown nonlinear agent dynamics (\ref{model 1}) are now transformed into an incremental form data description (\ref{model 2}) in every operation point with a bounded PPD. In Implementation, with good selected algorithms, PPD can be estimated by using the I/O data of the agents and the estimated value can also be proved to be bounded, which is shown in Theorem 1. Here, the CFDL data model is derived under the condition $ ||\Delta u_i(k) || \neq 0 $. In fact, if the case $ ||\Delta u_i(k) || = 0 $ happens at the some sampling time, a new CFDL data model can also be established after shifting $ \gamma_i $
+ 
 We define the distributed measurement output of \(\xi_i(k)\) for $i$th agents as follow:
 
 \begin{equation}
