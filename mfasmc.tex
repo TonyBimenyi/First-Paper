@@ -262,8 +262,8 @@ The stability analysis is conducted in two primary steps. The first step focuses
 
 Step 1: Establishment of error bounds
 
-The error between the estimated and actual values of the system parameters, denote as \(\tilde{\phi_i}(k)
-= \phi_i(k) - \hat{\phi}_i(k)\), starting from the foundational equation derived from the compact dynamic linearization model in equation (\ref{model 2}) along with the PPD estimation equation (\ref{model eq:ppd_parameter}). To ensure the theorem validity, the detailed proof that demonstrates the correctness of this error bound is provided.
+The estimated error between the estimated and actual values of the system parameters, denote as \(\tilde{\phi_i}(k)
+=\hat{\phi}_i(k)-\phi_i(k) \), starting from the foundational equation derived from the compact dynamic linearization model in equation (\ref{model 2}) along with the PPD estimation equation (\ref{model eq:ppd_parameter}). To ensure the theorem validity, the detailed proof that demonstrates the correctness of this error bound is provided.
 
 \begin{equation}
     \label{model 15}
@@ -272,10 +272,6 @@ The error between the estimated and actual values of the system parameters, deno
 
 Then by simplifying the previous equation, the result is:
 
-\begin{equation}
-    \label{model 16}
-    \tilde{\phi_i}(k) = (\hat{\phi_i}(k+1) - \phi_i(k-1))+ \frac{\eta \Delta u_i(k-1)}{\mu + | \Delta u_i(k-1)|^2}  ((\Delta y_i(k) - \hat{\phi_i}(k-1)\Delta u_i(k-1) )) -(\phi_i(k) - \phi_i(k-1))
-\end{equation}
 
 % \begin{equation}
 %     \label{model 19}
@@ -290,10 +286,10 @@ The control coefficient \(\beta_i(k)\) is expressed from the previous equation, 
     \tilde{\phi_i}(k) = \tilde{\phi_i}(k-1)+\beta_i(k)  (\Delta y_i(k) - \hat{\phi_i}(k-1)\Delta u_i(k-1) -\phi_i(k) - \phi_i(k-1))
 \end{equation}
 
-\begin{equation}
-    \label{model 18}
-    \tilde{\phi_i}(k) = (1-\frac{\eta(\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2})\tilde{\phi_i}(k-1) + \phi_i(k-1) - \phi_i(k)
-\end{equation}
+% \begin{equation}
+%     \label{model 18}
+%     \tilde{\phi_i}(k) = (1-\frac{\eta(\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2})\tilde{\phi_i}(k-1) + \phi_i(k-1) - \phi_i(k)
+% \end{equation}
 
 \begin{equation}
     \label{model 19}
@@ -369,7 +365,7 @@ Defining:
 \alpha(k-1) = \frac{\eta (\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2}
 \end{equation}
 
-So  (\ref{model 23}) becomes:
+So  (\ref{model 20}) becomes:
 
 \begin{equation}
 \label{model 22}
@@ -378,28 +374,19 @@ So  (\ref{model 23}) becomes:
 
 % Given that \(\Delta u_i(k) \neq 0\), \(0 < \eta \leq 1\), and \(\mu \geq 0\), it follows that \(0 < \alpha(k-1) \leq q_1 < 1\).
 
-
-Assumption 6: We assume that the control input increment \(\Delta u_i(k)\) is always non-zero, i.e., \(\Delta u_i(k) \neq 0\), at every time step \(k\). This assumption ensures that the system continues to receive meaningful input changes, which are necessary for the adaptive control mechanism to function. 
-
-Moreover, the parameters involved in the formulation of \(\alpha(k-1)\) are bounded as follows: the tuning parameter \(\eta\) is constrained within the range \(0 < \eta \leq 1\), ensuring that the influence of \(\Delta u_i(k-1)\) is appropriately scaled. The constant \(\mu\) is assumed to satisfy \(\mu \geq 0\), which provides numerical stability by preventing division by extremely small values. 
-
-Under these conditions, the term \(\alpha(k-1)\), which governs the scaling of the control input, is bounded such that \(0 < \alpha(k-1) \leq q_1 < 1\), where \(q_1\) is a positive constant. This constraint on \(\alpha(k-1)\) ensures that it remains strictly less than 1, preventing excessive correction in the control input. Consequently, \(\alpha(k-1)\) effectively moderates the magnitude of the corrective actions applied to the system, thereby ensuring stability and preventing oscillations or instability that could arise from overly aggressive control updates.
-
-
-
-By combining the inequalities and applying an iterative process, represents the change as follows:
+Since $|\phi_i(k)| \leq b $, considering assumption 4, we can obtain $|\phi_i(k-1)-\phi_i(k)|$, and then:
 
 \begin{equation}
 \label{model 23}
 |\tilde{\phi_i}(k)| \leq |1 - q_1| |\tilde{\phi_i}(k-1)| + b
 \end{equation}
 
-Continuing this process for previous time steps::
+% Continuing this process for previous time steps::
 
-\begin{equation}
-\label{model 24}
-|\tilde{\phi_i}(k-1)| \leq |1 - q_1| |\tilde{\phi_i}(k-2)| + b
-\end{equation}
+% \begin{equation}
+% \label{model 24}
+% |\tilde{\phi_i}(k-1)| \leq |1 - q_1| |\tilde{\phi_i}(k-2)| + b
+% \end{equation}
 
 Back to the initial condition at \(k=0\) and summing the resulting geometric series:
 \[
@@ -504,7 +491,8 @@ Remark 4: The inequality in \eqref{model 26} shows that \(\tilde{\phi_i}(k)\) is
 
 
 
-Part 2: In this part, delving into the convergence properties of the distributed error \(\xi_i(k)\). To understand the convergence, we start with the expression for \(\xi_i(k)\) as given in equation (\ref{model 3}). Aiming to express \(\xi_i(k)\) in terms of the individual tracking errors \(e_i(k)\) and the errors associated with neighboring systems.
+%  In this part, delving into the convergence properties of the distributed error \(\xi_i(k)\). To understand the convergence, we start with the expression for \(\xi_i(k)\) as given in equation (\ref{model 3}). Aiming to express \(\xi_i(k)\) in terms of the individual tracking errors \(e_i(k)\) and the errors associated with neighboring systems.
+Part 2:
 
 The expression for \(\xi_i(k)\) is formulated as follows:
 
