@@ -137,6 +137,16 @@ Assumption 3: The communication graph $\bar{G}$ is fixed and strognly connected,
 
 \section{Main Results}
 
+\subsection{Model Free Adaptive Controller Design}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagram.png}
+    \caption{Block diagram.}
+    \label{fig:diagram} % Label for referencing the figure
+\end{figure}
+
 
 Consider the following PPD criterion function, which is used to evaluate the performance of the parameter \(\phi_i(k)\):
 
@@ -183,22 +193,11 @@ Here, $\eta$ is the learning rate that controls the step size of the update, $\m
 Remark 3: In the parameter estimation law (\ref{model eq:ppd_parameter}), $y_i(k) $ is used to estimate $\hat{\phi}_i(k)$. The abovementioned scheme ensures the convergence of (\ref{model eq:ppd_parameter}). Additionally, the reset algorithm (\ref{reset}) is introduced to enhance the ability of the parameter estimation algorithm to effectively track time-varying parameters.
 
 
-
-
-\subsection{Model Free Adaptiive Controller Design}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{diagram.png}
-    \caption{Block diagram of the data-driven MFASMC control.}
-    \label{fig:diagram} % Label for referencing the figure
-\end{figure}
-
 To design the MFAC alogrithm, the performance function \(J(u_i(k))\) is set as:
 
 \begin{equation}
     \label{model 9}
-    J(u_i(k)) = |\xi_i(k)|^2 + \lambda|u_i(k) - u_i(k-1)|^2
+    J(u_i(k)) = |\xi_i(k+1)|^2 + \lambda|u_i(k) - u_i(k-1)|^2
 \end{equation}
 
 This function used to evaluate the effectiveness of the control input \(u_i(k)\) for the $i$th agent by considering two terms. The first term \(|\xi_i(k)|^2\), represents the tracking error and ensures that the output of agent closely follows the desired trajectory. The second term\(\lambda|u_i(k) - u_i(k-1)|^2\) where \(u_i(k)\) is the current control input, and \(u_i(k-1)\) is the previous control input, with \(\lambda\) serving as a weighting factor.
