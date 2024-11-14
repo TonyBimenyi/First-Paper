@@ -142,29 +142,30 @@ Consider the following PPD criterion function, which is used to evaluate the per
 
 \begin{equation}
     \label{model 4}
-    J(\phi_i(k)) = | \Delta y_i(k) - \hat{\phi}_i(k)  \Delta u_i(k-1)|^2 + \mu |\hat{\phi}_i(k) - \hat{\phi}_i(k-1)|\
+    J(\phi_i(k)) = | \Delta y_i(k) - \phi_i(k)  \Delta u_i(k-1)|^2 + \mu |\phi_i(k) - \hat{\phi}_i(k-1)|\
 \end{equation}
 
 Assumption 4 : The PPD \(\phi_i(k) > \varsigma\) , \(i = 1,2,3, \dots, N\) holds for all \(k\), where \( \varsigma \) is an rondomly small positive constant without loss of generality, assume that \(\phi_i(k) > \varsigma\).
 
-In the previous function, \(\Delta y_i(k)\) represents the change in the output, \(\hat{\phi}_i(k) \) is the estimated parameter at time $k$ and $\mu$ the regularization parameter that penalizes the deviation of the parameter estimate from the previous value.
 
 Differentiating equation (\ref{model 4}) with respect to PPD parameter \(\phi_i(k)\) and make it equal to zero:
 
-\begin{equation}
-    \label{model 5}
-    \frac{\partial J({\phi}_i(k))}{\partial {\phi}_i(k)} = | \Delta y_i(k) - \hat{\phi}_i(k)  \Delta u_i(k-1)|^2 + \mu |\hat{\phi}_i(k) - \hat{\phi}_i(k-1)| = 0
-\end{equation}
+% \begin{equation}
+%     \label{model 5}
+%     \frac{\partial J({\phi}_i(k))}{\partial {\phi}_i(k)} = | \Delta y_i(k) - \hat{\phi}_i(k)  \Delta u_i(k-1)|^2 + \mu |\hat{\phi}_i(k) - \hat{\phi}_i(k-1)| = 0
+% \end{equation}
 
 
-And, let's compute the derivative of \( J(\hat{\phi}_i(k)) \), we obtain:
+% And, let's compute the derivative of \( J(\hat{\phi}_i(k)) \), we obtain:
 
-\begin{equation}
-    \label{model 6}
-    2 [ \Delta y_i(k) - \phi_i(k-1)] - [\Delta u_i(k-1)] + 2 \mu [\phi_i(k) -  \hat{\phi}_i(k-1)] = 0
-\end{equation}
+% \begin{equation}
+%     \label{model 6}
+%     2 [ \Delta y_i(k) - \phi_i(k-1)] - [\Delta u_i(k-1)] + 2 \mu [\phi_i(k) -  \hat{\phi}_i(k-1)] = 0
+% \end{equation}
 
-This equation provides a necessary condition for minimizing the criterion function \(J(\phi_i(k))\) and based on this optimization criterion, the following update rule is proposed for the distributed MFAC algorithm:
+% This equation provides a necessary condition for minimizing the criterion function \(J(\phi_i(k))\) and based on this optimization criterion,
+
+The following update rule is proposed for the distributed MFAC algorithm:
 
 \begin{equation}
     \label{model eq:ppd_parameter}
