@@ -200,8 +200,6 @@ To design the MFAC alogrithm, the performance function \(J(u_i(k))\) is set as:
     J(u_i(k)) = |\xi_i(k+1)|^2 + \lambda|u_i(k) - u_i(k-1)|^2
 \end{equation}
 
-This function used to evaluate the effectiveness of the control input \(u_i(k)\) for the $i$th agent by considering two terms. The first term \(|\xi_i(k)|^2\), represents the tracking error and ensures that the output of agent closely follows the desired trajectory. The second term\(\lambda|u_i(k) - u_i(k-1)|^2\) where \(u_i(k)\) is the current control input, and \(u_i(k-1)\) is the previous control input, with \(\lambda\) serving as a weighting factor.
-
 Subtituting (\ref{model 2}) and (\ref{model 3}) into (\ref{model 9}), then differentiating (\ref{model 9}) with respect to \(u_i(k)\), and make it equal to zero, gives:
 
 \begin{equation}
@@ -222,7 +220,7 @@ where \(\rho\) \(\in\) (0,1) is a step-size constant, which is added to make (\r
 
 % y_i(k + 1) = f_i(y_i(k), u_i(k)), \quad i = 1, 2, \ldots, N
 
-To design the SMC for system, the sliding mode surface is first defined , guiding the behavior of system to ensure robust and accurate tracking of the desired trajectory.
+To design the SMC for system, the sliding mode surface is first defined, guiding the behavior of system to ensure robust and accurate tracking of the desired trajectory.
 
 The sliding mode surface is defined as:
 
@@ -231,9 +229,7 @@ The sliding mode surface is defined as:
     S_i(k+1) = S_i(k)+e_i(k+1)+\alpha e_i(k) 
 \end{equation}
 
-where \(S_i(k)\) represents the sliding surface at the current time step \(k\), \(\alpha\) is a positive constant.
-
-To ensure that the system trajectory is driven toward and remains on the sliding surface. The reaching law dictates how quickly the system state converges to the sliding surface and is given by:
+where \(\alpha\) is a positive constant, and  to ensure that the system trajectory is driven toward and remains on the sliding surface. The reaching law dictates how quickly the system state converges to the sliding surface and is given by:
 
 \begin{equation}
     \label{model eq:reaching_law}
@@ -244,18 +240,18 @@ In that equation, \(\varepsilon\) is a small positive constant that controls the
 
 By combining the sliding surface definition and the reaching law, derivating the control law that ensures the desired tracking performance while maintaining robustness.
 
-The final sliding mode control input \(\mathbf{u_i}_{\text{SM}}(k)\) is designed:
+The final sliding mode control input \(u_{i,\text{SMC}}(k)\) is designed:
 
 \begin{equation}
     \label{model eq:smc}
-    u_{i,\text{SMC}}(k) = u_i(k-1) + \frac{y_d(k+1)-y(k) + \alpha e_i(k) + \varepsilon T sign(k)}{\phi_i(k)}
+    u_{i,\text{SMC}}(k) = u_{i,\text{SMC}}(k) + \frac{y_d(k+1)-y(k) + \alpha e_i(k) + \varepsilon T sign(k)}{\phi_i(k)}
 \end{equation}
 
 To enhance the robutness and adaptibility of the control system, the MFASMC approach is employed.  the conrol input of the system is defined as:
 
 \begin{equation}
     \label{model eq:mfasmc}
-    u_i(k) = u_{i,\text{MFAC}}(k) + \Gamma_i \times u_{i,\text{SMC}}(k)
+    u_i(k) = u_{i,\text{MFAC}}(k) + \Gamma_i  u_{i,\text{SMC}}(k)
 \end{equation}
 
 where the parameter \(\Gamma\) is a gain factor that adjusts the contribution of the sliding mode control in the control effort and tunes the convergence rate.
@@ -267,7 +263,7 @@ The stability analysis is conducted in two primary steps. The first step focuses
 Step 1: Establishment of error bounds
 
 The error between the estimated and actual values of the system parameters, denote as \(\tilde{\phi_i}(k)
-= \phi_i(k) - \hat{\phi}_i(k)\), starting from the foundational equation derived from the compact dynamic linearization model in equation (\ref{model 2}) along with the PPD estimation equation (\ref{model eq:ppd_parameter}).To ensure the theorem's validity, the detailed proof that demonstrates the correctness of this error bound is provided.
+= \phi_i(k) - \hat{\phi}_i(k)\), starting from the foundational equation derived from the compact dynamic linearization model in equation (\ref{model 2}) along with the PPD estimation equation (\ref{model eq:ppd_parameter}). To ensure the theorem validity, the detailed proof that demonstrates the correctness of this error bound is provided.
 
 \begin{equation}
     \label{model 15}

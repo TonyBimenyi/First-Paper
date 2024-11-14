@@ -180,9 +180,6 @@ INPUT .\diagram.png
 INPUT .\diagram.png
 INPUT .\diagram.png
 INPUT .\diagram.png
-INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
-INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx7.tfm
-INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx5.tfm
 INPUT .\communication.png
 INPUT .\communication.png
 INPUT .\communication.png
@@ -227,10 +224,6 @@ INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr7t
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmri7t.vf
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
 INPUT mfasmc.aux
-INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
-INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
-INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx7.pfb
-INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx7.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
