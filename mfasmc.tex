@@ -668,18 +668,17 @@ Remark 5: This condition ensures that the tracking error decreases over time and
 
 
 
-Assumption 5: The communication graph \(\bar{\mathcal{G}}_l\) is a fixed strongly connected graph and at least one of the follower agents can access the leader trajectory for all \(l = 1,2,\dots,M\).
-
-By performing numerical simulations to illustrate the proposed speed tracking results for fixed communication topology. Consider the network comprising:
+% Assumption 5: The communication graph \(\bar{\mathcal{G}}_l\) is a fixed strongly connected graph and at least one of the follower agents can access the leader trajectory for all \(l = 1,2,\dots,M\).
+Consider the network comprising:
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{communication.png}
-    \caption{Communication topology among agents (DC Motors).}
+    \caption{Communication topology among agents.}
     \label{fig:communication1} % Label for referencing the figure
 \end{figure}
 
-To regulate the speed of DC motors accurately, the sophisticated data-driven binary containment control method employed, which requires precise measurement and processing of encoder data. This section describes the methodology and hardware used for speed regulation, including the calculation of motor speed using the quadriple-frequency data processing  method.
+This section describes the methodology and hardware used for speed regulation, including the calculation of motor speed using the quadriple-frequency data processing  method.
 
 \subsection{Hardware Implementation}
 
@@ -689,43 +688,45 @@ To enhance measurement accuracy, employing the quadruple-frequency data processi
 
 \subsection{Data Processing Method}
 
-The motor speed is measured in revolutions per second . The following equations are used to calculate the speed based on encoder measurements and sampling:
 
-1. Calculation of Rounds:
 
-   The total number of rounds that the encoder measures is given by:
-   \begin{equation}
-       \label{model 32}
-       T = N_e \times R_r \times 4
-   \end{equation}
-   where $N_e$ is the encoder line count equal to 13, and $R_r$ is the reduction ratio equal to 20. The factor of 4 accounts for the quadrature encoding, which effectively quadruples the resolution.
+% The motor speed is measured in revolutions per second . The following equations are used to calculate the speed based on encoder measurements and sampling:
 
-2. Calculation of Number of Rotations:
+% 1. Calculation of Rounds:
 
-   The number of rotations can be determined using:
-   \begin{equation}
-       \label{model 33}
-       N_r = \frac{m}{ T}
-   \end{equation}
-   where \( m \) is the total count from the encoder, and T is the number of encoder counts per revolution, derived from (\ref{model 32}).
+%    The total number of rounds that the encoder measures is given by:
+%    \begin{equation}
+%        \label{model 32}
+%        T = N_e \times R_r \times 4
+%    \end{equation}
+%    where $N_e$ is the encoder line count equal to 13, and $R_r$ is the reduction ratio equal to 20. The factor of 4 accounts for the quadrature encoding, which effectively quadruples the resolution.
 
-3. Calculation of Speed:
+% 2. Calculation of Number of Rotations:
 
-   The speed of the motor in resolution per second (\( r/s \)) is given by:
-   \begin{equation}
-       \label{model 34}
-       v = \frac{N_r}{t}
-   \end{equation}
-   where, \( v \) represents the speed, and \( t \) is the time interval it takes to complete those rotations.
+%    The number of rotations can be determined using:
+%    \begin{equation}
+%        \label{model 33}
+%        N_r = \frac{m}{ T}
+%    \end{equation}
+%    where \( m \) is the total count from the encoder, and T is the number of encoder counts per revolution, derived from (\ref{model 32}).
 
-4. Combining the Equations:
+% 3. Calculation of Speed:
 
-   Substituting (\ref{model 33}) into Equation (\ref{model 34}), we obtain:
-   \begin{equation}
-       \label{model 35}
-       v = \frac{m}{T \times t}
-   \end{equation}
-   The above final equation integrates encoder measurements and the sampling period to provide an accurate speed regulation.
+%    The speed of the motor in resolution per second (\( r/s \)) is given by:
+%    \begin{equation}
+%        \label{model 34}
+%        v = \frac{N_r}{t}
+%    \end{equation}
+%    where, \( v \) represents the speed, and \( t \) is the time interval it takes to complete those rotations.
+
+% 4. Combining the Equations:
+
+%    Substituting (\ref{model 33}) into Equation (\ref{model 34}), we obtain:
+%    \begin{equation}
+%        \label{model 35}
+%        v = \frac{m}{T \times t}
+%    \end{equation}
+%    The above final equation integrates encoder measurements and the sampling period to provide an accurate speed regulation.
 
 Each sampling interval triggers an interrupt where the controller samples the motor speed and updates control commands accordingly.
 
