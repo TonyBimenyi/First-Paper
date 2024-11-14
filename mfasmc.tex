@@ -148,7 +148,8 @@ Consider the following PPD criterion function, which is used to evaluate the per
 Assumption 4 : The PPD \(\phi_i(k) > \varsigma\) , \(i = 1,2,3, \dots, N\) holds for all \(k\), where \( \varsigma \) is an rondomly small positive constant without loss of generality, assume that \(\phi_i(k) > \varsigma\).
 
 
-Differentiating equation (\ref{model 4}) with respect to PPD parameter \(\phi_i(k)\) and make it equal to zero:
+Differentiating equation (\ref{model 4}) with respect to PPD parameter \(\phi_i(k)\) and make it equal to zero, the following update rule is proposed for the distributed MFAC algorithm:
+
 
 % \begin{equation}
 %     \label{model 5}
@@ -165,20 +166,24 @@ Differentiating equation (\ref{model 4}) with respect to PPD parameter \(\phi_i(
 
 % This equation provides a necessary condition for minimizing the criterion function \(J(\phi_i(k))\) and based on this optimization criterion,
 
-The following update rule is proposed for the distributed MFAC algorithm:
+
 
 \begin{equation}
     \label{model eq:ppd_parameter}
     \hat{\phi}_i(k) = \hat{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1) (\Delta y_i(k) - \hat{\phi}_i(k-1) \Delta u_i(k-1))}{\mu + \Delta u_i(k-1)}
 \end{equation}
 
-Here, $\eta$ is the learning rate that controls the step size of the update.
-Additionaly, to ensure stability and adherence to constraints, the following condition is applied and helps in maintaining the validity of the parameter and avoiding drastic changes. 
-
 \begin{equation}
-    \label{model 8}
-    \hat{\phi}_i(k) = \hat{\phi}_i(1), if |\hat{\phi}_i(k) | \leq \epsilon \ or \ sign(\hat{\phi}_i(k)) \neq  sign(\hat{\phi}_i(1))
+    \label{reset}
+    \hat{\phi}_i(k) = \hat{\phi}_i(1),  \text{    if}  |\hat{\phi}_i(k) | \leq \epsilon \ or \ sign(\hat{\phi}_i(k)) \neq  sign(\hat{\phi}_i(1))
 \end{equation}
+
+Here, $\eta$ is the learning rate that controls the step size of the update, $\mu > 0$ is a weight factor. $ \hat{\phi}_i(1) $ is the initial value of $ \hat{\phi}_i(k)$ and $ \hat{\phi}_i(k)$ is the estimated value of $ \phi_i(k)$.
+
+Remark 3: In the parameter estimation law (\ref{model eq:ppd_parameter}), $y_i(k) $ is used to estimate $\hat{\phi}_i(k)$. The abovementioned scheme ensures the convergence of (\ref{model eq:ppd_parameter}). Additionally, the reset algorithm (\ref{reset}) is introduced to enhance the ability of the parameter estimation algorithm to effectively track time-varying parameters.
+
+
+
 
 \subsection{Model Free Adaptiive Controller Design}
 
