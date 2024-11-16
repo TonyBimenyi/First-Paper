@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.13)  16 NOV 2024 19:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.13)  16 NOV 2024 20:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -381,20 +381,24 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package lettrine.sty Info: Targeted height = 22.74486pt
 (lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 22.74487pt (T);
+(lettrine.sty)             Lettrine height = 22.74487pt (M);
 (lettrine.sty)             reported on input line 48.
+Package lettrine.sty Info: Targeted height = 22.74486pt
+(lettrine.sty)             (for loversize=0, accent excluded),
+(lettrine.sty)             Lettrine height = 22.74487pt (T);
+(lettrine.sty)             reported on input line 50.
 
 
 [1{C:/Users/TonyBim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 85.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 87.
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -403,7 +407,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <diagram.png, id=19, 1998.46625pt x 1175.39125pt>
 File: diagram.png Graphic file (type png)
 <use diagram.png>
-Package pdftex.def Info: diagram.png  used on input line 145.
+Package pdftex.def Info: diagram.png  used on input line 147.
 (pdftex.def)             Requested size: 464.39685pt x 273.13216pt.
 
 
@@ -419,9 +423,9 @@ Package pdftex.def Info: diagram.png  used on input line 145.
 <communication.png, id=40, 928.46875pt x 603.75563pt>
 File: communication.png Graphic file (type png)
 <use communication.png>
-Package pdftex.def Info: communication.png  used on input line 676.
+Package pdftex.def Info: communication.png  used on input line 678.
 (pdftex.def)             Requested size: 309.60315pt x 201.33122pt.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 685.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 687.
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
@@ -430,7 +434,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 <Figure_2.png, id=45, 622.2447pt x 424.2249pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
-Package pdftex.def Info: Figure_2.png  used on input line 784.
+Package pdftex.def Info: Figure_2.png  used on input line 786.
 (pdftex.def)             Requested size: 309.60315pt x 211.08269pt.
 
 
@@ -438,12 +442,12 @@ Package pdftex.def Info: Figure_2.png  used on input line 784.
 <Figure_1.png, id=49, 1071.0414pt x 613.5723pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
-Package pdftex.def Info: Figure_1.png  used on input line 793.
+Package pdftex.def Info: Figure_1.png  used on input line 795.
 (pdftex.def)             Requested size: 464.39685pt x 266.04045pt.
 <Figure_4.png, id=50, 1086.2181pt x 574.5465pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
-Package pdftex.def Info: Figure_4.png  used on input line 802.
+Package pdftex.def Info: Figure_4.png  used on input line 804.
 (pdftex.def)             Requested size: 412.80157pt x 218.34747pt.
 
 
@@ -451,7 +455,7 @@ Package pdftex.def Info: Figure_4.png  used on input line 802.
 <Figure_5.png, id=56, 595.5048pt x 349.7868pt>
 File: Figure_5.png Graphic file (type png)
 <use Figure_5.png>
-Package pdftex.def Info: Figure_5.png  used on input line 809.
+Package pdftex.def Info: Figure_5.png  used on input line 811.
 (pdftex.def)             Requested size: 361.19843pt x 212.15807pt.
 
 
@@ -472,7 +476,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  79i,9n,93p,1452b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (12 pages, 784277 bytes).
+Output written on mfasmc.pdf (12 pages, 784427 bytes).
 PDF statistics:
  120 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
