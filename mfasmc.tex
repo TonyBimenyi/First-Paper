@@ -688,7 +688,7 @@ To enhance measurement accuracy, employing the quadruple-frequency data processi
 
 \subsection{Data Processing Method}
 
-The motor speed is measured in revolution per sencond $(r/s)$ based on encoder measurements and the sampling interval $t$. The total number of encoder counts per revolution is calculated as $ T=4N_{e}R{r} $, where $N_e$ is the encoder line count equal to 13, $R_r$ is the reduction ratio equal to 20 and the factor of 4 accounts for quadrature encoding. The number of rotations, $N_r$ is determined using $N_r=m/T$, with $m$ representing the total encoder count.
+The motor speed is measured in revolution per sencond $(r/s)$ based on encoder measurements and the sampling interval $t$. The total number of encoder counts per revolution is calculated as $ T=4N_{e}R{r} $, where $N_e$ is the encoder line count equal to 13, $R_r$ is the reduction ratio equal to 20 and the factor of 4 accounts for quadrature encoding. The number of rotations, $N_r$ is determined using $N_r = \frac{m}{T}$, with $m$ representing the total encoder count.
 
 The speed of the motor is then derived as:
 
