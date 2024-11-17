@@ -45,7 +45,7 @@ Model-free adaptive sliding mode control, quadruple-frequency data processing me
 
 \section{Introduction}\label{section:1}
 
-\lettrine{M}otivated by the coordinated behaviors observed in nature, such as bird flocking or herd migration, the distributed control multi-agent systems(MASs) has been studied with interest in recent years.[1 cc] Because of the distributed and flexible structure, the MASs based approaches have significant potential in addressing coordination challenges for complex systems [1 ap]. The control of DC motors is essential in numerious technological applications, with single DC motor serving as the foundation for the systems in various fields, including vehicle coorporation [2 cc], multi-robot systems[3 cc] and industrial machinery. 
+\lettrine{M}otivated by the coordinated behaviors observed in nature, such as bird flocking or herd migration, the distributed control multi-agent systems(MASs) has been studied with interest in recent years.[1 ccv] Because of the distributed and flexible structure, the MASs based approaches have significant potential in addressing coordination challenges for complex systems [1 ap]. The control of DC motors is essential in numerious technological applications, with single DC motor serving as the foundation for the systems in various fields, including vehicle coorporation [2 cc], multi-robot systems[3 cc] and industrial machinery. 
 
 It is challenging to establish an accurate mathematical model for the speed regulation of multi-DC motor systems due to their nonlinear, time-varying, and multi-variable conditions [10 cc]. Even if a relatively accurate mathematical models are developed, the associated control algorithms can become highly complex, so the model-based control approach is difficult to apply or extend to such systems. 
 
@@ -55,37 +55,17 @@ In [8 ap], a model-free adaptive control (MFAC) approach is presented for MASs, 
 
 Alternatively, the sliding mode control (SMC) adapts dynamically the system operation based on the current state of the system such as the error and its derivative, ensuring the system follows a predetermined sliding surface[27 cc]. Because the sliding surface can be designed and has the purpose to deal with the object parameters and disturbances, the SMC provides the fast response, insensitivity to parameter changes and disturbances, and simplicity in implementation. The above advantages make SMC widely used in control systems and one of main topic to focus in the ongoing research.[28 cc] - [30 cc]
 
-Inspired by the abovementioned considerations, this paper studies a novel model-free adaptive sliding mode control for speed regulation of multi-DC motors. The proposed control method consists to eliminates the need for precise system models by dynamically adjusting the control law[8 ap], where is particularly useful in systems where obtaining a detailed model is impractical or complex such as the tradition PID control method. 
+Inspired by the abovementioned considerations, this paper studies a novel model-free adaptive sliding mode control for speed regulation of multi-DC motors. The proposed control method consists to eliminates the need for precise system models by dynamically adjusting the control law[8 ap], where is particularly useful in systems where obtaining a detailed model is impractical or complex such as the tradition PID control method. Compared with other existing literature on multi-DC motors systems, the results of this paper have following distinct features.
 
-
-
-
-
-
- 
-\lettrine{T}he control of DC motors is essential in numerious industrial and technological applications, with single DC motors serving as the foundation for systems in robotics, autonomous vehicles, and industrial machinery. Traditional control methods, such as Proportional-Integral-Derivate and linear quadratic regulator, have been widely used to regulate DC motor speed due to the simplicity and effectiveness. However, the methods heavily rely on accurate mathematical models and often fail to handle complex dynamics and uncertainties, especialy in MASs involving multi-DC motors \cite{1}.
-
-In recent years, the focus has shifted towards the regulation of multi-DC motor systems, which are integral in multi-agent setups, such as satellite formations, distributed robotics, and automated vehicles \cite{2}, \cite{3}. Multi-DC motor systems introduce challenges related to communication, coordination, and sychronization of motor speeds, particularly in the presence of uncertainties, nonlinearities, and inter-agent interactions \cite{4},\cite{5}. Traditional methods struglle with such complexities, necessitating more advanced, robust control strategies \cite{7}.
-
-To address these limitations, this paper presents the novel control approach that combines MFAC with SMC. The MFAC eliminates for precise system models to adjust the control law dynamicaly \cite{8}. It is particularly usefuly in systems where obtaining a detailed model is impractical or impossible. However, while MFAC provides adaptability to changing system dynamics, it may not offer sufficient robutness against external disturbances and model uncertainties. This is where SMC, with the strong robutness and ability to handle system uncertainties, complements MFAC, providing a robust framework for speed regulation \cite{14}.
-
-The integration of MFAC and SMC forms the core of Model-Free Adaptive Sliding Mode Control system proposed in this paper. This hybrid strategy leverages the strengths of both methods: MFAC's data-driven adaptability and SMC's robutness, making it highly suitable for the speed regulation of multi-DC motors speed systems \cite{15},\cite{16}. The proposed system uses the fixed communication topology, represented by laplacian matrices, to handle the interconnections between multiple DC motors. Encoder counts provide feedback to ensure high-resolution performance monitoring, improving the precision and reliability of the control system.
-
-To further enhance the accuracy of the system, a quadruple-frequency data processing method is employed, refining the encoder measurements and ensuring consistent sampling periods. This method significantly improves the precision of the speed control, especialy in systems with nonlinear dynamics and varying motors characteristics.
-
-In summary, the contributions of this paper are as follows:
 \begin{enumerate}
-    \item The comprehensive review of traditional control methods for DC motors, highlighting the limitations in multi-agent systems (MASs).
+
+    \item The proposed method integrates encoder counts for accurate speed control in nonlinear, time-varying multi-DC motor systems. This innovation greatly enhances resolution and reliability, setting it apart from traditional methods.[34-40 ccv] 
     
-    \item The development of the hybrid Model-Free Adaptive Control (MFAC) and Sliding Mode Control (SMC) strategy for multi-DC motor systems, which offers enhanced adaptability and robustness.
+    \item The implementation of a fixed communication topology for agents interconnections, which makes the controller more applicable and flexible in real implementation.
     
-    \item The introduction of the fixed communication topology that uses Laplacian matrices to manage inter-agent dynamics effectively.
-    
-    \item Implementation of the quadruple-frequency data processing method to improve the precision of encoder measurements, ensuring more accurate speed regulation.
+    \item Utilizes the pseudo partial derivative (PPD) estimation mechanism within the MFASMC scheme, which provides strong robustness
+
 \end{enumerate}
-
-This approach is expected to outperform traditional control methods in terms of stability, adaptability, and robutness, with potential applications in autonomous vehicles, robotics, and industrial automation.
-
 
 
 
