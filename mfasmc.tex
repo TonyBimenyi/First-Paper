@@ -47,7 +47,19 @@ Model-free adaptive sliding mode control, quadruple-frequency data processing me
 
 \lettrine{M}otivated by the coordinated behaviors observed in nature, such as bird flocking or herd migration, the distributed control multi-agent systems(MASs) has been studied with interest in recent years.[1 cc] Because of the distributed and flexible structure, the MASs based approaches have significant potential in addressing coordination challenges for complex systems [1 ap]. The control of DC motors is essential in numerious technological applications, with single DC motor serving as the foundation for the systems in various fields, including vehicle coorporation [2 cc], multi-robot systems[3 cc] and industrial machinery. 
 
-It is challenging to establish an accurate mathematical model for the speed regulation of multi-DC motor systems due to their nonlinear, time-varying, and multi-variable conditions [10 cc]. Even if a relatively accurate mathematical models are developed, the associated control algorithms can become highly complex, so the model-based control approach is difficult to apply or extend to such systems.    
+It is challenging to establish an accurate mathematical model for the speed regulation of multi-DC motor systems due to their nonlinear, time-varying, and multi-variable conditions [10 cc]. Even if a relatively accurate mathematical models are developed, the associated control algorithms can become highly complex, so the model-based control approach is difficult to apply or extend to such systems. 
+
+Nowdays, data-driven methods have been used to control, decision making, planing, fault diagnosis, predicting, etc. In [21 cc]-[22 cc], a compact form dynamic linarization (CFDL) data-driven modeling method is proposed for nonlinear systems. So far, the CFDL data-driven modeling method has proven to be highly useful in various domains [23 cc]-[26 cc] with different characteristics such as simplicity and particularly, a small amount of calculation, ease of implementation, and strong robustness, making it highly effective for addressing unknown nonlinear time-varying systems[21]-[22].
+
+In [8 ap], a model-free adaptive control (MFAC) approach is presented for MASs, which uses input and output data to achieve consensus tracking trajectory.
+
+Alternatively, the sliding mode control (SMC) adapts dynamically the system operation based on the current state of the system such as the error and its derivative, ensuring the system follows a predetermined sliding surface[27 cc]. Because the sliding surface can be designed and has the purpose to deal with the object parameters and disturbances, the SMC provides the fast response, insensitivity to parameter changes and disturbances, and simplicity in implementation. The above advantages make SMC widely used in control systems and one of main topic to focus in the ongoing research.[28 cc] - [30 cc]
+
+
+
+
+
+
  
 \lettrine{T}he control of DC motors is essential in numerious industrial and technological applications, with single DC motors serving as the foundation for systems in robotics, autonomous vehicles, and industrial machinery. Traditional control methods, such as Proportional-Integral-Derivate and linear quadratic regulator, have been widely used to regulate DC motor speed due to the simplicity and effectiveness. However, the methods heavily rely on accurate mathematical models and often fail to handle complex dynamics and uncertainties, especialy in MASs involving multi-DC motors \cite{1}.
 
