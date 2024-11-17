@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.13)  17 NOV 2024 19:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.13)  17 NOV 2024 21:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -337,7 +337,11 @@ Package: xfp 2024-08-16 L3 Floating point unit
 Loading lettrine.cfg
 (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/lettrine\lettrine.cfg)
 \Llist@everypar=\toks33
-) (mfasmc.aux)
+) (mfasmc.aux
+
+LaTeX Warning: Label `32' multiply defined.
+
+)
 \openout1 = `mfasmc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
@@ -457,24 +461,30 @@ Package pdftex.def Info: Figure_5.png  used on input line 807.
 
 [11 <./Figure_4.png> <./Figure_5.png>]
 
-[12] (mfasmc.aux)
+[12]
+
+[13] (mfasmc.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 5732 strings out of 473682
- 99275 string characters out of 5718263
- 480840 words of memory out of 5000000
- 28742 multiletter control sequences out of 15000+600000
+ 5746 strings out of 473682
+ 99331 string characters out of 5718263
+ 482840 words of memory out of 5000000
+ 28756 multiletter control sequences out of 15000+600000
  594232 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,9n,93p,1452b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (12 pages, 784188 bytes).
+Output written on mfasmc.pdf (13 pages, 787573 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
+ 124 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

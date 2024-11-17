@@ -34,7 +34,7 @@
 % ---------------------------------------------------------------
 
 \begin{abstract}
-    This paper introduces the model free adaptive sliding mode control (MFASMC) system for multi-DC motors speed regulation problem. The control law is derived by incorporating sliding surface. Then, measurement accuracy enhanced through quadruple-frequency data processing method ensuring consistent sampling periods and accurate encoder readings for DC Motors. Furthermore, a nonlinear multi-agent system with fixed communication topology is implemented for improvement of regulation. The compact form dynamic linearization (CFDL) technique refines the control gains and adapts the system to varying conditions. Finally, simulation results are given to demonstrate effectiveness of the proposed design method.
+    This paper introduces the model free adaptive sliding mode control (MFASMC) system for multi-DC motors speed regulation problem. The control law is derived by incorporating sliding surface. Then, measurement accuracy enhanced through quadruple-frequency data processing method known as constant elapsed time (CET) method ensuring consistent sampling periods and accurate encoder readings for DC Motors. Furthermore, a nonlinear multi-agent system with fixed communication topology is implemented for improvement of regulation. The compact form dynamic linearization (CFDL) technique refines the control gains and adapts the system to varying conditions. Finally, simulation results are given to demonstrate effectiveness of the proposed design method.
 \end{abstract}
 
 \section*{Keywords}
@@ -45,21 +45,21 @@ Model-free adaptive sliding mode control, quadruple-frequency data processing me
 
 \section{Introduction}\label{section:1}
 
-\lettrine{M}otivated by the coordinated behaviors observed in nature, such as bird flocking or herd migration, the distributed control multi-agent systems(MASs) has been studied with interest in recent years.[1 ccv] Because of the distributed and flexible structure, the MASs based approaches have significant potential in addressing coordination challenges for complex systems [1 ap]. The control of DC motors is essential in numerious technological applications, with single DC motor serving as the foundation for the systems in various fields, including vehicle coorporation [2 cc], multi-robot systems[3 cc] and industrial machinery. 
+\lettrine{M}otivated by the coordinated behaviors observed in nature, such as bird flocking or herd migration, the distributed control multi-agent systems(MASs) has been studied with interest in recent years.\cite{1} Because of the distributed and flexible structure, the MASs based approaches have significant potential in addressing coordination challenges for complex systems\cite{2}. The control of DC motors is essential in numerious technological applications, with single DC motor serving as the foundation for the systems in various fields, including vehicle coorporation\cite{3}, multi-robot systems and industrial machinery\cite{4}. 
 
-It is challenging to establish an accurate mathematical model for the speed regulation of multi-DC motor systems due to their nonlinear, time-varying, and multi-variable conditions [10 cc]. Even if a relatively accurate mathematical models are developed, the associated control algorithms can become highly complex, so the model-based control approach is difficult to apply or extend to such systems. 
+It is challenging to establish an accurate mathematical model for the speed regulation of multi-DC motor systems due to their nonlinear, time-varying, and multi-variable conditions\cite{7}. Even if a relatively accurate mathematical models are developed, the associated control algorithms can become highly complex, so the model-based control approach is difficult to apply or extend to such systems. 
 
-Nowdays, data-driven methods have been used to control, decision making, planing, fault diagnosis, predicting, etc. In [21 cc]-[22 cc], a compact form dynamic linarization (CFDL) data-driven modeling method is proposed for nonlinear systems. So far, the CFDL data-driven modeling method has proven to be highly useful in various domains [23 cc]-[26 cc] with different characteristics such as simplicity and particularly, a small amount of calculation, ease of implementation, and strong robustness, making it highly effective for addressing unknown nonlinear time-varying systems[21]-[22].
+Nowdays, data-driven methods have been used to control, decision making, planing, fault diagnosis, predicting, etc. In\cite{15}-\cite{16}, a compact form dynamic linarization (CFDL) data-driven modeling method is proposed for nonlinear systems. So far, the CFDL data-driven modeling method has proven to be highly useful in various domains\cite{17}-\cite{20} with different characteristics such as simplicity and particularly, a small amount of calculation, ease of implementation, and strong robustness, making it highly effective for addressing unknown nonlinear time-varying systems.
 
-In [8 ap], a model-free adaptive control (MFAC) approach is presented for MASs, which uses input and output data to achieve consensus tracking trajectory.
+In\cite{21}, a model-free adaptive control (MFAC) approach is presented for MASs, which uses input and output data to achieve consensus tracking trajectory.
 
-Alternatively, the sliding mode control (SMC) adapts dynamically the system operation based on the current state of the system such as the error and its derivative, ensuring the system follows a predetermined sliding surface[27 cc]. Because the sliding surface can be designed and has the purpose to deal with the object parameters and disturbances, the SMC provides the fast response, insensitivity to parameter changes and disturbances, and simplicity in implementation. The above advantages make SMC widely used in control systems and one of main topic to focus in the ongoing research.[28 cc] - [30 cc]
+Alternatively, the sliding mode control (SMC) adapts dynamically the system operation based on the current state of the system such as the error and its derivative, ensuring the system follows a predetermined sliding surface\cite{22}. Because the sliding surface can be designed and has the purpose to deal with the object parameters and disturbances, the SMC provides the fast response, insensitivity to parameter changes and disturbances, and simplicity in implementation. The above advantages make SMC widely used in control systems and one of main topic to focus in the ongoing research.\cite{28}-\cite{30}
 
-Inspired by the abovementioned considerations, this paper studies a novel model-free adaptive sliding mode control for speed regulation of multi-DC motors. The proposed control method consists to eliminates the need for precise system models by dynamically adjusting the control law[8 ap], where is particularly useful in systems where obtaining a detailed model is impractical or complex such as the tradition PID control method. Compared with other existing literature on multi-DC motors systems, the results of this paper have following distinct features.
+Inspired by the abovementioned considerations, this paper studies a novel model-free adaptive sliding mode control for speed regulation of multi-DC motors. The proposed control method consists to eliminates the need for precise system models by dynamically adjusting the control law\cite{21}, where is particularly useful in systems where obtaining a detailed model is impractical or complex such as the tradition PID control method. Compared with other existing literature on multi-DC motors systems, the results of this paper have following distinct features.
 
 \begin{enumerate}
 
-    \item The proposed method integrates encoder counts for accurate speed control in nonlinear, time-varying multi-DC motor systems. This innovation greatly enhances resolution and reliability, setting it apart from traditional methods.[34-40 ccv] 
+    \item The proposed method integrates encoder counts based on the well known constant elapsed time (CET) method\cite{31} for accurate speed control in nonlinear, time-varying multi-DC motor systems. This innovation greatly enhances resolution and reliability, setting it apart from traditional methods.
     
     \item The implementation of a fixed communication topology for agents interconnections, which makes the controller more applicable and flexible in real implementation.
     
@@ -103,7 +103,7 @@ Assumption 1: The partial derivative of the nonlinear function \( f_i(\cdot) \) 
 
 Assumption 2: The model \( y_i(k + 1) = f_i(y_i(k), u_i(k)) \) is generalized lipschitz, meaning that if \( \Delta u_i(k) = u_i(k) - u_i(k - 1) \neq 0 \), then \( | \Delta y_i(k + 1) | \leq b |\Delta u_i(k)| \) holds for any \( k \), where \( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \) and \( b \) is a positive constant.
 
-Remark 1: The practical applicability of the aforementioned assumptions to nonlinear systems has been extensively discussed in \cite{1} and assumption 1 establishes a foundational criterion for controller design while, assumption 2 implies that the rate of change in the output of an agent in response to changes in the control input is bounded. This constraint ensures that, from an energetic perspective, finite changes in control input energy correspond to bounded changes in output energy rates, a crucial consideration for system stability and performance.
+Remark 1: The practical applicability of the aforementioned assumptions to nonlinear systems has been extensively discussed in \cite{2} and assumption 1 establishes a foundational criterion for controller design while, assumption 2 implies that the rate of change in the output of an agent in response to changes in the control input is bounded. This constraint ensures that, from an energetic perspective, finite changes in control input energy correspond to bounded changes in output energy rates, a crucial consideration for system stability and performance.
 
 \subsection{Linearization Technique}
 
@@ -834,69 +834,140 @@ In this paper, a novel model-free adaptive sliding mode control was presented fo
 % \end{thebibliography}
 
 \begin{thebibliography}{99}
-    
+
+
     \bibitem{1}
-    Bu, XH; Hou, ZS and Zhang, HW. Data-Driven Multiagent Systems Consensus Tracking Using Model Free Adaptive Control. \textit{IEEE Transactions on Neural Networks and Learning Systems}, May 2018, 29(5): 1514-1524.
+    Lewis, F.L.; Zhang, H.; Hengster-Movric, K.; Das, A. Cooperative Control of Multi-Agent Systems: Optimal and Adaptive Control
+    Design; Springer Science and Business Media: Berlin/Heidelberg, Germany, 2014.
     
     \bibitem{2}
-    Z. Hou and S. Jin, "A novel data-driven control approach for a class of SISO nonlinear systems," \textit{IEEE Transactions on Control Systems Technology}, vol. 19, no. 6, pp. 1549-1558, 2011.
-    
+    Bu, XH; Hou, ZS and Zhang, HW. Data-Driven Multiagent Systems Consensus Tracking Using Model Free Adaptive Control. \textit{IEEE Transactions on Neural Networks and Learning Systems}, May 2018, 29(5): 1514-1524.
+
     \bibitem{3}
-    R. Olfati-Saber, J. A. Fax, and R. M. Murray, "Consensus and cooperation in networked multi-agent systems," \textit{Proceedings of the IEEE}, vol. 95, no. 1, pp. 215-233, 2007.
-    
+    Ren, W. Consensus strategies for cooperative control of vehicle formations. IET Control Theory Appl. 2007, 1, 505–512.
+
     \bibitem{4}
-    L. Moreau, "Stability of multiagent systems with time-dependent
-    communication links," \textit{IEEE Trans. Autom. Control}, vol. 50, no. 2, pp. 169-182, Feb. 2005.
+    Dong, S.; Wang, C.; Wen, S.; Gang, F. A synchronization approach to trajectory tracking of multiple mobile robots while
+    maintaining time-varying formations. IEEE Trans. Robot. 2009, 25, 1074–1086.
     
     \bibitem{5}
-    W. Ren, R. W. Beard, and E. M. Atkins, "Information consensus in multivehicle cooperative control," \textit{IEEE Control Systems}, vol. 27, no. 2, pp. 71-82, 2007.
+    Z. Hou and S. Jin, "A novel data-driven control approach for a class of SISO nonlinear systems," \textit{IEEE Transactions on Control Systems Technology}, vol. 19, no. 6, pp. 1549-1558, 2011.
     
     \bibitem{6}
-    D. Xu, B. Jiang, and P. Shi, "Adaptive observer based data-driven control for nonlinear discrete-time processes," \textit{IEEE Transactions on Automation Science and Engineering}, vol. 11, no. 4, pp. 1037-1045, 2014.
+    R. Olfati-Saber, J. A. Fax, and R. M. Murray, "Consensus and cooperation in networked multi-agent systems," \textit{Proceedings of the IEEE}, vol. 95, no. 1, pp. 215-233, 2007.
     
     \bibitem{7}
-    R. Chi, Z. Hou, S. Jin, D. Wang, and C.-J. Chien, "Enhanced data-driven optimal terminal ILC using current iteration control knowledge," \textit{IEEE Transactions on Neural Networks and Learning Systems}, vol. 26, no. 11, pp. 2939-2948, 2015.
+    M. Sampei, T. Tamura, T. Kobayashi, and N. Shibui, “Arbitrary path
+    tracking control of articulated vehicles using nonlinear control theory,”
+    IEEE Trans. Control Syst. Technol., vol. 3, no. 1, pp. 125–131, Mar. 1995.
     
     \bibitem{8}
-    H. Zhang and F. L. Lewis, "Adaptive cooperative tracking control of higher-order nonlinear systems with unknown dynamics," \textit{Automatica}, vol. 48, no. 7, pp. 1432-1439, 2012.
+    W. Ren, R. W. Beard, and E. M. Atkins, "Information consensus in multivehicle cooperative control," \textit{IEEE Control Systems}, vol. 27, no. 2, pp. 71-82, 2007.
     
     \bibitem{9}
-    C. L. P. Chen, G.-X. Wen, Y.-J. Liu, and F.-Y. Wang, "Adaptive consensus control for a class of nonlinear multiagent time-delay systems using neural networks," \textit{IEEE Transactions on Neural Networks and Learning Systems}, vol. 25, no. 6, pp. 1217-1226, 2014.
+    D. Xu, B. Jiang, and P. Shi, "Adaptive observer based data-driven control for nonlinear discrete-time processes," \textit{IEEE Transactions on Automation Science and Engineering}, vol. 11, no. 4, pp. 1037-1045, 2014.
     
     \bibitem{10}
-    Zhou, N (Zhou, Ning); Deng, WX (Deng, Wenxiang); Yang, XW (Yang, Xiaowei); Yao, JY (Yao, Jianyong), "Continuous adaptive integral recursive terminal sliding mode control for DC motors," \textit{International Journal of Control}, vol. 96, no. 9, pp. 2190-2200, June 2022.
+    R. Chi, Z. Hou, S. Jin, D. Wang, and C.-J. Chien, "Enhanced data-driven optimal terminal ILC using current iteration control knowledge," \textit{IEEE Transactions on Neural Networks and Learning Systems}, vol. 26, no. 11, pp. 2939-2948, 2015.
     
     \bibitem{11}
-    X. Liu, J. Lam, W. Yu, and G. Chen, "Finite-time consensus of multiagent systems with a switching protocol," \emph{IEEE Transactions on Neural Networks and Learning Systems}, vol. 27, no. 4, pp. 853–862, Apr. 2016.
+    H. Zhang and F. L. Lewis, "Adaptive cooperative tracking control of higher-order nonlinear systems with unknown dynamics," \textit{Automatica}, vol. 48, no. 7, pp. 1432-1439, 2012.
     
     \bibitem{12}
-    Z.-G. Hou, L. Cheng, and M. Tan, "Decentralized robust adaptive control for the multiagent system consensus problem using neural networks," \emph{IEEE Transactions on Systems, Man, and Cybernetics, Part B: Cybernetics}, vol. 39, no. 3, pp. 636–647, Jun. 2009.
+    C. L. P. Chen, G.-X. Wen, Y.-J. Liu, and F.-Y. Wang, "Adaptive consensus control for a class of nonlinear multiagent time-delay systems using neural networks," \textit{IEEE Transactions on Neural Networks and Learning Systems}, vol. 25, no. 6, pp. 1217-1226, 2014.
     
     \bibitem{13}
-    Z. Hou and W. Huang, "The model-free learning adaptive control of a class of SISO nonlinear systems," \emph{Proceedings of the American Control Conference}, Albuquerque, NM, USA, Jun. 1997, pp. 343–344.
+    Zhou, N (Zhou, Ning); Deng, WX (Deng, Wenxiang); Yang, XW (Yang, Xiaowei); Yao, JY (Yao, Jianyong), "Continuous adaptive integral recursive terminal sliding mode control for DC motors," \textit{International Journal of Control}, vol. 96, no. 9, pp. 2190-2200, June 2022.
     
     \bibitem{14}
-    H. Su, G. Chen, X. Wang, and Z. Lin, "Adaptive second-order consensus of networked mobile agents with nonlinear dynamics," \emph{Automatica}, vol. 47, no. 2, pp. 368–375, Feb. 2011.
-    
+    X. Liu, J. Lam, W. Yu, and G. Chen, "Finite-time consensus of multiagent systems with a switching protocol," \emph{IEEE Transactions on Neural Networks and Learning Systems}, vol. 27, no. 4, pp. 853–862, Apr. 2016.
+
     \bibitem{15}
-    D. Xu, B. Jiang, and P. Shi, "Adaptive observer based data-driven control for nonlinear discrete-time processes," \emph{IEEE Transactions on Automation Science and Engineering}, vol. 11, no. 4, pp. 1037–1045, Oct. 2014.
-    
+    Z. Hou and Z. Wang, “From model-based control to data-driven control:
+    Survey, classification and perspective,” Inf. Sci., vol. 235, pp. 3–35, 2013.
+
     \bibitem{16}
-    H. Zhang and F. L. Lewis, "Adaptive cooperative tracking control of higher-order nonlinear systems with unknown dynamics," \emph{Automatica}, vol. 48, no. 7, pp. 1432–1439, Jul. 2012.
-    
+    Z. Hou and S. Jin, “A novel data-driven control approach for a class
+    of discrete-time nonlinear systems,” IEEE Trans. Control Syst. Technol.,
+    vol. 19, no. 6, pp. 1549–1558, Nov. 2011.
+
     \bibitem{17}
-    D. Meng, Y. Jia, J. Du, and J. Zhang, "On iterative learning algorithms for the formation control of nonlinear multi-agent systems," \emph{Automatica}, vol. 50, no. 1, pp. 291–295, Jan. 2014.
+    D. Xu, B. Jiang, and F. Liu, “An improved data driven MDEL free adaptive
+    constrained control for a solid oxide fuel cell,” IET Control Theory Appl.,
+    vol. 10, no. 12, pp. 1412–1419, 2016.
 
     \bibitem{18}
-    A. Sharafian, V. Bagheri, and W. Zhang, "RBF neural network sliding mode consensus of multi-agent systems with unknown dynamical model of leader-follower agents," \textit{International Journal of Control, Automation and Systems}, vol. 16, no. 2, pp. 749–758, 2018.
+    D. Xu, B. Jiang, and P. Shi, “A novel model free adaptive control design
+    for multivariable industrial processes,” IEEE Trans. Ind. Electron., vol. 61,
+    no. 11, pp. 6391–6398, Nov. 2014.
 
     \bibitem{19}
-    X. Ma, F. Sun, H. Li, and B. He, "Neural-network-based integral sliding-mode tracking control of second-order multi-agent systems with unmatched disturbances and completely unknown dynamics," \textit{International Journal of Control, Automation and Systems}, vol. 15, no. 4, pp. 1925–1935, 2017.
+    D. Xu, B. Jiang, and P. Shi, “Adaptive observer based data-driven control
+    for nonlinear discrete-time processes,” IEEE Trans. Autom. Sci. Eng.,
+    vol. 11, no. 4, pp. 1037–1045, Oct. 2014.
 
     \bibitem{20}
-    R. Rahmani, H. Toshani, and S. Mobayen, "Consensus tracking of multi-agent systems using constrained neural-optimiser-based sliding mode control," \textit{International Journal of Systems Science}, vol. 51, no. 14, pp. 2653–2674, 2020.
+    Z. Pang, G. Liu, D. Zhou, and D. Sun, “Data-based predictive control for networked nonlinear systems with network-induced delay and packet dropout,”IEEE Trans. Ind. Electron., vol. 63, no. 2, pp. 1249–1257,
+    Feb. 2016.
 
     \bibitem{21}
+    H. Zhang and F. L. Lewis, ”Adaptive cooperative tracking control of higher-order nonlinear systems with unknown dynamics,” Automatica, vol. 48, no.
+    7, pp. 1432-1439, 2012.
+
+    \bibitem{22}
+    J. Liu, S. Vazquez, L. Wu, A. Marque, H. Gao, and L. G. Franquelo
+    et al., “Extended state observer based sliding mode control for three-phase
+    power converters,” IEEE Trans. Ind. Electron., vol. 64, no. 1, pp. 22–31,
+    Jan. 2017.
+    
+    \bibitem{23}
+    Z.-G. Hou, L. Cheng, and M. Tan, "Decentralized robust adaptive control for the multiagent system consensus problem using neural networks," \emph{IEEE Transactions on Systems, Man, and Cybernetics, Part B: Cybernetics}, vol. 39, no. 3, pp. 636–647, Jun. 2009.
+    
+    \bibitem{24}
+    Z. Hou and W. Huang, "The model-free learning adaptive control of a class of SISO nonlinear systems," \emph{Proceedings of the American Control Conference}, Albuquerque, NM, USA, Jun. 1997, pp. 343–344.
+    
+    \bibitem{25}
+    H. Su, G. Chen, X. Wang, and Z. Lin, "Adaptive second-order consensus of networked mobile agents with nonlinear dynamics," \emph{Automatica}, vol. 47, no. 2, pp. 368–375, Feb. 2011.
+    
+    \bibitem{26}
+    D. Xu, B. Jiang, and P. Shi, "Adaptive observer based data-driven control for nonlinear discrete-time processes," \emph{IEEE Transactions on Automation Science and Engineering}, vol. 11, no. 4, pp. 1037–1045, Oct. 2014.
+    
+    \bibitem{27}
+    H. Zhang and F. L. Lewis, "Adaptive cooperative tracking control of higher-order nonlinear systems with unknown dynamics," \emph{Automatica}, vol. 48, no. 7, pp. 1432–1439, Jul. 2012.
+    
+    \bibitem{28}
+    Z. Wu, X. Wang, and X. Zhao, “Backstepping terminal sliding mode
+    control of DFIG for maximal wind energy captured,” Int. J. Innovative
+    Comput. Inf. Control, vol. 12, no. 5, pp. 1565–1579, 2016.
+
+    \bibitem{29}
+    X. Yan and C. Edwards, “Adaptive sliding-mode-observer-based fault
+    reconstruction for nonlinear systems with parametric uncertainties,” IEEE
+    Trans. Ind. Electron., vol. 55, no. 11, pp. 4029–4036, Nov. 2008.
+
+    \bibitem{30}
+    J. Liu, W. Luo, X. Yang, and L. Wu, “Robust model-based fault diagnosis
+    for PEM fuel cell air-feed system,” IEEE Trans. Ind. Electron., vol. 63,
+    no. 5, pp. 3261–3270, May 2016.
+
+    \bibitem{31}
+    A. Anuchin, A. Dianov and F. Briz, "Synchronous Constant Elapsed Time Speed Estimation Using Incremental Encoders," in IEEE/ASME Transactions on Mechatronics, vol. 24, no. 4, pp. 1893-1901, Aug. 2019, doi: 10.1109/TMECH.2019.2928950.
+
+    \bibitem{32}
+    S. Qin and T. Badgwell, “A survey of industrial model predictive control
+    technology,” Control Eng. Pract., vol. 11, pp. 733–764, 2003.
+
+    \bibitem{32}
+    A. Sharafian, V. Bagheri, and W. Zhang, "RBF neural network sliding mode consensus of multi-agent systems with unknown dynamical model of leader-follower agents," \textit{International Journal of Control, Automation and Systems}, vol. 16, no. 2, pp. 749–758, 2018.
+
+    \bibitem{33}
+    X. Ma, F. Sun, H. Li, and B. He, "Neural-network-based integral sliding-mode tracking control of second-order multi-agent systems with unmatched disturbances and completely unknown dynamics," \textit{International Journal of Control, Automation and Systems}, vol. 15, no. 4, pp. 1925–1935, 2017.
+    
+
+    \bibitem{34}
+    R. Rahmani, H. Toshani, and S. Mobayen, "Consensus tracking of multi-agent systems using constrained neural-optimiser-based sliding mode control," \textit{International Journal of Systems Science}, vol. 51, no. 14, pp. 2653–2674, 2020.
+
+    \bibitem{35}
     Z. Peng, G. Wen, A. Rahmani, and Y. Yongguang, "Distributed consensus-based formation control for multiple nonholonomic mobile robots with a specified reference trajectory," \textit{International Journal of Systems Science}, vol. 46, no. 8, pp. 1447–1457, 2015.
     
     \end{thebibliography}
