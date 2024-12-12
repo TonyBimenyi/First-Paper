@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.13)  12 DEC 2024 21:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.13)  12 DEC 2024 21:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -404,10 +404,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 [2]
-<diagram.png, id=19, 1998.46625pt x 1175.39125pt>
+<diagram.png, id=20, 1998.46625pt x 1175.39125pt>
 File: diagram.png Graphic file (type png)
 <use diagram.png>
-Package pdftex.def Info: diagram.png  used on input line 141.
+Package pdftex.def Info: diagram.png  used on input line 140.
 (pdftex.def)             Requested size: 464.39685pt x 273.13216pt.
 
 
@@ -423,9 +423,9 @@ Package pdftex.def Info: diagram.png  used on input line 141.
 <communication.png, id=40, 911.405pt x 603.75563pt>
 File: communication.png Graphic file (type png)
 <use communication.png>
-Package pdftex.def Info: communication.png  used on input line 672.
+Package pdftex.def Info: communication.png  used on input line 671.
 (pdftex.def)             Requested size: 309.60315pt x 205.09915pt.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 681.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 680.
  (C:\Users\TonyBim\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
@@ -434,7 +434,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 <Figure_2.png, id=45, 622.2447pt x 424.2249pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
-Package pdftex.def Info: Figure_2.png  used on input line 780.
+Package pdftex.def Info: Figure_2.png  used on input line 779.
 (pdftex.def)             Requested size: 309.60315pt x 211.08269pt.
 
 
@@ -442,12 +442,12 @@ Package pdftex.def Info: Figure_2.png  used on input line 780.
 <Figure_1.png, id=49, 997.326pt x 615.7404pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
-Package pdftex.def Info: Figure_1.png  used on input line 789.
+Package pdftex.def Info: Figure_1.png  used on input line 788.
 (pdftex.def)             Requested size: 464.39685pt x 286.71094pt.
 <Figure_4.png, id=50, 1263.2796pt x 605.6226pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
-Package pdftex.def Info: Figure_4.png  used on input line 798.
+Package pdftex.def Info: Figure_4.png  used on input line 797.
 (pdftex.def)             Requested size: 412.80157pt x 197.89697pt.
 
 
@@ -455,7 +455,7 @@ Package pdftex.def Info: Figure_4.png  used on input line 798.
 <Figure_5.png, id=56, 595.5048pt x 349.7868pt>
 File: Figure_5.png Graphic file (type png)
 <use Figure_5.png>
-Package pdftex.def Info: Figure_5.png  used on input line 805.
+Package pdftex.def Info: Figure_5.png  used on input line 804.
 (pdftex.def)             Requested size: 361.19843pt x 212.15807pt.
 
 
@@ -480,9 +480,9 @@ Here is how much of TeX's memory you used:
  28756 multiletter control sequences out of 15000+600000
  594232 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,9n,93p,1391b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,9n,93p,1527b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/TonyBim/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (13 pages, 767096 bytes).
+Output written on mfasmc.pdf (13 pages, 766255 bytes).
 PDF statistics:
  124 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
