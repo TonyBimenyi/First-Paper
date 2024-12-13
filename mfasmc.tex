@@ -34,7 +34,7 @@
 % ---------------------------------------------------------------
 
 \begin{abstract}
-    In this paper, the model-free adaptive sliding mode control (MFASMC) approach is adopted to investigate the consensus tracking problem of nonlinear multi-agent systems. Firstly, the system equivalent data model is constructed using the compact-form dynamic linearization (CFDL). Secondly, a distributed model-free adaptice control algorthm is designed to ensure that all agents can track the desired trajectory. Then, the new sliding function is proposed to ensure that the error converges to zero within a finite time. Subsequently, the model-free adaptive sliding mode control scheme is presented to realize that consensus tracking can be achieved under fixed topology using I/O data of each agent. Finally, simulation verification and experimental validation on multi-DC motors system are conducted to demonstrate effectiveness of the proposed design method.
+    In this paper, the model-free adaptive sliding mode control (MFASMC) approach is proposed to investigate the consensus problem of nonlinear multi-agent systems. Firstly, the equivalent data model is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, the new sliding function is proposed to ensure that the distributed measurement error remains bounded. Subsequently, the model-free adaptive sliding mode control scheme is presented to realize that consensus tracking can be achieved under fixed topology using I/O data of each agent. Finally, simulation verification and experimental validation on multi-DC motors system are conducted to demonstrate effectiveness of the proposed design method.
 \end{abstract}
 
 \section*{Keywords}
@@ -76,11 +76,11 @@ Inspired by the abovementioned considerations, this paper studies a novel model-
 \section{Preliminaries and problem formulation}\label{section:2}
 \subsection{Preliminaries}
 
-This paper focuses on multi-agents systems composed of one leader and $ X $ followers, whose dynamics are heterogeneous and nonlinear. Discribing the information exchange between agents, a signed graph $ \mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathcal{A}) $ is taken in consideration, where $ \mathcal{A} = [a_{ij}] \in \mathbb{R}^{N \times N} $ represents a weighted adjacency matrix with -1, 0 and 1 elements, and $ \mathcal{V}=[v_1, v_2,\dots,v_N] $ is the set of vertices, $ \mathcal{E} = [(v_j,v_i)|v_i \in \mathcal{V} ] \subseteq \mathcal{V} \times \mathcal{V}$ is the set of edges.  Moreover, let $ \mathcal{N}_i = {j \in \mathcal{V} |(i,j) \in \mathcal{E}} $ indicates the index set of neighbors of $ v_i $ where $ a_{i,j} \neq 0 $, if $ (v_j, v_i) \in \mathcal{E} $; $ a_{ij} = 0 $. We assume that no self-loop can be allowed in this article, meaning that, $(i, i) \in \mathcal{E}$ for any $ i \in \mathcal{V} $, $ a_{ii}=0$. Furthermore, a degree matrix is denoted by $ K $, where $ K = diag(k_1,\dots,k_N)$. If $ k_i > 0$, the agent $ i $ can directly obtain the information from the leader. The Laplacian matrix $ L $ of $ \mathcal{G} $ can be given as $ L = (\mathcal{D}-\mathcal{A})$, where $\mathcal{D} = diag({d_i})^N_{i=1}$, and $d_i=\sum_{j \in N_i} |a_{i j}|$ denotes the in-degree matrix. If there exists a path between any pair of two vertices, the graph is strongly connected.
+This paper focuses on multi-agents systems composed of one leader and $ N $ followers, whose dynamics are heterogeneous and nonlinear. Discribing the information exchange between agents, a signed graph $ \mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathcal{A}) $ is taken in consideration, where $ \mathcal{A} = [a_{ij}] \in \mathbb{R}^{N \times N} $ represents a weighted adjacency matrix with -1, 0 and 1 elements, and $ \mathcal{V}=[v_1, v_2,\dots,v_N] $ is the set of vertices, $ \mathcal{E} = [(v_j,v_i)|v_i \in \mathcal{V} ] \subseteq \mathcal{V} \times \mathcal{V}$ is the set of edges.  Moreover, let $ \mathcal{N}_i = {j \in \mathcal{V} |(i,j) \in \mathcal{E}} $ indicates the index set of neighbors of $ v_i $ where $ a_{i,j} \neq 0 $, if $ (v_j, v_i) \in \mathcal{E} $; $ a_{ij} = 0 $. We assume that no self-loop can be allowed in this article, meaning that, $(i, i) \in \mathcal{E}$ for any $ i \in \mathcal{V} $, $ a_{ii}=0$. Furthermore, a degree matrix is denoted by $ K $, where $ K = diag(k_1,\dots,k_N)$. If $ k_i > 0$, the agent $ i $ can directly obtain the information from the leader. The Laplacian matrix $ L $ of $ \mathcal{G} $ can be given as $ L = (\mathcal{D}-\mathcal{A})$, where $\mathcal{D} = diag({d_i})^N_{i=1}$, and $d_i=\sum_{j \in N_i} |a_{i j}|$ denotes the in-degree matrix. If there exists a path between any pair of two vertices, the graph is strongly connected.
 
+\subsection{Problem Formulation}
 
-
-In this research, the speed regulation problem of DC motors is frequently examined under the assumption that all motors demonstrate identical dynamic characteristics. However, heterogeneity remains a fundamental characteristic of systems incorporating multi-DC motors. Even when motors are of the same type and share similar structural features, the parameters can never be exactly the same. This inherent variability complicates coordinated speed regulation across heterogeneous motors. Consider the multi-DC motor system consisting of $N$ motors, where the interaction topology is represented by $G$. Assume that each motor $i$ follows the nonlinear dynamics:
+Consider the nonlinear multi-agent systems composed of $ N $ agents, the following dynamic of each agent is given by:
 
 \begin{equation}
     \label{model 1}
@@ -88,25 +88,21 @@ In this research, the speed regulation problem of DC motors is frequently examin
 \end{equation}
 
 % \noindent 
-where $y_i(k) \in \mathbb{R}$ represents the output (speed of the DC motor), $u_i(k) \in \mathbb{R}$ is the control input (the voltage), and $f_i(\cdot)$ is an unknown nonlinear function, respectively.
-
-
-
-In this scenario, multiple agents aim to track the consensus trajectory \(y_d(k)\), which is exclusively accessible to the subset of agents. This trsajectory is assumed to be generated by a virtual leader designated as vertex 0. To model this interaction, the construction of the direct graph \( G' = (V \cup \{0\}, E', A') \) where \( V \) denotes the set of agents, \( E' \) represents the edge set defining connections from agents to the virtual leader, and \( A' \) constitute a weighted adjacency matrix detailing the above-mentioned connections.
-
-The following assumptions for nonlinear dynamics are given to facilitate our analysis.
+where $u_i(k) \in \mathbb{R}$ and $y_i(k) \in \mathbb{R}$ are the system input signal and output signal at instant $ k $, respectively, and $f_i(\cdot)$ is an unknown nonlinear function.
 
 Assumption 1: The partial derivative of the nonlinear function \( f_i(\cdot) \) with respect to \( u_i(k) \) is continuous.
 
-Assumption 2: The model \( y_i(k + 1) = f_i(y_i(k), u_i(k)) \) is generalized lipschitz, meaning that if \( \Delta u_i(k) = u_i(k) - u_i(k - 1) \neq 0 \), then \( | \Delta y_i(k + 1) | \leq b |\Delta u_i(k)| \) holds for any \( k \), where \( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \) and \( b \) is a positive constant.
+Assumption 2: The system model (\ref{model 1}) is generalized Lipschitz, meaning that if \( \Delta u_i(k) = u_i(k) - u_i(k - 1) \neq 0 \), then \( | \Delta y_i(k + 1) | \leq b |\Delta u_i(k)| \) holds for any \( k \), where \( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \) and \( b \) is a positive constant.
 
-Remark 1: The practical applicability of the aforementioned assumptions to nonlinear systems has been extensively discussed in \cite{2} and assumption 1 establishes a foundational criterion for controller design while, assumption 2 implies that the rate of change in the output of an agent in response to changes in the control input is bounded. This constraint ensures that, from an energetic perspective, finite changes in control input energy correspond to bounded changes in output energy rates, a crucial consideration for system stability and performance.
+
+
+Remark 1: The practical applicability of the aforementioned assumptions to nonlinear systems has been discussed in \cite{2} and assumption 1 establishes a general condition for controller design while, assumption 2 implies that the rate of the control input is bounded. This constraint ensures that, from an energetic perspective, finite changes in control input energy correspond to bounded changes in output energy rates, a crucial consideration for system stability and performance.
 
 \subsection{Linearization Technique}
 
-Under Assumptions 1 and 2, the unknown agent dynamics (\ref{model 1}) can be transformed into the following dynamic linearization model and then the distributed control law will be designed based on it:
+% Under Assumptions 1 and 2, the unknown agent dynamics (\ref{model 1}) can be transformed into the following dynamic linearization model and then the distributed control law will be designed based on it:
 
-Lemma 1: Consider follower agents with dynamics (\ref{model 1}) satisfying Assumptions 1 and 2. If $ ||\Delta u_i(k) || \neq 0 $ holds, then agent (\ref{model 1}) can be transformed into a compact form dynamic linearization(CFDL) data model:
+Lemma 1 \cite{8}: Consider follower agents with dynamic (\ref{model 1}) satisfying above two assumptions. If $ ||\Delta u_i(k) || \neq 0 $ holds, then system (\ref{model 1}) can be transformed into a compact form dynamic linearization(CFDL) data model as follows:
 
 
 \begin{equation}
@@ -116,9 +112,9 @@ Lemma 1: Consider follower agents with dynamics (\ref{model 1}) satisfying Assum
 
 where \( | \phi_i(k) | \leq b\) with the variable \(\phi_i(k)\) named PPD, which is bounded for any time instant k.
 
-Remark 2: By virtual of CFDL technique, the unknown nonlinear agent dynamics (\ref{model 1}) are now transformed into an incremental form data description (\ref{model 2}) in every operation point with a bounded PPD. In Implementation, with good selected algorithms, PPD can be estimated by using the I/O data of the agents and the estimated value can also be proved to be bounded. Here, the CFDL data model is derived under the condition $ ||\Delta u_i(k) || \neq 0 $. In fact, if the case $ ||\Delta u_i(k) || = 0 $ happens at the some sampling time, a new CFDL data model can also be established after shifting $ \gamma_i \varepsilon \mathbb{Z}^+ $  time steps until $ u_i(k+\gamma_i) \neq u_i(k)$ holds. In the next section, the data model (\ref{model 2}) will be used to design the distributed control law and derive the stability analysis
+Remark 2: By application of CFDL technique, the unknown nonlinear system dynamic (\ref{model 1}) are now transformed into a time-varying incremental form data (\ref{model 2}) in every operation point with a bounded pseudo-partial derivative. 
  
-Let denote the following distributed measurement output of \(\xi_i(k)\) for $i$th agents as follow:
+Let denote the following distributed measurement output of \(\xi_i(k)\) for $N$ agents as follow:
 
 \begin{equation}
     \label{model 3}
@@ -126,8 +122,6 @@ Let denote the following distributed measurement output of \(\xi_i(k)\) for $i$t
 \end{equation}
 
  
-
-Assumption 3: The communication graph $\bar{G}$ is fixed and strognly connected, with at least one follower agent able to access the trajectory of the leader.
 
 
 \section{Main Results}
@@ -242,7 +236,7 @@ The final sliding mode control input \(u_{i,\text{SMC}}(k)\) is designed:
     u_{i,\text{SMC}}(k) = u_{i,\text{SMC}}(k) + \frac{y_d(k+1)-y(k) + \alpha e_i(k) + \varepsilon T sign(k)}{\phi_i(k)}
 \end{equation}
 
-To enhance the robutness and adaptibility of the control system, the MFASMC approach is employed.  the conrol input of the system is defined as:
+To enhance the  adaptibility of the control system, the MFASMC approach is employed.  the conrol input of the system is defined as:
 
 \begin{equation}
     \label{model eq:mfasmc}
