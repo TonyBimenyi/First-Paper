@@ -80,7 +80,7 @@ The directed graph $ \mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathcal{A}) $ is 
 
 \subsection{Problem Formulation}
 
-Consider the nonlinear multi-agent systems composed of $ N $ agents, the following dynamic of each agent is given by:
+Consider the nonlinear multi-agent systems composed of $ N $ agents:
 
 \begin{equation}
     \label{model 1}
@@ -88,11 +88,11 @@ Consider the nonlinear multi-agent systems composed of $ N $ agents, the followi
 \end{equation}
 
 % \noindent 
-where $u_i(k) \in \mathbb{R}$ and $y_i(k) \in \mathbb{R}$ are the system input signal and output signal at instant $ k $, respectively, and $f_i(\cdot)$ is an unknown nonlinear function.
+where $u_i(k) \in \mathbb{R}$ and $y_i(k) \in \mathbb{R}$ are the system input signal and output signal at instant $ k $, respectively, while $f_i(\cdot)$ is an unknown nonlinear function.
 
-Assumption 1: The partial derivative of the nonlinear function \( f_i(\cdot) \) with respect to \( u_i(k) \) is continuous.
+Assumption 1: The partial derivative of \( f_i(\cdot) \) with respect to \( u_i(k) \) is continuous.
 
-Assumption 2: The system model (\ref{model 1}) is generalized Lipschitz, meaning that if \( \Delta u_i(k) = u_i(k) - u_i(k - 1) \neq 0 \), then \( | \Delta y_i(k + 1) | \leq b |\Delta u_i(k)| \) holds for any \( k \), where \( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \) and \( b \) is a positive constant.
+Assumption 2: The system (\ref{model 1}) is generalized Lipschitz, meaning that if \( \Delta u_i(k) = u_i(k) - u_i(k - 1) \neq 0 \), then \( | \Delta y_i(k + 1) | \leq b |\Delta u_i(k)| \) holds for any \( k \), where \( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \) and \( b \) is a positive constant.
 
 
 

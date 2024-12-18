@@ -1,0 +1,22 @@
+	Firstly, it is undeniable that the revised paper has made certain progress. However, it is still far from being qualified. Meanwhile, the revised article has not met my expectations. 
+
+	I have already revised your paper three times, this is the fourth time. The issues raised during the first revision were not adequately addressed and persisted in the second revision. Similarly, the problems pointed out during the second revision were not satisfactorily resolved and remained in the third revision. I have invested considerable effort in each revision, hoping to see an improvement in the quality of your paper. At least, some basic and simple errors should not have occurred. However, that is not the case. Therefore, I have to remind you of this. 
+
+	In the revised Part II, some issues that have been emphasized many times still exist. For example: 
+	1. Say only one thing in one sentence, don't use too many 'and' in one sentence. 
+	2. Do not use the first person perspective. Avoid incorporating personal subjective thoughts. 
+	3. The use of 'a' is too frequent.
+
+	Additionally, the presence of some detail errors makes me think that you haven't carefully reviewed your article. For instance:
+	1. Spelling error: 'Discribing' should be 'Describing'.
+	2. Formatting error: A missing space before 'CFDL'.
+	3. Logical error: Description of distributed measurement output, etc.
+	4. Grammar error:‘ The 'following' and 'as following' coexist in one sentence. 
+
+	In the process of revision, there are several key points that you must understand:
+	1. Modifying is not simply correcting the issues marked. For example, I remind you that 'we' cannot be used here. What you need to do is not just delete this' we '. Instead, check the entire text and delete all 'we'. Meanwhile, this error will never occur in every subsequent revision and writing. If you can do this, your writing experience will be improved. 
+	2. If you're unsure how to write, you can refer to existing literature. But it doesn't mean you can copy it verbatim. At least, you need to modify the word order, rewrite the original sentence, and replace or delete some vocabulary. At the same time, it is not enough to only refer to 1-2 references. If you don't pay attention to this when writing, you will go crazy in the plagiarism check later on. Because you find that the entire text is mostly repetitive, which is not much different from rewriting the entire text. 
+	3. Every sentence you write needs to be checked for grammar! Use Grammarly, chatgpt, or other software you know. 
+	4. Don't use professional vocabulary from existing articles arbitrarily, the only thing you can learn from is sentence structure. Before using it, you must be clear whether this word is suitable for your article. For example, the "robustness" that appears when modifying the abstract, and the norm symbol in Lemma 1. 
+
+	In every version you send me afterwards, I hope to see you make more serious revisions. At least, the emphasized detail errors mentioned above should not reappear after your thorough check. Remember, writing quality is as important as writing speed. Looking forward to seeing your progress, keep going. 
