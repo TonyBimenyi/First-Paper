@@ -97,7 +97,7 @@ Assumption 2: The system (\ref{model 1}) is generalized Lipschitz, meaning that 
 
 % Under Assumptions 1 and 2, the unknown agent dynamics (\ref{model 1}) can be transformed into the following dynamic linearization model and then the distributed control law will be designed based on it:
 
-Remark 1: Assumption 1 provides a general condition for controller design, while assumption 2 ensures that the bounded changes in control input result in the bounded changes in output energy rates, supporting system stability and performance.
+Remark 1:The above assumptions are general and aligned with reality. Assumption 1 specifies the constraints of the controller. Assumption 2 ensures that changes in the input rate limited, thereby restricting the rate change in the output, which is satisfied in real industrial systems.
 
 Lemma 1\cite{8}: Consider agents with dynamics described by (\ref{model 1}) satisfying above two assumptions. If $ | \Delta u_i(k) | \neq 0 $ holds, then the system (\ref{model 1}) can be transformed into the compact form dynamic linearization (CFDL) data model as follows:
 
@@ -112,14 +112,14 @@ where \( | \phi_i(k) | \leq b\) with the variable \(\phi_i(k)\) named PPD.
 
 Remark 2: The CFDL technique does not contain any prior knowledge about the system dynamic model. Moreover, the dynamic behavior of time-varying PPD can be highly complex and more challenging to verify. Therefore a data-driven approach to study numerical characteristics becomes the preferred solution.
  
-Let denote the following distributed measurement error of \(\xi_i(k)\) for $N$ agents:
+The distributed measurement error of \(\xi_i(k)\) for $N$ agents is established as:
 
 \begin{equation}
     \label{model 3}
     \xi_i(k) = \sum_{j \in N_i} a_{ij}( y_j(k)-y_i(k)) + d_i(y_d(k) - y_i(k ))
 \end{equation}
 
-If the agent $ i $ can receive data from the leader, then $d_i=1$; otherwise, $d_i=0$. Additionally, $y_d(k)$ represents the reference trajectory. 
+if the agent $ i $ can receive data from the leader, then $d_i=1$; otherwise, $d_i=0$. Additionally, $y_d(k)$ represents the reference trajectory. 
 
  
 
