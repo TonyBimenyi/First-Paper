@@ -34,7 +34,7 @@
 % ---------------------------------------------------------------
 
 \begin{abstract}
-    This paper proposes the distributed data-driven sliding mode control approach to address the consensus problem for a network of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, the novel sliding surface is employed to enhance  and ensuring that the distributed measurement error remains bounded by incorporating a positive constant. Subsequently, to achieve consensus tracking, a distributed model-free adaptive sliding mode controller scheme is then developed. This approach relies solely on input-output data of each agent, eliminating the need for explicit system models. Finally, the effectiveness of the proposed control scheme is verified through multi-DC motors.
+    This paper proposes the distributed data-driven sliding mode control approach to address the consensus problem in the network of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, the novel sliding surface is employed to enhance performance and ensure that the distributed measurement error remains bounded by incorporating the positive constant. Subsequently, to achieve consensus tracking, a distributed model-free adaptive sliding mode controller scheme is then developed. This approach relies solely on input-output data of each agent, eliminating the need for explicit system models. Finally, the effectiveness of the proposed control scheme is verified through multi-DC motors.
 \end{abstract}
 
 \section*{Keywords}
@@ -756,7 +756,8 @@ As illustrated in Fig. 2, the virtual leader is designated as vertex 0. It can b
 
 with \( D = \text{diag}(1, 0, 1, 0) \). We consider the following two different desired trajectories.
 
-\subsection{Time Invariable Desired Trajectory}
+
+
 
 The expression for \( y_d(k) \) is:
 
@@ -800,6 +801,14 @@ Fig.\ref{fig:figure_3} presents a detailed analysis of the tracking performance 
 \end{figure}
 
 Fig. \ref{fig:figure_4} demonstrates that all agents successfully track the time-invariable desired trajectory, further validating the robustness of the proposed control strategy. Meanwhile, Fig. \ref{fig:figure_5} shows the PPD estimation for all agents, highlighting the accuracy of the adaptive estimation process within the control framework.
+
+\subsection{Physical verification}
+
+The physical verification was conducted using multi-DC motors system. The system is composed with 3 DC-motors with a STM32F407ZET6 board and connected through 2 motor drivers. The reference trajectory is :
+
+
+
+The following figures show the output results of the system.
 
 Overall, the simulation results suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While there may be initial transient error, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
 
