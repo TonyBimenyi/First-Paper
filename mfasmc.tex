@@ -34,7 +34,7 @@
 % ---------------------------------------------------------------
 
 \begin{abstract}
-    This paper proposes the distributed data-driven sliding mode control approach to address the consensus problem in the network of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, the novel sliding surface is employed to enhance performance and ensure that the distributed measurement error remains bounded by incorporating the positive constant. Subsequently, to achieve consensus tracking, a distributed model-free adaptive sliding mode controller scheme is then developed. This approach relies solely on input-output data of each agent, eliminating the need for explicit system models. Finally, the effectiveness of the proposed control scheme is verified through multi-DC motors.
+    This paper proposes the distributed data-driven sliding mode control approach to address the consensus problem of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, the novel sliding surface is employed to enhance performance and ensure that the distributed measurement error remains bounded by incorporating the positive constant. Subsequently, to achieve consensus tracking, a distributed model-free adaptive sliding mode controller scheme is then developed. This approach relies solely on input-output data of each agent, eliminating the need for explicit system models. Finally, the effectiveness of the proposed control scheme is verified through multi-DC motors.
 \end{abstract}
 
 \section*{Keywords}
@@ -76,7 +76,7 @@ Inspired by the abovementioned considerations, this paper studies a novel model-
 \section{Preliminaries and problem formulation}\label{section:2}
 \subsection{Directed Graph Theory}
 
-The directed graph $ \mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathcal{A}) $ is employed to describe the information exchange between agents. Here $ \mathcal{A} = [a_{ij}] \in \mathbb{R}^{N \times N} $ represents the adjacency matrix, $ \mathcal{V}=[v_1, v_2,\dots,v_N] $ is the set of vertices, and $ \mathcal{E} = [(v_j,v_i)|v_i \in \mathcal{V} ] \subseteq \mathcal{V} \times \mathcal{V}$ is the set of edges. Moreover, $ \mathcal{N}_i = {j \in \mathcal{V} |(i,j) \in \mathcal{E} ,i \neq j} $ denotes the neighbor set of agent $ i $. No self-loop is allowed in this article, which means $(i, i) \in \mathcal{E}$ for any $ i \in \mathcal{V} $, $ a_{ii}=0$. Furthermore, the degree matrix is denoted by $ K $, where $ K = diag(k_1,\dots,k_N)$. If $ k_i > 0$, agent $ i $ can directly obtain the information from the leader. The Laplacian matrix $ L $ is defined as $ L = (\mathcal{D}-\mathcal{A})$, here $\mathcal{D} = diag({d_1,\dots,d_N})$, and $d_i=\sum_{j=1}^{N} a_{i j}$ denotes the in-degree matrix. The graph is strongly connected if the path exists between every pair of vertices.
+The directed graph $ \mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathcal{A}) $ is employed to describe the information exchange between agents. Here $ \mathcal{A} = [a_{ij}] \in \mathbb{R}^{N \times N} $ represents the adjacency matrix, $ \mathcal{V}=[v_1, v_2,\dots,v_N] $ is the set of vertices, and $ \mathcal{E} = [(v_j,v_i)|v_i \in \mathcal{V} ] \subseteq \mathcal{V} \times \mathcal{V}$ is the set of edges. Moreover, $ \mathcal{N}_i = {j \in \mathcal{V} |(i,j) \in \mathcal{E} ,i \neq j} $ denotes the neighbor set of agent $ i $. No self-loop is allowed in this article, which means $(i, i) \notin \mathcal{E}$ for any $ i \in \mathcal{V} $, $ a_{ii}=0$. Furthermore, the degree matrix is denoted by $ K $, where $ K = diag(k_1,\dots,k_N)$. If $ k_i > 0$, agent $ i $ can directly obtain the information from the leader. The Laplacian matrix $ L $ is defined as $ L = (\mathcal{D}-\mathcal{A})$, here $\mathcal{D} = diag({d_1,\dots,d_N})$, and $d_i=\sum_{j=1}^{N} a_{i j}$ denotes the in-degree matrix. The graph is strongly connected if the path exists between every pair of vertices.
 
 \subsection{Problem Formulation}
 
@@ -804,13 +804,22 @@ Fig. \ref{fig:figure_4} demonstrates that all agents successfully track the time
 
 \subsection{Physical verification}
 
-The physical verification was conducted using multi-DC motors system. The system is composed with 3 DC-motors with a STM32F407ZET6 board and connected through 2 motor drivers. The reference trajectory is:
+The physical verification was conducted using a multi-DC motors system. The system consists of multi DC-motors system, an STM32F407ZET6 board, and is connected through two motor drivers. 
+
+The reference trajectory is:
 
 \[ y_d(k)=0.1(\pi)+0.25(\pi)\sin(0.25)+0.2 \]
 
-The following figures show the output results of the system.
+The following figure shows the output results of the system.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{output.png}
+    \caption{Tracking performance of 3 DC motors for time-invariable desired trajectory.}
+    \label{fig:output} % Label for referencing the figure
+\end{figure}
 
+Fig.\ref{fig:output} shows the tracking performance of multi-DC motors. As presented, all DC motors successfully track the desired trajectory, demonstrating the effectiveness of the proposed control method. Where the reference trajectory is presented by white color.
 
 Overall, the simulation results suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While there may be initial transient error, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
 
