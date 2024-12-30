@@ -804,11 +804,13 @@ Fig. \ref{fig:figure_4} demonstrates that all agents successfully track the time
 
 \subsection{Physical verification}
 
-The physical verification was conducted using multi-DC motors system. The system is composed with 3 DC-motors with a STM32F407ZET6 board and connected through 2 motor drivers. The reference trajectory is :
+The physical verification was conducted using multi-DC motors system. The system is composed with 3 DC-motors with a STM32F407ZET6 board and connected through 2 motor drivers. The reference trajectory is:
 
-
+\[ y_d(k)=0.1(\pi)+0.25(\pi)\sin(0.25)+0.2 \]
 
 The following figures show the output results of the system.
+
+
 
 Overall, the simulation results suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While there may be initial transient error, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
 
