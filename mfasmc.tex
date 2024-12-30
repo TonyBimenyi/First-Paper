@@ -34,7 +34,7 @@
 % ---------------------------------------------------------------
 
 \begin{abstract}
-    This paper proposes the distributed data-driven sliding mode control approach to investigate the consensus problem of nonlinear multi-agent systems. Firstly, the equivalent data model is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, the novel sliding surface is employed to enhance and ensuring that the distributed measurement error remains bounded. Subsequently, a distributed model-free adaptive sliding mode controller scheme is then given to realize that consensus tracking can be achieved using I/O data of each agent. Finally, the effectiveness of the proposed scheme is verified through multi-DC motors.
+    This paper proposes the distributed data-driven sliding mode control approach to address the consensus problem of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, the novel sliding surface is employed to enhance and ensuring that the distributed measurement error remains bounded. Subsequently, a distributed model-free adaptive sliding mode controller scheme is then given. The controller achieves the consensus tracking using only I/O data of each agent, eliminating the need of for explicit system models. Finally, the effectiveness of the proposed control scheme is verified through multi-DC motors.
 \end{abstract}
 
 \section*{Keywords}
@@ -97,7 +97,7 @@ Assumption 2: The system (\ref{model 1}) is generalized Lipschitz, meaning that 
 
 % Under Assumptions 1 and 2, the unknown agent dynamics (\ref{model 1}) can be transformed into the following dynamic linearization model and then the distributed control law will be designed based on it:
 
-Remark 1:The above assumptions are general and aligned with reality. Assumption 1 specifies the constraints of the controller. Assumption 2 ensures that changes in the input rate limited, thereby restricting the rate change in the output, which is satisfied in real industrial systems.
+Remark 1:The assumptions above are general and aligned with reality. Assumption 1 specifies the constraints of the controller. Assumption 2 ensures that variations in the input rate are limited, thereby restricting the change rate in the output, which is satisfied in real industrial systems.
 
 Lemma 1\cite{8}: Consider agents with dynamics described by (\ref{model 1}) satisfying above two assumptions. If $ | \Delta u_i(k) | \neq 0 $ holds, then the system (\ref{model 1}) can be transformed into the compact form dynamic linearization (CFDL) data model as follows:
 
