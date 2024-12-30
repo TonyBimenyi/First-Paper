@@ -92,16 +92,14 @@ where $u_i(k) \in \mathbb{R}$ and $y_i(k) \in \mathbb{R}$ are the system input a
 
 Assumption 1: The partial derivative of \( f_i(\cdot) \) with respect to \( u_i(k) \) is continuous.
 
-Assumption 2: The system (\ref{model 1}) is generalized Lipschitz, meaning that,  the positive constant \( b \) exits such as \( \Delta u_i(k) = u_i(k) - u_i(k - 1) \neq 0 \) then \( | \Delta y_i(k + 1) | \leq b |\Delta u_i(k)| \) holds for any \( k \), where \( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \).
-
-
-
-Remark 1\cite{2}: Assumption 1 provides a general condition for controller design, while assumption 2 ensures that the bounded changes in control input result in the bounded changes in output energy rates, supporting system stability and performance. 
-
+Assumption 2: The system (\ref{model 1}) is generalized Lipschitz, meaning that the positive constant \( b \) exists such that if \( \Delta u_i(k) = u_i(k) - u_i(k - 1) \neq 0 \) then \( | \Delta y_i(k + 1) | \leq b |\Delta u_i(k)| \) holds for any \( k \), where \( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \).
+ 
 
 % Under Assumptions 1 and 2, the unknown agent dynamics (\ref{model 1}) can be transformed into the following dynamic linearization model and then the distributed control law will be designed based on it:
 
-Lemma 1\cite{8}: Consider agents with dynamic (\ref{model 1}) satisfying above two assumptions. If $ | \Delta u_i(k) | \neq 0 $ holds, then the system (\ref{model 1}) can be transformed into a compact form dynamic linearization (CFDL) data model as follow:
+Remark 1: Assumption 1 provides a general condition for controller design, while assumption 2 ensures that the bounded changes in control input result in the bounded changes in output energy rates, supporting system stability and performance.
+
+Lemma 1\cite{8}: Consider agents with dynamics described by (\ref{model 1}) satisfying above two assumptions. If $ | \Delta u_i(k) | \neq 0 $ holds, then the system (\ref{model 1}) can be transformed into the compact form dynamic linearization (CFDL) data model as follows:
 
 
 \begin{equation}
@@ -109,9 +107,10 @@ Lemma 1\cite{8}: Consider agents with dynamic (\ref{model 1}) satisfying above t
     \Delta y_i(k+1)=\phi_i(k)\Delta u_i(k)
 \end{equation}
 
-where \( | \phi_i(k) | \leq b\) with the variable \(\phi_i(k)\) named PPD, which is bounded for any time instant k.
 
+where \( | \phi_i(k) | \leq b\) with the variable \(\phi_i(k)\) named PPD.
 
+Remark 2: By application of CFDL technique, the unknown nonlinear system dynamic (\ref{model 1}) are now transformed into a time-varying incremental form data (\ref{model 2}) in every operation point with a bounded pseudo-partial derivative. 
  
 Let denote the following distributed measurement error of \(\xi_i(k)\) for $N$ agents:
 
@@ -123,7 +122,6 @@ Let denote the following distributed measurement error of \(\xi_i(k)\) for $N$ a
 If the agent $ i $ can receive data from the leader, then $d_i=1$; otherwise, $d_i=0$. Additionally, $y_d(k)$ represents the reference trajectory. 
 
  
-Remark 2: By application of CFDL technique, the unknown nonlinear system dynamic (\ref{model 1}) are now transformed into a time-varying incremental form data (\ref{model 2}) in every operation point with a bounded pseudo-partial derivative. 
 
 \section{Main Results}
 
