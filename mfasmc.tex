@@ -92,12 +92,12 @@ where $u_i(k) \in \mathbb{R}$ and $y_i(k) \in \mathbb{R}$ represent the system i
 
 Assumption 1: The partial derivative of \( f_i(\cdot) \) with respect to \( u_i(k) \) is continuous.
 
-Assumption 2: The system (\ref{model 1}) is generalized Lipschitz, meaning that if \( \Delta u_i(k) = u_i(k) - u_i(k - 1) \neq 0 \) then \( | \Delta y_i(k + 1) | \leq b |\Delta u_i(k)| \) holds for any \( k \), where \( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \).
+Assumption 2: The system (\ref{model 1}) satisfies the generalized Lipschitz condition, meaning that if \( \Delta u_i(k) = u_i(k) - u_i(k - 1) \neq 0 \) then \( | \Delta y_i(k + 1) | \leq b |\Delta u_i(k)| \) holds for any \( k \), where \( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \).
  
 
 % Under Assumptions 1 and 2, the unknown agent dynamics (\ref{model 1}) can be transformed into the following dynamic linearization model and then the distributed control law will be designed based on it:
 
-Remark 1:The assumptions above are general and aligned with reality. Assumption 1 specifies the constraints of the controller. Assumption 2 ensures that variations in the input rate are limited, thereby restricting the change rate in the output, which is satisfied in real industrial systems.
+Remark 1: The assumptions above are general and aligned with reality. As the common condition for model-free control methods, Assumption 1 is crucial in ensuring effective system performance.
 
 Lemma 1\cite{8}: Consider agents with dynamics described by (\ref{model 1}) satisfying above two assumptions. If $ | \Delta u_i(k) | \neq 0 $ holds, then the system (\ref{model 1}) can be transformed into the compact form dynamic linearization (CFDL) data model as follows:
 
