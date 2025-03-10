@@ -99,7 +99,7 @@ Assumption 2: The system (\ref{model 1}) satisfies the generalized Lipschitz con
 
 Remark 1: The assumptions above are general. As the common condition for model-free control methods, Assumption 1 is crucial in ensuring effective system performance. Assumption 2 implies that the system input rate constrains the system output rate, which is satisfied in many practical systems.
 
-Lemma 1\cite{8}: Consider agents with dynamics described by (\ref{model 1}) satisfying above two assumptions. If $ | \Delta u_i(k) | \neq 0 $ holds, then the system (\ref{model 1}) can be transformed into the compact form dynamic linearization (CFDL) data model as follows:
+Lemma 1\cite{8}: Consider the nonlinear multi-agent system (\ref{model 1}) satisfying above two assumptions. If $ | \Delta u_i(k) | \neq 0 $ holds, then the system can be transformed into the CFDL data model as follows:
 
 
 \begin{equation}
@@ -107,8 +107,7 @@ Lemma 1\cite{8}: Consider agents with dynamics described by (\ref{model 1}) sati
     \Delta y_i(k+1)=\phi_i(k)\Delta u_i(k)
 \end{equation}
 
-
-where \( | \phi_i(k) | \leq b\) with the variable \(\phi_i(k)\) named PPD.
+where \(\phi_i(k)\) is called pseudo partial derivative (PPD), satisfying \( | \phi_i(k) | \leq b\).
 
 Remark 2: The CFDL technique does not contain any prior knowledge about the system dynamic model. Moreover, the dynamic behavior of time-varying PPD can be highly complex and more challenging to verify. Therefore a data-driven approach to study numerical characteristics becomes the preferred solution.
  
