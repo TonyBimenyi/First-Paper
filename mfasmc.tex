@@ -88,11 +88,11 @@ Consider the nonlinear multi-agent systems composed of $ N $ agents:
 \end{equation}
 
 % \noindent 
-where $u_i(k) \in \mathbb{R}$ and $y_i(k) \in \mathbb{R}$ are the system input and output signals at instant $ k $, respectively. $f_i(\cdot)$ signifies an unknown nonlinear function.
+where $u_i(k) \in \mathbb{R}$ and $y_i(k) \in \mathbb{R}$ represent the system input and output signals of agent $ i $, respectively. $f_i(\cdot)$ signifies an unknown nonlinear function.
 
 Assumption 1: The partial derivative of \( f_i(\cdot) \) with respect to \( u_i(k) \) is continuous.
 
-Assumption 2: The system (\ref{model 1}) is generalized Lipschitz, meaning that the positive constant \( b \) exists such that if \( \Delta u_i(k) = u_i(k) - u_i(k - 1) \neq 0 \) then \( | \Delta y_i(k + 1) | \leq b |\Delta u_i(k)| \) holds for any \( k \), where \( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \).
+Assumption 2: The system (\ref{model 1}) is generalized Lipschitz, meaning that if \( \Delta u_i(k) = u_i(k) - u_i(k - 1) \neq 0 \) then \( | \Delta y_i(k + 1) | \leq b |\Delta u_i(k)| \) holds for any \( k \), where \( \Delta y_i(k + 1) = y_i(k + 1) - y_i(k) \).
  
 
 % Under Assumptions 1 and 2, the unknown agent dynamics (\ref{model 1}) can be transformed into the following dynamic linearization model and then the distributed control law will be designed based on it:
