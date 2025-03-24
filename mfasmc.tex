@@ -666,15 +666,14 @@ Consider the network comprising:
 
 This section describes the methodology and hardware used for speed regulation, including the calculation of motor speed using the quadriple-frequency data processing  method.
 
-\subsection{Hardware Implementation}
 
-The DC brushed motors have a rated voltage of 12V, an unloaded speed of 293 ± 21 RPM, and a rated current of 0.36 A. The gear ratio of 20 means that the output speed of the motor is 1/20 of the rotor speed, resulting in higher torque with a higher gear ratio. The Hall encoders used have 13 pulses per revolution , meaning each full rotation generates 13 pulse signals. 
+The DC brushed motors have a rated voltage of 12V, an unloaded speed of 293 ± 21 RPM and a rated current of 0.36 A. The gear ratio of 20 means that the output speed of the motor is 1/20 of the rotor speed, resulting in higher torque with a higher gear ratio. The Hall encoders used have 13 pulses per revolution, meaning each full rotation generates 13 pulse signals. 
 
 To enhance measurement accuracy, employing the quadruple-frequency data processing method. This technique quadruples the effective resolution of the encoder by processing the output pulse signals at four times the frequency, thus increasing measurement precision by a factor of four.
 
-\subsection{Data Processing Method}
+% \subsection{Data Processing Method}
 
-The motor speed is measured in revolution per sencond $(r/s)$ based on encoder measurements and the sampling interval $t$. The total number of encoder counts per revolution is calculated as $ T=4N_{e}R{r} $, where $N_e$ is the encoder line count equal to 13, $R_r$ is the reduction ratio equal to 20 and the factor of 4 accounts for quadrature encoding. The number of rotations, $N_r$ is determined using $N_r = \frac{m}{T}$, with $m$ representing the total encoder count.
+The motor speed is measured in revolution per second $(r/s)$ based on encoder measurements and the sampling interval $t$. The total number of encoder counts per revolution is calculated as $ T=4N_{e}R{r} $, where $N_e$ is the encoder line count equal to 13, $R_r$ is the reduction ratio equal to 20 and the factor of 4 accounts for quadrature encoding. The number of rotations, $N_r$ is determined using $N_r = \frac{m}{T}$, with $m$ representing the total encoder count.
 
 The speed of the motor is then derived as:
 
@@ -723,11 +722,11 @@ The speed of the motor is then derived as:
 %    \end{equation}
 %    The above final equation integrates encoder measurements and the sampling period to provide an accurate speed regulation.
 
-Each sampling interval triggers an interrupt where the controller samples the motor speed and updates control commands accordingly.
+% Each sampling interval triggers an interrupt where the controller samples the motor speed and updates control commands accordingly.
 
-The quadruple-frequency method,  is crucial for maximizing encoder measurement precision, resulting in more accurate speed control for the motor system.
+The quadruple-frequency method is crucial for maximizing encoder measurement precision, resulting in more accurate speed control for the motor system.
 
-Four follower DC motors and the models for each DC motor governed by:
+Four follower DC motors and the models for each DC motor are governed by:
 
 \[
 \begin{array}{c}
@@ -752,7 +751,7 @@ As illustrated in Fig. 2, the virtual leader is designated as vertex 0. It can b
     \end{bmatrix}
 \]
 
-with \( D = \text{diag}(1, 0, 1, 0) \). We consider the following two different desired trajectories.
+with \( D = \text{diag}(1, 0, 1, 0) \), we consider the following two different desired trajectories.
 
 
 
@@ -765,7 +764,7 @@ y_d(k) = 0.5 \sin\left(\frac{k \pi}{30}\right) + 0.3  \cos\left(\frac{k \pi}{10}
 
 as \( k \) in the range \( 0 \leq k \leq 200 \).
 
-The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\) and \(\phi_i(0)=1 \) for all agents in this simulation ,\(\Gamma_{1}=\Gamma_{2}=0.15\) and \(\Gamma_{3}=\Gamma_{4}=0.45\), with \(T=0.1\), \(m=350\), \(\eta=1\), \(\mu=1\). The MFA Controller parameters are given as \(\rho=1\), \(\lambda=50\) and \(\alpha=1\) with \(\epsilon=10^{-5}\).
+The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\) and \(\phi_i(0)=1 \) for all agents in this simulation, \(\Gamma_{1}=\Gamma_{2}=0.15\) and \(\Gamma_{3}=\Gamma_{4}=0.45\), with \(T=0.1\), \(m=350\), \(\eta=1\), \(\mu=1\), other parameters are given as \(\rho=1\), \(\lambda=50\) and \(\alpha=1\) with \(\epsilon=10^{-5}\).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{Figure_2.png}
@@ -782,7 +781,7 @@ As shown in Fig. \ref{fig:figure_2}, the tracking errors between the actual and 
     \label{fig:figure_3} % Label for referencing the figure
 \end{figure}
 
-Fig.\ref{fig:figure_3} presents a detailed analysis of the tracking performance for all agents. All agents successfully track the time-varying desired trajectory, confirming the effectiveness of the proposed control system. While minor variations in individual trajectories are evident, each agent generally adheres to the desired path. Factors such as agent dynamics, communication delays, and environmental disturbances could potentially influence the tracking performance.
+Fig. \ref{fig:figure_3} presents a detailed analysis of the tracking performance for all agents. All agents successfully track the time-varying desired trajectory, confirming the effectiveness of the proposed control system. While minor variations in individual trajectories are evident, each agent generally adheres to the desired path. Factors such as agent dynamics, communication delays, and environmental disturbances could potentially influence the tracking performance.
 
 \begin{figure}[H]
     \centering
@@ -798,13 +797,16 @@ Fig.\ref{fig:figure_3} presents a detailed analysis of the tracking performance 
     \label{fig:figure_5} % Label for referencing the figure
 \end{figure}
 
-Fig. \ref{fig:figure_4} demonstrates that all agents successfully track the time-invariable desired trajectory, further validating the robustness of the proposed control strategy. Meanwhile, Fig. \ref{fig:figure_5} shows the PPD estimation for all agents, highlighting the accuracy of the adaptive estimation process within the control framework.
+Fig. \ref{fig:figure_4} demonstrates that all agents successfully track the time-invariable desired trajectory. Meanwhile, Fig. \ref{fig:figure_5} shows the PPD estimation for all agents, highlighting the accuracy of the adaptive estimation process within the control framework.
 
-\subsection{Experimental verification}
+% \subsection{Experimental verification}
 
-In order to verify the proposed consensus tracking control methodology, the experimental verification was conducted using a multi-DC motors system as illustrated in Fig.\ref{fig:hardware_con}. The system consists three DC motors equipped with Hall encoders and reduction gears, a STM32F407 main control chip, two motor drive modules, and a LCD display module. The microcontroller unit (MCU) is the STM32F407ZGT6, for the high-resolution pulse width modulation (PWM) output generation for precise control of motor speed, the timer module was utilized.
 
-In addtion, C language is used to write the code of the controller in STM32CubeIDE and STM32CubeMX for pin configuration; the main purpose of the experiment is to make three motors track the reference trajectory as: 
+
+
+To verify the proposed consensus tracking control methodology, the experimental validation is conducted using a multi-DC motor system, as illustrated in Fig.8. The system consists of three DC motors equipped with Hall encoders and reduction
+gears, an STM32F407 main control chip, two motor drive modules, and an LCD display module. The microcontroller unit (MCU) STM32F407ZGT6 is used for high-resolution pulse width modulation (PWM) output generation to achieve precise motor speed control. The timer module is utilized for this purpose.
+In addition, the controller code is written in C language using STM32CubeIDE, while STM32CubeMX is used for pin configuration. The main purpose of the experiment is to ensure that the three motors accurately track the reference trajectory:
 
 \[ y_d(k)=0.5\sin(0.07\pi(k))+0.7\cos(0.04\pi(k)) \]
 
@@ -819,7 +821,7 @@ The following figure shows the output results of the system.
 
 Fig.\ref{fig:output} shows the tracking performance of multi-DC motors. As presented, all DC motors successfully track the desired trajectory, demonstrating the effectiveness of the proposed control method. Where the reference trajectory is presented by white color.
 
-Overall, the simulation results suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While there may be initial transient error, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
+Overall, the simulation results suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While there may be initial transient errors, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
 
 \section{Conclusion}
 
