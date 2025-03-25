@@ -221,11 +221,11 @@ INPUT ./system.jpg
 INPUT ./system.jpg
 INPUT ./system.jpg
 INPUT ./system.jpg
-INPUT ./output.png
-INPUT ./output.png
-INPUT ./output.png
-INPUT ./output.png
-INPUT ./output.png
+INPUT ./dc_motor_tracking.png
+INPUT ./dc_motor_tracking.png
+INPUT ./dc_motor_tracking.png
+INPUT ./dc_motor_tracking.png
+INPUT ./dc_motor_tracking.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm

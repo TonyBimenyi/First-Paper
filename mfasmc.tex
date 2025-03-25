@@ -664,7 +664,7 @@ Consider the network comprising:
     \label{fig:communication1} % Label for referencing the figure
 \end{figure}
 
-This section describes the methodology and hardware used for speed regulation, including the calculation of motor speed using the quadriple-frequency data processing  method.
+This section describes the methodology and hardware used for speed regulation, including the calculation of motor speed using the quadruple-frequency data processing  method.
 
 
 The DC brushed motors have a rated voltage of 12V, an unloaded speed of 293 ± 21 RPM and a rated current of 0.36 A. The gear ratio of 20 means that the output speed of the motor is 1/20 of the rotor speed, resulting in higher torque with a higher gear ratio. The Hall encoders used have 13 pulses per revolution, meaning each full rotation generates 13 pulse signals. 
@@ -738,9 +738,9 @@ Four follower DC motors and the models for each DC motor are governed by:
 \]
 
 
-It is evident that the agents considered are heterogeneous, as the dynamics differ from one another. In this scenario, the dynamics are assumed to be unknown and are only provided here to generate the I/O data for the MASs. 
+It is evident that the agents considered are heterogeneous, as the dynamics differ from one another. In this scenario, the dynamics are assumed to be unknown and are only used to generate the I/O data for the MASs. 
 
-As illustrated in Fig. 2, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. Assume that the information exchange among agents is directed and fixed. The laplacian matrix of the graph is given as follows:
+As illustrated in Fig. 2, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. Assume that the information exchange among agents is directed and fixed. The Laplacian matrix of the graph is given as follows:
 
 \[
     L = \begin{bmatrix}
@@ -828,14 +828,14 @@ In addition, the controller code is written in C language using STM32CubeIDE, wh
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{output.png}
+    \includegraphics[width=0.9\textwidth]{dc_motor_tracking.png}
     \caption{Tracking performance of 3 DC motors for time-invariable desired trajectory.}
     \label{fig:output} % Label for referencing the figure
 \end{figure}
 
 Fig.\ref{fig:output} shows the tracking performance of multi-DC motors. As presented, all DC motors successfully track the desired trajectory, demonstrating the effectiveness of the proposed control method. Where the reference trajectory is presented by blue.
 
-Overall, the simulation results suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While there may be initial transient errors, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
+Overall, the simulation results suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While initial transient errors may accur, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
 
 \section{Conclusion}
 

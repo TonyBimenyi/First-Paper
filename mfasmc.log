@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  25 MAR 2025 20:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  25 MAR 2025 23:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -473,16 +473,16 @@ File: system.jpg Graphic file (type jpg)
 <use system.jpg>
 Package pdftex.def Info: system.jpg  used on input line 823.
 (pdftex.def)             Requested size: 464.39685pt x 347.22656pt.
-<output.png, id=65, 898.85812pt x 446.41782pt>
-File: output.png Graphic file (type png)
-<use output.png>
-Package pdftex.def Info: output.png  used on input line 831.
-(pdftex.def)             Requested size: 412.80157pt x 205.01408pt.
+<dc_motor_tracking.png, id=65, 722.7pt x 433.62pt>
+File: dc_motor_tracking.png Graphic file (type png)
+<use dc_motor_tracking.png>
+Package pdftex.def Info: dc_motor_tracking.png  used on input line 831.
+(pdftex.def)             Requested size: 464.39685pt x 278.64066pt.
 
 
 [12 <./diagram.jpg> <./system.jpg>]
 
-[13 <./output.png>]
+[13 <./dc_motor_tracking.png>]
 
 [14]
 
@@ -498,14 +498,14 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  5786 strings out of 473190
- 99034 string characters out of 5715801
+ 99111 string characters out of 5715801
  486984 words of memory out of 5000000
  28966 multiletter control sequences out of 15000+600000
  595000 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,9n,93p,1233b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (15 pages, 1139644 bytes).
+Output written on mfasmc.pdf (15 pages, 1101433 bytes).
 PDF statistics:
  136 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream
