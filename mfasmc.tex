@@ -767,7 +767,7 @@ as \( k \) in the range \( 0 \leq k \leq 200 \).
 The initial parameters are chosen as \(u_i(1)=0.1\), \(y_i(1)=0.1\) and \(\phi_i(0)=1 \) for all agents in this simulation, \(\Gamma_{1}=\Gamma_{2}=0.15\) and \(\Gamma_{3}=\Gamma_{4}=0.45\), with \(T=0.1\), \(m=350\), \(\eta=1\), \(\mu=1\), other parameters are given as \(\rho=1\), \(\lambda=50\) and \(\alpha=1\) with \(\epsilon=10^{-5}\).
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{Figure_2.png}
+    \includegraphics[width=0.9\textwidth]{Figure_2.png}
     \caption{Tracking errors for time varying desired trajectory.}
     \label{fig:figure_2} % Label for referencing the figure
 \end{figure}
@@ -776,7 +776,7 @@ As shown in Fig. \ref{fig:figure_2}, the tracking errors between the actual and 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{Figure_1.png}
+    \includegraphics[width=0.8\textwidth]{Figure_1.png}
     \caption{Tracking performance of all agents for time-varying desired trajectory.}
     \label{fig:figure_3} % Label for referencing the figure
 \end{figure}
@@ -792,7 +792,7 @@ Fig. \ref{fig:figure_3} presents a detailed analysis of the tracking performance
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{Figure_5.png}
+    \includegraphics[width=0.9\textwidth]{Figure_5.png}
     \caption{PPD Estimation of all agents.}
     \label{fig:figure_5} % Label for referencing the figure
 \end{figure}
@@ -804,13 +804,27 @@ Fig. \ref{fig:figure_4} demonstrates that all agents successfully track the time
 
 
 
-To verify the proposed consensus tracking control methodology, the experimental validation is conducted using a multi-DC motor system, as illustrated in Fig.8. The system consists of three DC motors equipped with Hall encoders and reduction
+To verify the proposed consensus tracking control methodology, the experimental validation is conducted using a multi-DC motor system, as illustrated in Fig. \ref{fig:system}. The system consists of three DC motors equipped with Hall encoders and reduction
 gears, an STM32F407 main control chip, two motor drive modules, and an LCD display module. The microcontroller unit (MCU) STM32F407ZGT6 is used for high-resolution pulse width modulation (PWM) output generation to achieve precise motor speed control. The timer module is utilized for this purpose.
+
 In addition, the controller code is written in C language using STM32CubeIDE, while STM32CubeMX is used for pin configuration. The main purpose of the experiment is to ensure that the three motors accurately track the reference trajectory:
 
 \[ y_d(k)=0.5\sin(0.07\pi(k))+0.7\cos(0.04\pi(k)) \]
 
-The following figure shows the output results of the system.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagram.jpg}
+    \caption{System connection diagram of multi-DC motors consensus tracking control.}
+    \label{fig:system_diagram} % Label for referencing the figure
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{system.jpg}
+    \caption{Multi-DC motors system.}
+    \label{fig:system} % Label for referencing the figure
+\end{figure}
+
 
 \begin{figure}[H]
     \centering
@@ -819,7 +833,7 @@ The following figure shows the output results of the system.
     \label{fig:output} % Label for referencing the figure
 \end{figure}
 
-Fig.\ref{fig:output} shows the tracking performance of multi-DC motors. As presented, all DC motors successfully track the desired trajectory, demonstrating the effectiveness of the proposed control method. Where the reference trajectory is presented by white color.
+Fig.\ref{fig:output} shows the tracking performance of multi-DC motors. As presented, all DC motors successfully track the desired trajectory, demonstrating the effectiveness of the proposed control method. Where the reference trajectory is presented by blue.
 
 Overall, the simulation results suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While there may be initial transient errors, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
 

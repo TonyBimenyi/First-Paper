@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1742816281.09332 "/Users/mac/Documents/PAPERS/LATEX/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1742816282.84618 0
-  "/Users/mac/Documents/PAPERS/LATEX/First-Paper/mfasmc.tex" 1742816280.86079 51021 5c80b097bef8186ed8217762aec7f705 ""
+["pdflatex"] 1742906925.58038 "/Users/mac/Documents/PAPERS/LATEX/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1742906926.88173 0
+  "/Users/mac/Documents/PAPERS/LATEX/First-Paper/mfasmc.tex" 1742906925.37561 51422 b709931beca9e9c97c36e082f392b183 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -85,15 +85,17 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1742062162 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "Figure_1.png" 1742812738.95914 190632 e8f4a7656d2a5ae62305e17a654859bd ""
-  "Figure_2.png" 1742812738.95991 38228 3cce87434d422eb944ca9409c81057e7 ""
-  "Figure_4.png" 1742812738.96015 61366 ee60d6448feb3de63d148a6bdf74ca5b ""
-  "Figure_5.png" 1742812738.96049 26580 9bfc676d537bcbbf2fb39ae37eabc7e9 ""
+  "Figure_1.png" 1742905959.41263 72469 bf8a61369fc4dc6cf43eece635cda9df ""
+  "Figure_2.png" 1742905576.49619 23259 e21151b8ac1f3032ca198f3870282e37 ""
+  "Figure_4.png" 1742905697.07943 33188 1007b952cd76e4db4fb8b1e262efb5ea ""
+  "Figure_5.png" 1742905281.77671 30359 d1ade50fd330343ca87316376f2184fd ""
   "communication.png" 1742812738.96081 46867 d3c908f6c18b44bd99c9591f6c11efe9 ""
+  "diagram.jpg" 1742906700.51568 174560 1ec1d90c7a614cfe14f4de13c60cee83 ""
   "diagram.png" 1742812738.96182 251342 161056946171cc693b3bf0102ad204fd ""
-  "mfasmc.aux" 1742816282.77972 4976 8a7b341a7df107eb8fb5132408225f93 "pdflatex"
-  "mfasmc.tex" 1742816280.86079 51021 5c80b097bef8186ed8217762aec7f705 ""
+  "mfasmc.aux" 1742906926.8262 5377 dae1e2cfff82479a44b1aabbaff61cdc "pdflatex"
+  "mfasmc.tex" 1742906925.37561 51422 b709931beca9e9c97c36e082f392b183 ""
   "output.png" 1742812738.96915 106753 e9b3978b01f5c456d8e308326994972b ""
+  "system.jpg" 1742906700.49795 284345 2e63d27a6282be46dcff4ad0511d988c ""
   (generated)
   "mfasmc.aux"
   "mfasmc.log"
