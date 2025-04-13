@@ -206,14 +206,14 @@ where \(\rho\) \(\in\) (0,1) is a step-size constant, which is added to make (\r
 
 % y_i(k + 1) = f_i(y_i(k), u_i(k)), \quad i = 1, 2, \ldots, N
 
-To design the SMC for system, the sliding mode surface is first defined, guiding the behavior of system to ensure robust and accurate tracking of the desired trajectory.
-
-The sliding mode surface is defined as:
+To design the SMC for system, the sliding mode surface is first defined, guiding the behavior of system to ensure is defined as:
 
 \begin{equation}
     \label{model eq:sms}
     S_i(k+1) = S_i(k)+e_i(k+1)+\alpha e_i(k) 
 \end{equation}
+
+Taking $ \ref{model 3} $ into $ \ref{model eq:sms} $, with reaching law $ S_i(k+1) = 0 $, the equivalent control law is then designed as follow:
 
 where \(\alpha\) is a positive constant, and  to ensure that the system trajectory is driven toward and remains on the sliding surface. The reaching law dictates how quickly the system state converges to the sliding surface and is given by:
 
