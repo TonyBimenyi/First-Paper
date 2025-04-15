@@ -34,7 +34,7 @@
 % ---------------------------------------------------------------
 
 \begin{abstract}
-    This paper proposes the distributed data-driven sliding mode control approach to address the consensus problem of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, utilizing the input-output data of agents, the novel sliding surface is employed, which ensures the boundedness of distributed error through the stability-guaranteeing mechanism. Subsequently, a distributed model-free adaptive sliding mode controller is developed to ensure the reference trajectory tracking. Finally, the effectiveness of the proposed control approach is verified through experiments on multi-DC motors.
+    This paper proposes the distributed data-driven sliding mode control approach to address the consensus problem of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, utilizing the input-output data of agents, the novel sliding surface is employed, which ensures the boundedness of distributed error through stability-guaranteeing mechanism. Subsequently, a distributed model-free adaptive sliding mode controller is developed to ensure the reference trajectory tracking. Finally, the effectiveness of the proposed control approach is verified through experiments on multi-DC motors.
 \end{abstract}
 
 % It would be more appropriate to rephrase it using a relative clause introduced by 
@@ -146,10 +146,8 @@ Consider the following PPD criterion function, which is used to evaluate the per
     J(\phi_i(k)) = | \Delta y_i(k) - \phi_i(k)  \Delta u_i(k-1)|^2 + \mu |\phi_i(k) - \hat{\phi}_i(k-1)|\
 \end{equation}
 
-Assumption 4 : The PPD \(\phi_i(k) > \varsigma\) , \(i = 1,2,3, \dots, N\) holds for all \(k\), where \( \varsigma \) is an rondomly small positive constant without loss of generality, assume that \(\phi_i(k) > \varsigma\).
+By utilizing the optimal condition $ \frac{\partial J(\phi_i(k))}{\partial \phi_i(k)}=0 $, then the updating law with reset algorithm can be derived as
 
-
-Differentiating equation (\ref{model 4}) with respect to PPD parameter \(\phi_i(k)\) and make it equal to zero, the following update rule is proposed for the distributed MFAC algorithm:
 
 
 % \begin{equation}
@@ -179,19 +177,14 @@ Differentiating equation (\ref{model 4}) with respect to PPD parameter \(\phi_i(
     \hat{\phi}_i(k) = \hat{\phi}_i(1),  \text{    if}  |\hat{\phi}_i(k) | \leq \epsilon \ or \ sign(\hat{\phi}_i(k)) \neq  sign(\hat{\phi}_i(1))
 \end{equation}
 
-Here, $\eta$ is the learning rate that controls the step size of the update, $\mu > 0$ is a weight factor. $ \hat{\phi}_i(1) $ is the initial value of $ \hat{\phi}_i(k)$ and $ \hat{\phi}_i(k)$ is the estimated value of $ \phi_i(k)$.
-
-Remark 3: In the parameter estimation law (\ref{model eq:ppd_parameter}), $y_i(k) $ is used to estimate $\hat{\phi}_i(k)$. The abovementioned scheme ensures the convergence of (\ref{model eq:ppd_parameter}). Additionally, the reset algorithm (\ref{reset}) is introduced to enhance the ability of the parameter estimation algorithm to effectively track time-varying parameters.
+Herein, $\eta \in (0,1) $, $\mu > 0$ the weight factor, $ \epsilon $ is a small positive number  and $ \hat{\phi}_i(k)$ represents the estimated value of $ \phi_i(k)$. 
 
 
-To design the MFAC alogrithm, the performance function \(J(u_i(k))\) is set as:
 
-\begin{equation}
-    \label{model 9}
-    J(u_i(k)) = |\xi_i(k+1)|^2 + \lambda|u_i(k) - u_i(k-1)|^2
-\end{equation}
+The following distributed MFAC algorithm is then presented:
 
-Subtituting (\ref{model 2}) and (\ref{model 3}) into (\ref{model 9}), then differentiating (\ref{model 9}) with respect to \(u_i(k)\), and make it equal to zero, gives:
+
+% Subtituting (\ref{model 2}) and (\ref{model 3}) into (\ref{model 9}), then differentiating (\ref{model 9}) with respect to \(u_i(k)\), and make it equal to zero, gives:
 
 \begin{equation}
     \label{model eq:mfac}
@@ -199,14 +192,10 @@ Subtituting (\ref{model 2}) and (\ref{model 3}) into (\ref{model 9}), then diffe
 \end{equation}
 
 
-where \(\rho\) \(\in\) (0,1) is a step-size constant, which is added to make (\ref{model eq:mfac}) general. Using the parameter estimation algorithm (\ref{model eq:ppd_parameter}) and the control law algorithm (\ref{model eq:mfac}), the MFAC scheme is constructed. 
+where \(\rho\) \(\in\) (0,1) is a step-size constant, which is added to make (\ref{model eq:mfac}) general. 
 
 
 \subsection{Sliding Mode Controller Design}
-
-
-
-
 
 
 % y_i(k + 1) = f_i(y_i(k), u_i(k)), \quad i = 1, 2, \ldots, N
@@ -215,7 +204,7 @@ To design the SMC for system, the sliding mode surface is first defined as:
 
 \begin{equation}
     \label{model eq:sms}
-    S_i(k+1) = S_i(k)+e_i(k+1)+\alpha e_i(k) 
+    S_i(k) = \alpha  
 \end{equation}
 
 Taking $ \ref{model 3} $ into $ \ref{model eq:sms} $, with reaching law $ S_i(k+1) = 0 $, the equivalent control law is then designed as follow:
