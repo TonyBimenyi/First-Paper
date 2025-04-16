@@ -169,7 +169,7 @@ By utilizing the optimal condition $ \frac{\partial J(\phi_i(k))}{\partial \phi_
 
 \begin{equation}
     \label{model eq:ppd_parameter}
-    \hat{\phi}_i(k) = \hat{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1) (\Delta y_i(k) - \hat{\phi}_i(k-1) \Delta u_i(k-1))}{\mu + \Delta u_i(k-1)}
+    \hat{\phi}_i(k) = \hat{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1) }{\mu + \Delta u_i(k-1)^2}(\Delta y_i(k) - \hat{\phi}_i(k-1) \Delta u_i(k-1))
 \end{equation}
 
 \begin{equation}
@@ -188,7 +188,7 @@ The following distributed MFAC algorithm is then presented:
 
 \begin{equation}
     \label{model eq:mfac}
-    u_{i,\text{MFAC}}(k) = u_{i,\text{MFAC}}(k - 1) + \frac{\rho \phi_i(k)}{\lambda + |\phi_i(k)|^2} \xi_i(k)
+    u_{i,\text{MFAC}}(k) = u_{i,\text{MFAC}}(k - 1) + \frac{\rho \hat{\phi}_i(k)}{\lambda + |\hat{\phi}_i(k)|^2} \xi_i(k)
 \end{equation}
 
 
