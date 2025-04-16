@@ -143,7 +143,7 @@ Consider the following PPD criterion function, which is used to evaluate the per
 
 \begin{equation}
     \label{model 4}
-    J(\phi_i(k)) = | \Delta y_i(k) - \phi_i(k)  \Delta u_i(k-1)|^2 + \mu |\phi_i(k) - \hat{\phi}_i(k-1)|\
+    J(\phi_i(k)) = | \Delta y_i(k) - \phi_i(k)  \Delta u_i(k-1)|^2 + \mu |\phi_i(k) - \hat{\phi}_i(k-1)|^2\
 \end{equation}
 
 By utilizing the optimal condition $ \frac{\partial J(\phi_i(k))}{\partial \phi_i(k)}=0 $, then the updating law with reset algorithm can be derived as
@@ -207,27 +207,32 @@ To design the SMC for system, the sliding mode surface is first defined as:
     S_i(k) = \alpha  
 \end{equation}
 
-Taking $ \ref{model 3} $ into $ \ref{model eq:sms} $, with reaching law $ S_i(k+1) = 0 $, the equivalent control law is then designed as follow:
+Considering ($ \ref{model eq:sms}) $, with reaching law $ S_i(k+1) = 0 $, the equivalent control law is then designed as follow:
 
-where \(\alpha\) is a positive constant, and  to ensure that the system trajectory is driven toward and remains on the sliding surface. The reaching law dictates how quickly the system state converges to the sliding surface and is given by:
+The $ u_{i,\text{SM}}(k) $ contains equivalent control law and switching control law, which is set as:
+
+\begin{equation}
+    \label{model eq:u}
+    u_{i,\text{SM}}(k) = u_{i,\text{SM}}(k-1) + \Delta u_{i,\text{SM}}^M(k)+ \Delta u_{i,\text{SM}}^S(k)
+\end{equation}
+
+where, the switching control law $ u_{i,\text{SM}}^S(k) $ is presented as
 
 \begin{equation}
     \label{model eq:reaching_law}
-    \Delta S_i(k+1) = - \varepsilon T sign(k) 
+    \Delta u_{i,\text{SM}}^M = \frac{1}{2}
 \end{equation}
 
-In that equation, \(\varepsilon\) is a small positive constant that controls the rate of the convergence, \(T\) is the sampling period, and \(sign(k)\) indicates the direction in which the system should move to reach the sliding surface.
+Therefore, the controller is summarized as
 
-By combining the sliding surface definition and the reaching law, derivating the control law that ensures the desired tracking performance while maintaining robustness.
+\begin{equation}
+    \label{model eq:sm_controller}
+    u_{i,\text{SM}}^M = \frac{1}{2}
+\end{equation}
+
 
 The final sliding mode control input \(u_{i,\text{SMC}}(k)\) is designed:
 
-\begin{equation}
-    \label{model eq:smc}
-    u_{i,\text{SMC}}(k) = u_{i,\text{SMC}}(k) + \frac{y_d(k+1)-y(k) + \alpha e_i(k) + \varepsilon T sign(k)}{\phi_i(k)}
-\end{equation}
-
-To enhance the  adaptibility of the control system, the MFASMC approach is employed.  the conrol input of the system is defined as:
 
 \begin{equation}
     \label{model eq:mfasmc}
