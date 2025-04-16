@@ -204,10 +204,17 @@ To design the SMC for system, the sliding mode surface is first defined as:
 
 \begin{equation}
     \label{model eq:sms}
-    S_i(k) = \alpha  
+    S_i(k) = \alpha \xi(k) - \xi(k-1)
 \end{equation}
 
 Considering ($ \ref{model eq:sms}) $, with reaching law $ S_i(k+1) = 0 $, the equivalent control law is then designed as follow:
+
+\begin{equation}
+    \label{model eq:equivalent_control}
+    \Delta u_{i,\text{SM}}^M = \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)}(\frac{\alpha(\displaystyle \sum_{j \in N_i}a_{ij} y_j(k) + d_i y_d(k+1))-\xi_i(k)}{\alpha(\displaystyle \sum_{j \in N_i}a_{ij}+d_i)} - y_i(k)
+    )
+\end{equation}
+
 
 The $ u_{i,\text{SM}}(k) $ contains equivalent control law and switching control law, which is set as:
 
