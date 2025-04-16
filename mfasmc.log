@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  16 APR 2025 15:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  16 APR 2025 15:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -423,9 +423,9 @@ Package pdftex.def Info: diagram.png  used on input line 136.
 <communication.png, id=37, 911.405pt x 603.75563pt>
 File: communication.png Graphic file (type png)
 <use communication.png>
-Package pdftex.def Info: communication.png  used on input line 670.
+Package pdftex.def Info: communication.png  used on input line 671.
 (pdftex.def)             Requested size: 309.60315pt x 205.09915pt.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 678.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 679.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
@@ -434,7 +434,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 <Figure_2.png, id=43, 722.7pt x 180.675pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
-Package pdftex.def Info: Figure_2.png  used on input line 778.
+Package pdftex.def Info: Figure_2.png  used on input line 779.
 (pdftex.def)             Requested size: 464.39685pt x 116.10027pt.
 
 
@@ -442,12 +442,12 @@ Package pdftex.def Info: Figure_2.png  used on input line 778.
 <Figure_1.png, id=47, 722.7pt x 433.62pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
-Package pdftex.def Info: Figure_1.png  used on input line 787.
+Package pdftex.def Info: Figure_1.png  used on input line 788.
 (pdftex.def)             Requested size: 412.80157pt x 247.68205pt.
 <Figure_4.png, id=48, 722.7pt x 433.62pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
-Package pdftex.def Info: Figure_4.png  used on input line 796.
+Package pdftex.def Info: Figure_4.png  used on input line 797.
 (pdftex.def)             Requested size: 412.80157pt x 247.68205pt.
 
 
@@ -455,7 +455,7 @@ Package pdftex.def Info: Figure_4.png  used on input line 796.
 <Figure_5.png, id=54, 722.7pt x 433.62pt>
 File: Figure_5.png Graphic file (type png)
 <use Figure_5.png>
-Package pdftex.def Info: Figure_5.png  used on input line 803.
+Package pdftex.def Info: Figure_5.png  used on input line 804.
 (pdftex.def)             Requested size: 464.39685pt x 278.64066pt.
 
 
@@ -463,12 +463,12 @@ Package pdftex.def Info: Figure_5.png  used on input line 803.
 <diagram.jpg, id=60, 426.8748pt x 238.0092pt>
 File: diagram.jpg Graphic file (type jpg)
 <use diagram.jpg>
-Package pdftex.def Info: diagram.jpg  used on input line 824.
+Package pdftex.def Info: diagram.jpg  used on input line 825.
 (pdftex.def)             Requested size: 464.39685pt x 258.94548pt.
 <system.jpg, id=61, 364.7226pt x 272.6988pt>
 File: system.jpg Graphic file (type jpg)
 <use system.jpg>
-Package pdftex.def Info: system.jpg  used on input line 831.
+Package pdftex.def Info: system.jpg  used on input line 832.
 (pdftex.def)             Requested size: 464.39685pt x 347.22656pt.
 
 
@@ -476,7 +476,7 @@ Package pdftex.def Info: system.jpg  used on input line 831.
 <dc_motor_tracking.png, id=65, 722.7pt x 433.62pt>
 File: dc_motor_tracking.png Graphic file (type png)
 <use dc_motor_tracking.png>
-Package pdftex.def Info: dc_motor_tracking.png  used on input line 839.
+Package pdftex.def Info: dc_motor_tracking.png  used on input line 840.
 (pdftex.def)             Requested size: 464.39685pt x 278.64066pt.
 
 
@@ -503,7 +503,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  79i,9n,93p,1245b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (14 pages, 1102836 bytes).
+Output written on mfasmc.pdf (14 pages, 1102928 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  74 compressed objects within 1 object stream
