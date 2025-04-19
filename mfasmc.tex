@@ -286,235 +286,31 @@ Part i: Set $ \tilde{\phi}_i(k) = \hat{\phi}_i(k)-\phi_i(k) $, based on PPD esti
     =\,\ & \bigg( 1 - \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} \bigg) \tilde{\phi}_i(k-1) - \Delta \phi_i(k) 
 \end{align}
 
-herein, ||as
-    
-    
+Denote that the term $ \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} $ is monotonically increasing with respect to $| \Delta u_i(k)^2 |$, and its minimun value is $ \frac{\eta \epsilon^2}{\mu + \epsilon^2} $, therefore there must be a constant $ q_1 $ to satisfy inequality $ 0 < \eta \leq 1 $ and $ u > 0$
 
-
-
-
-Then by simplifying the previous equation, the result is:
-
-
-% \begin{equation}
-%     \label{model 19}
-%     \beta_i(k) =  \frac{\eta \Delta u_i(k-1)}{\mu + | \Delta u_i(k-1)|^2}
-% \end{equation}
-
-The control coefficient \(\beta_i(k)\) is expressed from the previous equation, plays a critical role in adjusting the control input for each agent at time step $k$. The following equation is expressed:
-
- 
-\begin{equation}
-    \label{model 17}
-    \tilde{\phi_i}(k) = \tilde{\phi_i}(k-1)+\beta_i(k)  (\Delta y_i(k) - \hat{\phi_i}(k-1)\Delta u_i(k-1) -\phi_i(k) - \phi_i(k-1))
-\end{equation}
-
-% \begin{equation}
-%     \label{model 18}
-%     \tilde{\phi_i}(k) = (1-\frac{\eta(\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2})\tilde{\phi_i}(k-1) + \phi_i(k-1) - \phi_i(k)
-% \end{equation}
 
 \begin{equation}
-    \label{model 19}
-    \tilde{\phi_i}(k) = (1-\frac{\eta(\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2})\tilde{\phi_i}(k-1) - \Delta \phi_i(k)
+    \label{model eq:ineq}
+    0 < \bigg |1 - \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} \bigg| \leq 1 - \frac{\eta \epsilon^2}{\mu + \epsilon^2} = q_1 < 1 
 \end{equation}
 
-% To prove the boundedness of the error, we begin by taking the absolute value of each term in the error equation (\ref{model 22}). This step is crucial as it allows us to establish an inequality that provides an upper bound on the error.
-
-% Taking the absolute value on both sides and applying the triangle inequality to the right-hand side, we obtain:
-
-% \begin{equation}
-%     \label{model 23}
-%     |\tilde{\phi_i}(k)| \leq  |(1-\frac{\eta(\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2})|*|\tilde{\phi_i}(k-1) |- |\Delta \phi_i(k)|
-% \end{equation}
-
-% Let,
-% \begin{equation}
-%     \label{model 24}
-%     \alpha(k-1) = \frac{\eta(\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2}
-% \end{equation}
-
-% So:
-
-% \begin{equation}
-%     \label{model 25}
-%     |\tilde{\phi_i}(k)| \leq  |(1-\alpha(k-1))|*|\tilde{\phi_i}(k-1) |- |\Delta \phi_i(k)|
-% \end{equation}
-
-% Since \(\Delta u_i(k) \neq  0\), \(0 < \eta \leq 1 \) and \(\mu \geq 0 \), \(0 < \alpha(k-1) \leq q_1 < 1  \)
-
-% Upper bound for \(1-\alpha(k-1) \) by replacing it with constant \(q_1\), we get:
-
-% \begin{align}
-%     \label{model 26}
-%     |1-\alpha(k-1)| &\leq 1-q_1 \\
-%     |\Delta \phi_i(k)| \leq |\phi_i(k-1) - \phi_i(k)| \leq b 
-% \end{align}
-
-% By combining the inequalities and applying an iterative process, we obtain the following expression:
-
-% \begin{equation}
-%     \label{model 28}
-%     |\tilde{\phi_i}(k) \leq |1-q_1||\tilde{\phi_i}(k-1)|+b
-% \end{equation}
-% \begin{equation}
-%     \label{model 29}
-%     |\tilde{\phi_i}(k-1) \leq |1-q_1||\tilde{\phi_i}(k-2)|+b
-% \end{equation}
-
-% continuing the process back to the initial condition(0) , with sum of geometric series of \(\sum_{j=o}^{k-1} (1-q_1)^j = \frac{1-(1-q_1)^k}{q_1} \)
-
-% Thus:
-% \begin{equation}
-%     \label{model 30}
-%     |\tilde{\phi_i}(k) \leq (1-q_1)^k ((\tilde{phi_i}(0))) + \frac{b}{q_1} (1-(1-q_1)^k)
-% \end{equation}
-
-% Simplifying the bound, as \(k=\infty\), so\((1-q_1)^k=0\), therefore \(\tilde{\phi_i}(k) \) is bounded, because if satifies: \(|\tilde{\phi_i}(k) \leq \frac{b}{q_1} \)
-
-To demonstrate the boundedness of the error, by taking the absolute value of both sides of the error (\ref{model 19}). This is a crucial step, as it allows us to establish an inequality that provides an upper bound on the error term.
-
-Taking the absolute value on both sides and applying the triangle inequality to the right-hand side, it follows that:
-
-\begin{equation}
-\label{model 20}
-|\tilde{\phi_i}(k)| \leq \left| 1 - \frac{\eta (\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2} \right| |\tilde{\phi_i}(k-1)| + |\Delta \phi_i(k)|
-\end{equation}
-
-Defining:
-
-\begin{equation}
-\label{model 21}
-\alpha(k-1) = \frac{\eta (\Delta u_i(k-1))^2}{\mu + |\Delta u_i(k-1)|^2}
-\end{equation}
-
-So  (\ref{model 20}) becomes:
-
-\begin{equation}
-\label{model 22}
-|\tilde{\phi_i}(k)| \leq |1 - \alpha(k-1)| |\tilde{\phi_i}(k-1)| + |\Delta \phi_i(k)|
-\end{equation}
-
-% Given that \(\Delta u_i(k) \neq 0\), \(0 < \eta \leq 1\), and \(\mu \geq 0\), it follows that \(0 < \alpha(k-1) \leq q_1 < 1\).
-
-Since $|\phi_i(k)| \leq b $, considering assumption 4, we can obtain $|\phi_i(k-1)-\phi_i(k)|$, and then:
-
-\begin{equation}
-\label{model 23}
-|\tilde{\phi_i}(k)| \leq |1 - q_1| |\tilde{\phi_i}(k-1)| + b
-\end{equation}
-
-% Continuing this process for previous time steps::
-
-% \begin{equation}
-% \label{model 24}
-% |\tilde{\phi_i}(k-1)| \leq |1 - q_1| |\tilde{\phi_i}(k-2)| + b
-% \end{equation}
-
-Back to the initial condition at \(k=0\) and summing the resulting geometric series:
-\[
-\sum_{j=0}^{k-1} (1-q_1)^j = \frac{1-(1-q_1)^k}{q_1}
-\]
-
-Thus:
-
-\begin{equation}
-\label{model 25}
-|\tilde{\phi_i}(k)| \leq (1 - q_1)^k |\tilde{\phi_i}(0)| + \frac{b}{q_1} (1 - (1 - q_1)^k)
-\end{equation}
-
-As \(k \rightarrow \infty\), the term \((1-q_1)^k\) tends to zero, simplifying the bound to:
-
-\begin{equation}
-\label{model 26}
-|\tilde{\phi_i}(k)| \leq \frac{b}{q_1}
-\end{equation}
-
-% Therefore, \(\tilde{\phi_i}(k)\) is bounded by \(\frac{b}{q_1}\), proving that the error remains within this bound as \(k\) approaches infinity.
+Because of $ |\phi_i(k)| < \bar{b} $, and $ |\Delta \phi_i(k)| < 2 \bar{b} $ then the equation ($ \ref{model:phi_tilde_update} $) is written as:
 
 
-Remark 4: The inequality in \eqref{model 26} shows that \(\tilde{\phi_i}(k)\) is bounded by \(\frac{b}{q_1}\). This result implies that the error \(\tilde{\phi_i}(k)\) will remain within this bound, even as \(k\) approaches infinity. Thus, the system error behavior is effectively controlled and constrained.
+\begin{align}
+    \label{model:absolute}
+    |\tilde{\phi}_i(k)| \leq\ & q_1|\tilde{\phi}_i(k-1)| + 2 \bar{b}  \nonumber \\
+    \leq\,\ & q_1^2|\tilde{\phi}_i(k-2)| + 2 q_1\bar{b} + 2\bar{b} \nonumber \\
+    \vdots \nonumber \\
+    \leq\,\ & q_1^{k-1}|\tilde{\phi}_i(1)| + \frac{2 \bar{b}}{1-q_1}(1-q_1^{k-1}) 
+\end{align}   
 
+which implies $ \tilde{\phi}_i(k) $ is bounded. Since the boundedness of $ \phi_i(k) $ is guaranteed by Lemma 1. 
     
 
-% Part 2: The convergence of tracking error , from (\ref{model 3}). \(\xi_i(k)\) can be rewritten in terms of tracking errors as follows:
-
-% \begin{equation}
-%     \label{model 32}
-%     \xi_i(k) = \sum_{j\epsilon N_i} (e_i(k) - e_j(k))+d_i e_i (k)
-% \end{equation}
-
-% \(y(k) =  \begin{pmatrix} y_1 \\ y_2 \\ y_3 \\ \vdots \\ y_n \end{pmatrix} , e(k) =  \begin{pmatrix} e_1 \\ e_2 \\ e_3 \\ \vdots \\ e_n \end{pmatrix}, \xi(k) =  \begin{pmatrix} \xi_1 \\ \xi_2 \\ \xi_3 \\ \vdots \\  \xi_n \end{pmatrix}, u(k) =  \begin{pmatrix} u_1 \\ u_2 \\ u_3 \\ \vdots \\ u_n \end{pmatrix}
-% \)
-
-% \begin{equation}
-%     \label{model 33}
-%     \xi_i(k) = (L+D)e(k) 
-% \end{equation}
-
-% with \(D = diag(d_1,d_2,d_3,\dots,d_n)\)
-
-% Where \(u(k) = u(k-1) + \rho*diag(\frac{\hat{\phi_1}(k)}{\lambda + |\hat{\phi_1}(k)|^2},\frac{\hat{\phi_2}(k)}{\lambda + |\hat{\phi_2}(k)|^2},\frac{\hat{\phi_3}(k)}{\lambda + |\hat{\phi_3}(k)|^2},\dots, \frac{\hat{\phi_n}(k)}{\lambda + |\hat{\phi_n}(k)|^2}) (L+D)e(k)\)
-
-% \begin{equation}
-%     \label{model 34}
-%     u(k) = u(k-1)+\rho H_1(k)(L+D)e(k)  
-% \end{equation}
-
-% We can describe (\ref{model 2}) as \(y(k+1) = y(k) + \phi(k) \Delta u(k) \)
-
-% So:
-
-% \(y(k+1) = y(k) + diag(\phi_1(k) \phi_2(k) \phi_3(k) \dots \phi_n(k)) \Delta u(k)\)
-
-% \begin{equation}
-%     \label{model 35}
-%     y(k+1) = y(k) + H_\phi(k) \Delta u(k)
-% \end{equation}
-
-% Where \(\Delta u(k) = u(k)-u(k-1) , H_\phi(k) = diag(\phi_1(k) \phi_2(k) \phi_2(k) \dots \phi_n(k) ) \)
-
-% By Subtituting (\ref{model 34}) into (\ref{model 35}) we can get: \\
-% \(e(k+1)-e(k) = y(k) - y(k+1) \) 
-
-% \(e(k+1) = e(k) + y(k) - y(k+1) \\
-% e(k+1) = e(k) - H_\phi(k) \rho H_1(k) (L+D) e(k)  
-% \)
-
-% Which give as the following equation:
-
-% \begin{equation}
-%     \label{model 36}
-%     e(k+1) = (I-\rho \sum(k) (L+D))e(k)
-% \end{equation}
-
-% Where \(\sum(k) = H_\phi(k) H_1(k) = diag(\frac{\hat{\phi_1}(k)}{\lambda + |\hat{\phi_1}(k)|^2},\frac{\hat{\phi_2}(k)}{\lambda + |\hat{\phi_2}(k)|^2},\frac{\hat{\phi_3}(k)}{\lambda + |\hat{\phi_3}(k)|^2},\dots, \frac{\hat{\phi_n}(k)}{\lambda + |\hat{\phi_n}(k)|^2})
-% \\
-% =diag(\mathcal{V}_1(k) \mathcal{V}_2(k) \mathcal{V}_3(k) \dots \mathcal{V}_n(k) )
-% \)
-
-% With 
-
-% \(\mathcal{V}_i(k) =\frac{\hat{\phi_i}(k)}{\lambda + |\hat{\phi_i}(k)|^2} , i=1,2,3,\dots,n\) 
-
-% Let \(\Theta(k) = \sum(k) (L+D) \) , we get \(e(k+1) = (I-\rho \Theta(k))e(k) \)
-
-% Finnaly , we have:
-
-% \begin{equation}
-%     \label{model 37}
-%     ||I-\rho \ \Theta(k)|| < 1
-% \end{equation}
-
-% so :
-
-% \(\lim{k \rightarrow \infty} ||e(k+1)|| = 0\)
-
-% \section*{Part 2: Convergence of Tracking Error}
 
 
 
-%  In this part, delving into the convergence properties of the distributed error \(\xi_i(k)\). To understand the convergence, we start with the expression for \(\xi_i(k)\) as given in equation (\ref{model 3}). Aiming to express \(\xi_i(k)\) in terms of the individual tracking errors \(e_i(k)\) and the errors associated with neighboring systems.
 Step 2:
 
 The expression for \(\xi_i(k)\) is formulated as follows:
