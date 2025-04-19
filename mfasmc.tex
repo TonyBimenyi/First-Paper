@@ -200,14 +200,24 @@ where \(\rho\) \(\in\) (0,1) is a step-size constant, which is added to make (\r
 
 % y_i(k + 1) = f_i(y_i(k), u_i(k)), \quad i = 1, 2, \ldots, N
 
-To design the SMC for system, the sliding mode surface is first defined as:
+To design the SMC for system, the sliding mode surface is first defined as
 
 \begin{equation}
     \label{model eq:sms}
-    S_i(k) = \alpha \xi(k) - \xi(k-1)
+    S_i(k) = \alpha \xi_i(k) - \xi_i(k-1)
+\end{equation}
+herein $ \alpha > 1$ represents a positive constant.
+
+Furthermore, from ($ \ref{model 2}) $ and ($ \ref{model 3} $), the formula ($ \ref{model 3} $) is updated as
+
+\begin{equation}
+    \label{model eq:xi_next}
+    \xi_i(k+1) =\xi_i(k)-\left(\displaystyle \sum_{j \in N_i}a_{ij} + d_i \right) \phi_i(k)\Delta u_i(k) + \displaystyle \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1)
 \end{equation}
 
-Considering ($ \ref{model eq:sms}) $, with the assistance of reaching law $ S_i(k+1) = 0 $, the equivalent control law is then designed as follow:
+wherein $\Delta y_j(k)$
+
+Considering ($ \ref{model eq:sms}) $, with the assistance of reaching law $ S_i(k+1) = 0 $, the equivalent control law is then designed as
 
 \begin{equation}
     \label{model eq:equivalent_control}
@@ -251,7 +261,9 @@ where the parameter \(\Gamma\) is a gain factor.
 
 \subsection{Stability Analysis}
 
-Theorem 1: For the MASs (\ref{model 1}) that satifies Assumptions 1 and 2, assuming $ |\xi_{i,0}| < \min\{a_{i,0}, b_{i,0}\} \rho_{i,0} $
+Theorem 1: For the MASs (\ref{model 1}) that satifies Assumptions 1 and 2, assuming $ |\xi_{i,0}| < \min\{a_{i,0}, b_{i,0}\} \rho_{i,0} $ are satisfied, the utilizing the PPD update law (\ref{model eq:ppd_parameter}) can ensure the boundedness of $ \hat{\phi}_i(k) $.
+
+Proof: The proof 
 
 The stability analysis is conducted in two primary steps. The first step focuses on estabilishing the bounds, the second step ensures that the error remains within acceptable limits over time, leading to a stable system.
 

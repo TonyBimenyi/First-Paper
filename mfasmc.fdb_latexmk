@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1744787855.98702 "/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1744787857.29733 0
-  "/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/mfasmc.tex" 1744787855.77959 51003 038612051eb14cd6877f4651b2277763 ""
+["pdflatex"] 1745046150.34523 "/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1745046151.66683 0
+  "/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/mfasmc.tex" 1745046148.79645 51577 e469c21c1d52876d19035e93fbca52c2 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -93,8 +93,8 @@
   "dc_motor_tracking.png" 1742916598.44281 62079 78a9d70ca9442c4468ec4051946fba81 ""
   "diagram.jpg" 1742906700.51568 174560 1ec1d90c7a614cfe14f4de13c60cee83 ""
   "diagram.png" 1742812738.96182 251342 161056946171cc693b3bf0102ad204fd ""
-  "mfasmc.aux" 1744787857.23783 5453 4faedb825434627ce90d09ebd7db3bc6 "pdflatex"
-  "mfasmc.tex" 1744787855.77959 51003 038612051eb14cd6877f4651b2277763 ""
+  "mfasmc.aux" 1745046151.60319 5509 7b37b0a47fcffab658469d818f7a7891 "pdflatex"
+  "mfasmc.tex" 1745046148.79645 51577 e469c21c1d52876d19035e93fbca52c2 ""
   "system.jpg" 1742906700.49795 284345 2e63d27a6282be46dcff4ad0511d988c ""
   (generated)
   "mfasmc.aux"
