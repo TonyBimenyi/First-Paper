@@ -210,34 +210,45 @@ herein $ \alpha > 1$ represents a positive constant.
 
 Furthermore, from ($ \ref{model 2}) $ and ($ \ref{model 3} $), the formula ($ \ref{model 3} $) is updated as
 
-\begin{equation}
+\begin{align}
     \label{model eq:xi_next}
-    \xi_i(k+1) =\xi_i(k)-\left(\displaystyle \sum_{j \in N_i}a_{ij} + d_i \right) \phi_i(k)\Delta u_i(k) + \displaystyle \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1)
-\end{equation}
+    \xi_i(k+1) =\ & \xi_i(k) - \left(\sum_{j \in N_i} a_{ij} + d_i \right) \phi_i(k) \Delta u_i(k) + \sum_{j \in N_i} a_{ij} \Delta y_j(k) \nonumber \\
+    &  + d_i \Delta y_d(k+1)
+\end{align}
+    
 
-wherein $\Delta y_j(k)$
+wherein $\Delta y_j(k+1)$ is replaced with $ \Delta y_j(k) $ because the data at the next moment cannot be obtained.
+
+% Then, ($ \ref{model eq:sms}  $) is given as
+
+% \begin{align}
+%     \label{model eq:sms_next}
+%     S_i(k+1) =\ & (\alpha-1)\xi_i(k) - \left(\sum_{j \in N_i} a_{ij} + d_i \right) \phi_i(k) \Delta u_i(k) + \alpha \sum_{j \in N_i} a_{ij} \Delta y_j(k) \nonumber \\
+%     &  + d_i \Delta y_d(k+1)
+% \end{align}
+
 
 Considering ($ \ref{model eq:sms}) $, with the assistance of reaching law $ S_i(k+1) = 0 $, the equivalent control law is then designed as
 
 \begin{equation}
     \label{model eq:equivalent_control}
-    \Delta u_{i,\text{SM}}^M = \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}\left(\frac{\alpha(\displaystyle \sum_{j \in N_i}a_{ij} y_j(k) + d_i y_d(k+1))-\xi_i(k)}{\alpha(\displaystyle \sum_{j \in N_i}a_{ij}+d_i)} - y_i(k)
+    \Delta u_{i,\text{SM}}^{eq} = \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}\left(\frac{\xi_i(k)+ \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1)}{\displaystyle \sum_{j \in N_i}a_{ij}+d_i} - \frac{\xi_i(k)}{\alpha(\displaystyle \sum_{j \in N_i}a_{ij}+d_i)}
     \right)
 \end{equation}
 
 
-The $ u_{i,\text{SM}}(k) $ contains equivalent control law and switching control law, which is set as:
+The controller contains equivalent control law and switching control law, which is set as
 
 \begin{equation}
     \label{model eq:u}
-    u_{i,\text{SM}}(k) = u_{i,\text{SM}}(k-1) + \Delta u_{i,\text{SM}}^M(k)+ \Delta u_{i,\text{SM}}^S(k)
+    u_{i,\text{SM}}(k) = u_{i,\text{SM}}(k-1) + \Delta u_{i,\text{SM}}^M(k)+ \Delta u_{i,\text{SM}}^s(k)
 \end{equation}
 
-where, the switching control law $ u_{i,\text{SM}}^S(k) $ is presented as
+where, the switching control law $ \Delta u_{i,\text{SM}}^s(k) $ is presented as
 
 \begin{equation}
     \label{model eq:reaching_law}
-    \Delta u_{i,\text{SM}}^S(k) = \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}\tau_s sign(S_i(k))
+    \Delta u_{i,\text{SM}}^s(k) = \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}\tau_s sign(S_i(k))
 \end{equation}
 
 Taking in considaration both(\ref{model eq:equivalent_control}), (\ref{model eq:u}) and (\ref{model eq:reaching_law})  , the controller is summarized as
