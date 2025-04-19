@@ -273,21 +273,25 @@ where the parameter \(\Gamma\) is a gain factor.
 
 \subsection{Stability Analysis}
 
-Theorem 1: For the MASs (\ref{model 1}) that satifies Assumptions 1 and 2, assuming $ |\xi_{i,0}| < \min\{a_{i,0}, b_{i,0}\} \rho_{i,0} $ are satisfied, the utilizing the PPD update law (\ref{model eq:ppd_parameter}) can ensure the boundedness of $ \hat{\phi}_i(k) $.
+Theorem 1: For the MASs (\ref{model 1}) that satifies Assumptions 1 and 2, assuming $ |\xi_{i,0}| < \min\{a_{i,0}, b_{i,0}\} \rho_{i,0} $ are satisfied, the controller parameters establish $ 0<h_0<h_i(k)<\frac{\omega C_0}{2 \sqrt{\sigma}} <1 $, the using the PPD update law (\ref{model eq:ppd_parameter}) can ensure the boundedness of $ \hat{\phi}_i(k) $.
 
-Proof: The proof 
+Proof: The proof is devided in two parts.
 
-The stability analysis is conducted in two primary steps. The first step focuses on estabilishing the bounds, the second step ensures that the error remains within acceptable limits over time, leading to a stable system.
+Part i: Set $ \tilde{\phi}_i(k) = \hat{\phi}_i(k)-\phi_i(k) $, based on PPD estimation algorithm ($ \ref{model eq:ppd_parameter} $), we can obtain: 
 
-Step 1: Establishment of error bounds
+\begin{align}
+    \label{model:phi_tilde_update}
+    \tilde{\phi}_i(k) =\ & \tilde{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} ( \phi_i(k-1) \Delta u_i(k-1) - \hat{\phi}_i(k-1) \Delta u_i(k-1)) \nonumber \\
+    =\,\ & \tilde{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} ( \phi_i(k-1) - \hat{\phi}_i(k-1)) - \phi_i(k) + \phi_i(k-1) \nonumber \\
+    =\,\ & \bigg( 1 - \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} \bigg) \tilde{\phi}_i(k-1) - \Delta \phi_i(k) 
+\end{align}
 
-The estimated error between the estimated and actual values of the system parameters, denote as \(\tilde{\phi_i}(k)
-=\hat{\phi}_i(k)-\phi_i(k) \), starting from the foundational equation derived from the compact dynamic linearization model in equation (\ref{model 2}) along with the PPD estimation equation (\ref{model eq:ppd_parameter}). To ensure the theorem validity, the detailed proof that demonstrates the correctness of this error bound is provided.
 
-\begin{equation}
-    \label{model 15}
-    \tilde{\phi_i}(k) = \hat{\phi_i}(k+1) + \frac{\eta \Delta u_i(k-1)}{\mu + | \Delta u_i(k-1)|^2}  ((\Delta y_i(k) - \hat{\phi_i}(k-1)\Delta u_i(k-1) )) - \phi_i(k)
-\end{equation}
+    
+    
+
+
+
 
 Then by simplifying the previous equation, the result is:
 
