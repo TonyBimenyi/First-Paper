@@ -307,128 +307,38 @@ Because of $ |\phi_i(k)| < \bar{b} $, and $ |\Delta \phi_i(k)| < 2 \bar{b} $ the
 
 which implies $ \tilde{\phi}_i(k) $ is bounded. Since the boundedness of $ \phi_i(k) $ is guaranteed by Lemma 1. 
     
+Part ii: In this part, mathematical induction will be utilized to prove that $ \xi_i(k)$ is remain bounded.
 
+Substituting ($ \ref{model eq:ppd_parameter} $) into ($ \ref{model eq:xi_next} $), then the expression for \(\xi_i(k+1)\) is formulated as follows::
 
+\begin{align}
+    \label{model eq:xi_next_proof}
+    \xi_i(k+1) =\ & \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} (1-\frac{1}{2})  \bigg) \xi_i(k) + \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}  \bigg) \bigg ( \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) \bigg ) \nonumber \\
+    &\quad - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}  \bigg ( \sum_{j \in N_i}a_{ij} + d_i \bigg ) \tau_s sign(S_i(k))
+\end{align}
 
+By applying the fundamentals of mathematical induction, then assuming $ 0<h_0<h_i(k)<\frac{\omega C_0}{2\sqrt{\sigma}}<1 $, where $ \phi_i(k) < C_0 $ and $ |g_i(k)|<g_0 $, the inequality is obtained by taking the absolute value of each term of ($ \ref{model eq:xi_next_proof} $).
 
-Step 2:
+\begin{align}
+    \label{model:absolute2}
+    |\xi_i(k+1)| \leq\ & |1-h_i(k)(1-\frac{1}{2})| |\xi_i(k)| + |g_i(k)|  \nonumber \\
+    \leq\,\ & |1-h_i(k)(1-\frac{1}{2})| |\xi_i(k)| + g_0(k) \nonumber \\
+    \vdots \nonumber \\
+    \leq\,\ & 1-h_0(1-\frac{1}{2})^k |\xi_i(k)| + \frac{g_0(1-(1-h_0(1-\frac{1}{2}))^2)}{h_0(1-\frac{1}{2})} 
+\end{align}   
 
-The expression for \(\xi_i(k)\) is formulated as follows:
-
-\begin{equation}
-    \label{model 27}
-    \xi_i(k) = \sum_{j \in N_i} (e_i(k) - e_j(k)) + d_i e_i(k)
-\end{equation}
-
-In this equation, \(\xi_i(k)\) represents the distributed measurement of the $i$th system at time \(k\), taking into account the deviations from the neighbors \(j\) in the set \(N_i\) and an additional term \(d_i e_i(k)\) that depends on the specific characteristics of the $i$th system.
-
-Define the collective stack vectors as follows:
-
-    
-\begin{align*}
-    y(k)   &= \left[ y_1(k) \quad y_2(k) \quad \dots \quad y_n(k) \right]^T \\
-    e(k)   &= \left[ e_1(k) \quad e_2(k) \quad \dots \quad e_n(k) \right]^T \\ 
-    \xi(k) &= \left[ \xi_1(k) \quad \xi_2(k) \quad \dots \quad \xi_n(k) \right]^T \\
-    u(k)   &= \left[ u_1(k) \quad u_2(k) \quad \dots \quad u_n(k) \right]^T
-    \end{align*}
-    
-
-Using the above-mentioned definitions, the measurement output \(\xi_i(k)\) can be rewritten as as follows:
+Therefore, the following result will be given as
 
 \begin{equation}
-    \label{model 28}
-    \xi(k) = (L + D) e(k)
+    \label{model:lim_fin}
+    \lim_{k \to \infty} \xi_i(k+1) = \frac{g_0}{h_0(1-\frac{1}{2})} = \frac{\alpha g_0}{(\alpha-1)h_0}
 \end{equation}
 
-Where \(L\) represents the interaction matrix that describes how each system interacts with its neighbors, while \(D\) is a diagonal matrix defined by \(D = \text{diag}(d_1, d_2, d_3, \dots, d_n)\). By noting the definition in (\ref{model 28}), the controller (\ref{model eq:mfac}) is rewritten as:
-
-
-\begin{equation}
-    \label{model 29}
-    u(k) = u(k-1) + \rho H_1(k) (L + D) e(k)
-\end{equation}
-
-where
-
-
-\[
-H_1(k) = \rho   \text{diag}\left(\frac{\hat{\phi}_1(k)}{\lambda + |\hat{\phi}_1(k)|^2}, \frac{\hat{\phi}_2(k)}{\lambda + |\hat{\phi}_2(k)|^2}, \dots, \frac{\hat{\phi}_n(k)}{\lambda + |\hat{\phi}_n(k)|^2}\right).
-\]
-
-
-% where \(H_1(k)\) is a diagonal matrix whose elements are functions of the estimated parameters \(\hat{\phi}_i(k)\), and \(H_\phi(k)\) is defined as:
-
-
-In similar way, CFDL model (\ref{model 2}) is also transformed into the following collective form:
-
-\begin{equation}
-    \label{new cfdl}
-    % e(k+1) = (I - \rho \Theta(k)) e(k)
-    y(k+1) = y(k) + H_\phi(k) \Delta u(k)
-\end{equation}
-
-where
-
-\[\Delta u(k) = u(k)-u(k-1)\]
-\[
-H_\phi(k) = \text{diag}(\phi_1(k), \phi_2(k), \phi_3(k), \dots, \phi_n(k))
-\]
-
-
-We can substitute (\ref{model 29}) and (\ref{new cfdl}) to get
-
-\begin{equation}
-    \label{model 30}
-    % e(k+1) = (I - \rho \Theta(k)) e(k)
-    e(k+1) = (I - \rho \sum(k) (L+D)) e(k)
-\end{equation}
-
-where $\sum(k) = H_\phi(k)H_1(k) = \text{diag}(\mathcal{V}_1(k), \mathcal{V}_2(k), \mathcal{V}_3(k), \dots, \mathcal{V}_n(k))$, and each \(\mathcal{V}_i(k)\) is given by:
-
-% where \(\Theta(k)\) is defined by:
-
-% \[
-% \Theta(k) = \sum(k) (L + D) = H_\phi(k) H_1(k) (L + D)
-% \]
-
-% with:
-
-% \[
-% \sum(k) = \text{diag}\left(\frac{\hat{\phi_1}(k)}{\lambda + |\hat{\phi_1}(k)|^2}, \frac{\hat{\phi_2}(k)}{\lambda + |\hat{\phi_2}(k)|^2}, \frac{\hat{\phi_3}(k)}{\lambda + |\hat{\phi_3}(k)|^2}, \dots, \frac{\hat{\phi_n}(k)}{\lambda + |\hat{\phi_n}(k)|^2}\right)
-% \]
-
-% which can be expressed in diagonal form as:
-
-% \[
-% \sum(k) = \text{diag}(\mathcal{V}_1(k), \mathcal{V}_2(k), \mathcal{V}_3(k), \dots, \mathcal{V}_n(k))
-% \]
+The proof is completed.
 
 
 
-\[
-\mathcal{V}_i(k) = \frac{\hat{\phi_i}(k)}{\lambda + |\hat{\phi_i}(k)|^2}, \quad i = 1, 2, \dots, n
-\]
 
-Thus :
-
-\[
-\Theta(k) = \text{diag}(\mathcal{V}_1(k), \mathcal{V}_2(k), \mathcal{V}_3(k), \dots, \mathcal{V}_n(k)) (L + D)
-\]
-
-To ensure convergence of the tracking error, the following condition is imposed:
-
-\begin{equation}
-    \label{model 31}
-    \|I - \rho \Theta(k)\| < 1
-\end{equation}
-
-This condition guarantees that the tracking error \(e(k)\) will approach zero as \(k \to \infty\). Consequently:
-
-\[
-\lim_{k \to \infty} \|e(k+1)\| = 0
-\]
-
-% This result indicates that the tracking error will converge to zero, demonstrating the effectiveness of the proposed control strategy in achieving desired tracking performance.
 
 Remark 5: This condition ensures that the tracking error decreases over time and eventually converges to zero as $k$ approaches infinity. The implication is under the proposed control strategy, the system will successfully align with the desireed performance, eliminating any discrepancies in tracking. This convergence demonstrates the robutness and effectiveness of the control method in achieving accurate and stable performance.
 
