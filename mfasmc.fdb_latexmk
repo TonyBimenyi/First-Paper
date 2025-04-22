@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1745307873.65659 "/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1745307875.20654 0
-  "/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/mfasmc.tex" 1745307873.38222 41596 c25528a6c729a140abf17edce8c7e7a4 ""
+["pdflatex"] 1745315536.91206 "/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1745315538.06816 0
+  "/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/mfasmc.tex" 1745315536.68499 41682 a6a039450f514a89ac9c9c14c36647d9 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -82,17 +82,17 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1742062162 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "Figure_1.png" 1742905959.41263 72469 bf8a61369fc4dc6cf43eece635cda9df ""
-  "Figure_2.png" 1742905576.49619 23259 e21151b8ac1f3032ca198f3870282e37 ""
-  "Figure_4.png" 1742905697.07943 33188 1007b952cd76e4db4fb8b1e262efb5ea ""
-  "Figure_5.png" 1742905281.77671 30359 d1ade50fd330343ca87316376f2184fd ""
-  "communication.png" 1742812738.96081 46867 d3c908f6c18b44bd99c9591f6c11efe9 ""
+  "communication.png" 1745315461.62892 46571 a30c06218b6e2161ea8490b4300d681c ""
   "dc_motor_tracking.png" 1742916598.44281 62079 78a9d70ca9442c4468ec4051946fba81 ""
   "diagram.jpg" 1742906700.51568 174560 1ec1d90c7a614cfe14f4de13c60cee83 ""
   "diagram.png" 1742812738.96182 251342 161056946171cc693b3bf0102ad204fd ""
-  "mfasmc.aux" 1745307875.14275 5091 376fe23491ff5f911db36436e07950de "pdflatex"
-  "mfasmc.tex" 1745307873.38222 41596 c25528a6c729a140abf17edce8c7e7a4 ""
+  "error_inv.png" 1745308752.29655 35337 babb4da9fa201c91c73f81df006dbcc1 ""
+  "error_var.png" 1745309913.93103 47460 659c21f5e1b729e82e5796edf311691f ""
+  "mfasmc.aux" 1745315538.00476 5187 890d6c78246768badf6f5fbc94e14dc6 "pdflatex"
+  "mfasmc.tex" 1745315536.68499 41682 a6a039450f514a89ac9c9c14c36647d9 ""
   "system.jpg" 1742906700.49795 284345 2e63d27a6282be46dcff4ad0511d988c ""
+  "tracking_inv.png" 1745308376.17018 62272 102d171c73b6322c7977b5936d35d31c ""
+  "tracking_var.png" 1745309097.46585 82718 71ad471e9fd9d930b65fd87fa68721e6 ""
   (generated)
   "mfasmc.aux"
   "mfasmc.log"

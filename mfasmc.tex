@@ -200,7 +200,7 @@ where \(\rho\) \(\in\) (0,1) is a step-size constant, which is added to make (\r
 
 % y_i(k + 1) = f_i(y_i(k), u_i(k)), \quad i = 1, 2, \ldots, N
 
-To design the SMC for system, the sliding mode surface is first defined as
+To design the SMC for the system, the sliding mode surface is first defined as
 
 \begin{equation}
     \label{model eq:sms}
@@ -228,7 +228,7 @@ wherein $\Delta y_j(k+1)$ is replaced with $ \Delta y_j(k) $ because the data at
 % \end{align}
 
 
-Considering ($ \ref{model eq:sms}) $, with the assistance of reaching law $ S_i(k+1) = 0 $, the equivalent control law is then designed as
+Considering ($ \ref{model eq:sms}) $, with the assistance of reaching law $ S_i(k+1) = 0 $, the equivalent control law is designed as
 
 \begin{equation}
     \label{model eq:equivalent_control}
@@ -237,7 +237,7 @@ Considering ($ \ref{model eq:sms}) $, with the assistance of reaching law $ S_i(
 \end{equation}
 
 
-The controller contains equivalent control law and switching control law, which is set as
+The controller consists of an equivalent control law and switching control law, which is set as
 
 \begin{equation}
     \label{model eq:u}
@@ -251,7 +251,7 @@ where, the switching control law $ \Delta u_{i,\text{SM}}^s(k) $ is presented as
     \Delta u_{i,\text{SM}}^s(k) = \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}\tau_s sign(S_i(k))
 \end{equation}
 
-Taking in considaration both(\ref{model eq:equivalent_control}), (\ref{model eq:u}) and (\ref{model eq:reaching_law})  , the controller is summarized as follows:
+Taking into considaration both(\ref{model eq:equivalent_control}), (\ref{model eq:u}) and (\ref{model eq:reaching_law}), the controller is summarized as follows:
 
 \begin{align}
     \label{model eq:sm_controller}
@@ -273,9 +273,9 @@ where the parameter \(\Gamma\) is a gain factor.
 
 \subsection{Stability Analysis}
 
-Theorem 1: For the MASs (\ref{model 1}) that satifies Assumptions 1 and 2, assuming $ |\xi_{i,0}| < \min\{a_{i,0}, b_{i,0}\} \rho_{i,0} $ are satisfied, the controller parameters establish $ 0<h_0<h_i(k)<\frac{\omega C_0}{2 \sqrt{\sigma}} <1 $, then using the PPD update law (\ref{model eq:ppd_parameter}) can ensure the boundedness of $ \hat{\phi}_i(k) $.
+Theorem 1: For the MASs (\ref{model 1}) satisfying assumptions 1 and 2, assuming the controller parameters establish $ 0<h_0<h_i(k)<\frac{\omega C_0}{2 \sqrt{\sigma}} <1 $, then using the PPD update law (\ref{model eq:ppd_parameter}) ensures the boundedness of $ \hat{\phi}_i(k) $.
 
-Proof: The proof is devided in two parts.
+Proof: The proof is devided into two parts.
 
 Part i: Set $ \tilde{\phi}_i(k) = \hat{\phi}_i(k)-\phi_i(k) $, based on PPD estimation algorithm ($ \ref{model eq:ppd_parameter} $), we can obtain: 
 
@@ -286,7 +286,7 @@ Part i: Set $ \tilde{\phi}_i(k) = \hat{\phi}_i(k)-\phi_i(k) $, based on PPD esti
     =\,\ & \bigg( 1 - \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} \bigg) \tilde{\phi}_i(k-1) - \Delta \phi_i(k) 
 \end{align}
 
-Denote that the term $ \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} $ is monotonically increasing with respect to $| \Delta u_i(k)^2 |$, and its minimun value is $ \frac{\eta \epsilon^2}{\mu + \epsilon^2} $, therefore there must be a constant $ q_1 $ to satisfy inequality $ 0 < \eta \leq 1 $ and $ u > 0$
+Denote that the term $ \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} $ is monotonically increasing with respect to $| \Delta u_i(k)^2 |$, and its minimum value is $ \frac{\eta \epsilon^2}{\mu + \epsilon^2} $. Therefore, there must be a constant $ q_1 $ satisfying the inequalities $ 0 < \eta \leq 1 $ and $ u > 0$
 
 
 \begin{equation}
@@ -307,9 +307,9 @@ Because of $ |\phi_i(k)| < \bar{b} $, and $ |\Delta \phi_i(k)| < 2 \bar{b} $ the
 
 which implies $ \tilde{\phi}_i(k) $ is bounded. Since the boundedness of $ \phi_i(k) $ is guaranteed by Lemma 1. 
     
-Part ii: In this part, mathematical induction will be utilized to prove that $ \xi_i(k)$ is remain bounded.
+Part ii: In this part, mathematical induction will be utilized to prove that $ \xi_i(k)$ remains bounded.
 
-Substituting ($ \ref{model eq:ppd_parameter} $) into ($ \ref{model eq:xi_next} $), then the expression for \(\xi_i(k+1)\) is formulated as follows::
+Substituting ($ \ref{model eq:ppd_parameter} $) into ($ \ref{model eq:xi_next} $), then the expression for \(\xi_i(k+1)\) is formulated as follows:
 
 \begin{align}
     \label{model eq:xi_next_proof}
@@ -339,13 +339,13 @@ Therefore, the following result will be given as
 The proof is completed.
 
 
-Remark 3: Theorem 1 guarantees the boundedness of  $ \hat{\phi}_i $ and the distributed measurement error for the MASs described by ($\ref{model 1} $) under assumptions 1 and 2. The proof employs the PPD update law ($ \ref{model eq:ppd_parameter} $) to ensure that $ \tilde{\phi}_i(k) $ remains bounded, as demonstrated through the application of the factor $ q_1<1 $. Then, mathematical induction confirms that $ \xi_i(k) $ is bounded. Therefore, this result shows the effectiveness of the proposed controller in achieving stable performance for the MASs.
+Remark 3: Theorem 1 guarantees the boundedness of  $ \hat{\phi}_i $ and the distributed measurement error for the MASs described by ($\ref{model 1} $) under assumptions 1 and 2. The proof employs the PPD update law ($ \ref{model eq:ppd_parameter} $) to ensure that $ \tilde{\phi}_i(k) $ remains bounded, as demonstrated through the application of the factor $ q_1<1 $. The mathematical induction confirms that $ \xi_i(k) $ is bounded. Thus, this result shows the effectiveness of the proposed controller in achieving stable performance for the MASs.
 
 Consider the network comprising:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{communication.png}
+    \includegraphics[width=0.45\textwidth]{communication.png}
     \caption{Communication topology among agents.}
     \label{fig:communication1} % Label for referencing the figure
 \end{figure}
@@ -432,10 +432,10 @@ The output data model of each agents is governed by:
 
 \[
 \begin{array}{c}
-\text{Agent 1}: \quad y_1(k+1) = \frac{m u_1(k)}{0.1 T}\\
-\text{Agent 2}: \quad y_2(k+1) = \frac{m u_2(k)}{0.1 T } \\
-\text{Agent 3}: \quad y_3(k+1) = \frac{m u_3(k)}{0.3 T } \\
-\text{Agent 4}: \quad y_4(k+1) = \frac{m u_4(k)}{0.3 T } 
+\text{Agent 1}: \quad y_1(k+1) = 0.5 * y_1(k) * u_1(k) + 1.2 * \frac{m}{(rT * 0.2)} - 0.03 * y_1(k)^3 + 0.45\\
+\text{Agent 2}: \quad y_2(k+1) = 0.5 * y_2(k) * u_2(k) + 1.2 * \frac{m}{(rT * 0.2)} - 0.01 * y_2(k)^2 + 0.45\\
+\text{Agent 3}: \quad y_3(k+1) = 0.5 * y_3(k) * u_3(k) + 1.2 * \frac{m}{(rT * 0.2)} - 0.02 * y_3(k)^3 + 0.45\\
+\text{Agent 4}: \quad y_4(k+1) = 0.5 * y_4(k) * u_4(k) + 1.2 * \frac{m}{(rT * 0.2)} - 0.01 * y_4(k)^2 + 0.45\\
 \end{array}
 \]
 
@@ -458,7 +458,7 @@ with \( D = \text{diag}(1, 0, 1, 0) \), we consider the following two different 
 
 
 
-Exemple 1: The expression for \( y_d(k) \) is:
+Example 1: The expression for \( y_d(k) \) is:
 
 % \[
 % y_d(k) = 0.5 \sin\left(\frac{k \pi}{30}\right) + 0.3  \cos\left(\frac{k \pi}{10}\right)
@@ -468,40 +468,54 @@ $ y_d(k) = 6 $
 
 as \( k \) in the range \( 0 \leq k \leq 200 \).
 
-The initial parameters are chosen as \(u_i(1)=0.01\), \(y_i(1)=0.6\) and \(\phi_i(0)=4 \) for all agents in this simulation, \(\Gamma_{1}=\Gamma_{3}=0.45\) and \(\Gamma_{2}=\Gamma_{4}=0.15\), with \(\tau_s=10^{-5}\), \(m=200\), sample rate $rT = 1024 $, \(\eta=1\), \(\mu=0.005\), other parameters are given as \(\rho=7.5\), \(\lambda=350\), $ \omega = 10 $, $ \sigma=95 $ and \(\alpha=15\) with \(\epsilon=10^{-5}\).
+The initial parameters are chosen as \(u_i(1)=0.01\), \(y_i(1)=0.6\) and \(\phi_i(0)=4 \) for all agents in this simulation, \(\Gamma_{1}=\Gamma_{3}=0.45\) and \(\Gamma_{2}=\Gamma_{4}=0.15\), with \(\tau_s=10^{-5}\), \(m=200\), sampling rate $rT = 1024 $, \(\eta=1\), \(\mu=0.005\), other parameters are given as \(\rho=7.5\), \(\lambda=350\), $ \omega = 10 $, $ \sigma=95 $, \(\alpha=15\) with \(\epsilon=10^{-5}\).
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{Figure_2.png}
-    \caption{Tracking errors for time varying desired trajectory.}
-    \label{fig:figure_2} % Label for referencing the figure
+    \includegraphics[width=1 \textwidth]{tracking_inv.png}
+    \caption{Tracking performance of all agents under the time-invarying reference trajectory.}
+    \label{fig:tracking_inv} % Label for referencing the figure
 \end{figure}
 
-As shown in Fig. \ref{fig:figure_2}, the tracking errors between the actual and desired trajectories for agents $e_1$, $e_2$, $e_3$, and $e_4$ are relatively small and converge to zero over time. However, the individual agents exhibit varying levels of tracking error, suggesting that their unique dynamics or initial conditions may influence the performance.
+Fig. \ref{fig:tracking_inv} demonstrates that all agents successfully track the time-invariable reference trajectory. 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Figure_1.png}
-    \caption{Tracking performance of all agents for time-varying desired trajectory.}
-    \label{fig:figure_3} % Label for referencing the figure
-\end{figure}
-
-Fig. \ref{fig:figure_3} presents a detailed analysis of the tracking performance for all agents. All agents successfully track the time-varying desired trajectory, confirming the effectiveness of the proposed control system. While minor variations in individual trajectories are evident, each agent generally adheres to the desired path. Factors such as agent dynamics, communication delays, and environmental disturbances could potentially influence the tracking performance.
+As shown in Fig. \ref{fig:error_inv} and \ref{fig:error_var}, the distributed errors for all agents are relatively small and converge to zero over time. However, the individual agents exhibit varying levels of tracking error, suggesting that their unique dynamics or initial conditions may influence the performance.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Figure_4.png}
-    \caption{Tracking performance of all agents for time-invariable desired trajectory.}
-    \label{fig:figure_4} % Label for referencing the figure
+    \includegraphics[width=1 \textwidth]{error_inv.png}
+    \caption{Distributed error of all agents under the time-invarying reference trajectory.}
+    \label{fig:error_inv} % Label for referencing the figure
 \end{figure}
+
+
+Example 2: The expression for \( y_d(k) \) is:
+
+
+
+\[
+y_d(k) = 0.5 \sin\left(\frac{k \pi}{30}\right) + 0.3  \cos\left(\frac{k \pi}{10}\right)
+\]
+
+as \( k \) in the range \( 0 \leq k \leq 200 \).
+
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{Figure_5.png}
-    \caption{PPD Estimation of all agents.}
-    \label{fig:figure_5} % Label for referencing the figure
+    \includegraphics[width=1\textwidth]{tracking_var.png}
+    \caption{Tracking performance of all agents under the time-varying reference trajectory.}
+    \label{fig:tracking_var} % Label for referencing the figure
 \end{figure}
 
-Fig. \ref{fig:figure_4} demonstrates that all agents successfully track the time-invariable desired trajectory. Meanwhile, Fig. \ref{fig:figure_5} shows the PPD estimation for all agents, highlighting the accuracy of the adaptive estimation process within the control framework.
+Fig. \ref{fig:tracking_var} presents a detailed analysis of the tracking performance for all agents. All agents successfully track the time-varying desired trajectory, confirming the effectiveness of the proposed control system. While minor variations in individual trajectories are evident, each agent generally adheres to the desired path. Factors such as agent dynamics, communication delays, and environmental disturbances could potentially influence the tracking performance.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{error_var.png}
+    \caption{Distributed error of all agents under the time-varying reference trajectory.}
+    \label{fig:error_var} % Label for referencing the figure
+\end{figure}
+
+
 
 % \subsection{Experimental verification}
 
@@ -543,7 +557,7 @@ Overall, the simulation results suggest that the proposed control system is capa
 
 \section{Conclusion}
 
-In this paper, a novel model-free adaptive sliding mode control was presented for multi-DC motors speed regulation. The proposed method achieves robust performance and adaptability in the presence of varying conditions. Utilizing a fixed topology represented by Laplacian matrice, the control strategy effectively manages the interconnections among multiple DC motors. The advantages and effectiveness of the proposed approach are demonstrated through detailed simulation results. Future work will focus on implementing the proposed approach in practical scenerios under hardware constraints.
+In this study, the model-free adaptive sliding mode control approach is presented to address the consensus problem of MASs. Firstly, the equivalent data model for each agent is obtained using the CFDL method. Secondly, a novel sliding surface ireas presented to ensure that the distributed error remains bounded. Finally, the effectiveness of the proposed control approach is verified through physical experiments on multi-DC motor system.
 
 
 
