@@ -1,13 +1,12 @@
 # Fdb version 4
-["pdflatex"] 1745304332.06732 "/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1745304333.4409 0
-  "/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/mfasmc.tex" 1745304331.8282 43031 62cbc32c84905dbd3bef5d2f8b7d37bd ""
+["pdflatex"] 1745305500.94706 "/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1745305502.30724 0
+  "/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/mfasmc.tex" 1745305500.71188 41487 7aa3bf8c15247c819594837805ebfa2f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmbi7t.tfm" 1136768653 2228 e564491c42a4540b5ebb710a75ff306c ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm" 1136768653 2124 2601a75482e9426d33db523edf23570a ""
-  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm" 1136768653 1352 fa28a7e6d323c65ce7d13d5342ff6be2 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm" 1136768653 4408 25b74d011a4c66b7f212c0cc3c90061b ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmrc7t.tfm" 1136768653 2680 312a2d12b1f1df8ee0212e7ba1962402 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm" 1136768653 2288 f478fc8fed18759effb59f3dad7f3084 ""
@@ -37,7 +36,6 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb" 1136849748 45458 a3faba884469519614ca56ba5f6b1de1 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf" 1136768653 1372 788387fea833ef5963f4c5bffe33eb89 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf" 1136768653 1380 0ea3a3370054be6da6acd929ec569f06 ""
-  "/usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf" 1136768653 3556 8a9a6dcbcd146ef985683f677f4758a6 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmrc7t.vf" 1136768653 1948 7330aeef3af211edff3b35fb2c12a0fd ""
   "/usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf" 1136768653 1384 a9d8adaf491ce34e5fba99dc7bbe5f39 ""
   "/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -78,7 +76,6 @@
   "/usr/local/texlive/2025/texmf-dist/tex/latex/lettrine/lettrine.sty" 1738361308 11601 38d9f6d9f3ec07f252ee99f8bad14e28 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/placeins/placeins.sty" 1137110565 4087 636308456f60d2b31cbf97867db5708d ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ptm.fd" 1137110629 961 15056f4a61917ceed3a44e4ac11fcc52 ""
-  "/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd" 1137110629 619 96f56dc5d1ef1fe1121f1cfeec70ee0c ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/subfigure/subfigure.cfg" 1167176009 2062 a0e7d66e09e508f51289a656aec06ed2 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/subfigure/subfigure.sty" 1167176009 15188 91281c7ddbccfa54a8e0c3b56ab5aa72 ""
   "/usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf" 1739380943 42148 61becc7c670cd061bb319c643c27fdd4 ""
@@ -93,8 +90,8 @@
   "dc_motor_tracking.png" 1742916598.44281 62079 78a9d70ca9442c4468ec4051946fba81 ""
   "diagram.jpg" 1742906700.51568 174560 1ec1d90c7a614cfe14f4de13c60cee83 ""
   "diagram.png" 1742812738.96182 251342 161056946171cc693b3bf0102ad204fd ""
-  "mfasmc.aux" 1745304333.37797 5140 52fbede07681195aafc7caac4c3118a2 "pdflatex"
-  "mfasmc.tex" 1745304331.8282 43031 62cbc32c84905dbd3bef5d2f8b7d37bd ""
+  "mfasmc.aux" 1745305502.24754 5091 376fe23491ff5f911db36436e07950de "pdflatex"
+  "mfasmc.tex" 1745305500.71188 41487 7aa3bf8c15247c819594837805ebfa2f ""
   "system.jpg" 1742906700.49795 284345 2e63d27a6282be46dcff4ad0511d988c ""
   (generated)
   "mfasmc.aux"

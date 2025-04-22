@@ -186,16 +186,11 @@ INPUT ./communication.png
 INPUT ./communication.png
 INPUT ./communication.png
 INPUT ./communication.png
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT ./Figure_2.png
 INPUT ./Figure_2.png
 INPUT ./Figure_2.png
 INPUT ./Figure_2.png
 INPUT ./Figure_2.png
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT ./Figure_1.png
 INPUT ./Figure_1.png
 INPUT ./Figure_1.png

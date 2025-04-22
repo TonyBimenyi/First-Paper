@@ -341,6 +341,14 @@ The proof is completed.
 
 Remark 3: Theorem 1 guarantees the boundedness of  $ \hat{\phi}_i $ and the distributed measurement error for the MASs described by ($\ref{model 1} $) under assumptions 1 and 2. The proof employs the PPD update law ($ \ref{model eq:ppd_parameter} $) to ensure that $ \tilde{\phi}_i(k) $ remains bounded, as demonstrated through the application of the factor $ q_1<1 $. Then, mathematical induction confirms that $ \xi_i(k) $ is bounded. Therefore, this result shows the effectiveness of the proposed controller in achieving stable performance for the MASs.
 
+Consider the network comprising:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{communication.png}
+    \caption{Communication topology among agents.}
+    \label{fig:communication1} % Label for referencing the figure
+\end{figure}
 
 
 
@@ -395,85 +403,39 @@ Remark 3: Theorem 1 guarantees the boundedness of  $ \hat{\phi}_i $ and the dist
 
 
 % Assumption 5: The communication graph \(\bar{\mathcal{G}}_l\) is a fixed strongly connected graph and at least one of the follower agents can access the leader trajectory for all \(l = 1,2,\dots,M\).
-Consider the network comprising:
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{communication.png}
-    \caption{Communication topology among agents.}
-    \label{fig:communication1} % Label for referencing the figure
-\end{figure}
-
-This section describes the methodology and hardware used for speed regulation, including the calculation of motor speed using the quadruple-frequency data processing  method.
 
 
-The DC brushed motors have a rated voltage of 12V, an unloaded speed of 293 ± 21 RPM and a rated current of 0.36 A. The gear ratio of 20 means that the output speed of the motor is 1/20 of the rotor speed, resulting in higher torque with a higher gear ratio. The Hall encoders used have 13 pulses per revolution, meaning each full rotation generates 13 pulse signals. 
-
-To enhance measurement accuracy, employing the quadruple-frequency data processing method. This technique quadruples the effective resolution of the encoder by processing the output pulse signals at four times the frequency, thus increasing measurement precision by a factor of four.
-
-% \subsection{Data Processing Method}
-
-The motor speed is measured in revolution per second $(r/s)$ based on encoder measurements and the sampling interval $t$. The total number of encoder counts per revolution is calculated as $ T=4N_{e}R{r} $, where $N_e$ is the encoder line count equal to 13, $R_r$ is the reduction ratio equal to 20 and the factor of 4 accounts for quadrature encoding. The number of rotations, $N_r$ is determined using $N_r = \frac{m}{T}$, with $m$ representing the total encoder count.
-
-The speed of the motor is then derived as:
-
-\begin{equation}
-           \label{motor_speed}
-           v = \frac{N_r}{t} = \frac{m}{T  t}
-\end{equation}
+% This section describes the methodology and hardware used for speed regulation, including the calculation of motor speed using the quadruple-frequency data processing  method and .
 
 
+% The DC brushed motors have a rated voltage of 12V, an unloaded speed of 293 ± 21 RPM and a rated current of 0.36 A. The gear ratio of 20 means that the output speed of the motor is 1/20 of the rotor speed, resulting in higher torque with a higher gear ratio. The Hall encoders used have 13 pulses per revolution, meaning each full rotation generates 13 pulse signals. 
 
-% The motor speed is measured in revolutions per second . The following equations are used to calculate the speed based on encoder measurements and sampling:
+% To enhance measurement accuracy, employing the quadruple-frequency data processing method. This technique quadruples the effective resolution of the encoder by processing the output pulse signals at four times the frequency, thus increasing measurement precision by a factor of four.
 
-% 1. Calculation of Rounds:
+% % \subsection{Data Processing Method}
 
-%    The total number of rounds that the encoder measures is given by:
-%    \begin{equation}
-%        \label{model 32}
-%        T = N_e \times R_r \times 4
-%    \end{equation}
-%    where $N_e$ is the encoder line count equal to 13, and $R_r$ is the reduction ratio equal to 20. The factor of 4 accounts for the quadrature encoding, which effectively quadruples the resolution.
+% The motor speed is measured in revolution per second $(r/s)$ based on encoder measurements and the sampling interval $t$. The total number of encoder counts per revolution is calculated as $ T=4N_{e}R{r} $, where $N_e$ is the encoder line count equal to 13, $R_r$ is the reduction ratio equal to 20 and the factor of 4 accounts for quadrature encoding. The number of rotations, $N_r$ is determined using $N_r = \frac{m}{T}$, with $m$ representing the total encoder count.
 
-% 2. Calculation of Number of Rotations:
+% The speed of the motor is then derived as:
 
-%    The number of rotations can be determined using:
-%    \begin{equation}
-%        \label{model 33}
-%        N_r = \frac{m}{ T}
-%    \end{equation}
-%    where \( m \) is the total count from the encoder, and T is the number of encoder counts per revolution, derived from (\ref{model 32}).
+% \begin{equation}
+%            \label{motor_speed}
+%            v = \frac{N_r}{t} = \frac{m}{T  t}
+% \end{equation}
 
-% 3. Calculation of Speed:
 
-%    The speed of the motor in resolution per second (\( r/s \)) is given by:
-%    \begin{equation}
-%        \label{model 34}
-%        v = \frac{N_r}{t}
-%    \end{equation}
-%    where, \( v \) represents the speed, and \( t \) is the time interval it takes to complete those rotations.
+% The quadruple-frequency method is crucial for maximizing encoder measurement precision, resulting in more accurate speed control for the motor system.
 
-% 4. Combining the Equations:
+This section describes the usefulness of the provided control approach, which is validated by numerical simulations and physical experiments results.
 
-%    Substituting (\ref{model 33}) into Equation (\ref{model 34}), we obtain:
-%    \begin{equation}
-%        \label{model 35}
-%        v = \frac{m}{T \times t}
-%    \end{equation}
-%    The above final equation integrates encoder measurements and the sampling period to provide an accurate speed regulation.
-
-% Each sampling interval triggers an interrupt where the controller samples the motor speed and updates control commands accordingly.
-
-The quadruple-frequency method is crucial for maximizing encoder measurement precision, resulting in more accurate speed control for the motor system.
-
-Four follower DC motors and the models for each DC motor are governed by:
+The output data model of each agents is governed by:
 
 \[
 \begin{array}{c}
-\text{DC Motor 1}: \quad y_1(k+1) = \frac{m u_1(k)}{0.1 T}\\
-\text{DC Motor 2}: \quad y_2(k+1) = \frac{m u_2(k)}{0.1 T } \\
-\text{DC Motor 3}: \quad y_3(k+1) = \frac{m u_3(k)}{0.3 T } \\
-\text{DC Motor 4}: \quad y_4(k+1) = \frac{m u_4(k)}{0.3 T } 
+\text{Agent 1}: \quad y_1(k+1) = \frac{m u_1(k)}{0.1 T}\\
+\text{Agent 2}: \quad y_2(k+1) = \frac{m u_2(k)}{0.1 T } \\
+\text{Agent 3}: \quad y_3(k+1) = \frac{m u_3(k)}{0.3 T } \\
+\text{Agent 4}: \quad y_4(k+1) = \frac{m u_4(k)}{0.3 T } 
 \end{array}
 \]
 
