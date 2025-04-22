@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 APR 2025 15:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 APR 2025 15:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -429,12 +429,12 @@ Package pdftex.def Info: communication.png  used on input line 348.
 <Figure_2.png, id=39, 722.7pt x 180.675pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
-Package pdftex.def Info: Figure_2.png  used on input line 472.
+Package pdftex.def Info: Figure_2.png  used on input line 474.
 (pdftex.def)             Requested size: 464.39685pt x 116.10027pt.
 <Figure_1.png, id=40, 722.7pt x 433.62pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
-Package pdftex.def Info: Figure_1.png  used on input line 481.
+Package pdftex.def Info: Figure_1.png  used on input line 483.
 (pdftex.def)             Requested size: 412.80157pt x 247.68205pt.
 
 
@@ -442,12 +442,12 @@ Package pdftex.def Info: Figure_1.png  used on input line 481.
 <Figure_4.png, id=46, 722.7pt x 433.62pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
-Package pdftex.def Info: Figure_4.png  used on input line 490.
+Package pdftex.def Info: Figure_4.png  used on input line 492.
 (pdftex.def)             Requested size: 412.80157pt x 247.68205pt.
 <Figure_5.png, id=47, 722.7pt x 433.62pt>
 File: Figure_5.png Graphic file (type png)
 <use Figure_5.png>
-Package pdftex.def Info: Figure_5.png  used on input line 497.
+Package pdftex.def Info: Figure_5.png  used on input line 499.
 (pdftex.def)             Requested size: 464.39685pt x 278.64066pt.
 
 
@@ -455,7 +455,7 @@ Package pdftex.def Info: Figure_5.png  used on input line 497.
 <diagram.jpg, id=53, 426.8748pt x 238.0092pt>
 File: diagram.jpg Graphic file (type jpg)
 <use diagram.jpg>
-Package pdftex.def Info: diagram.jpg  used on input line 518.
+Package pdftex.def Info: diagram.jpg  used on input line 520.
 (pdftex.def)             Requested size: 464.39685pt x 258.94548pt.
 
 
@@ -463,12 +463,12 @@ Package pdftex.def Info: diagram.jpg  used on input line 518.
 <system.jpg, id=58, 364.7226pt x 272.6988pt>
 File: system.jpg Graphic file (type jpg)
 <use system.jpg>
-Package pdftex.def Info: system.jpg  used on input line 525.
+Package pdftex.def Info: system.jpg  used on input line 527.
 (pdftex.def)             Requested size: 464.39685pt x 347.22656pt.
 <dc_motor_tracking.png, id=59, 722.7pt x 433.62pt>
 File: dc_motor_tracking.png Graphic file (type png)
 <use dc_motor_tracking.png>
-Package pdftex.def Info: dc_motor_tracking.png  used on input line 533.
+Package pdftex.def Info: dc_motor_tracking.png  used on input line 535.
 (pdftex.def)             Requested size: 464.39685pt x 278.64066pt.
 
 
@@ -497,7 +497,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  79i,12n,93p,1245b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (13 pages, 1098986 bytes).
+Output written on mfasmc.pdf (13 pages, 1099152 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  72 compressed objects within 1 object stream
