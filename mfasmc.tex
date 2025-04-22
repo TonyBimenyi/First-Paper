@@ -273,7 +273,7 @@ where the parameter \(\Gamma\) is a gain factor.
 
 \subsection{Stability Analysis}
 
-Theorem 1: For the MASs (\ref{model 1}) that satifies Assumptions 1 and 2, assuming $ |\xi_{i,0}| < \min\{a_{i,0}, b_{i,0}\} \rho_{i,0} $ are satisfied, the controller parameters establish $ 0<h_0<h_i(k)<\frac{\omega C_0}{2 \sqrt{\sigma}} <1 $, the using the PPD update law (\ref{model eq:ppd_parameter}) can ensure the boundedness of $ \hat{\phi}_i(k) $.
+Theorem 1: For the MASs (\ref{model 1}) that satifies Assumptions 1 and 2, assuming $ |\xi_{i,0}| < \min\{a_{i,0}, b_{i,0}\} \rho_{i,0} $ are satisfied, the controller parameters establish $ 0<h_0<h_i(k)<\frac{\omega C_0}{2 \sqrt{\sigma}} <1 $, then using the PPD update law (\ref{model eq:ppd_parameter}) can ensure the boundedness of $ \hat{\phi}_i(k) $.
 
 Proof: The proof is devided in two parts.
 
@@ -313,7 +313,9 @@ Substituting ($ \ref{model eq:ppd_parameter} $) into ($ \ref{model eq:xi_next} $
 
 \begin{align}
     \label{model eq:xi_next_proof}
-    \xi_i(k+1) =\ & \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} (1-\frac{1}{2})  \bigg) \xi_i(k) + \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}  \bigg) \bigg ( \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) \bigg ) \nonumber \\
+    \xi_i(k+1) =\ & \xi_i(k) + \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg( (1-\frac{1}{2})\xi_i(k)+ \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1)\bigg) \nonumber \\
+    &\quad + \bigg( \sum_{j \in N_i}a_{ij} +d_i \bigg) \tau_s sign(Si(k)) \nonumber \\
+    =\,\ & \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} (1-\frac{1}{2})  \bigg) \xi_i(k) + \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}  \bigg) \bigg ( \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) \bigg ) \nonumber \\
     &\quad - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}  \bigg ( \sum_{j \in N_i}a_{ij} + d_i \bigg ) \tau_s sign(S_i(k))
 \end{align}
 
@@ -337,12 +339,7 @@ Therefore, the following result will be given as
 The proof is completed.
 
 
-
-
-
-Remark 5: This condition ensures that the tracking error decreases over time and eventually converges to zero as $k$ approaches infinity. The implication is under the proposed control strategy, the system will successfully align with the desireed performance, eliminating any discrepancies in tracking. This convergence demonstrates the robutness and effectiveness of the control method in achieving accurate and stable performance.
-
-
+Remark 3: Theorem 1 guarantees the boundedness of  $ \hat{\phi}_i $ and the distributed measurement error for the MASs described by ($\ref{model 1} $) under assumptions 1 and 2. The proof employs the PPD update law ($ \ref{model eq:ppd_parameter} $) to ensure that $ \tilde{\phi}_i(k) $ remains bounded, as demonstrated through the application of the factor $ q_1<1 $. Then, mathematical induction confirms that $ \xi_i(k) $ is bounded. Therefore, this result shows the effectiveness of the proposed controller in achieving stable performance for the MASs.
 
 
 
