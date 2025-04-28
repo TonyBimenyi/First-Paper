@@ -41,10 +41,7 @@
 % “which.” This would avoid making the sentence appear too lengthy.
 
 \section*{Keywords}
-Model-free adaptive sliding mode control, Multi-DC motors speed control, nonlinear multi-agent system, data-driven control.
-
-
-
+Data-driven control, model-free adaptive sliding mode control, nonlinear multi-agent system, multi-DC motors speed control.
 
 \section{Introduction}\label{section:1}
 
@@ -68,8 +65,6 @@ Inspired by the abovementioned considerations, this paper studies a novel model-
 
 \end{enumerate}
 
-
-
     The following sections will outline the remaining content of this paper:
     section II provides preliminaries and problem formulation, Section III The main results, Section IV presents simulation results and performance analysis, demonstrating the efficacy of the proposed method under various operating conditions.
     At the end, Section V concludes the paper, summarizing the key findings potential points for future research.
@@ -84,12 +79,10 @@ The directed graph $ \mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathcal{A}) $ is 
 \subsection{Problem Formulation}
 
 Consider the nonlinear multi-agent systems composed of $ N $ agents:
-
 \begin{equation}
     \label{model 1}
     y_i(k+1) = f_i(y_i(k), u_i(k)), \quad i = 1, 2, \dots, N
 \end{equation}
-
 % \noindent 
 where $u_i(k) \in \mathbb{R}$ and $y_i(k) \in \mathbb{R}$ represent the system input and output signals of agent $ i $, respectively. $f_i(\cdot)$ signifies an unknown nonlinear function.
 
@@ -100,11 +93,11 @@ Assumption 2: The system (\ref{model 1}) satisfies the generalized Lipschitz con
 
 % Under Assumptions 1 and 2, the unknown agent dynamics (\ref{model 1}) can be transformed into the following dynamic linearization model and then the distributed control law will be designed based on it:
 
-Remark 1: The assumptions above are general. As the common condition for model-free control methods, Assumption 1 is crucial in ensuring effective system performance. Assumption 2 implies that the system input rate constrains the system output rate, which is satisfied in many practical systems.
+Remark 1: The assumptions above are general. Assumption 1 is a general condition for controller design. Assumption 2 implies that the system input rate constrains the system output rate, which is satisfied in many practical systems.
 
-Assumption 3: The network of followers forms a strongly connected graph, ensuring each follower can directly receive information from at least one leader.
+Assumption 3: The communication graph $ \mathcal{G} $ forms a strongly connected graph, ensuring each follower can directly receive information from at least one leader.
 
-Lemma 1\cite{8}: Consider the nonlinear multi-agent system (\ref{model 1}) satisfying above two assumptions. If $ | \Delta u_i(k) | \neq 0 $ holds, then the system can be transformed into the CFDL data model as follows:
+Lemma 1\cite{8}: Consider the nonlinear multi-agent system (\ref{model 1}) satisfying above three assumptions. If $ | \Delta u_i(k) | \neq 0 $ holds, then the system can be transformed into the CFDL data model as follows:
 
 
 \begin{equation}
@@ -123,7 +116,7 @@ The distributed measurement error of \(\xi_i(k)\) for $N$ agents is established 
 
 if the agent $ i $ can receive data from the leader, then $d_i=1$; otherwise, $d_i=0$. Additionally, $y_d(k)$ represents the reference trajectory. 
 
-Remark 2: The CFDL technique requires no prior knowledge about the system dynamic model. Moreover, the dynamic behavior of time-varying PPD can be highly complex and more challenging to verify. Therefore a data-driven method for studying numerical characteristics is the preferred solution.
+Remark 2: The CFDL technique requires no prior knowledge about the system dynamic model. Moreover, the dynamic behavior of time-varying PPD may be highly complex and difficult to verify. Therefore a data-driven method for studying numerical characteristics is the preferred solution.
  
 
 \section{Main Results}
@@ -139,33 +132,13 @@ Remark 2: The CFDL technique requires no prior knowledge about the system dynami
 \end{figure}
 
 
-Consider the following PPD criterion function, which is used to evaluate the performance of the parameter \(\phi_i(k)\):
-
+Consider the following PPD criterion function, for the above consensus tracking objective \(\phi_i(k)\):
 \begin{equation}
     \label{model 4}
     J(\phi_i(k)) = | \Delta y_i(k) - \phi_i(k)  \Delta u_i(k-1)|^2 + \mu |\phi_i(k) - \hat{\phi}_i(k-1)|^2\
 \end{equation}
 
-By utilizing the optimal condition $ \frac{\partial J(\phi_i(k))}{\partial \phi_i(k)}=0 $, then the updating law with reset algorithm can be derived as
-
-
-
-% \begin{equation}
-%     \label{model 5}
-%     \frac{\partial J({\phi}_i(k))}{\partial {\phi}_i(k)} = | \Delta y_i(k) - \hat{\phi}_i(k)  \Delta u_i(k-1)|^2 + \mu |\hat{\phi}_i(k) - \hat{\phi}_i(k-1)| = 0
-% \end{equation}
-
-
-% And, let's compute the derivative of \( J(\hat{\phi}_i(k)) \), we obtain:
-
-% \begin{equation}
-%     \label{model 6}
-%     2 [ \Delta y_i(k) - \phi_i(k-1)] - [\Delta u_i(k-1)] + 2 \mu [\phi_i(k) -  \hat{\phi}_i(k-1)] = 0
-% \end{equation}
-
-% This equation provides a necessary condition for minimizing the criterion function \(J(\phi_i(k))\) and based on this optimization criterion,
-
-
+By utilizing the optimal condition $ \frac{\partial J(\phi_i(k))}{\partial \phi_i(k)}=0 $, the updating law with reset algorithm can be derived as
 
 \begin{equation}
     \label{model eq:ppd_parameter}
@@ -174,17 +147,12 @@ By utilizing the optimal condition $ \frac{\partial J(\phi_i(k))}{\partial \phi_
 
 \begin{equation}
     \label{reset}
-    \hat{\phi}_i(k) = \hat{\phi}_i(1),  \text{    if}  |\hat{\phi}_i(k) | \leq \epsilon \ or \ sign(\hat{\phi}_i(k)) \neq  sign(\hat{\phi}_i(1))
+    \hat{\phi}_i(k) = \hat{\phi}_i(1),  \text{ if }  |\hat{\phi}_i(k) | \leq \epsilon \ or \ sign(\hat{\phi}_i(k)) \neq  sign(\hat{\phi}_i(1))
 \end{equation}
 
-Herein, $\eta \in (0,1) $, $\mu > 0$ the weight factor, $ \epsilon $ is a small positive number  and $ \hat{\phi}_i(k)$ represents the estimated value of $ \phi_i(k)$. 
+herein, $\eta \in (0,1)$, $\mu > 0$ represents a positive weight factor. Additionally, $\epsilon$ is a small positive number. Finally, $\hat{\phi}_i(k)$ signifies the estimated value of $\phi_i(k)$.
 
-
-
-The following distributed MFAC algorithm is then presented:
-
-
-% Subtituting (\ref{model 2}) and (\ref{model 3}) into (\ref{model 9}), then differentiating (\ref{model 9}) with respect to \(u_i(k)\), and make it equal to zero, gives:
+The following distributed MFAC algorithm is presented:
 
 \begin{equation}
     \label{model eq:mfac}
@@ -200,20 +168,18 @@ where \(\rho\) \(\in\) (0,1) is a step-size constant, which is added to make (\r
 
 % y_i(k + 1) = f_i(y_i(k), u_i(k)), \quad i = 1, 2, \ldots, N
 
-To design the SMC for the system, the sliding mode surface is first defined as
+To design the sliding mode controller for the system, the sliding surface is designed:
 
 \begin{equation}
     \label{model eq:sms}
-    S_i(k) = \alpha \xi_i(k) - \xi_i(k-1)
+    s_i(k) = \alpha \xi_i(k) - \xi_i(k-1)
 \end{equation}
 herein $ \alpha > 1$ represents a positive constant.
 
 Furthermore, from ($ \ref{model 2}) $ and ($ \ref{model 3} $), the formula ($ \ref{model 3} $) is updated as
-
 \begin{align}
     \label{model eq:xi_next}
-    \xi_i(k+1) =\ & \xi_i(k) - \bigg(\sum_{j \in N_i} a_{ij} + d_i \bigg) \phi_i(k) \Delta u_i(k) + \sum_{j \in N_i} a_{ij} \Delta y_j(k) \nonumber \\
-    &  + d_i \Delta y_d(k+1)
+    \xi_i(k+1) =\ & \xi_i(k) - (\sum_{j \in N_i} a_{ij} + d_i ) \phi_i(k) \Delta u_i(k) + \sum_{j \in N_i} a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1)
 \end{align}
     
 
@@ -228,7 +194,7 @@ wherein $\Delta y_j(k+1)$ is replaced with $ \Delta y_j(k) $ because the data at
 % \end{align}
 
 
-Considering ($ \ref{model eq:sms}) $, with the assistance of reaching law $ S_i(k+1) = 0 $, the equivalent control law is designed as
+Therefore, considering ($ \ref{model eq:sms}) $, with the assistance of reaching law $ s_i(k+1) = 0 $, the equivalent control law is designed as
 
 \begin{equation}
     \label{model eq:equivalent_control}
@@ -237,39 +203,35 @@ Considering ($ \ref{model eq:sms}) $, with the assistance of reaching law $ S_i(
 \end{equation}
 
 
-The controller consists of an equivalent control law and switching control law, which is set as
+The controller consists of an equivalent control law and switching control law, which means:
 
 \begin{equation}
     \label{model eq:u}
     u_{i,\text{SM}}(k) = u_{i,\text{SM}}(k-1) + \Delta u_{i,\text{SM}}^M(k)+ \Delta u_{i,\text{SM}}^s(k)
 \end{equation}
 
-where, the switching control law $ \Delta u_{i,\text{SM}}^s(k) $ is presented as
+Additionally, the switching control law $ \Delta u_{i,\text{SM}}^s(k) $ is presented as
 
 \begin{equation}
     \label{model eq:reaching_law}
-    \Delta u_{i,\text{SM}}^s(k) = \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}\tau_s sign(S_i(k))
+    \Delta u_{i,\text{SM}}^s(k) = \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}\tau_s sign(s_i(k))
 \end{equation}
 
-Taking into considaration both(\ref{model eq:equivalent_control}), (\ref{model eq:u}) and (\ref{model eq:reaching_law}), the controller is summarized as follows:
+As a consequence, taking into considaration both(\ref{model eq:equivalent_control}), (\ref{model eq:u}) and (\ref{model eq:reaching_law}), the controller is summarized as follows:
 
 \begin{align}
     \label{model eq:sm_controller}
     u_{i,\text{SM}}(k) =\ & u_{i,\text{SM}}(k-1) +  \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg( \frac{\xi_i(k)+ \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1)}{\sum_{j \in N_i}a_{ij}+d_i} \nonumber \\
-    &\quad - \frac{\xi_i(k)}{\alpha(\displaystyle \sum_{j \in N_i}a_{ij}+d_i)} + \tau_s sign(S_i(k) \bigg)
+    &\quad - \frac{\xi_i(k)}{\alpha(\displaystyle \sum_{j \in N_i}a_{ij}+d_i)} + \tau_s sign(s_i(k) \bigg)
 \end{align}
     
-
-
 Subsequently, the final MFASMC input  is designed:
-
-
 \begin{equation}
     \label{model eq:mfasmc}
-    u_i(k) = u_{i,\text{MFAC}}(k) + \Gamma_i  u_{i,\text{SMC}}(k)
+    u_i(k) = u_{i,\text{MFAC}}(k) + \Gamma_i  u_{i,\text{SM}}(k)
 \end{equation}
 
-where the parameter \(\Gamma\) is a gain factor.
+where the parameter \(\Gamma_i\) is a gain factor.
 
 \subsection{Stability Analysis}
 
@@ -277,8 +239,7 @@ Theorem 1: For the MASs (\ref{model 1}) satisfying assumptions 1 and 2, assuming
 
 Proof: The proof is devided into two parts.
 
-Part i: Set $ \tilde{\phi}_i(k) = \hat{\phi}_i(k)-\phi_i(k) $, based on PPD estimation algorithm ($ \ref{model eq:ppd_parameter} $), we can obtain: 
-
+Part i: Define $\tilde{\phi}_i(k) = \hat{\phi}_i(k) - \phi_i(k)$. Using the PPD estimation algorithm ($\ref{model eq:ppd_parameter}$), the following result is derived:
 \begin{align}
     \label{model:phi_tilde_update}
     \tilde{\phi}_i(k) =\ & \tilde{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} ( \phi_i(k-1) \Delta u_i(k-1) - \hat{\phi}_i(k-1) \Delta u_i(k-1)) \nonumber \\
@@ -286,7 +247,7 @@ Part i: Set $ \tilde{\phi}_i(k) = \hat{\phi}_i(k)-\phi_i(k) $, based on PPD esti
     =\,\ & \bigg( 1 - \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} \bigg) \tilde{\phi}_i(k-1) - \Delta \phi_i(k) 
 \end{align}
 
-Denote that the term $ \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} $ is monotonically increasing with respect to $| \Delta u_i(k)^2 |$, and its minimum value is $ \frac{\eta \epsilon^2}{\mu + \epsilon^2} $. Therefore, there must be a constant $ q_1 $ satisfying the inequalities $ 0 < \eta \leq 1 $ and $ u > 0$
+Denote that the term $ \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} $ is monotonically increasing with respect to $ \Delta u_i(k)^2 $, and its minimum value is $ \frac{\eta \epsilon^2}{\mu + \epsilon^2} $. Therefore, there must be a constant $ q_1 $ satisfying the inequalities $ 0 < \eta \leq 1 $ and $ u_i > 0$
 
 
 \begin{equation}
@@ -294,15 +255,13 @@ Denote that the term $ \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} $ 
     0 < \bigg |1 - \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} \bigg| \leq 1 - \frac{\eta \epsilon^2}{\mu + \epsilon^2} = q_1 < 1 
 \end{equation}
 
-Because of $ |\phi_i(k)| < \bar{b} $, and $ |\Delta \phi_i(k)| < 2 \bar{b} $ then the equation ($ \ref{model:phi_tilde_update} $) is written as:
-
-
+Because of $ |\phi_i(k)| < \bar{c} $, and $ |\Delta \phi_i(k)| < 2 \bar{c} $, the following the equation ($ \ref{model:phi_tilde_update} $) is written as:
 \begin{align}
     \label{model:absolute}
-    |\tilde{\phi}_i(k)| \leq\ & q_1|\tilde{\phi}_i(k-1)| + 2 \bar{b}  \nonumber \\
-    \leq\,\ & q_1^2|\tilde{\phi}_i(k-2)| + 2 q_1\bar{b} + 2\bar{b} \nonumber \\
+    |\tilde{\phi}_i(k)| \leq\ & q_1|\tilde{\phi}_i(k-1)| + 2 \bar{c}  \nonumber \\
+    \leq\,\ & q_1^2|\tilde{\phi}_i(k-2)| + 2 q_1\bar{c} + 2\bar{c} \nonumber \\
     \vdots \nonumber \\
-    \leq\,\ & q_1^{k-1}|\tilde{\phi}_i(1)| + \frac{2 \bar{b}}{1-q_1}(1-q_1^{k-1}) 
+    \leq\,\ & q_1^{k-1}|\tilde{\phi}_i(1)| + \frac{2 \bar{c}}{1-q_1}(1-q_1^{k-1}) 
 \end{align}   
 
 which implies $ \tilde{\phi}_i(k) $ is bounded. Since the boundedness of $ \phi_i(k) $ is guaranteed by Lemma 1. 
@@ -440,7 +399,7 @@ The output data model of each agents is governed by:
 \]
 
 
-It is evident that the agents considered are heterogeneous, as the dynamics differ from one another. In this scenario, the dynamics are assumed to be unknown and are only used to generate the I/O data for the MASs. 
+In this scenario, the dynamics are assumed to be unknown and are only used to generate the I/O data for the MASs. 
 
 As illustrated in Fig. 2, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. Assume that the information exchange among agents is directed and fixed. The Laplacian matrix of the graph is given as follows:
 
