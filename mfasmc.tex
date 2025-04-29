@@ -149,7 +149,6 @@ By utilizing the optimal condition $ \frac{\partial J(\phi_i(k))}{\partial \phi_
 herein, $\eta \in (0,1)$, $\mu > 0$ represents a positive weight factor. Additionally, $\epsilon$ is a small positive number. Finally, $\hat{\phi}_i(k)$ signifies the estimated value of $\phi_i(k)$.
 
 The following distributed MFAC algorithm is presented:
-
 \begin{equation}
     \label{model eq:mfac}
     u_{i,\text{MFAC}}(k) = u_{i,\text{MFAC}}(k - 1) + \frac{\rho \hat{\phi}_i(k)}{\lambda + |\hat{\phi}_i(k)|^2} \xi_i(k)
@@ -158,11 +157,7 @@ where \(\rho\) \(\in\) (0,1) is a step-size constant, which is added to make (\r
 
 \subsection{Sliding Mode Controller Design}
 
-
-% y_i(k + 1) = f_i(y_i(k), u_i(k)), \quad i = 1, 2, \ldots, N
-
 To design the sliding mode controller for the system, the sliding surface is designed:
-
 \begin{equation}
     \label{model eq:sms}
     s_i(k) = \alpha \xi_i(k) - \xi_i(k-1)
@@ -195,21 +190,18 @@ Therefore, considering ($ \ref{model eq:sms}) $, with the assistance of reaching
 
 
 The controller consists of an equivalent control law and switching control law, which means:
-
 \begin{equation}
     \label{model eq:u}
     u_{i,\text{SM}}(k) = u_{i,\text{SM}}(k-1) + \Delta u_{i,\text{SM}}^M(k)+ \Delta u_{i,\text{SM}}^s(k)
 \end{equation}
 
 Additionally, the switching control law $ \Delta u_{i,\text{SM}}^s(k) $ is presented as
-
 \begin{equation}
     \label{model eq:reaching_law}
     \Delta u_{i,\text{SM}}^s(k) = \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}\tau_s sign(s_i(k))
 \end{equation}
 
 As a consequence, taking into considaration both(\ref{model eq:equivalent_control}), (\ref{model eq:u}) and (\ref{model eq:reaching_law}), the controller is summarized as follows:
-
 \begin{align}
     \label{model eq:sm_controller}
     u_{i,\text{SM}}(k) =\ & u_{i,\text{SM}}(k-1) +  \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg( \frac{\xi_i(k)+ \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1)}{\sum_{j \in N_i}a_{ij}+d_i} \nonumber \\
@@ -380,14 +372,30 @@ Consider the network comprising:
 This section describes the usefulness of the provided control approach, which is validated by numerical simulations and physical experiments results.
 
 The output data model of each agents is governed by:
-
+% \[
+% \begin{array}{c}
+% \text{Agent 1}: \quad y_1(k+1) = 0.5 * y_1(k) * u_1(k) + 1.2 * \frac{m}{(rT * 0.2)} - 0.03 * y_1(k)^3 + 0.45\\
+% \text{Agent 2}: \quad y_2(k+1) = 0.5 * y_2(k) * u_2(k) + 1.2 * \frac{m}{(rT * 0.2)} - 0.01 * y_2(k)^2 + 0.45\\
+% \text{Agent 3}: \quad y_3(k+1) = 0.5 * y_3(k) * u_3(k) + 1.2 * \frac{m}{(rT * 0.2)} - 0.02 * y_3(k)^3 + 0.45\\
+% \text{Agent 4}: \quad y_4(k+1) = 0.5 * y_4(k) * u_4(k) + 1.2 * \frac{m}{(rT * 0.2)} - 0.01 * y_4(k)^2 + 0.45\\
+% \end{array}
+% \]
 \[
-\begin{array}{c}
-\text{Agent 1}: \quad y_1(k+1) = 0.5 * y_1(k) * u_1(k) + 1.2 * \frac{m}{(rT * 0.2)} - 0.03 * y_1(k)^3 + 0.45\\
-\text{Agent 2}: \quad y_2(k+1) = 0.5 * y_2(k) * u_2(k) + 1.2 * \frac{m}{(rT * 0.2)} - 0.01 * y_2(k)^2 + 0.45\\
-\text{Agent 3}: \quad y_3(k+1) = 0.5 * y_3(k) * u_3(k) + 1.2 * \frac{m}{(rT * 0.2)} - 0.02 * y_3(k)^3 + 0.45\\
-\text{Agent 4}: \quad y_4(k+1) = 0.5 * y_4(k) * u_4(k) + 1.2 * \frac{m}{(rT * 0.2)} - 0.01 * y_4(k)^2 + 0.45\\
-\end{array}
+y_i(k+1) = 0.5 y_i(k) u_i(k) + \frac{6m}{rT} - a_i y_i(k)^{p_i} + 0.45, \quad i = 1, 2, 3, 4,
+\]
+where the agent-specific parameters are:
+\[
+a_i = \begin{cases} 
+0.03 & \text{if } i=1, \\
+0.01 & \text{if } i=2, \\
+0.02 & \text{if } i=3, \\
+0.01 & \text{if } i=4,
+\end{cases}
+\qquad
+p_i = \begin{cases} 
+3 & \text{if } i=1, 3, \\
+2 & \text{if } i=2, 4.
+\end{cases}
 \]
 In this scenario, the dynamics are assumed to be unknown and are only used to generate the I/O data for the MASs. 
 
