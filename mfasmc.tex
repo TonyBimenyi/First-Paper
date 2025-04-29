@@ -34,14 +34,14 @@
 % ---------------------------------------------------------------
 
 \begin{abstract}
-    This paper proposes the distributed data-driven sliding mode control approach to address the consensus problem of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, utilizing the input-output data of agents, the novel sliding surface is employed, which ensures the boundedness of distributed error through stability-guaranteeing mechanism. Subsequently, a distributed model-free adaptive sliding mode controller is developed to ensure the reference trajectory tracking. Finally, the effectiveness of the proposed control approach is verified through experiments on multi-DC motors.
+    This paper proposes the distributed data-driven sliding mode control approach to address the consensus problem of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, utilizing the neighboring agents process informations, the novel sliding surface is employed, which ensures the boundedness of distributed error through stability mechanism. Subsequently, a distributed model free adaptive sliding mode controller is developed for precise reference trajectory tracking. Finally, the effectiveness of the proposed control approach is verified through experiments on multi-DC motors.
 \end{abstract}
 
 % It would be more appropriate to rephrase it using a relative clause introduced by 
 % “which.” This would avoid making the sentence appear too lengthy.
 
 \section*{Keywords}
-Data-driven control, model-free adaptive sliding mode control, nonlinear multi-agent system, multi-DC motors speed control.
+Data-driven control, model free adaptive sliding mode control, nonlinear multi-agent system, multi-DC motors speed control.
 
 \section{Introduction}\label{section:1}
 
@@ -49,11 +49,11 @@ Data-driven control, model-free adaptive sliding mode control, nonlinear multi-a
 
 It is challenging to establish an accurate mathematical model for the speed regulation of multi-DC motor systems due to their nonlinear, time-varying, and multi-variable conditions\cite{7}. Even if a relatively accurate mathematical models are developed, the associated control algorithms can become highly complex, so the model-based control approach is difficult to apply or extend to such systems. Nowdays, data-driven methods have been used to control, decision making, planing, fault diagnosis, predicting, etc. In\cite{15}-\cite{16}, a compact form dynamic linarization (CFDL) data-driven modeling method is proposed for nonlinear systems. So far, the CFDL data-driven modeling method has proven to be highly useful in various domains\cite{17}-\cite{20} with different characteristics such as simplicity and particularly, a small amount of calculation, ease of implementation, and strong robustness, making it highly effective for addressing unknown nonlinear time-varying systems.
 
-In\cite{21}, a model-free adaptive control (MFAC) approach is presented for MASs, which uses input and output data to achieve consensus tracking trajectory.
+In\cite{21}, a model free adaptive control (MFAC) approach is presented for MASs, which uses input and output data to achieve consensus tracking trajectory.
 
 Alternatively, the sliding mode control (SMC) adapts dynamically the system operation based on the current state of the system such as the error and its derivative, ensuring the system follows a predetermined sliding surface\cite{22}. Because the sliding surface can be designed and has the purpose to deal with the object parameters and disturbances, the SMC provides the fast response, insensitivity to parameter changes and disturbances, and simplicity in implementation. The above advantages make SMC widely used in control systems and one of main topic to focus in the ongoing research.\cite{28}-\cite{30}
 
-Inspired by the abovementioned considerations, this paper studies a novel model-free adaptive sliding mode control for speed regulation of multi-DC motors. The proposed control method consists to eliminates the need for precise system models by dynamically adjusting the control law\cite{21}, where is particularly useful in systems where obtaining a detailed model is impractical or complex such as the tradition PID control method. Compared with other existing literature on multi-DC motors systems, the results of this paper have following distinct features.
+Inspired by the abovementioned considerations, this paper studies a novel model free adaptive sliding mode control for speed regulation of multi-DC motors. The proposed control method consists to eliminates the need for precise system models by dynamically adjusting the control law\cite{21}, where is particularly useful in systems where obtaining a detailed model is impractical or complex such as the tradition PID control method. Compared with other existing literature on multi-DC motors systems, the results of this paper have following distinct features.
 
 \begin{enumerate}
 
@@ -74,7 +74,7 @@ Inspired by the abovementioned considerations, this paper studies a novel model-
 \section{Preliminaries and problem formulation}\label{section:2}
 \subsection{Directed Graph Theory}
 
-The directed graph $ \mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathcal{A}) $ is employed to describe the information exchange between agents. Here, $ \mathcal{A} = [a_{ij}] \in \mathbb{R}^{N \times N} $ represents the adjacency matrix, $ \mathcal{V}=\{v_1, v_2,\dots,v_N\} $ is the set of vertices, and $ \mathcal{E} = [(v_j,v_i)|v_i \in \mathcal{V} ] \subseteq \mathcal{V} \times \mathcal{V}$ is the set of edges. Moreover, $ \mathcal{N}(i) = \{j \in \mathcal{V} |(i,j) \in \mathcal{E}\} $ denotes the neighbor set of agent $ i $, where $ a_{i j} \neq 0$. No self-loop is allowed in this article, which means $(i, i) \notin \mathcal{E}$ for any $ i \in \mathcal{V} $, $ a_{ii}=0$. Furthermore, the degree matrix $ K = diag(k_1,\dots,k_N)$. If $ k_i > 0$, agent $ i $ can directly obtain the information from the leader. The Laplacian matrix $ L $ is defined as $ L = (\mathcal{D}-\mathcal{A})$, here $\mathcal{D} = diag({d_1,\dots,d_N})$ and $d_i=\sum_{j=1}^{N} a_{i j}$ denotes the in-degree matrix. Moreover, the graph is strongly connected if the path exists between every pair of vertices.
+\indent The directed graph $ \mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathcal{A}) $ is employed to describe the information exchange between agents. Here, $ \mathcal{A} = [a_{ij}] \in \mathbb{R}^{N \times N} $ represents the adjacency matrix, $ \mathcal{V}=\{v_1, v_2,\dots,v_N\} $ is the set of vertices, and $ \mathcal{E} = [(v_j,v_i)|v_i \in \mathcal{V} ] \subseteq \mathcal{V} \times \mathcal{V}$ is the set of edges. Moreover, $ \mathcal{N}(i) = \{j \in \mathcal{V} |(i,j) \in \mathcal{E}\} $ denotes the neighbor set of agent $ i $, where $ a_{i j} \neq 0$. No self-loop is allowed in this article, which means $(i, i) \notin \mathcal{E}$ for any $ i \in \mathcal{V} $, $ a_{ii}=0$. Furthermore, the degree matrix $ K = diag(k_1,\dots,k_N)$. If $ k_i > 0$, agent $ i $ can directly obtain the information from the leader. The Laplacian matrix $ L $ is defined as $ L = (\mathcal{D}-\mathcal{A})$, here $\mathcal{D} = diag({d_1,\dots,d_N})$ and $d_i=\sum_{j=1}^{N} a_{i j}$ denotes the in-degree matrix. Moreover, the graph is strongly connected if the path exists between every pair of vertices.
 
 \subsection{Problem Formulation}
 
@@ -235,7 +235,9 @@ where the parameter \(\Gamma_i\) is a gain factor.
 
 \subsection{Stability Analysis}
 
-Theorem 1: For the MASs (\ref{model 1}) satisfying assumptions 1 and 2, assuming the controller parameters establish $ 0<h_0<h_i(k)<\frac{\omega C_0}{2 \sqrt{\sigma}} <1 $, then using the PPD update law (\ref{model eq:ppd_parameter}) ensures the boundedness of $ \hat{\phi}_i(k) $.
+Theorem 1: For the system (\ref{model 1}) satisfying assumptions 1 and 2, utilizing the designed algorithms (\ref{model eq:ppd_parameter}) along with the reset law (\ref{reset}), the sliding surface (\ref{model eq:sms}) and controller (\ref{model eq:sm_controller}) can ensure the boundedness of $ \hat{\phi}_i(k) $. Simultaneously, the distributed measurement error remains bounded. The functions used therein are presented bellow:
+
+$ 0<h_0<h_i(k)<\frac{\omega C_0}{2 \sqrt{\sigma}} <1 $
 
 Proof: The proof is devided into two parts.
 
@@ -298,7 +300,7 @@ Therefore, the following result will be given as
 The proof is completed.
 
 
-Remark 3: Theorem 1 guarantees the boundedness of  $ \hat{\phi}_i $ and the distributed measurement error for the MASs described by ($\ref{model 1} $) under assumptions 1 and 2. The proof employs the PPD update law ($ \ref{model eq:ppd_parameter} $) to ensure that $ \tilde{\phi}_i(k) $ remains bounded, as demonstrated through the application of the factor $ q_1<1 $. The mathematical induction confirms that $ \xi_i(k) $ is bounded. Thus, this result shows the effectiveness of the proposed controller in achieving stable performance for the MASs.
+Remark 3: Unlike the consensus tracking control schemes used in the existing literature, this paper proposes a model free adaptive sliding mode control strategy for MASs. For the purpose of improving the reference trajectory tracking, the CFDL technique is employed alongside a novel sliding surface. Specifically, regardless of the nonlinear and time-varying dynamics of agents, the proposed methodology ensures that distributed error remains bounded within a predifined region, achieving precise speed regulation.
 
 Consider the network comprising:
 
@@ -516,7 +518,7 @@ Overall, the simulation results suggest that the proposed control system is capa
 
 \section{Conclusion}
 
-In this study, the model-free adaptive sliding mode control approach is presented to address the consensus problem of MASs. Firstly, the equivalent data model for each agent is obtained using the CFDL method. Secondly, a novel sliding surface ireas presented to ensure that the distributed error remains bounded. Finally, the effectiveness of the proposed control approach is verified through physical experiments on multi-DC motor system.
+In this study, the model free adaptive sliding mode control approach is presented to address the consensus problem of MASs. Firstly, the equivalent data model for each agent is obtained using the CFDL method. Secondly, a novel sliding surface ireas presented to ensure that the distributed error remains bounded. Finally, the effectiveness of the proposed control approach is verified through physical experiments on multi-DC motor system.
 
 
 
