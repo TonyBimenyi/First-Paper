@@ -1,6 +1,6 @@
 \documentclass[journal,onecolumn]{IEEEtran}
 \renewcommand{\baselinestretch}{1.45}
-\setlength{\parindent}{0pt}
+\setlength{\parindent}{13pt}
 
 
 \usepackage{mathrsfs}
@@ -104,16 +104,13 @@ Lemma 1\cite{8}: Consider the nonlinear multi-agent system (\ref{model 1}) satis
     \label{model 2}
     \Delta y_i(k+1)=\phi_i(k)\Delta u_i(k)
 \end{equation}
-
-where \(\phi_i(k)\) is called pseudo partial derivative (PPD), satisfying \( | \phi_i(k) | \leq b\).
+wherein \(\phi_i(k)\) is called pseudo partial derivative (PPD), satisfying \( | \phi_i(k) | \leq b\).
  
 The distributed measurement error of \(\xi_i(k)\) for $N$ agents is established as:
-
 \begin{equation}
     \label{model 3}
     \xi_i(k) = \sum_{j \in N_i} a_{ij}( y_j(k)-y_i(k)) + d_i(y_d(k) - y_i(k ))
 \end{equation}
-
 if the agent $ i $ can receive data from the leader, then $d_i=1$; otherwise, $d_i=0$. Additionally, $y_d(k)$ represents the reference trajectory. 
 
 Remark 2: The CFDL technique requires no prior knowledge about the system dynamic model. Moreover, the dynamic behavior of time-varying PPD may be highly complex and difficult to verify. Therefore a data-driven method for studying numerical characteristics is the preferred solution.
@@ -149,7 +146,6 @@ By utilizing the optimal condition $ \frac{\partial J(\phi_i(k))}{\partial \phi_
     \label{reset}
     \hat{\phi}_i(k) = \hat{\phi}_i(1),  \text{ if }  |\hat{\phi}_i(k) | \leq \epsilon \ or \ sign(\hat{\phi}_i(k)) \neq  sign(\hat{\phi}_i(1))
 \end{equation}
-
 herein, $\eta \in (0,1)$, $\mu > 0$ represents a positive weight factor. Additionally, $\epsilon$ is a small positive number. Finally, $\hat{\phi}_i(k)$ signifies the estimated value of $\phi_i(k)$.
 
 The following distributed MFAC algorithm is presented:
@@ -158,10 +154,7 @@ The following distributed MFAC algorithm is presented:
     \label{model eq:mfac}
     u_{i,\text{MFAC}}(k) = u_{i,\text{MFAC}}(k - 1) + \frac{\rho \hat{\phi}_i(k)}{\lambda + |\hat{\phi}_i(k)|^2} \xi_i(k)
 \end{equation}
-
-
 where \(\rho\) \(\in\) (0,1) is a step-size constant, which is added to make (\ref{model eq:mfac}) general. 
-
 
 \subsection{Sliding Mode Controller Design}
 
@@ -181,8 +174,6 @@ Furthermore, from ($ \ref{model 2}) $ and ($ \ref{model 3} $), the formula ($ \r
     \label{model eq:xi_next}
     \xi_i(k+1) =\ & \xi_i(k) - (\sum_{j \in N_i} a_{ij} + d_i ) \phi_i(k) \Delta u_i(k) + \sum_{j \in N_i} a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1)
 \end{align}
-    
-
 wherein $\Delta y_j(k+1)$ is replaced with $ \Delta y_j(k) $ because the data at the next moment cannot be obtained.
 
 % Then, ($ \ref{model eq:sms}  $) is given as
@@ -265,7 +256,6 @@ Because of $ |\phi_i(k)| < \bar{c} $, and $ |\Delta \phi_i(k)| < 2 \bar{c} $, th
     \vdots \nonumber \\
     \leq\,\ & q_1^{k-1}|\tilde{\phi}_i(1)| + \frac{2 \bar{c}}{1-q_1}(1-q_1^{k-1}) 
 \end{align}   
-
 which implies $ \tilde{\phi}_i(k) $ is bounded. Since the boundedness of $ \phi_i(k) $ is guaranteed by Lemma 1. 
     
 Part ii: In this part, mathematical induction will be utilized to prove that $ \xi_i(k)$ remains bounded.
@@ -399,11 +389,9 @@ The output data model of each agents is governed by:
 \text{Agent 4}: \quad y_4(k+1) = 0.5 * y_4(k) * u_4(k) + 1.2 * \frac{m}{(rT * 0.2)} - 0.01 * y_4(k)^2 + 0.45\\
 \end{array}
 \]
-
-
 In this scenario, the dynamics are assumed to be unknown and are only used to generate the I/O data for the MASs. 
 
-As illustrated in Fig. 2, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. Assume that the information exchange among agents is directed and fixed. The Laplacian matrix of the graph is given as follows:
+As illustrated in Fig. 2, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. The Laplacian matrix of the graph is given as follows:
 
 \[
     L = \begin{bmatrix}
@@ -419,13 +407,13 @@ with \( D = \text{diag}(1, 0, 1, 0) \), we consider the following two different 
 
 
 
-Example 1: The expression for \( y_d(k) \) is:
+Example 1: The desired reference tajectory is:
 
 % \[
 % y_d(k) = 0.5 \sin\left(\frac{k \pi}{30}\right) + 0.3  \cos\left(\frac{k \pi}{10}\right)
 % \]
 
-$ y_d(k) = 6 $
+$ y_d(k) = 0.6 $
 
 as \( k \) in the range \( 0 \leq k \leq 200 \).
 
@@ -439,7 +427,7 @@ The initial parameters are chosen as \(u_i(1)=0.01\), \(y_i(1)=0.6\) and \(\phi_
 
 Fig. \ref{fig:tracking_inv} demonstrates that all agents successfully track the time-invariable reference trajectory. 
 
-As shown in Fig. \ref{fig:error_inv} and \ref{fig:error_var}, the distributed errors for all agents are relatively small and converge to zero over time. However, the individual agents exhibit varying levels of tracking error, suggesting that their unique dynamics or initial conditions may influence the performance.
+As shown in Fig. \ref{fig:error_inv} and \ref{fig:error_var}, the distributed errors for all agents are relatively small and converge to zero over time.
 
 \begin{figure}[H]
     \centering
@@ -466,6 +454,7 @@ as \( k \) in the range \( 0 \leq k \leq 200 \).
     \caption{Tracking performance of all agents under the time-varying reference trajectory.}
     \label{fig:tracking_var} % Label for referencing the figure
 \end{figure}
+
 
 Fig. \ref{fig:tracking_var} presents a detailed analysis of the tracking performance for all agents. All agents successfully track the time-varying desired trajectory, confirming the effectiveness of the proposed control system. While minor variations in individual trajectories are evident, each agent generally adheres to the desired path. Factors such as agent dynamics, communication delays, and environmental disturbances could potentially influence the tracking performance.
 
@@ -512,8 +501,7 @@ In addition, the controller code is written in C language using STM32CubeIDE, wh
     \label{fig:output} % Label for referencing the figure
 \end{figure}
 
-Fig.\ref{fig:output} shows the tracking performance of multi-DC motors. As presented, all DC motors successfully track the desired trajectory, demonstrating the effectiveness of the proposed control method. Where the reference trajectory is presented by blue.
-
+Fig. \ref{fig:output} shows the tracking performance of multi-DC motors demonstrating the effectiveness of the proposed control method.
 Overall, the simulation results suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While initial transient errors may accur, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
 
 \section{Conclusion}

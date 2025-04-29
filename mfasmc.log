@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  29 APR 2025 16:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  29 APR 2025 16:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -409,7 +409,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <diagram.png, id=20, 1998.46625pt x 1175.39125pt>
 File: diagram.png Graphic file (type png)
 <use diagram.png>
-Package pdftex.def Info: diagram.png  used on input line 129.
+Package pdftex.def Info: diagram.png  used on input line 126.
 (pdftex.def)             Requested size: 464.39685pt x 273.13216pt.
 
 
@@ -421,7 +421,7 @@ Package pdftex.def Info: diagram.png  used on input line 129.
 <communication.png, id=34, 622.325pt x 366.36874pt>
 File: communication.png Graphic file (type png)
 <use communication.png>
-Package pdftex.def Info: communication.png  used on input line 309.
+Package pdftex.def Info: communication.png  used on input line 299.
 (pdftex.def)             Requested size: 232.19843pt x 136.69473pt.
 
 
@@ -429,12 +429,12 @@ Package pdftex.def Info: communication.png  used on input line 309.
 <tracking_inv.png, id=39, 2007.5pt x 1104.125pt>
 File: tracking_inv.png Graphic file (type png)
 <use tracking_inv.png>
-Package pdftex.def Info: tracking_inv.png  used on input line 435.
+Package pdftex.def Info: tracking_inv.png  used on input line 423.
 (pdftex.def)             Requested size: 516.0pt x 283.7973pt.
 <error_inv.png, id=40, 2007.5pt x 501.875pt>
 File: error_inv.png Graphic file (type png)
 <use error_inv.png>
-Package pdftex.def Info: error_inv.png  used on input line 446.
+Package pdftex.def Info: error_inv.png  used on input line 434.
 (pdftex.def)             Requested size: 516.0pt x 128.99876pt.
 
 
@@ -442,12 +442,12 @@ Package pdftex.def Info: error_inv.png  used on input line 446.
 <tracking_var.png, id=45, 2007.5pt x 1104.125pt>
 File: tracking_var.png Graphic file (type png)
 <use tracking_var.png>
-Package pdftex.def Info: tracking_var.png  used on input line 465.
+Package pdftex.def Info: tracking_var.png  used on input line 453.
 (pdftex.def)             Requested size: 516.0pt x 283.7973pt.
 <error_var.png, id=46, 2007.5pt x 501.875pt>
 File: error_var.png Graphic file (type png)
 <use error_var.png>
-Package pdftex.def Info: error_var.png  used on input line 474.
+Package pdftex.def Info: error_var.png  used on input line 463.
 (pdftex.def)             Requested size: 516.0pt x 128.99876pt.
 
 
@@ -455,12 +455,12 @@ Package pdftex.def Info: error_var.png  used on input line 474.
 <diagram.jpg, id=50, 426.8748pt x 238.0092pt>
 File: diagram.jpg Graphic file (type jpg)
 <use diagram.jpg>
-Package pdftex.def Info: diagram.jpg  used on input line 495.
+Package pdftex.def Info: diagram.jpg  used on input line 484.
 (pdftex.def)             Requested size: 464.39685pt x 258.94548pt.
 <system.jpg, id=51, 364.7226pt x 272.6988pt>
 File: system.jpg Graphic file (type jpg)
 <use system.jpg>
-Package pdftex.def Info: system.jpg  used on input line 502.
+Package pdftex.def Info: system.jpg  used on input line 491.
 (pdftex.def)             Requested size: 464.39685pt x 347.22656pt.
 
 
@@ -468,7 +468,7 @@ Package pdftex.def Info: system.jpg  used on input line 502.
 <dc_motor_tracking.png, id=55, 722.7pt x 433.62pt>
 File: dc_motor_tracking.png Graphic file (type png)
 <use dc_motor_tracking.png>
-Package pdftex.def Info: dc_motor_tracking.png  used on input line 510.
+Package pdftex.def Info: dc_motor_tracking.png  used on input line 499.
 (pdftex.def)             Requested size: 464.39685pt x 278.64066pt.
 
 
@@ -493,9 +493,9 @@ Here is how much of TeX's memory you used:
  28936 multiletter control sequences out of 15000+600000
  594686 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,12n,93p,1253b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,12n,93p,1253b,299s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (12 pages, 1182205 bytes).
+Output written on mfasmc.pdf (12 pages, 1181967 bytes).
 PDF statistics:
  122 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream
