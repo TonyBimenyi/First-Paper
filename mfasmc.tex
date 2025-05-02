@@ -218,14 +218,15 @@ where the parameter \(\Gamma_i\) is a gain factor.
 
 \subsection{Stability Analysis}
 
-Theorem 1: For the system (\ref{model 1}) satisfying assumptions 1 and 2, utilizing the designed algorithms (\ref{model eq:ppd_parameter}) along with the reset law (\ref{reset}), the sliding surface (\ref{model eq:sms}) and controller (\ref{model eq:sm_controller}) can ensure the boundedness of $ \hat{\phi}_i(k) $. Simultaneously, the distributed measurement error remains bounded. The functions used therein are presented bellow:
+Theorem 1: For the system (\ref{model 1}) satisfying assumptions 1 and 2, utilizing the designed algorithms (\ref{model eq:ppd_parameter}) along with the reset law (\ref{reset}), the sliding surface (\ref{model eq:sms}) and controller (\ref{model eq:sm_controller}) can ensure the boundedness of $ \hat{\phi}_i(k) $. Simultaneously, the distributed measurement error remains bounded. The functions used therein is given by:\\
+
 
 $
-a_i = \begin{cases} 
+\begin{cases} 
     0<h_0<h_i(k)<\frac{\omega C_0}{2 \sqrt{\sigma}} <1 \\
-    0.01 & \text{if } i=2, \\
-    0.02 & \text{if } i=3, \\
-    0.01 & \text{if } i=4,
+    h_i(k) = \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \\
+    g_i(k) = (1-h_i(k))( \sum_{j \in N_i}a_{ij}+d_i \Delta y_d(k+1))-h_i(k)(\sum_{j \in N_i}a_{ij}+d_i) \tau_s sign(s_i(k)) \\
+    |g_i(k)|< g_0
     \end{cases}
 $  \\
 
