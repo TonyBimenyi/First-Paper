@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1746190559.89867 "/Users/apple/Documents/PAPERS/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1746190561.12958 0
-  "/Users/apple/Documents/PAPERS/First-Paper/mfasmc.tex" 1746190558.35219 40623 2a0a0bcd8be9f04f712a93f862efb41b ""
+["pdflatex"] 1746207206.2333 "/Users/apple/Documents/PAPERS/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1746207207.48664 0
+  "/Users/apple/Documents/PAPERS/First-Paper/mfasmc.tex" 1746207206.03922 40580 e76ef4f9a2294d72c769842f72e3f450 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -85,11 +85,11 @@
   "communication.png" 1746090841.65212 46571 a30c06218b6e2161ea8490b4300d681c ""
   "dc_motor_tracking.png" 1746090841.65235 62079 78a9d70ca9442c4468ec4051946fba81 ""
   "diagram.jpg" 1746090841.65293 174560 1ec1d90c7a614cfe14f4de13c60cee83 ""
-  "diagram.png" 1746190549.37212 259492 c32263cc1374537d8e9607a657c9a813 ""
+  "diagram.png" 1746191195.03585 260645 8c1d1216ebaf5f0cfbfa2ff0add5b5ff ""
   "inv_error.png" 1746187580.80165 35426 f74287760fbcdaa9618106e822cdee94 ""
   "inv_tracking.png" 1746188213.42055 54153 ad9826e5cfd6e246d1029ed664714e44 ""
-  "mfasmc.aux" 1746190561.06895 5187 05d9ed6413ba53c3b31c3d60de5ab6c8 "pdflatex"
-  "mfasmc.tex" 1746190558.35219 40623 2a0a0bcd8be9f04f712a93f862efb41b ""
+  "mfasmc.aux" 1746207207.42459 5187 05d9ed6413ba53c3b31c3d60de5ab6c8 "pdflatex"
+  "mfasmc.tex" 1746207206.03922 40580 e76ef4f9a2294d72c769842f72e3f450 ""
   "system.jpg" 1746090841.66315 284345 2e63d27a6282be46dcff4ad0511d988c ""
   "var_error.png" 1746188302.80856 41350 346a594ebfc3dc6fb5a2b2144932c1fd ""
   "var_tracking.png" 1746188457.56825 58893 41d39ee587ad7d4a64fe2a3fa1e19f07 ""
