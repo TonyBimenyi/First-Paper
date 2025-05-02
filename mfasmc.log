@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  29 APR 2025 17:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.1)  2 MAY 2025 20:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/mfasmc.tex"
-(/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/mfasmc.tex
+**/Users/apple/Documents/PAPERS/First-Paper/mfasmc.tex
+(/Users/apple/Documents/PAPERS/First-Paper/mfasmc.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
@@ -406,11 +406,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 [2]
-<diagram.png, id=20, 1998.46625pt x 1175.39125pt>
+<diagram.png, id=20, 1953.2975pt x 1131.22626pt>
 File: diagram.png Graphic file (type png)
 <use diagram.png>
 Package pdftex.def Info: diagram.png  used on input line 126.
-(pdftex.def)             Requested size: 464.39685pt x 273.13216pt.
+(pdftex.def)             Requested size: 464.39685pt x 268.9452pt.
 
 
 [3 <./diagram.png>]
@@ -426,57 +426,59 @@ Package pdftex.def Info: communication.png  used on input line 291.
 
 
 [6 <./communication.png>]
-<tracking_inv.png, id=39, 2007.5pt x 1104.125pt>
-File: tracking_inv.png Graphic file (type png)
-<use tracking_inv.png>
-Package pdftex.def Info: tracking_inv.png  used on input line 431.
-(pdftex.def)             Requested size: 516.0pt x 283.7973pt.
-<error_inv.png, id=40, 2007.5pt x 501.875pt>
-File: error_inv.png Graphic file (type png)
-<use error_inv.png>
-Package pdftex.def Info: error_inv.png  used on input line 442.
-(pdftex.def)             Requested size: 516.0pt x 128.99876pt.
+<inv_tracking.png, id=39, 2007.5pt x 1003.75pt>
+File: inv_tracking.png Graphic file (type png)
+<use inv_tracking.png>
+Package pdftex.def Info: inv_tracking.png  used on input line 431.
+(pdftex.def)             Requested size: 516.0pt x 257.99754pt.
+<inv_error.png, id=40, 2007.5pt x 1003.75pt>
+File: inv_error.png Graphic file (type png)
+<use inv_error.png>
+Package pdftex.def Info: inv_error.png  used on input line 440.
+(pdftex.def)             Requested size: 516.0pt x 257.99754pt.
 
 
-[7 <./tracking_inv.png (PNG copy)>]
-<tracking_var.png, id=45, 2007.5pt x 1104.125pt>
-File: tracking_var.png Graphic file (type png)
-<use tracking_var.png>
-Package pdftex.def Info: tracking_var.png  used on input line 461.
-(pdftex.def)             Requested size: 516.0pt x 283.7973pt.
-<error_var.png, id=46, 2007.5pt x 501.875pt>
-File: error_var.png Graphic file (type png)
-<use error_var.png>
-Package pdftex.def Info: error_var.png  used on input line 471.
-(pdftex.def)             Requested size: 516.0pt x 128.99876pt.
+[7 <./inv_tracking.png (PNG copy)>]
+<var_tracking.png, id=45, 2007.5pt x 1003.75pt>
+File: var_tracking.png Graphic file (type png)
+<use var_tracking.png>
+Package pdftex.def Info: var_tracking.png  used on input line 459.
+(pdftex.def)             Requested size: 516.0pt x 257.99754pt.
+<var_error.png, id=46, 2007.5pt x 1003.75pt>
+File: var_error.png Graphic file (type png)
+<use var_error.png>
+Package pdftex.def Info: var_error.png  used on input line 467.
+(pdftex.def)             Requested size: 516.0pt x 257.99754pt.
 
 
-[8 <./error_inv.png (PNG copy)> <./tracking_var.png (PNG copy)>]
+[8 <./inv_error.png (PNG copy)> <./var_tracking.png (PNG copy)>]
 <diagram.jpg, id=50, 426.8748pt x 238.0092pt>
 File: diagram.jpg Graphic file (type jpg)
 <use diagram.jpg>
-Package pdftex.def Info: diagram.jpg  used on input line 492.
-(pdftex.def)             Requested size: 464.39685pt x 258.94548pt.
-<system.jpg, id=51, 364.7226pt x 272.6988pt>
+Package pdftex.def Info: diagram.jpg  used on input line 476.
+(pdftex.def)             Requested size: 412.80157pt x 230.1786pt.
+
+
+[9 <./var_error.png (PNG copy)> <./diagram.jpg>]
+<system.jpg, id=54, 364.7226pt x 272.6988pt>
 File: system.jpg Graphic file (type jpg)
 <use system.jpg>
-Package pdftex.def Info: system.jpg  used on input line 499.
-(pdftex.def)             Requested size: 464.39685pt x 347.22656pt.
-
-
-[9 <./error_var.png (PNG copy)> <./diagram.jpg>]
+Package pdftex.def Info: system.jpg  used on input line 489.
+(pdftex.def)             Requested size: 387.0pt x 289.35477pt.
 <dc_motor_tracking.png, id=55, 722.7pt x 433.62pt>
 File: dc_motor_tracking.png Graphic file (type png)
 <use dc_motor_tracking.png>
-Package pdftex.def Info: dc_motor_tracking.png  used on input line 507.
+Package pdftex.def Info: dc_motor_tracking.png  used on input line 497.
 (pdftex.def)             Requested size: 464.39685pt x 278.64066pt.
 
 
-[10 <./system.jpg> <./dc_motor_tracking.png>]
+[10 <./system.jpg>]
 
-[11]
+[11 <./dc_motor_tracking.png>]
 
-[12] (./mfasmc.aux)
+[12]
+
+[13] (./mfasmc.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -488,17 +490,17 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  5752 strings out of 473190
- 98833 string characters out of 5715801
+ 98789 string characters out of 5715801
  494964 words of memory out of 5000000
  28936 multiletter control sequences out of 15000+600000
  594686 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,12n,93p,1253b,299s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,12n,93p,1237b,299s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (12 pages, 1181670 bytes).
+Output written on mfasmc.pdf (13 pages, 1165987 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
+ 126 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

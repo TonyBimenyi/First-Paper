@@ -415,7 +415,7 @@ with \( D = \text{diag}(1, 0, 1, 0) \), we consider the following two different 
 
 
 
-Example 1: The desired reference tajectory is:
+Example 1: Consider the following reference trajectory:
 
 % \[
 % y_d(k) = 0.5 \sin\left(\frac{k \pi}{30}\right) + 0.3  \cos\left(\frac{k \pi}{10}\right)
@@ -428,18 +428,16 @@ as \( k \) in the range \( 0 \leq k \leq 200 \).
 The initial parameters are chosen as \(u_i(1)=0.01\), \(y_i(1)=0.6\) and \(\phi_i(0)=4 \) for all agents in this simulation, \(\Gamma_{1}=\Gamma_{3}=0.45\) and \(\Gamma_{2}=\Gamma_{4}=0.15\), with \(\tau_s=10^{-5}\), \(m=200\), sampling rate $rT = 1024 $, \(\eta=1\), \(\mu=0.005\), other parameters are given as \(\rho=7.5\), \(\lambda=350\), $ \omega = 10 $, $ \sigma=95 $, \(\alpha=15\) with \(\epsilon=10^{-5}\).
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1 \textwidth]{tracking_inv.png}
+    \includegraphics[width=1 \textwidth]{inv_tracking.png}
     \caption{Tracking performance of all agents under the time-invarying reference trajectory.}
     \label{fig:tracking_inv} % Label for referencing the figure
 \end{figure}
 
-Fig. \ref{fig:tracking_inv} demonstrates that all agents successfully track the time-invariable reference trajectory. 
-
-As shown in Fig. \ref{fig:error_inv} and \ref{fig:error_var}, the distributed errors for all agents are relatively small and converge to zero over time.
+Fig. \ref{fig:tracking_inv} demonstrates the tracking performance for the time-invariant signal. Moreover, Fig. \ref{fig:error_inv} shows that the distributed measurement error remains bounded and constrained within the range.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1 \textwidth]{error_inv.png}
+    \includegraphics[width=1 \textwidth]{inv_error.png}
     \caption{Distributed error of all agents under the time-invarying reference trajectory.}
     \label{fig:error_inv} % Label for referencing the figure
 \end{figure}
@@ -458,45 +456,37 @@ as \( k \) in the range \( 0 \leq k \leq 200 \).
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{tracking_var.png}
+    \includegraphics[width=1\textwidth]{var_tracking.png}
     \caption{Tracking performance of all agents under the time-varying reference trajectory.}
     \label{fig:tracking_var} % Label for referencing the figure
 \end{figure}
 
 
-Fig. \ref{fig:tracking_var} presents a detailed analysis of the tracking performance for all agents. All agents successfully track the time-varying desired trajectory, confirming the effectiveness of the proposed control system. While minor variations in individual trajectories are evident, each agent generally adheres to the desired path. Factors such as agent dynamics, communication delays, and environmental disturbances could potentially influence the tracking performance.
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{error_var.png}
+    \includegraphics[width=1\textwidth]{var_error.png}
     \caption{Distributed error of all agents under the time-varying reference trajectory.}
     \label{fig:error_var} % Label for referencing the figure
 \end{figure}
 
+Fig. \ref{fig:tracking_var} presents the tracking performance for all agents for the time-varying trajectory. All agents successfully track the time-varying desired trajectory. Additionally, as shown in Fig. \ref{fig:error_var} the distributed measurement errors of all agents are constrained in range 
 
-
-% \subsection{Experimental verification}
-
-
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{diagram.jpg}
+    \caption{System connection diagram of multi-DC motors consensus tracking control.}
+    \label{fig:system_diagram} % Label for referencing the figure
+\end{figure}
 
 To verify the proposed consensus tracking control methodology, the experimental validation is conducted using a multi-DC motor system, as illustrated in Fig. \ref{fig:system}. The system consists of three DC motors equipped with Hall encoders and reduction
 gears, an STM32F407 main control chip, two motor drive modules, and an LCD display module. The microcontroller unit (MCU) STM32F407ZGT6 is used for high-resolution pulse width modulation (PWM) output generation to achieve precise motor speed control. The timer module is utilized for this purpose.
 
 In addition, the controller code is written in C language using STM32CubeIDE, while STM32CubeMX is used for pin configuration. The main purpose of the experiment is to ensure that the three motors accurately track the reference trajectory:
-
 \[ y_d(k)=0.5\sin(0.07\pi(k))+0.7\cos(0.04\pi(k)) \]
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{diagram.jpg}
-    \caption{System connection diagram of multi-DC motors consensus tracking control.}
-    \label{fig:system_diagram} % Label for referencing the figure
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{system.jpg}
+    \includegraphics[width=0.75\textwidth]{system.jpg}
     \caption{Multi-DC motors system.}
     \label{fig:system} % Label for referencing the figure
 \end{figure}
