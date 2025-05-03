@@ -24,40 +24,38 @@
 
 \allowdisplaybreaks[4]
 
-\title{\LARGE Data-Driven Model Free Adaptive Sliding Mode Control for Multi DC-Motors Speed Regulation}
+\title{\LARGE Data-Driven Model-Free Adaptive Sliding Mode Control for Multi DC Motor Speed Regulation}
 
 \author{bim}
 
 \begin{document}
 \maketitle
 
-% ---------------------------------------------------------------
-
 \begin{abstract}
-    This paper proposes the distributed data-driven sliding mode control approach to address the consensus problem of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, utilizing the neighboring agents process informations, the novel sliding surface is employed, which ensures the boundedness of distributed error through stability mechanism. Subsequently, a distributed model free adaptive sliding mode controller is developed for precise reference trajectory tracking. Finally, the effectiveness of the proposed control approach is verified through experiments on multi-DC motors.
+    This paper proposes the distributed data-driven model-free adaptive sliding mode control approach to address the consensus problem of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, by utilizing process information from neighboring agents, the novel sliding surface is employed to ensure the boundedness of distributed measurement error through stability mechanism. Subsequently, a distributed model-free adaptive sliding mode controller is developed for precise reference trajectory tracking. Finally, the effectiveness of the proposed control approach is verified through experiments on multi DC motor system.
 \end{abstract}
 
 % It would be more appropriate to rephrase it using a relative clause introduced by 
 % “which.” This would avoid making the sentence appear too lengthy.
 
 \section*{Keywords}
-Data-driven control, model free adaptive sliding mode control, nonlinear multi-agent system, multi-DC motors speed control.
+Data-driven control, model-free adaptive sliding mode control, nonlinear multi-agent systems, multi DC motor speed control.
 
 \section{Introduction}\label{section:1}
 
 \lettrine{M}otivated by the coordinated behaviors observed in nature, such as bird flocking or herd migration, the distributed control multi-agent systems(MASs) has been studied with interest in recent years.\cite{1} Because of the distributed and flexible structure, the MASs based approaches have significant potential in addressing coordination challenges for complex systems\cite{2}. The control of DC motors is essential in numerious technological applications, with single DC motor serving as the foundation for the systems in various fields, including vehicle coorporation\cite{3}, multi-robot systems and industrial machinery\cite{4}. 
 
-It is challenging to establish an accurate mathematical model for the speed regulation of multi-DC motor systems due to their nonlinear, time-varying, and multi-variable conditions\cite{7}. Even if a relatively accurate mathematical models are developed, the associated control algorithms can become highly complex, so the model-based control approach is difficult to apply or extend to such systems. Nowdays, data-driven methods have been used to control, decision making, planing, fault diagnosis, predicting, etc. In\cite{15}-\cite{16}, a compact form dynamic linarization (CFDL) data-driven modeling method is proposed for nonlinear systems. So far, the CFDL data-driven modeling method has proven to be highly useful in various domains\cite{17}-\cite{20} with different characteristics such as simplicity and particularly, a small amount of calculation, ease of implementation, and strong robustness, making it highly effective for addressing unknown nonlinear time-varying systems.
+It is challenging to establish an accurate mathematical model for the speed regulation of multi DC motor systems due to their nonlinear, time-varying, and multi-variable conditions\cite{7}. Even if a relatively accurate mathematical models are developed, the associated control algorithms can become highly complex, so the model-based control approach is difficult to apply or extend to such systems. Nowdays, data-driven methods have been used to control, decision making, planing, fault diagnosis, predicting, etc. In\cite{15}-\cite{16}, a compact form dynamic linarization (CFDL) data-driven modeling method is proposed for nonlinear systems. So far, the CFDL data-driven modeling method has proven to be highly useful in various domains\cite{17}-\cite{20} with different characteristics such as simplicity and particularly, a small amount of calculation, ease of implementation, and strong robustness, making it highly effective for addressing unknown nonlinear time-varying systems.
 
-In\cite{21}, a model free adaptive control (MFAC) approach is presented for MASs, which uses input and output data to achieve consensus tracking trajectory.
+In\cite{21}, a model-free adaptive control (MFAC) approach is presented for MASs, which uses input and output data to achieve consensus tracking trajectory.
 
 Alternatively, the sliding mode control (SMC) adapts dynamically the system operation based on the current state of the system such as the error and its derivative, ensuring the system follows a predetermined sliding surface\cite{22}. Because the sliding surface can be designed and has the purpose to deal with the object parameters and disturbances, the SMC provides the fast response, insensitivity to parameter changes and disturbances, and simplicity in implementation. The above advantages make SMC widely used in control systems and one of main topic to focus in the ongoing research.\cite{28}-\cite{30}
 
-Inspired by the abovementioned considerations, this paper studies a novel model free adaptive sliding mode control for speed regulation of multi-DC motors. The proposed control method consists to eliminates the need for precise system models by dynamically adjusting the control law\cite{21}, where is particularly useful in systems where obtaining a detailed model is impractical or complex such as the tradition PID control method. Compared with other existing literature on multi-DC motors systems, the results of this paper have following distinct features.
+Inspired by the abovementioned considerations, this paper studies a novel model-free adaptive sliding mode control for speed regulation of multi DC motors. The proposed control method consists to eliminates the need for precise system models by dynamically adjusting the control law\cite{21}, where is particularly useful in systems where obtaining a detailed model is impractical or complex such as the tradition PID control method. Compared with other existing literature on multi DC motor systems, the results of this paper have following distinct features.
 
 \begin{enumerate}
 
-    \item The proposed method integrates encoder counts based on the well known constant elapsed time (CET) method\cite{31} for accurate speed control in nonlinear, time-varying multi-DC motor systems. This innovation greatly enhances resolution and reliability, setting it apart from traditional methods.
+    \item The proposed method integrates encoder counts based on the well known constant elapsed time (CET) method\cite{31} for accurate speed control in nonlinear, time-varying multi DC motor systems. This innovation greatly enhances resolution and reliability, setting it apart from traditional methods.
     
     \item The implementation of a fixed communication topology for agents interconnections, which makes the controller more applicable and flexible in real implementation.
     
@@ -95,10 +93,9 @@ Assumption 2: The system (\ref{model 1}) satisfies the generalized Lipschitz con
 
 Remark 1: The assumptions above are general. Assumption 1 is a general condition for controller design. Assumption 2 implies that the system input rate constrains the system output rate, which is satisfied in many practical systems.
 
-Assumption 3: The communication graph $ \mathcal{G} $ forms a strongly connected graph, ensuring each follower can directly receive information from at least one leader.
+Assumption 3: The communication graph $ \mathcal{G} $ is strongly connected, ensuring that each follower can directly receive information from at least one leader.
 
 Lemma 1\cite{8}: Consider the nonlinear multi-agent system (\ref{model 1}) satisfying above three assumptions. If $ | \Delta u_i(k) | \neq 0 $ holds, then the system can be transformed into the CFDL data model as follows:
-
 
 \begin{equation}
     \label{model 2}
@@ -113,17 +110,17 @@ The distributed measurement error of \(\xi_i(k)\) for $N$ agents is established 
 \end{equation}
 if the agent $ i $ can receive data from the leader, then $d_i=1$; otherwise, $d_i=0$. Additionally, $y_d(k)$ represents the reference trajectory. 
 
-Remark 2: The CFDL technique requires no prior knowledge about the system dynamic model. Moreover, the dynamic behavior of time-varying PPD may be highly complex and difficult to verify. Therefore a data-driven method for studying numerical characteristics is the preferred solution.
+Remark 2: The CFDL technique requires no prior knowledge about the system dynamic model. Moreover, the dynamic behavior of time-varying PPD may be highly complex and difficult to verify. Therefore, a data-driven method for studying numerical characteristics is the preferred solution.
  
 
 \section{Main Results}
 
-\subsection{Model Free Adaptive Controller Design}
+\subsection{Model-Free Adaptive Controller Design}
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{diagram.png}
+    \includegraphics[width=0.8\textwidth]{diagram.png}
     \caption{Block diagram.}
     \label{fig:diagram} % Label for referencing the figure
 \end{figure}
@@ -135,13 +132,12 @@ Consider the following PPD criterion function, for the above consensus tracking 
     J(\phi_i(k)) = | \Delta y_i(k) - \phi_i(k)  \Delta u_i(k-1)|^2 + \mu |\phi_i(k) - \hat{\phi}_i(k-1)|^2\
 \end{equation}
 
-By utilizing the optimal condition $ \frac{\partial J(\phi_i(k))}{\partial \phi_i(k)}=0 $, the updating law with reset algorithm can be derived as
+By utilizing the optimal condition $ \frac{\partial J(\phi_i(k))}{\partial \phi_i(k)}=0 $, the updating law with reset algorithm is derived:
 
 \begin{equation}
     \label{model eq:ppd_parameter}
     \hat{\phi}_i(k) = \hat{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1) }{\mu + \Delta u_i(k-1)^2}(\Delta y_i(k) - \hat{\phi}_i(k-1) \Delta u_i(k-1))
 \end{equation}
-
 \begin{equation}
     \label{reset}
     \hat{\phi}_i(k) = \hat{\phi}_i(1),  \text{ if }  |\hat{\phi}_i(k) | \leq \epsilon \ or \ sign(\hat{\phi}_i(k)) \neq  sign(\hat{\phi}_i(1))
@@ -151,13 +147,13 @@ herein, $\eta \in (0,1)$, $\mu > 0$ represents a positive weight factor. Additio
 The following distributed MFAC algorithm is presented:
 \begin{equation}
     \label{model eq:mfac}
-    u_{i,\text{MFAC}}(k) = u_{i,\text{MFAC}}(k - 1) + \frac{\rho \hat{\phi}_i(k)}{\lambda + |\hat{\phi}_i(k)|^2} \xi_i(k)
+    u_{i,\text{MFA}}(k) = u_{i,\text{MFA}}(k - 1) + \frac{\rho \hat{\phi}_i(k)}{\lambda + |\hat{\phi}_i(k)|^2} \xi_i(k)
 \end{equation}
 where \(\rho\) \(\in\) (0,1) is a step-size constant, which is added to make (\ref{model eq:mfac}) general. 
 
 \subsection{Sliding Mode Controller Design}
 
-To design the sliding mode controller for the system, the sliding surface is designed:
+To design the sliding mode controller for the system, the sliding surface function is given by:
 \begin{equation}
     \label{model eq:sms}
     s_i(k) = \alpha \xi_i(k) - \xi_i(k-1)
@@ -180,14 +176,13 @@ wherein $\Delta y_j(k+1)$ is replaced with $ \Delta y_j(k) $ because the data at
 % \end{align}
 
 
-Therefore, considering ($ \ref{model eq:sms}) $, with the assistance of reaching law $ s_i(k+1) = 0 $, the equivalent control law is designed as
+Therefore, considering ($ \ref{model eq:sms}) $, with the assistance of reaching law $ s_i(k+1) = 0 $, the following equivalent control law can be derived.
 
 \begin{equation}
     \label{model eq:equivalent_control}
-    \Delta u_{i,\text{SM}}^{eq} = \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}\bigg(\frac{\xi_i(k)+ \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1)}{\displaystyle \sum_{j \in N_i}a_{ij}+d_i} - \frac{\xi_i(k)}{\alpha(\displaystyle \sum_{j \in N_i}a_{ij}+d_i)} )
+    \Delta u_{i,\text{SM}}^{eq} = \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}\bigg(\frac{\xi_i(k)+ \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1)}{\displaystyle \sum_{j \in N_i}a_{ij}+d_i} - \frac{\xi_i(k)}{\alpha(\displaystyle \sum_{j \in N_i}a_{ij}+d_i)} 
     \bigg)
 \end{equation}
-
 
 The controller consists of an equivalent control law and switching control law, which means:
 \begin{equation}
@@ -195,7 +190,7 @@ The controller consists of an equivalent control law and switching control law, 
     u_{i,\text{SM}}(k) = u_{i,\text{SM}}(k-1) + \Delta u_{i,\text{SM}}^M(k)+ \Delta u_{i,\text{SM}}^s(k)
 \end{equation}
 
-Additionally, the switching control law $ \Delta u_{i,\text{SM}}^s(k) $ is presented as
+Additionally, the switching control law $ \Delta u_{i,\text{SM}}^s(k) $ is presented:
 \begin{equation}
     \label{model eq:reaching_law}
     \Delta u_{i,\text{SM}}^s(k) = \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}\tau_s sign(s_i(k))
@@ -204,22 +199,20 @@ Additionally, the switching control law $ \Delta u_{i,\text{SM}}^s(k) $ is prese
 As a consequence, taking into considaration both(\ref{model eq:equivalent_control}), (\ref{model eq:u}) and (\ref{model eq:reaching_law}), the controller is summarized as follows:
 \begin{align}
     \label{model eq:sm_controller}
-    u_{i,\text{SM}}(k) =\ & u_{i,\text{SM}}(k-1) +  \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg( \frac{\xi_i(k)+ \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1)}{\sum_{j \in N_i}a_{ij}+d_i} \nonumber \\
-    &\quad - \frac{\xi_i(k)}{\alpha(\displaystyle \sum_{j \in N_i}a_{ij}+d_i)} + \tau_s sign(s_i(k) \bigg)
+    u_{i,\text{SM}}(k) =\ & u_{i,\text{SM}}(k-1) +  \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg( \frac{\xi_i(k)+ \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1)}{\sum_{j \in N_i}a_{ij}+d_i} \quad \nonumber  \\
+    - \ & \frac{\xi_i(k)}{\alpha(\displaystyle \sum_{j \in N_i}a_{ij}+d_i)} + \tau_s sign(s_i(k)) \bigg)
 \end{align}
     
-Subsequently, the final MFASMC input  is designed:
+Subsequently, the final MFASMC input is:
 \begin{equation}
     \label{model eq:mfasmc}
-    u_i(k) = u_{i,\text{MFAC}}(k) + \Gamma_i  u_{i,\text{SM}}(k)
+    u_i(k) = u_{i,\text{MFA}}(k) + \Gamma_i  u_{i,\text{SM}}(k)
 \end{equation}
-
 where the parameter \(\Gamma_i\) is a gain factor.
 
 \subsection{Stability Analysis}
 
-Theorem 1: For the system (\ref{model 1}) satisfying assumptions 1 and 2, utilizing the designed algorithms (\ref{model eq:ppd_parameter}) along with the reset law (\ref{reset}), the sliding surface (\ref{model eq:sms}) and controller (\ref{model eq:sm_controller}) can ensure the boundedness of $ \hat{\phi}_i(k) $. Simultaneously, the distributed measurement error remains bounded. The functions used therein is given by:\\
-
+Theorem 1: For the system (\ref{model 1}) satisfying assumptions 1 and 2, using  the designed algorithms (\ref{model eq:ppd_parameter}) along with the reset law (\ref{reset}), the sliding surface (\ref{model eq:sms}) and controller (\ref{model eq:sm_controller}) can ensure the boundedness of $ \hat{\phi}_i(k) $. Simultaneously, the distributed measurement error remains bounded. The functions used therein are given by: \\
 
 $
 \begin{cases} 
@@ -235,14 +228,13 @@ Proof: The proof is devided into two parts.
 Part i: Define $\tilde{\phi}_i(k) = \hat{\phi}_i(k) - \phi_i(k)$. Using the PPD estimation algorithm ($\ref{model eq:ppd_parameter}$), the following result is derived:
 \begin{align}
     \label{model:phi_tilde_update}
-    \tilde{\phi}_i(k) =\ & \tilde{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} ( \phi_i(k-1) \Delta u_i(k-1) - \hat{\phi}_i(k-1) \Delta u_i(k-1)) \nonumber \\
-    =\,\ & \tilde{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} ( \phi_i(k-1) - \hat{\phi}_i(k-1)) - \phi_i(k) + \phi_i(k-1) \nonumber \\
-    =\,\ & \bigg( 1 - \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} \bigg) \tilde{\phi}_i(k-1) - \Delta \phi_i(k) 
+    \tilde{\phi}_i(k) = \ & \tilde{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} \big( \phi_i(k-1) \Delta u_i(k-1) - \hat{\phi}_i(k-1) \Delta u_i(k-1) \big) \quad \nonumber \\
+    = \ & \tilde{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} \big( \phi_i(k-1) - \hat{\phi}_i(k-1) \big) - \phi_i(k) + \phi_i(k-1) \quad \nonumber \\
+    = \ & \bigg( 1 - \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} \bigg) \tilde{\phi}_i(k-1) - \Delta \phi_i(k)
 \end{align}
 
+
 Denote that the term $ \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} $ is monotonically increasing with respect to $ \Delta u_i(k)^2 $, and its minimum value is $ \frac{\eta \epsilon^2}{\mu + \epsilon^2} $. Therefore, there must be a constant $ q_1 $ satisfying the inequalities $ 0 < \eta \leq 1 $ and $ u_i > 0$
-
-
 \begin{equation}
     \label{model eq:ineq}
     0 < \bigg |1 - \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} \bigg| \leq 1 - \frac{\eta \epsilon^2}{\mu + \epsilon^2} = q_1 < 1 
@@ -251,46 +243,44 @@ Denote that the term $ \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} $ 
 Because of $ |\phi_i(k)| < \bar{c} $, and $ |\Delta \phi_i(k)| < 2 \bar{c} $, the following the equation ($ \ref{model:phi_tilde_update} $) is written as:
 \begin{align}
     \label{model:absolute}
-    |\tilde{\phi}_i(k)| \leq\ & q_1|\tilde{\phi}_i(k-1)| + 2 \bar{c}  \nonumber \\
-    \leq\,\ & q_1^2|\tilde{\phi}_i(k-2)| + 2 q_1\bar{c} + 2\bar{c} \nonumber \\
+    |\tilde{\phi}_i(k)| \leq \ & q_1|\tilde{\phi}_i(k-1)| + 2 \bar{c} \quad \nonumber \\
+    \leq \ & q_1^2|\tilde{\phi}_i(k-2)| + 2 q_1\bar{c} + 2\bar{c} \quad \nonumber \\
     \vdots \nonumber \\
-    \leq\,\ & q_1^{k-1}|\tilde{\phi}_i(1)| + \frac{2 \bar{c}}{1-q_1}(1-q_1^{k-1}) 
-\end{align}   
+    \leq \ & q_1^{k-1}|\tilde{\phi}_i(1)| + \frac{2 \bar{c}}{1-q_1}(1-q_1^{k-1})
+\end{align} 
 which implies $ \tilde{\phi}_i(k) $ is bounded. Since the boundedness of $ \phi_i(k) $ is guaranteed by Lemma 1. 
     
-Part ii: In this part, mathematical induction will be utilized to prove that $ \xi_i(k)$ remains bounded.
+Part ii: The boundedness of $ \xi_i(k)$.
 
-Substituting ($ \ref{model eq:ppd_parameter} $) into ($ \ref{model eq:xi_next} $), then the expression for \(\xi_i(k+1)\) is formulated as follows:
-
+By combining ($ \ref{model eq:ppd_parameter} $) with ($ \ref{model eq:xi_next} $), the expression for \(\xi_i(k+1)\) is updated:
 \begin{align}
     \label{model eq:xi_next_proof}
-    \xi_i(k+1) =\ & \xi_i(k) + \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg( (1-\frac{1}{2})\xi_i(k)+ \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1)\bigg) \nonumber \\
-    &\quad + \bigg( \sum_{j \in N_i}a_{ij} +d_i \bigg) \tau_s sign(Si(k)) \nonumber \\
-    =\,\ & \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} (1-\frac{1}{2})  \bigg) \xi_i(k) + \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}  \bigg) \bigg ( \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) \bigg ) \nonumber \\
-    &\quad - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}  \bigg ( \sum_{j \in N_i}a_{ij} + d_i \bigg ) \tau_s sign(S_i(k))
+    \xi_i(k+1) = \ & \xi_i(k) + \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg((1-\frac{1}{\alpha})\xi_i(k) + \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) \bigg) \quad \nonumber \\
+    + \ & \bigg( \sum_{j \in N_i}a_{ij} + d_i \bigg) \tau_s sign(s_i(k)) \nonumber \\
+    = \ & \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} (1-\frac{1}{\alpha}) \bigg) \xi_i(k) + \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg) \bigg( \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) \bigg) \quad \nonumber \\
+    - \ & \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg( \sum_{j \in N_i}a_{ij} + d_i \bigg) \tau_s sign(s_i(k))
 \end{align}
 
-By applying the fundamentals of mathematical induction, then assuming $ 0<h_0<h_i(k)<\frac{\omega C_0}{2\sqrt{\sigma}}<1 $, where $ \phi_i(k) < C_0 $ and $ |g_i(k)|<g_0 $, the inequality is obtained by taking the absolute value of each term of ($ \ref{model eq:xi_next_proof} $).
+Subsequently, take $ 0<h_0<h_i(k)<\frac{\omega C_0}{2\sqrt{\sigma}}<1 $ into consideration, where $ \phi_i(k) < C_0 $ and $ |g_i(k)|<g_0 $, the inequality is obtained by taking the absolute value of each term of ($ \ref{model eq:xi_next_proof} $).
 
 \begin{align}
     \label{model:absolute2}
-    |\xi_i(k+1)| \leq\ & |1-h_i(k)(1-\frac{1}{2})| |\xi_i(k)| + |g_i(k)|  \nonumber \\
-    \leq\,\ & |1-h_i(k)(1-\frac{1}{2})| |\xi_i(k)| + g_0(k) \nonumber \\
+    |\xi_i(k+1)| \leq \ & |1-h_i(k)(1-\frac{1}{ \alpha })| |\xi_i(k)| + |g_i(k)| \quad \nonumber \\
+    \leq \ & |1-h_i(k)(1-\frac{1}{\alpha })| |\xi_i(k)| + g_0(k) \quad \nonumber \\
     \vdots \nonumber \\
-    \leq\,\ & 1-h_0(1-\frac{1}{2})^k |\xi_i(k)| + \frac{g_0(1-(1-h_0(1-\frac{1}{2}))^2)}{h_0(1-\frac{1}{2})} 
-\end{align}   
+    \leq \ & 1-h_0(1-\frac{1}{\alpha })^k |\xi_i(k)| + \frac{g_0(1-(1-h_0(1-\frac{1}{\alpha}))^2)}{h_0(1-\frac{1}{ \alpha})}
+\end{align}
 
 Therefore, the following result will be given as
-
 \begin{equation}
     \label{model:lim_fin}
-    \lim_{k \to \infty} \xi_i(k+1) = \frac{g_0}{h_0(1-\frac{1}{2})} = \frac{\alpha g_0}{(\alpha-1)h_0}
+    \lim_{k \to \infty} \xi_i(k+1) = \frac{g_0}{h_0(1-\frac{1}{\alpha})} = \frac{\alpha g_0}{(\alpha-1)h_0}
 \end{equation}
 
 The proof is completed.
 
 
-Remark 3: Unlike the consensus tracking control schemes used in the existing literature, this paper proposes a model free adaptive sliding mode control strategy for MASs. For the purpose of improving the reference trajectory tracking, the CFDL technique is employed alongside a novel sliding surface. Specifically, regardless of the nonlinear and time-varying dynamics of agents, the proposed methodology ensures that distributed error remains bounded within a predifined region, achieving precise speed regulation.
+Remark 3: Unlike the consensus tracking control schemes used in the existing literature, this paper proposes a model-free adaptive sliding mode control strategy for MASs. For the purpose of improving the reference trajectory tracking, the CFDL technique is employed alongside a novel sliding surface. Specifically, regardless of the nonlinear and time-varying dynamics of agents, the proposed methodology ensures that distributed measurement error remains bounded, thereby achieving precise speed regulation.
 
 Consider the network comprising:
 
@@ -405,7 +395,7 @@ p_i = \begin{cases}
 2 & \text{if } i=2, 4.
 \end{cases}
 \]
-In this scenario, the dynamics are assumed to be unknown and are only used to generate the I/O data for the MASs. 
+in this scenario, the dynamics are assumed to be unknown and are only used to generate the I/O data for the MASs. 
 
 As illustrated in Fig. 2, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. The Laplacian matrix of the graph is given as follows:
 
@@ -417,9 +407,7 @@ As illustrated in Fig. 2, the virtual leader is designated as vertex 0. It can b
     -1 & 0 & -1 & 2
     \end{bmatrix}
 \]
-
-with \( D = \text{diag}(1, 0, 1, 0) \), we consider the following two different desired trajectories.
-
+with \( D = \text{diag}(1, 0, 1, 0) \), the following two different reference trajectories are introduced to demonstrate the effectiveness of the proposed method.
 
 
 
@@ -429,38 +417,39 @@ Example 1: Consider the following reference trajectory:
 % y_d(k) = 0.5 \sin\left(\frac{k \pi}{30}\right) + 0.3  \cos\left(\frac{k \pi}{10}\right)
 % \]
 
-$ y_d(k) = 0.6 $
+$ y_d(k) = 0.6, k \in [0, 200]  $
 
-as \( k \) in the range \( 0 \leq k \leq 200 \).
+
 
 The initial parameters are chosen as \(u_i(1)=0.01\), \(y_i(1)=0.6\) and \(\phi_i(0)=4 \) for all agents in this simulation, \(\Gamma_{1}=\Gamma_{3}=0.45\) and \(\Gamma_{2}=\Gamma_{4}=0.15\), with \(\tau_s=10^{-5}\), \(m=200\), sampling rate $rT = 1024 $, \(\eta=1\), \(\mu=0.005\), other parameters are given as \(\rho=7.5\), \(\lambda=350\), $ \omega = 10 $, $ \sigma=95 $, \(\alpha=15\) with \(\epsilon=10^{-5}\).
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1 \textwidth]{inv_tracking.png}
+    \includegraphics[width=0.9 \textwidth]{inv_tracking.png}
     \caption{Tracking performance of all agents under the time-invarying reference trajectory.}
     \label{fig:tracking_inv} % Label for referencing the figure
 \end{figure}
 
-Fig. \ref{fig:tracking_inv} demonstrates the tracking performance for the time-invariant signal. Moreover, Fig. \ref{fig:error_inv} shows that the distributed measurement error remains bounded and constrained within the range.
+
+Fig.~\ref{fig:tracking_inv} demonstrates the tracking output of the proposed control scheme for the case of a time-invariant reference signal. It can be clearly observed that the agents effectively follow the reference trajectory, which is set to a constant value of 0.6, and the tracking performance closely aligns with this target. 
+
+\clearpage
+Moreover, Fig.~\ref{fig:error_inv} illustrates the corresponding distributed measurement error, which remains bounded within the range of [-0.01, 0.01], indicating accuracy of the control strategy. These results confirm that the controller maintains stability.
+
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1 \textwidth]{inv_error.png}
-    \caption{Distributed error of all agents under the time-invarying reference trajectory.}
+    \includegraphics[width=0.9 \textwidth]{inv_error.png}
+    \caption{Distributed measurement error of all agents under the time-invarying reference trajectory.}
     \label{fig:error_inv} % Label for referencing the figure
 \end{figure}
 
 
-Example 2: The expression for \( y_d(k) \) is:
-
-\[ y_d(k)=0.6\sin(0.07\pi(k))+0.6\cos(0.04\pi(k)) \]
-
-as \( k \) in the range \( 0 \leq k \leq 200 \).
-
+Example 2: The expression for the reference trajectory is:
+\[ y_d(k)=0.6\sin(0.07\pi(k))+0.6\cos(0.04\pi(k)), k \in [0, 200] \]
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{var_tracking.png}
+    \includegraphics[width=0.9\textwidth]{var_tracking.png}
     \caption{Tracking performance of all agents under the time-varying reference trajectory.}
     \label{fig:tracking_var} % Label for referencing the figure
 \end{figure}
@@ -468,47 +457,47 @@ as \( k \) in the range \( 0 \leq k \leq 200 \).
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{var_error.png}
-    \caption{Distributed error of all agents under the time-varying reference trajectory.}
+    \includegraphics[width=0.9\textwidth]{var_error.png}
+    \caption{Distributed measurement error of all agents under the time-varying reference trajectory.}
     \label{fig:error_var} % Label for referencing the figure
 \end{figure}
 
-Fig. \ref{fig:tracking_var} presents the tracking performance for all agents for the time-varying trajectory. All agents successfully track the time-varying desired trajectory. Additionally, as shown in Fig. \ref{fig:error_var} the distributed measurement errors of all agents are constrained in range 
+Fig. \ref{fig:tracking_var} presents the tracking performance for all agents for the time-varying trajectory. All agents successfully track the time-varying reference trajectory. Additionally, as shown in Fig. \ref{fig:error_var}, the distributed measurement errors of all agents are bounded within a specified range 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{diagram.jpg}
-    \caption{System connection diagram of multi-DC motors consensus tracking control.}
+    \includegraphics[width=0.75\textwidth]{diagram.jpg}
+    \caption{System connection diagram of multi DC motor consensus tracking control.}
     \label{fig:system_diagram} % Label for referencing the figure
 \end{figure}
 
-To verify the proposed consensus tracking control methodology, the experimental validation is conducted using a multi-DC motor system, as illustrated in Fig. \ref{fig:system}. The system consists of three DC motors equipped with Hall encoders and reduction
+To verify the proposed consensus tracking control methodology, the experimental validation is conducted using a multi DC motor system, as illustrated in Fig. \ref{fig:system}. The system consists of three DC motors equipped with Hall encoders and reduction
 gears, an STM32F407 main control chip, two motor drive modules, and an LCD display module. The microcontroller unit (MCU) STM32F407ZGT6 is used for high-resolution pulse width modulation (PWM) output generation to achieve precise motor speed control. The timer module is utilized for this purpose.
 
 In addition, the controller code is written in C language using STM32CubeIDE, while STM32CubeMX is used for pin configuration. The main purpose of the experiment is to ensure that the three motors accurately track the reference trajectory:
-\[ y_d(k)=0.5\sin(0.07\pi(k))+0.7\cos(0.04\pi(k)) \]
+% \[ y_d(k)=0.5\sin(0.07\pi(k))+0.7\cos(0.04\pi(k)) \]
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{system.jpg}
-    \caption{Multi-DC motors system.}
+    \includegraphics[width=0.65\textwidth]{system.jpg}
+    \caption{Multi DC motor system.}
     \label{fig:system} % Label for referencing the figure
 \end{figure}
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{dc_motor_tracking.png}
+    \includegraphics[width=0.9\textwidth]{dataplot.png}
     \caption{Tracking performance of 3 DC motors for time-invariable desired trajectory.}
     \label{fig:output} % Label for referencing the figure
 \end{figure}
 
-Fig. \ref{fig:output} shows the tracking performance of multi-DC motors demonstrating the effectiveness of the proposed control method.
+Fig. \ref{fig:output} shows the tracking performance of multi DC motor demonstrating the effectiveness of the proposed control method.
 Overall, the simulation results suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While initial transient errors may accur, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
 
 \section{Conclusion}
 
-In this study, the model free adaptive sliding mode control approach is presented to address the consensus problem of MASs. Firstly, the equivalent data model for each agent is obtained using the CFDL method. Secondly, a novel sliding surface ireas presented to ensure that the distributed error remains bounded. Finally, the effectiveness of the proposed control approach is verified through physical experiments on multi-DC motor system.
+In this study, the model-free adaptive sliding mode control approach is presented to address the consensus problem of MASs. Firstly, the equivalent data model for each agent is obtained using the CFDL method. Secondly, a novel sliding surface ireas presented to ensure that the distributed measurement error remains bounded. Finally, the effectiveness of the proposed control approach is verified through physical experiments on multi DC motor system.
 
 
 
