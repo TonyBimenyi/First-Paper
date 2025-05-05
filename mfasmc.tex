@@ -43,25 +43,34 @@ Data-driven control, model-free adaptive sliding mode control, nonlinear multi-a
 
 \section{Introduction}\label{section:1}
 
-\lettrine{M}otivated by the coordinated behaviors observed in nature, such as bird flocking or herd migration, the distributed control multi-agent systems(MASs) has been studied with interest in recent years.\cite{1} Because of the distributed and flexible structure, the MASs based approaches have significant potential in addressing coordination challenges for complex systems\cite{2}. The control of DC motors is essential in numerious technological applications, with single DC motor serving as the foundation for the systems in various fields, including vehicle coorporation\cite{3}, multi-robot systems and industrial machinery\cite{4}. 
+\lettrine{D}ue to the excellent capabilities and coordination efficiency of distributed multi-agent systems (MASs) in various applications in field such as sensor network, transportation systems, agriculture monitoring and industrial process systems [1-3]. As the fundamental structure for collaborative control [4-5 manus], one of the main challenge is to handle consensus problem. It is shown that all agents can be tracking the same trajectory from different initial values. However, traditional model-based control strategies are increasingly not suitable for complex systems that are difficult to model accurately. In modern industrial environments, vast amounts of process information often reflecting nonlinear system behaviors are continuously generated and stored during the system operation. Despite to the effectiveness in certain scenarios, traditional control strategies [11-14] heavly depend on precise system models and the modeling process becomes challenging as technology grow rapidly. Under such circumstances, it is difficult to solve practical problems while applying the scheme. Therefore, how to use data to achieving system consesus control has become a new powerful topic. Data-driven control [15-18 P2R] refers to control systems uitlizing system I/O data solely. Among different data-based aprroaches have developed, including model-free adaptive control, iterative learing control, virtual reference feedback tuning [24 P2R], PID control [10 manuscri] and others. The model-free adaptive control approach [15-18 manu] is proposed, which has a great significance in addressing the aforementioned problems. In design processes, only I/O data of the system are utilized, significantly avoiding the reliance on mathematical models. The algorithm has thus proven effective in practical domains such as motor systems, chemical industries, and machinery, reinforcing the versatility and usefulness of the algorithm. 
+Alternatively, sliding mode control [16 1-s] has emerged as a highly attractive approach from the control researchers due to its robustness to parameter uncertainties and its ability to ensure fast response. Currently, the novel sliding mode control based on I/O data is presented in [35 PR2].
+
+
+These features make SMC particularly suitable for complex and uncertain systems where maintaining performance and stability is critical.
+[23] extends this method to unknown nonlinear MASs,
+studying data-driven consensus tracking problems with fixed
+communication topology This   the coordinated behaviors observed in nature, such as bird flocking or herd migration, the distributed control multi-agent systems(MASs) has been studied with interest in recent years.\cite{1} Because of the distributed and flexible structure, the MASs based approaches have significant potential in addressing coordination challenges for complex systems\cite{2}. The control of DC motors is essential in numerious technological applications, with single DC motor serving as the foundation for the systems in various fields, including vehicle coorporation\cite{3}, multi-robot systems and industrial machinery\cite{4}. 
 
 It is challenging to establish an accurate mathematical model for the speed regulation of multi DC motor systems due to their nonlinear, time-varying, and multi-variable conditions\cite{7}. Even if a relatively accurate mathematical models are developed, the associated control algorithms can become highly complex, so the model-based control approach is difficult to apply or extend to such systems. Nowdays, data-driven methods have been used to control, decision making, planing, fault diagnosis, predicting, etc. In\cite{15}-\cite{16}, a compact form dynamic linarization (CFDL) data-driven modeling method is proposed for nonlinear systems. So far, the CFDL data-driven modeling method has proven to be highly useful in various domains\cite{17}-\cite{20} with different characteristics such as simplicity and particularly, a small amount of calculation, ease of implementation, and strong robustness, making it highly effective for addressing unknown nonlinear time-varying systems.
 
-In\cite{21}, a model-free adaptive control (MFAC) approach is presented for MASs, which uses input and output data to achieve consensus tracking trajectory.
+The data driven consensus problem is studied in [2 , my paper ]. However, 
 
-Alternatively, the sliding mode control (SMC) adapts dynamically the system operation based on the current state of the system such as the error and its derivative, ensuring the system follows a predetermined sliding surface\cite{22}. Because the sliding surface can be designed and has the purpose to deal with the object parameters and disturbances, the SMC provides the fast response, insensitivity to parameter changes and disturbances, and simplicity in implementation. The above advantages make SMC widely used in control systems and one of main topic to focus in the ongoing research.\cite{28}-\cite{30}
 
-Inspired by the abovementioned considerations, this paper studies a novel model-free adaptive sliding mode control for speed regulation of multi DC motors. The proposed control method consists to eliminates the need for precise system models by dynamically adjusting the control law\cite{21}, where is particularly useful in systems where obtaining a detailed model is impractical or complex such as the tradition PID control method. Compared with other existing literature on multi DC motor systems, the results of this paper have following distinct features.
+How to achieve consensus tracking problem utilizing the model-free adaptive sliding mdoe controller approach for nonlinear MASs, still is a question.
+
+Inspired by the above discussions, this paper proposes the data-driven model-free adaptive sliding mode control scheme. The contributions points of this paper are summarized as follows:
 
 \begin{enumerate}
 
-    \item The proposed method integrates encoder counts based on the well known constant elapsed time (CET) method\cite{31} for accurate speed control in nonlinear, time-varying multi DC motor systems. This innovation greatly enhances resolution and reliability, setting it apart from traditional methods.
+    \item This paper establishes the model-free adaptive sliding mode control approach, which enables precise consensus tracking in nonlinear MASs, even under system uncertainties and unknown dynamics.
     
-    \item The implementation of a fixed communication topology for agents interconnections, which makes the controller more applicable and flexible in real implementation.
+    \item The method utilizes CFDL to construct equivalent data models based purely on input-output data. This allows for the systematic design of controllers for each agent without requiring internal system knowledge, making it highly practical for real-time applications.
     
-    \item Utilizes the pseudo partial derivative (PPD) estimation mechanism within the MFASMC scheme, which provides strong robustness
+    \item A novel distributed sliding surface is developed using neighboring agent process data. This structure ensures the boundedness of measurement errors and enhances the robustness and convergence of the system through a designed stability mechanism..
 
 \end{enumerate}
+
 
     The following sections will outline the remaining content of this paper:
     section II provides preliminaries and problem formulation, Section III The main results, Section IV presents simulation results and performance analysis, demonstrating the efficacy of the proposed method under various operating conditions.
@@ -240,13 +249,13 @@ Denote that the term $ \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} $ 
     0 < \bigg |1 - \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} \bigg| \leq 1 - \frac{\eta \epsilon^2}{\mu + \epsilon^2} = q_1 < 1 
 \end{equation}
 
-Because of $ |\phi_i(k)| < \bar{c} $, and $ |\Delta \phi_i(k)| < 2 \bar{c} $, the following the equation ($ \ref{model:phi_tilde_update} $) is written as:
+Because of $ |\phi_i(k)| < \bar{d} $, and $ |\Delta \phi_i(k)| < 2 \bar{d} $, the following equation ($ \ref{model:phi_tilde_update} $) is written as:
 \begin{align}
     \label{model:absolute}
-    |\tilde{\phi}_i(k)| \leq \ & q_1|\tilde{\phi}_i(k-1)| + 2 \bar{c} \quad \nonumber \\
-    \leq \ & q_1^2|\tilde{\phi}_i(k-2)| + 2 q_1\bar{c} + 2\bar{c} \quad \nonumber \\
+    |\tilde{\phi}_i(k)| \leq \ & q_1|\tilde{\phi}_i(k-1)| + 2 \bar{d} \quad \nonumber \\
+    \leq \ & q_1^2|\tilde{\phi}_i(k-2)| + 2 q_1\bar{d} + 2\bar{d} \quad \nonumber \\
     \vdots \nonumber \\
-    \leq \ & q_1^{k-1}|\tilde{\phi}_i(1)| + \frac{2 \bar{c}}{1-q_1}(1-q_1^{k-1})
+    \leq \ & q_1^{k-1}|\tilde{\phi}_i(1)| + \frac{2 \bar{d}}{1-q_1}(1-q_1^{k-1})
 \end{align} 
 which implies $ \tilde{\phi}_i(k) $ is bounded. Since the boundedness of $ \phi_i(k) $ is guaranteed by Lemma 1. 
     
