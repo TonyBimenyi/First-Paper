@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.1)  6 MAY 2025 14:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.1)  15 MAY 2025 18:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -381,22 +381,17 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package lettrine.sty Info: Targeted height = 22.74486pt
-(lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 22.74487pt (D);
-(lettrine.sty)             reported on input line 46.
-
 
 [1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 73.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 77.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 77.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 77.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -405,17 +400,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <diagram.png, id=20, 1973.87437pt x 930.97812pt>
 File: diagram.png Graphic file (type png)
 <use diagram.png>
-Package pdftex.def Info: diagram.png  used on input line 120.
+Package pdftex.def Info: diagram.png  used on input line 124.
 (pdftex.def)             Requested size: 412.80157pt x 194.68724pt.
 
 
 [3 <./diagram.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--221
+Underfull \hbox (badness 10000) in paragraph at lines 217--225
 
  []
 
@@ -427,7 +422,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 213--221
 <communication.png, id=34, 622.325pt x 366.36874pt>
 File: communication.png Graphic file (type png)
 <use communication.png>
-Package pdftex.def Info: communication.png  used on input line 285.
+Package pdftex.def Info: communication.png  used on input line 289.
 (pdftex.def)             Requested size: 232.19843pt x 136.69473pt.
 
 
@@ -435,7 +430,7 @@ Package pdftex.def Info: communication.png  used on input line 285.
 <inv_tracking.png, id=39, 2007.5pt x 1003.75pt>
 File: inv_tracking.png Graphic file (type png)
 <use inv_tracking.png>
-Package pdftex.def Info: inv_tracking.png  used on input line 423.
+Package pdftex.def Info: inv_tracking.png  used on input line 427.
 (pdftex.def)             Requested size: 464.39685pt x 232.19012pt.
 
 
@@ -443,17 +438,17 @@ Package pdftex.def Info: inv_tracking.png  used on input line 423.
 <inv_error.png, id=44, 2007.5pt x 1003.75pt>
 File: inv_error.png Graphic file (type png)
 <use inv_error.png>
-Package pdftex.def Info: inv_error.png  used on input line 437.
+Package pdftex.def Info: inv_error.png  used on input line 441.
 (pdftex.def)             Requested size: 464.39685pt x 232.19012pt.
 <var_tracking.png, id=45, 2007.5pt x 1003.75pt>
 File: var_tracking.png Graphic file (type png)
 <use var_tracking.png>
-Package pdftex.def Info: var_tracking.png  used on input line 448.
+Package pdftex.def Info: var_tracking.png  used on input line 452.
 (pdftex.def)             Requested size: 464.39685pt x 232.19012pt.
 <var_error.png, id=46, 2007.5pt x 1003.75pt>
 File: var_error.png Graphic file (type png)
 <use var_error.png>
-Package pdftex.def Info: var_error.png  used on input line 456.
+Package pdftex.def Info: var_error.png  used on input line 460.
 (pdftex.def)             Requested size: 464.39685pt x 232.19012pt.
 
 
@@ -463,12 +458,12 @@ Package pdftex.def Info: var_error.png  used on input line 456.
 <diagram.jpg, id=50, 426.8748pt x 238.0092pt>
 File: diagram.jpg Graphic file (type jpg)
 <use diagram.jpg>
-Package pdftex.def Info: diagram.jpg  used on input line 465.
+Package pdftex.def Info: diagram.jpg  used on input line 469.
 (pdftex.def)             Requested size: 387.0pt x 215.78972pt.
 <system.jpg, id=51, 364.7226pt x 272.6988pt>
 File: system.jpg Graphic file (type jpg)
 <use system.jpg>
-Package pdftex.def Info: system.jpg  used on input line 478.
+Package pdftex.def Info: system.jpg  used on input line 482.
 (pdftex.def)             Requested size: 335.39685pt x 250.77357pt.
 
 
@@ -476,7 +471,7 @@ Package pdftex.def Info: system.jpg  used on input line 478.
 <dataplot.png, id=55, 1606.0pt x 803.0pt>
 File: dataplot.png Graphic file (type png)
 <use dataplot.png>
-Package pdftex.def Info: dataplot.png  used on input line 486.
+Package pdftex.def Info: dataplot.png  used on input line 490.
 (pdftex.def)             Requested size: 464.39685pt x 232.19012pt.
 
 
@@ -491,15 +486,15 @@ L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5752 strings out of 473190
- 98726 string characters out of 5715801
+ 5749 strings out of 473190
+ 98680 string characters out of 5715801
  496963 words of memory out of 5000000
- 28936 multiletter control sequences out of 15000+600000
- 594686 words of font info for 100 fonts, out of 8000000 for 9000
+ 28934 multiletter control sequences out of 15000+600000
+ 592594 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,12n,93p,1237b,299s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,12n,93p,1329b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (12 pages, 1114285 bytes).
+Output written on mfasmc.pdf (12 pages, 1114152 bytes).
 PDF statistics:
  121 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream

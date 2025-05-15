@@ -32,7 +32,7 @@
 \maketitle
 
 \begin{abstract}
-    This paper proposes the distributed data-driven model-free adaptive sliding mode control approach to address the consensus problem of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, by utilizing process information from neighboring agents, the novel sliding surface is employed to ensure the boundedness of distributed measurement error through stability mechanism. Subsequently, a distributed model-free adaptive sliding mode controller is developed for precise reference trajectory tracking. Finally, the effectiveness of the proposed control approach is verified through experiments on multi DC motor system.
+    This paper proposes the distributed data-driven model-free adaptive sliding mode control approach to address the consensus problem of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, by utilizing process information from neighboring agents, the novel sliding surface is employed to ensure the boundedness of distributed measurement error based on stability analysis. Subsequently, a distributed model-free adaptive sliding mode controller is developed for accurate consensus tracking. Finally, the effectiveness of the proposed control approach is verified through experiments on multi DC motor system.
 \end{abstract}
 
 % It would be more appropriate to rephrase it using a relative clause introduced by 
@@ -43,17 +43,21 @@ Data-driven control, model-free adaptive sliding mode control, nonlinear multi-a
 
 \section{Introduction}\label{section:1}
 
-\lettrine{D}{ue} to the excellent capabilities and coordination efficiency of distributed multi-agent systems (MASs) in various applications such as sensor network, transportation systems, agriculture monitoring and industrial process systems \cite{1,2,3}, MASs have attracted significant attention. As the fundamental structure for collaborative control \cite{4,5}, one of the main challenges is to handle consensus problem. It means that all agents can follow the same trajectory from different initial values. However, traditional model-based control strategies are not suitable for complex systems that are difficult to model accurately. In modern industrial environments, vast amounts of process information often reflecting nonlinear system behaviors are continuously generated and stored during the system operation. \\
-Despite their effectiveness in certain scenarios, traditional control strategies \cite{10,11,12,13} heavily depend on precise system models and the modeling process becomes increasingly challenging as technology grows rapidly. Under such circumstances, it becomes difficult to solve practical problems using the above schemes. Therefore, how to use data to achieve system consensus control has become a powerful new topic. Data-driven control \cite{17,18,19,20} refers to control systems utilizing system I/O data solely. Various data-based approaches have been developed, including model-free adaptive control, iterative learing control, virtual reference feedback tuning \cite{21}, PID control \cite{22} and others. The model-free adaptive control approach \cite{23,24,25} is proposed, which has a great significance in addressing the aforementioned challenges. In its design process, only I/O data of the system are utilized, significantly avoiding the reliance on mathematical models. The algorithm has thus proven effective in practical domains such as motor systems, chemical industries, and machinery, demonstrating the adaptability and usefulness of the algorithm. \\
-Alternatively, sliding mode control \cite{26} has emerged as a highly attractive approach for the control researchers due to its robustness to parameter uncertainties and its ability to ensure fast responses. Currently, the novel sliding mode control method based on I/O data is presented in \cite{27}.
-Although considerable progress has been made in controlling nonlinear MASs, the controller design remains highly challenging due to the dynamic couplings and nonlinear behaviors among agents \cite{14}. This challenge becomes even more critical in practical situations where the exact mathematical models of the agents are unavailable. However, the effectiveness of existing approaches \cite{31,32,33,34} is limited in highly uncertain environments because they typically rely on input-affine structures with known or partially known dynamics.
+Due to the excellent capabilities and coordination efficiency of distributed multi-agent systems (MASs) in various applications such as sensor network, transportation systems, agriculture monitoring and industrial process systems \cite{1,2,3}, MASs have attracted significant attention. Over the past few years, one of the main challenges for collaborative control \cite{4,5,6} is to handle consensus problem. It means that all agents can follow the same trajectory from different initial values. However, traditional model-based control strategies are not suitable for complex systems that are difficult to model accurately. Despite their effectiveness in certain scenarios, traditional control strategies \cite{10,11,12,13} heavily depend on precise system models and the modeling process becomes increasingly challenging as technology grows rapidly. Under such circumstances, it becomes difficult to solve practical problems using the above schemes. In modern industrial environments, vast amounts of process information often containing implicit and complex dynamic behaviors of the system are continuously generated and stored during operation. As a result, there has been a growing interest in alternative control methods that rely on data modeling. 
+
+Therefore, how to use this data to achieve system consensus control has become a powerful new topic. The data-driven control \cite{17,18,19,20} refers to control systems utilizing system I/O data solely. Various data-based approaches have been developed, including model-free adaptive control, iterative learing control, virtual reference feedback tuning \cite{21}, PID control \cite{22} and others. Among these,  the model-free adaptive control approach \cite{23,24,25} has been proposed, and has a great significance in addressing the aforementioned challenges. The design process relies solely on I/O data of the system, significantly avoiding the reliance on mathematical models. The algorithm has proven effective in practical domains such as motor systems, chemical industries, and machinery, demonstrating the adaptability and usefulness of the algorithm. 
+
+Alternatively, sliding mode control \cite{26} has emerged as a highly attractive approach for the control researchers due to its robustness to parameter uncertainties and its capability to ensure fast responses. Currently, the novel sliding mode control method based on I/O data is presented in \cite{27}, which eliminate the need for explicit system models. 
+Although considerable progress has been made in controlling nonlinear MASs, the dynamic couplings and complex nonlinear behaviors among agents \cite{14} can be challenging practical implementation.
+
+However, the effectiveness of existing approaches \cite{31,32,33,34} is limited in highly uncertain environments because they typically rely on input-affine structures with known or partially known dynamics.
 How to achieve consensus tracking problem utilizing the model-free adaptive sliding mode controller approach for nonlinear MASs remains an open question.
 
 Inspired by the above discussions, this paper proposes a data-driven model-free adaptive sliding mode control scheme. The contributions of this paper are structured as follows:
 
 \begin{enumerate}
 
-    \item This paper establishes the model-free adaptive sliding mode control approach, which enables precise consensus tracking in nonlinear MASs, even under system uncertainties and unknown dynamics.
+    \item This paper establishes the model-free adaptive sliding mode control approach, which enables consensus tracking in nonlinear MASs, even under system uncertainties and unknown dynamics.
     
     \item The method utilizes CFDL to construct equivalent data models based purely on input-output data. This allows for the systematic design of controllers for each agent without requiring internal system knowledge, making it highly practical for real-time applications.
     
@@ -107,7 +111,7 @@ The distributed measurement error of \(\xi_i(k)\) for $N$ agents is established 
 \end{equation}
 if the agent $ i $ can receive data from the leader, then $d_i=1$; otherwise, $d_i=0$. Additionally, $y_d(k)$ represents the reference trajectory. 
 
-Remark 2: The CFDL technique requires no prior knowledge about the system dynamic model. Moreover, the dynamic behavior of time-varying PPD may be highly complex and difficult to verify. Therefore, a data-driven method for studying numerical characteristics is the preferred solution.
+Remark 2: The CFDL technique requires no prior knowledge about the system dynamic model. Moreover, the dynamic behavior of time-varying PPD may be highly complex and difficult to verify. 
  
 
 \section{Main Results}
@@ -143,7 +147,7 @@ herein, $\eta \in (0,1)$, $\mu > 0$ represents a positive weight factor. Additio
 The following distributed MFAC algorithm is presented:
 \begin{equation}
     \label{model eq:mfac}
-    u_{i,\text{MFA}}(k) = u_{i,\text{MFA}}(k - 1) + \frac{\rho \hat{\phi}_i(k)}{\lambda + |\hat{\phi}_i(k)|^2} \xi_i(k)
+    u_{i,\text{MFA}}(k) = u_{i,\text{MFA}}(k - 1) + \frac{\rho \hat{\phi}_i(k)}{\lambda + \hat{\phi}_i(k)^2} \xi_i(k)
 \end{equation}
 where \(\rho\) \(\in\) (0,1) is a step-size constant, which is added to make (\ref{model eq:mfac}) general. 
 
@@ -365,7 +369,7 @@ Consider the network comprising:
 
 This section describes the usefulness of the provided control approach, which is validated by numerical simulations and physical experiments results.
 
-The output data model of each agents is governed by:
+The output data model of each agent is governed by:
 % \[
 % \begin{array}{c}
 % \text{Agent 1}: \quad y_1(k+1) = 0.5 * y_1(k) * u_1(k) + 1.2 * \frac{m}{(rT * 0.2)} - 0.03 * y_1(k)^3 + 0.45\\
