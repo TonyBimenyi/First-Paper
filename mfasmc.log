@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.1)  15 MAY 2025 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.1)  16 MAY 2025 17:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -405,16 +405,6 @@ Package pdftex.def Info: diagram.png  used on input line 124.
 
 
 [3 <./diagram.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--225
-
- []
-
-
 
 [4]
 
@@ -422,7 +412,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 217--225
 <communication.png, id=34, 622.325pt x 366.36874pt>
 File: communication.png Graphic file (type png)
 <use communication.png>
-Package pdftex.def Info: communication.png  used on input line 289.
+Package pdftex.def Info: communication.png  used on input line 292.
 (pdftex.def)             Requested size: 232.19843pt x 136.69473pt.
 
 
@@ -430,56 +420,58 @@ Package pdftex.def Info: communication.png  used on input line 289.
 <inv_tracking.png, id=39, 2007.5pt x 1003.75pt>
 File: inv_tracking.png Graphic file (type png)
 <use inv_tracking.png>
-Package pdftex.def Info: inv_tracking.png  used on input line 427.
+Package pdftex.def Info: inv_tracking.png  used on input line 431.
 (pdftex.def)             Requested size: 464.39685pt x 232.19012pt.
 
 
 [7 <./inv_tracking.png (PNG copy)>]
-<inv_error.png, id=44, 2007.5pt x 1003.75pt>
+
+[8]
+<inv_error.png, id=47, 2007.5pt x 1003.75pt>
 File: inv_error.png Graphic file (type png)
 <use inv_error.png>
-Package pdftex.def Info: inv_error.png  used on input line 441.
+Package pdftex.def Info: inv_error.png  used on input line 445.
 (pdftex.def)             Requested size: 464.39685pt x 232.19012pt.
-<var_tracking.png, id=45, 2007.5pt x 1003.75pt>
+<var_tracking.png, id=48, 2007.5pt x 1003.75pt>
 File: var_tracking.png Graphic file (type png)
 <use var_tracking.png>
-Package pdftex.def Info: var_tracking.png  used on input line 452.
+Package pdftex.def Info: var_tracking.png  used on input line 456.
 (pdftex.def)             Requested size: 464.39685pt x 232.19012pt.
-<var_error.png, id=46, 2007.5pt x 1003.75pt>
+<var_error.png, id=49, 2007.5pt x 1003.75pt>
 File: var_error.png Graphic file (type png)
 <use var_error.png>
-Package pdftex.def Info: var_error.png  used on input line 460.
+Package pdftex.def Info: var_error.png  used on input line 464.
 (pdftex.def)             Requested size: 464.39685pt x 232.19012pt.
 
 
-[8
+[9
 
  <./inv_error.png (PNG copy)> <./var_tracking.png (PNG copy)>]
-<diagram.jpg, id=50, 426.8748pt x 238.0092pt>
+<diagram.jpg, id=53, 426.8748pt x 238.0092pt>
 File: diagram.jpg Graphic file (type jpg)
 <use diagram.jpg>
-Package pdftex.def Info: diagram.jpg  used on input line 469.
+Package pdftex.def Info: diagram.jpg  used on input line 473.
 (pdftex.def)             Requested size: 387.0pt x 215.78972pt.
-<system.jpg, id=51, 364.7226pt x 272.6988pt>
+<system.jpg, id=54, 364.7226pt x 272.6988pt>
 File: system.jpg Graphic file (type jpg)
 <use system.jpg>
-Package pdftex.def Info: system.jpg  used on input line 482.
+Package pdftex.def Info: system.jpg  used on input line 486.
 (pdftex.def)             Requested size: 335.39685pt x 250.77357pt.
 
 
-[9 <./var_error.png (PNG copy)> <./diagram.jpg>]
-<dataplot.png, id=55, 1606.0pt x 803.0pt>
+[10 <./var_error.png (PNG copy)> <./diagram.jpg>]
+<dataplot.png, id=58, 1606.0pt x 803.0pt>
 File: dataplot.png Graphic file (type png)
 <use dataplot.png>
-Package pdftex.def Info: dataplot.png  used on input line 490.
+Package pdftex.def Info: dataplot.png  used on input line 494.
 (pdftex.def)             Requested size: 464.39685pt x 232.19012pt.
 
 
-[10 <./system.jpg> <./dataplot.png (PNG copy)>]
+[11 <./system.jpg> <./dataplot.png (PNG copy)>]
 
-[11]
+[12]
 
-[12] (./mfasmc.aux)
+[13] (./mfasmc.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -488,16 +480,16 @@ L3 programming layer <2025-01-18>
 Here is how much of TeX's memory you used:
  5749 strings out of 473190
  98680 string characters out of 5715801
- 496963 words of memory out of 5000000
+ 497963 words of memory out of 5000000
  28934 multiletter control sequences out of 15000+600000
  592594 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,12n,93p,1329b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (12 pages, 1114152 bytes).
+Output written on mfasmc.pdf (13 pages, 1117741 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
+ 125 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
