@@ -415,17 +415,14 @@ with \( D = \text{diag}(1, 0, 1, 0) \), the following two different reference tr
 
 
 
-Example 1: Consider the following reference trajectory:
-
+Example 1: In this example, the reference trajectory is time-invariant value signal $ y_d(k) = 0.6 $.
 % \[
 % y_d(k) = 0.5 \sin\left(\frac{k \pi}{30}\right) + 0.3  \cos\left(\frac{k \pi}{10}\right)
 % \]
 
-$ y_d(k) = 0.6, k \in [0, 200]  $
 
 
-
-The initial parameters are chosen as \(u_i(1)=0.01\), \(y_i(1)=0.6\) and \(\phi_i(0)=4 \) for all agents in this simulation, \(\Gamma_{1}=\Gamma_{3}=0.45\) and \(\Gamma_{2}=\Gamma_{4}=0.15\), with \(\tau_s=10^{-5}\), \(m=200\), sampling rate $rT = 1024 $, \(\eta=1\), \(\mu=0.005\), other parameters are given as \(\rho=7.5\), \(\lambda=350\), $ \omega = 10 $, $ \sigma=95 $, \(\alpha=15\) with \(\epsilon=10^{-5}\).
+The initial parameters are chosen as \(u_i(1)=0.01\), \(y_i(1)=0.6\) and \(\hat{\phi}_i(0)=4 \) for all agents in this simulation, \(\Gamma_{1}=\Gamma_{3}=0.45\) and \(\Gamma_{2}=\Gamma_{4}=0.15\), with \(\tau_s=10^{-5}\), \(m=600\), $rT = 1024 $, \(\eta=1\), \(\mu=0.005\), other parameters are given as \(\rho=7.5\), \(\lambda=350\), $ \omega = 10 $, $ \sigma=95 $, \(\alpha=15\) with \(\epsilon=10^{-5}\).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9 \textwidth]{inv_tracking.png}
