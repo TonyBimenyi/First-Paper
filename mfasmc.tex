@@ -32,7 +32,7 @@
 \maketitle
 
 \begin{abstract}
-    This paper proposes the distributed data-driven model-free adaptive sliding mode control approach to address the consensus problem of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, by utilizing process information from neighboring agents, the novel sliding surface is employed to ensure the boundedness of distributed measurement error based on stability analysis. Subsequently, a distributed model-free adaptive sliding mode controller is developed for accurate consensus tracking. Finally, the effectiveness of the proposed control approach is verified through experiments on multi DC motor system.
+    This paper proposes the distributed data-driven model-free adaptive sliding mode control approach to address the consensus problem of nonlinear multi-agent systems. Firstly, the equivalent data model for each agent is constructed using the compact-form dynamic linearization (CFDL) technique. Secondly, by utilizing process information from neighboring agents, the novel sliding surface is employed to ensure the boundedness of distributed measurement error. Subsequently, a distributed model-free adaptive sliding mode controller is developed for accurate consensus tracking. Finally, the effectiveness of the proposed control approach is verified through experiments on multi DC motor system.
 \end{abstract}
 
 % It would be more appropriate to rephrase it using a relative clause introduced by 
@@ -43,13 +43,15 @@ Data-driven control, model-free adaptive sliding mode control, nonlinear multi-a
 
 \section{Introduction}\label{section:1}
 
-Due to the excellent capabilities and coordination efficiency of distributed multi-agent systems (MASs) in various applications such as sensor network, transportation systems, agriculture monitoring and industrial process systems \cite{1,2,3}, MASs have attracted significant attention. Over the past few years, one of the main challenges for collaborative control \cite{4,5,6} is to handle consensus problem. It means that all agents can follow the same trajectory from different initial values. However, traditional model-based control strategies are not suitable for complex systems that are difficult to model accurately. Despite their effectiveness in certain scenarios, traditional control strategies \cite{10,11,12,13} heavily depend on precise system models and the modeling process becomes increasingly challenging as technology grows rapidly. Under such circumstances, it becomes difficult to solve practical problems using the above schemes. In modern industrial environments, vast amounts of process information often containing implicit and complex dynamic behaviors of the system are continuously generated and stored during operation. As a result, there has been a growing interest in alternative control methods that rely on data modeling. 
+Due to the excellent capabilities and coordination efficiency of distributed multi-agent systems (MASs) in various applications such as sensor networks, transportation systems, agriculture monitoring and industrial process systems \cite{1,2,3}, MASs have attracted significant attention. Over the past few years, one of the main challenges for collaborative control \cite{4,5,6} is to handle consensus problem. It means that all agents can follow the same trajectory from different initial values. However, traditional model-based control strategies are not suitable for complex systems that are difficult to model accurately. 
 
-Therefore, how to use this data to achieve system consensus control has become a powerful new topic. The data-driven control \cite{17,18,19,20} refers to control systems utilizing system I/O data solely. Various data-based approaches have been developed, including model-free adaptive control, iterative learing control, virtual reference feedback tuning \cite{21}, PID control \cite{22} and others. Among these,  the model-free adaptive control approach \cite{23,24,25} has been proposed, and has a great significance in addressing the aforementioned challenges. The design process relies solely on I/O data of the system, significantly avoiding the reliance on mathematical models. The algorithm has proven effective in practical domains such as motor systems, chemical industries, and machinery, demonstrating the adaptability and usefulness of the algorithm. 
+Despite their effectiveness in certain scenarios, traditional control strategies \cite{10,11,12,13} heavily depend on precise system models, and the modeling process becomes increasingly challenging as technology grows rapidly. Under such circumstances, it becomes difficult to solve practical problems using the above schemes. In modern industrial environments, vast amounts of process information often containing implicit and complex dynamic behaviors of the system are continuously generated and stored during operation. As a result, there has been a growing interest in alternative control methods that rely on data modeling. 
 
-Alternatively, sliding mode control \cite{26} has emerged as a highly attractive approach for the control researchers due to its robustness to parameter uncertainties and its capability to ensure fast responses. Currently, the novel sliding mode control method based on I/O data is presented in \cite{27}, which eliminate the need for explicit system models. 
+Therefore, how to use this data to achieve system consensus control has become a powerful new topic. The data-driven control \cite{17,18,19,20} refers to control systems utilizing system I/O data solely. Various data-based approaches have been developed, including model-free adaptive control, iterative learning control, virtual reference feedback tuning \cite{21}, PID control \cite{22} and others. Among these,  the model-free adaptive control approach \cite{23,24,25} has been proposed, and has a great significance in addressing the aforementioned challenges. The design process relies solely on I/O data of the system, significantly avoiding the reliance on mathematical models. The algorithm has proven effective in practical domains such as motor systems, chemical industries, and machinery, demonstrating the adaptability and usefulness of the algorithm. 
+
+Alternatively, sliding mode control \cite{26} has emerged as a highly attractive approach for the control researchers due to the robustness to parameter uncertainties and the capability to ensure fast responses. Currently, the novel sliding mode control method based on I/O data is presented in \cite{27}, which eliminates the need for explicit system models. 
 Although considerable progress has been made in controlling nonlinear MASs, the dynamic couplings and complex nonlinear behaviors among agents \cite{14} can be challenging practical implementation.
-
+o
 However, the effectiveness of existing approaches \cite{31,32,33,34} is limited in highly uncertain environments because they typically rely on input-affine structures with known or partially known dynamics.
 How to achieve consensus tracking problem utilizing the model-free adaptive sliding mode controller approach for nonlinear MASs remains an open question.
 
@@ -222,7 +224,6 @@ Theorem 1: For the system (\ref{model 1}) satisfying assumptions 1 and 2, using 
 \[
 \begin{cases} 
     h_i(k) = \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \\
-    0 < h_0 < h_i(k) < \frac{\omega C_0}{2 \sqrt{\sigma}} < 1 \\
     g_i(k) = (1 - h_i(k))\left( \sum_{j \in N_i} a_{ij} + d_i \right)\Delta y_d(k+1) - h_i(k)\left( \sum_{j \in N_i} a_{ij} + d_i \right)\tau_s\, \text{sign}(s_i(k)) \\
     |g_i(k)| < g_0
 \end{cases}
@@ -233,8 +234,11 @@ Proof: The proof is devided into two parts.
 Part i: Define $\tilde{\phi}_i(k) = \hat{\phi}_i(k) - \phi_i(k)$. Using the PPD estimation algorithm ($\ref{model eq:ppd_parameter}$), the following result is derived:
 \begin{align}
     \label{model:phi_tilde_update}
-    \tilde{\phi}_i(k) = \ & \tilde{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} \big( \phi_i(k-1) \Delta u_i(k-1) - \hat{\phi}_i(k-1) \Delta u_i(k-1) \big) \quad \nonumber \\
-    = \ & \tilde{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} \big( \phi_i(k-1) - \hat{\phi}_i(k-1) \big) - \phi_i(k) + \phi_i(k-1) \quad \nonumber \\
+    \tilde{\phi}_i(k) = \ & \big( \hat{\phi}_i(k-1) - \phi_i(k) \big) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} \big( \phi_i(k-1) \Delta u_i(k-1) \quad \nonumber \\
+    - \ & \hat{\phi}_i(k-1) \Delta u_i(k-1)\big) - \phi_i(k) + \phi_i(k-1) \quad \nonumber \\
+    = \ & \tilde{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} \big( \phi_i(k-1) \Delta u_i(k-1) \quad \nonumber \\
+    - \ & \hat{\phi}_i(k-1) \Delta u_i(k-1)\big) - \phi_i(k) + \phi_i(k-1) \quad \nonumber \\
+    = \ & \tilde{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} \Delta u_i(k-1) \big( \phi_i(k-1) - \hat{\phi}_i(k-1) \big) - \phi_i(k) + \phi_i(k-1) \quad \nonumber \\
     = \ & \bigg( 1 - \frac{\eta \Delta u_i(k-1)^2}{\mu + \Delta u_i(k-1)^2} \bigg) \tilde{\phi}_i(k-1) - \Delta \phi_i(k)
 \end{align}
 
@@ -260,8 +264,8 @@ Part ii: The boundedness of $ \xi_i(k)$.
 By combining ($ \ref{model eq:ppd_parameter} $) with ($ \ref{model eq:xi_next} $), the expression for \(\xi_i(k+1)\) is updated:
 \begin{align}
     \label{model eq:xi_next_proof}
-    \xi_i(k+1) = \ & \xi_i(k) + \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg((1-\frac{1}{\alpha})\xi_i(k) + \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) \bigg) \quad \nonumber \\
-    + \ & \bigg( \sum_{j \in N_i}a_{ij} + d_i \bigg) \tau_s sign(s_i(k)) \nonumber \\
+    \xi_i(k+1) = \ & \xi_i(k) + \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg((1-\frac{1}{\alpha})\xi_i(k) + \sum_{j \in N_i}a_{ij} \Delta y_j(k) \quad \nonumber \\
+    + \ & d_i \Delta y_d(k+1) \bigg) + \bigg( \sum_{j \in N_i}a_{ij} + d_i \bigg) \tau_s sign(s_i(k)) \nonumber \\
     = \ & \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} (1-\frac{1}{\alpha}) \bigg) \xi_i(k) + \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg) \bigg( \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) \bigg) \quad \nonumber \\
     - \ & \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg( \sum_{j \in N_i}a_{ij} + d_i \bigg) \tau_s sign(s_i(k))
 \end{align}
@@ -282,7 +286,7 @@ Therefore, the following result will be given as
     \lim_{k \to \infty} \xi_i(k+1) = \frac{g_0}{h_0(1-\frac{1}{\alpha})} = \frac{\alpha g_0}{(\alpha-1)h_0}
 \end{equation}
 
-In summary, both the parameter estimation $\hat{\phi}_i(k)$ and the measurement error $\xi_i(k)$ remain bounded under the proposed adaptive sliding mode control scheme. The condition $0 < h_0 < h_i(k) < \frac{\omega C_0}{2\sqrt{\sigma}} < 1$ ensures that the adaptive gains are well-behaved, enabling stability and effectiveness of the distributed controller. The proof is completed.
+In summary, both the parameter estimation $\hat{\phi}_i(k)$ and the measurement error $\xi_i(k)$ remain bounded under the proposed adaptive sliding mode control scheme. The condition $0 < h_0 < h_i(k) < \frac{\omega C_0}{2\sqrt{\sigma}} < 1$ ensures that the adaptive gains are well-behaved, thereby enabling stability and effectiveness of the distributed controller. This completes the proof.
 
 
 Remark 3: Distinct from the consensus tracking control schemes used in the existing literature, this paper proposes a model-free adaptive sliding mode control strategy for MASs. For the purpose of attaining the reference trajectory tracking, the CFDL technique is employed alongside a novel sliding surface. Specifically, regardless of the nonlinear and time-varying dynamics of agents, the proposed methodology ensures that distributed measurement error remains bounded, thereby achieving precise speed regulation.
@@ -360,7 +364,7 @@ Remark 3: Distinct from the consensus tracking control schemes used in the exist
 
 This section describes the usefulness of the provided control approach, which is validated by numerical simulations and physical experiments results. 
 
-The motor speed is measured in revolution per second $(r/s)$ based on encoder measurements and the sampling interval $t$. The total number of encoder counts per revolution is calculated as $ rT=4N_{e}R{r} $, where $N_e$ is the encoder line count equal to 13, $R_r$ is the reduction ratio equal to 20 and the factor of 4 accounts for quadrature encoding. The number of rotations, $N_r$ is determined using $N_r = \frac{m}{rT}$, with $m$ representing the total encoder count. The output data model of each agent is governed by:
+The motor speed is measured in revolutions per second $(r/s)$ based on encoder measurements and the sampling interval $t$. The total number of encoder counts per revolution is calculated as $ rT=4N_{e}R{r} $, where $N_e$ is the encoder line count equal to 13, $R_r$ is the reduction ratio equal to 20 and the factor of 4 accounts for quadrature encoding. The number of rotations, $N_r$ is determined using $N_r = \frac{m}{rT}$, with $m$ representing the total encoder count. The output data model of each agent is governed by:
 
 % The speed of the motor is then derived as:
 
@@ -437,7 +441,7 @@ Moreover, Fig.~\ref{fig:error_inv} illustrates the distributed measurement error
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95 \textwidth]{inv_error.png}
+    \includegraphics[width=0.92\textwidth]{inv_error.png}
     \caption{Distributed measurement error of all agents under the time-invarying reference trajectory.}
     \label{fig:error_inv} % Label for referencing the figure
 \end{figure}
@@ -448,7 +452,7 @@ Example 2: The expression for the reference trajectory is:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{var_tracking.png}
+    \includegraphics[width=0.922\textwidth]{var_tracking.png}
     \caption{Tracking performance of all agents under the time-varying reference trajectory.}
     \label{fig:tracking_var} % Label for referencing the figure
 \end{figure}
@@ -456,7 +460,7 @@ Example 2: The expression for the reference trajectory is:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{var_error.png}
+    \includegraphics[width=0.92\textwidth]{var_error.png}
     \caption{Distributed measurement error of all agents under the time-varying reference trajectory.}
     \label{fig:error_var} % Label for referencing the figure
 \end{figure}
