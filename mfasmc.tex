@@ -123,7 +123,7 @@ Remark 2: The CFDL technique requires no prior knowledge about the system dynami
 This section is devided in two parts. The first part introduces the model-free adaptive controller design, which is based on the CFDL technique. The second part introduces the sliding mode controller design, which is formulated based on the distributed measurement error. The overall block diagram of the proposed control scheme is shown in Fig. \ref{fig:diagram}, which is illustrates the system control process.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{diagram.png}
+    \includegraphics[width=0.9\textwidth]{diagram.png}
     \caption{Block diagram.}
     \label{fig:diagram} % Label for referencing the figure
 \end{figure}
@@ -449,7 +449,7 @@ The initial parameters are chosen as \(u_i(1)=0.01\), \(y_i(1)=0.6\) and \(\hat{
 
 
 Fig.~\ref{fig:tracking_inv} demonstrates the tracking performance of all agents under the proposed control scheme for the case of a time-invariant reference signal. It can be observed that the agents effectively follow the reference trajectory, which is set to a constant value of 0.6, with negligible steady-state error and without overshoot.
-Moreover, Fig.~\ref{fig:error_inv} illustrates the distributed measurement error, which remains bounded within the range of [-0.01, 0.01], indicating accuracy of the control strategy. These results confirm that the controller maintains stability.
+Moreover, Fig.~\ref{fig:error_inv} illustrates the distributed measurement error, which remains bounded within the range of [-0.02, 0.02], indicating accuracy of the control strategy. These results confirm that the controller maintains stability.
 
 
 \begin{figure}[H]
