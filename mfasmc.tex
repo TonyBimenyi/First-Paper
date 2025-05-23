@@ -53,7 +53,7 @@ Therefore, how to use this data to achieve system consensus control has become a
 
 Alternatively, sliding mode control \cite{26} has emerged as a highly attractive approach for the control researchers due to the robustness to parameter uncertainties and the capability to ensure fast responses. Currently, the novel sliding mode control method based on I/O data is presented in \cite{27}, which eliminates the need for explicit system models. 
 Although considerable progress has been made in controlling nonlinear MASs, the dynamic couplings and complex nonlinear behaviors among agents \cite{14} can be challenging practical implementation.
-o
+
 However, the effectiveness of existing approaches \cite{31,32,33,34} is limited in highly uncertain environments because they typically rely on input-affine structures with known or partially known dynamics.
 How to achieve consensus tracking problem utilizing the model-free adaptive sliding mode controller approach for nonlinear MASs remains an open question.
 
@@ -299,7 +299,7 @@ Therefore, the following result will be given as
     \lim_{k \to \infty} \xi_i(k+1) = \frac{g_0}{h_0(1-\frac{1}{\alpha})} = \frac{\alpha g_0}{(\alpha-1)h_0}
 \end{equation}
 
-In summary, both the parameter estimation $\hat{\phi}_i(k)$ and the measurement error $\xi_i(k)$ remain bounded under the proposed adaptive sliding mode control scheme. The condition $0 < h_0 < h_i(k) < \frac{\omega C_0}{2\sqrt{\sigma}} < 1$ ensures that the adaptive gains are well-behaved, thereby enabling stability and effectiveness of the distributed controller. This completes the proof.
+In summary, both the parameter estimation $\hat{\phi}_i(k)$ and the measurement error $\xi_i(k)$ remain bounded under the proposed adaptive sliding mode control scheme. The condition $0 < h_0 < h_i(k) < \frac{\omega C_0}{2\sqrt{\sigma}} < 1$ ensures that the adaptive parameters are stable, thereby enabling stability and effectiveness of the distributed controller. This completes the proof.
 
 
 Remark 3: Distinct from the consensus tracking control schemes used in the existing literature, this paper proposes a model-free adaptive sliding mode control strategy for MASs. For the purpose of attaining the reference trajectory tracking, the CFDL technique is employed alongside a novel sliding surface. Specifically, regardless of the nonlinear and time-varying dynamics of agents, the proposed methodology ensures that distributed measurement error remains bounded, thereby achieving precise speed regulation.
@@ -468,7 +468,7 @@ Moreover, Fig.~\ref{fig:error_inv} illustrates the distributed measurement error
     \resizebox{0.45\linewidth}{!}{ % adjust the scale factor as needed
     \begin{tabular}{lcc}
     \toprule
-    Variable & Method \cite{1} & Proposed scheme \\
+    $ \text{MSE}_i(k) $ & Method \cite{1} & Proposed scheme \\
     \midrule
     Agent 1      & \num{2.1933e-03} & \num{2.0628e-03} \\
     Agent 2      & \num{7.2082e-04} & \num{4.7332e-04} \\
@@ -508,7 +508,7 @@ Example 2: The expression for the reference trajectory is:
     \label{fig:error_var} % Label for referencing the figure
 \end{figure}
 
-Fig. \ref{fig:tracking_var} presents the tracking performance for all agents for the time-varying trajectory. All agents are able to accurately track the time-varying reference trajectory. Additionally, as shown in Fig. \ref{fig:error_var}, the distributed measurement errors among agents are bounded.
+Fig. \ref{fig:tracking_var} presents the tracking performance for all agents for the time-varying trajectory. All agents are able to accurately track the time-varying reference trajectory. Additionally, as shown in Fig. \ref{fig:error_var} the distributed measurement errors among agents are bounded.
 
 For time-varying reference trajectories, the mean squared errors of distributed
 measurements for two control strategies are detailed in TABLE \ref{tab:mse_comparison2}. Relative to the
@@ -521,7 +521,7 @@ conventional approach \cite{1}, the proposed scheme reduces in average MSE by ap
     \resizebox{0.45\linewidth}{!}{ % adjust the scale factor as needed
     \begin{tabular}{lcc}
     \toprule
-    Variable & Method \cite{1} & Proposed scheme \\
+    $ \text{MSE}_i(k) $ & Method \cite{1} & Proposed scheme \\
     \midrule
     Agent 1      & \num{4.0160e-03} & \num{3.0720e-03} \\
     Agent 2      & \num{2.1004e-03} & \num{1.8066e-03} \\

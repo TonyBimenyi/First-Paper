@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.1)  23 MAY 2025 09:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.1)  23 MAY 2025 15:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -495,12 +495,12 @@ Package pdftex.def Info: inv_error.png  used on input line 457.
 
 
 [8 <./inv_error.png (PNG copy)>]
-<var_tracking.png, id=53, 2910.875pt x 1606.0pt>
+<var_tracking.png, id=54, 2910.875pt x 1606.0pt>
 File: var_tracking.png Graphic file (type png)
 <use var_tracking.png>
 Package pdftex.def Info: var_tracking.png  used on input line 498.
 (pdftex.def)             Requested size: 438.60315pt x 241.96785pt.
-<var_error.png, id=54, 2910.875pt x 1606.0pt>
+<var_error.png, id=55, 2910.875pt x 1606.0pt>
 File: var_error.png Graphic file (type png)
 <use var_error.png>
 Package pdftex.def Info: var_error.png  used on input line 506.
@@ -508,12 +508,12 @@ Package pdftex.def Info: var_error.png  used on input line 506.
 
 
 [9 <./var_tracking.png (PNG copy)> <./var_error.png (PNG copy)>]
-<diagram.jpg, id=58, 426.8748pt x 238.0092pt>
+<diagram.jpg, id=59, 426.8748pt x 238.0092pt>
 File: diagram.jpg Graphic file (type jpg)
 <use diagram.jpg>
 Package pdftex.def Info: diagram.jpg  used on input line 539.
 (pdftex.def)             Requested size: 387.0pt x 215.78972pt.
-<system.jpg, id=59, 364.7226pt x 272.6988pt>
+<system.jpg, id=60, 364.7226pt x 272.6988pt>
 File: system.jpg Graphic file (type jpg)
 <use system.jpg>
 Package pdftex.def Info: system.jpg  used on input line 552.
@@ -521,7 +521,7 @@ Package pdftex.def Info: system.jpg  used on input line 552.
 
 
 [10 <./diagram.jpg>]
-<dataplot.png, id=63, 1606.0pt x 803.0pt>
+<dataplot.png, id=64, 1606.0pt x 803.0pt>
 File: dataplot.png Graphic file (type png)
 <use dataplot.png>
 Package pdftex.def Info: dataplot.png  used on input line 560.
@@ -539,18 +539,18 @@ L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 10235 strings out of 473190
- 228471 string characters out of 5715801
+ 10236 strings out of 473190
+ 228484 string characters out of 5715801
  594852 words of memory out of 5000000
- 33378 multiletter control sequences out of 15000+600000
- 596023 words of font info for 111 fonts, out of 8000000 for 9000
+ 33379 multiletter control sequences out of 15000+600000
+ 596530 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,12n,93p,1237b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (13 pages, 1467057 bytes).
+ 79i,13n,93p,1237b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on mfasmc.pdf (13 pages, 1437434 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 155 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
