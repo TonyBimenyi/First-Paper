@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1745820136.27436 "/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/resume.tex" "resume.pdf" "resume" 1745820136.73906 0
-  "/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/resume.tex" 1745820136.06516 4920 4532c9af2ed47242616ece5fbe172e68 ""
+["pdflatex"] 1747908207.74967 "/Users/apple/Documents/PAPERS/First-Paper/resume.tex" "resume.pdf" "resume" 1747908208.31819 0
+  "/Users/apple/Documents/PAPERS/First-Paper/resume.tex" 1747908207.5205 5057 db123d06be075e8539f459bba688608a ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc" 1463430686 2679 32dd8ae231bf4a0752b98f62dc097183 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -75,13 +75,13 @@
   "/usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty" 1727642399 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "/usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf" 1739380943 42148 61becc7c670cd061bb319c643c27fdd4 ""
-  "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1742062162 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
-  "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
+  "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1746111365 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
+  "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1746111347 3345732 20ce0379798f61e609be20f3b5c54aea ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "resume.aux" 1745820136.69189 162 87159b23cce7c2b923b11c85495bbd6d "pdflatex"
-  "resume.out" 1745820136.54258 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "resume.tex" 1745820136.06516 4920 4532c9af2ed47242616ece5fbe172e68 ""
-  "tony.JPG" 1745819945.77452 239694 9e30b8f8d843aaa7ae8a7022d1feb423 ""
+  "resume.aux" 1747908208.26192 162 87159b23cce7c2b923b11c85495bbd6d "pdflatex"
+  "resume.out" 1747908208.08706 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "resume.tex" 1747908207.5205 5057 db123d06be075e8539f459bba688608a ""
+  "tony.JPG" 1746090841.66407 239694 9e30b8f8d843aaa7ae8a7022d1feb423 ""
   (generated)
   "resume.aux"
   "resume.log"

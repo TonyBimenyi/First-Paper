@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  28 APR 2025 14:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.1)  22 MAY 2025 18:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/resume.tex"
-(/Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/resume.tex
+**/Users/apple/Documents/PAPERS/First-Paper/resume.tex
+(/Users/apple/Documents/PAPERS/First-Paper/resume.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -335,10 +335,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--71
 [1
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./tony.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
 LaTeX Font Info:    Font shape `T1/calligra/m/n' will be
-(Font)              scaled to size 14.40002pt on input line 98.
+(Font)              scaled to size 14.40002pt on input line 103.
 LaTeX Font Info:    Font shape `T1/calligra/m/n' will be
-(Font)              scaled to size 17.28003pt on input line 98.
+(Font)              scaled to size 17.28003pt on input line 103.
 
 
 [2] (./resume.aux)
@@ -351,17 +355,17 @@ Package rerunfilecheck Info: File `resume.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  11610 strings out of 473190
- 178683 string characters out of 5715801
+ 178639 string characters out of 5715801
  595165 words of memory out of 5000000
  34747 multiletter control sequences out of 15000+600000
  562221 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,79p,431b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,5n,79p,415b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/calligra-type1/callig15.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on resume.pdf (2 pages, 347582 bytes).
+Output written on resume.pdf (2 pages, 347726 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 62 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  3 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

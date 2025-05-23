@@ -1,8 +1,8 @@
-PWD /Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper
+PWD /Users/apple/Documents/PAPERS/First-Paper
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/mac/Documents/PAPERS/1st Paper/LATEX/First-Paper/resume.tex
+INPUT /Users/apple/Documents/PAPERS/First-Paper/resume.tex
 OUTPUT resume.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls

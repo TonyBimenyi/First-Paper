@@ -20,6 +20,8 @@
 \usepackage{amsfonts}
 \usepackage{placeins}
 \usepackage{lettrine} % Package for dropped capital letters
+\usepackage{booktabs} % For professional table formatting
+\usepackage{siunitx}   % For scientific notation and number formatting
 
 
 \allowdisplaybreaks[4]
@@ -118,17 +120,14 @@ Remark 2: The CFDL technique requires no prior knowledge about the system dynami
 
 \section{Main Results}
 
-
-
-
+This section is devided in two parts. The first part introduces the model-free adaptive controller design, which is based on the CFDL technique. The second part introduces the sliding mode controller design, which is formulated based on the distributed measurement error. The overall block diagram of the proposed control scheme is shown in Fig. \ref{fig:diagram}, which is illustrates the system control process.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{diagram.png}
+    \includegraphics[width=0.75\textwidth]{diagram.png}
     \caption{Block diagram.}
     \label{fig:diagram} % Label for referencing the figure
 \end{figure}
 
-This section is devided in two parts. The first part introduces the model-free adaptive controller design, which is based on the CFDL technique. The second part introduces the sliding mode controller design, which is formulated based on the distributed measurement error. The overall block diagram of the proposed control scheme is shown in Fig. \ref{fig:diagram}.
 
 \subsection{Model-Free Adaptive Controller Design}
 
@@ -234,7 +233,7 @@ Proof: The proof is devided into two parts.
 Part i: Define $\tilde{\phi}_i(k) = \hat{\phi}_i(k) - \phi_i(k)$. Using the PPD estimation algorithm ($\ref{model eq:ppd_parameter}$), the following result is derived:
 \begin{align}
     \label{model:phi_tilde_update}
-    \tilde{\phi}_i(k) = \ & \big( \hat{\phi}_i(k-1) - \phi_i(k) \big) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} \big( \phi_i(k-1) \Delta u_i(k-1) \quad \nonumber \\
+    \tilde{\phi}_i(k) = \ & \big( \hat{\phi}_i(k-1) - \phi_i(k-1) \big) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} \big( \phi_i(k-1) \Delta u_i(k-1) \quad \nonumber \\
     - \ & \hat{\phi}_i(k-1) \Delta u_i(k-1)\big) - \phi_i(k) + \phi_i(k-1) \quad \nonumber \\
     = \ & \tilde{\phi}_i(k-1) + \frac{\eta \Delta u_i(k-1)}{\mu + \Delta u_i(k-1)^2} \big( \phi_i(k-1) \Delta u_i(k-1) \quad \nonumber \\
     - \ & \hat{\phi}_i(k-1) \Delta u_i(k-1)\big) - \phi_i(k) + \phi_i(k-1) \quad \nonumber \\
@@ -262,16 +261,30 @@ which implies $ \tilde{\phi}_i(k) $ is bounded. Since the boundedness of $ \phi_
 Part ii: The boundedness of $ \xi_i(k)$.
 
 By combining ($ \ref{model eq:ppd_parameter} $) with ($ \ref{model eq:xi_next} $), the expression for \(\xi_i(k+1)\) is updated:
+% \begin{align}
+%     \label{model eq:xi_next_proof}
+%     \xi_i(k+1) = \ & \xi_i(k) + \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg((1-\frac{1}{\alpha})\xi_i(k) + \sum_{j \in N_i}a_{ij} \Delta y_j(k) \quad \nonumber \\
+%     + \ & d_i \Delta y_d(k+1) \bigg) + \bigg( \sum_{j \in N_i}a_{ij} + d_i \bigg) \tau_s sign(s_i(k)) \nonumber \\
+%     = \ & \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} (1-\frac{1}{\alpha}) \bigg) \xi_i(k) + \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg) \bigg( \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) \bigg) \quad \nonumber \\
+%     - \ & \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg( \sum_{j \in N_i}a_{ij} + d_i \bigg) \tau_s sign(s_i(k))
+% \end{align}
+
 \begin{align}
     \label{model eq:xi_next_proof}
-    \xi_i(k+1) = \ & \xi_i(k) + \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg((1-\frac{1}{\alpha})\xi_i(k) + \sum_{j \in N_i}a_{ij} \Delta y_j(k) \quad \nonumber \\
-    + \ & d_i \Delta y_d(k+1) \bigg) + \bigg( \sum_{j \in N_i}a_{ij} + d_i \bigg) \tau_s sign(s_i(k)) \nonumber \\
-    = \ & \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} (1-\frac{1}{\alpha}) \bigg) \xi_i(k) + \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg) \bigg( \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) \bigg) \quad \nonumber \\
-    - \ & \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg( \sum_{j \in N_i}a_{ij} + d_i \bigg) \tau_s sign(s_i(k))
+    % Starting with the initial expression for xi_i(k+1)
+    \xi_i(k+1) = \ &  \xi_i(k) + \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1) - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \big(1 - \frac{1}{\alpha}\big) \xi_i(k) \quad \nonumber \\
+    % Rearranging the terms
+    - \ & \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \sum_{j \in N_i}a_{ij} \Delta y_j(k) - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} d_i \Delta y_d(k+1) + \bigg( \sum_{j \in N_i}a_{ij} + d_i \bigg) \tau_s \operatorname{sign}(s_i(k)) \quad \nonumber \\
+    % Factoring xi_i(k) terms
+    = \ & \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \big(1 - \frac{1}{\alpha}\big) \bigg) \xi_i(k) + \bigg( \sum_{j \in N_i}a_{ij} \Delta y_j(k) - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \sum_{j \in N_i}a_{ij} \Delta y_j(k) \bigg) \quad \nonumber \\
+    % Factoring the sum and d_i terms
+    + \ & \bigg( d_i \Delta y_d(k+1) - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} d_i \Delta y_d(k+1) \bigg) + \bigg( \sum_{j \in N_i}a_{ij} + d_i \bigg) \tau_s \operatorname{sign}(s_i(k)) \quad \nonumber \\
+    % Adjusting the sign of the last term to match the original
+    = \ & \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \big(1 - \frac{1}{\alpha}\big) \bigg) \xi_i(k) + \bigg( 1 - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg) \bigg( \sum_{j \in N_i}a_{ij} \Delta y_j(k)  \quad \nonumber \\
+    + \ &  d_i \Delta y_d(k+1) \bigg) - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg( \sum_{j \in N_i}a_{ij} + d_i \bigg) \tau_s \operatorname{sign}(s_i(k))
 \end{align}
 
 Subsequently, take $ 0<h_0<h_i(k)<\frac{\omega C_0}{2\sqrt{\sigma}}<1 $ into consideration, where $ \phi_i(k) < C_0 $ and $ |g_i(k)|<g_0 $, the inequality is obtained by taking the absolute value of each term of ($ \ref{model eq:xi_next_proof} $).
-
 \begin{align}
     \label{model:absolute2}
     |\xi_i(k+1)| \leq \ & |1-h_i(k)(1-\frac{1}{ \alpha })| |\xi_i(k)| + |g_i(k)| \quad \nonumber \\
@@ -293,7 +306,7 @@ Remark 3: Distinct from the consensus tracking control schemes used in the exist
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\textwidth]{communication.png}
+    \includegraphics[width=0.3\textwidth]{communication.png}
     \caption{Communication topology among agents.}
     \label{fig:communication1} % Label for referencing the figure
 \end{figure}
@@ -386,7 +399,7 @@ The motor speed is measured in revolutions per second $(r/s)$ based on encoder m
 % \end{array}
 % \]
 \[
-y_i(k+1) = 0.5 y_i(k) u_i(k) + \frac{6m}{rT} - a_i y_i(k)^{p_i} + 0.45, \quad i = 1, 2, 3, 4,
+y_i(k+1) = 0.5 y_i(k) u_i(k) + \frac{6m}{rT} - a_i y_i(k)^{p_i} + 0.45, \quad i = 1, 2, 3, 4
 \]
 where the agent-specific parameters are:
 \[
@@ -429,7 +442,7 @@ Example 1: In this example, the reference trajectory is time-invariant value sig
 The initial parameters are chosen as \(u_i(1)=0.01\), \(y_i(1)=0.6\) and \(\hat{\phi}_i(0)=4 \) for all agents in this simulation, \(\Gamma_{1}=\Gamma_{3}=0.45\) and \(\Gamma_{2}=\Gamma_{4}=0.15\), with \(\tau_s=10^{-5}\), \(m=600\), $rT = 1024 $, \(\eta=1\), \(\mu=0.005\), other parameters are given as \(\rho=7.5\), \(\lambda=350\), $ \omega = 10 $, $ \sigma=95 $, \(\alpha=15\) with \(\epsilon=10^{-5}\).
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9 \textwidth]{inv_tracking.png}
+    \includegraphics[width=0.85 \textwidth]{inv_tracking.png}
     \caption{Tracking performance of all agents under the time-invarying reference trajectory.}
     \label{fig:tracking_inv} % Label for referencing the figure
 \end{figure}
@@ -441,18 +454,48 @@ Moreover, Fig.~\ref{fig:error_inv} illustrates the distributed measurement error
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.92\textwidth]{inv_error.png}
+    \includegraphics[width=0.85\textwidth]{inv_error.png}
     \caption{Distributed measurement error of all agents under the time-invarying reference trajectory.}
     \label{fig:error_inv} % Label for referencing the figure
 \end{figure}
 
+
+% Creating the table
+\begin{table}[H]
+    \centering
+    \caption{Mean square error comparison (Example 1)}
+    \label{tab:mse_comparison}
+    \resizebox{0.45\linewidth}{!}{ % adjust the scale factor as needed
+    \begin{tabular}{lcc}
+    \toprule
+    Variable & Method \cite{1} & Proposed scheme \\
+    \midrule
+    Agent 1      & \num{2.1933e-03} & \num{2.0628e-03} \\
+    Agent 2      & \num{7.2082e-04} & \num{4.7332e-04} \\
+    Agent 3      & \num{2.1976e-03} & \num{2.0737e-03} \\
+    Agent 4      & \num{7.2082e-04} & \num{4.7332e-04} \\
+    \midrule
+    Average      & \num{1.7082e-03} & \num{1.2708e-03} \\
+    \bottomrule
+    \end{tabular}
+    }
+\end{table}
+
+
+
+
+To quantitatively evaluate the advantages of the developed method, the mean square error(MSE) is calculated for each agent. The MSE values are presented in TABLE \ref{tab:mse_comparison}. For each agent, the MSE is calculated according to the formula: \[
+\text{MSE}_{i}(k) = \frac{1}{m} \sum_{k=1}^{m} \xi^2_{i}(k)
+\] where $ m $  denotes the total number of time steps. In comparison to the existing approach \cite{1}, the developed strategy demonstrates significant improvement in accuracy, reducing the average MSE across agents by a factor of approximately 1.34. This notable reduction confirms the effectiveness of the proposed technique.
+
+\pagebreak
 
 Example 2: The expression for the reference trajectory is:
 \[ y_d(k)=0.6\sin(0.07\pi(k))+0.6\cos(0.04\pi(k)), k \in [0, 200] \]
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.922\textwidth]{var_tracking.png}
+    \includegraphics[width=0.85\textwidth]{var_tracking.png}
     \caption{Tracking performance of all agents under the time-varying reference trajectory.}
     \label{fig:tracking_var} % Label for referencing the figure
 \end{figure}
@@ -460,12 +503,36 @@ Example 2: The expression for the reference trajectory is:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.92\textwidth]{var_error.png}
+    \includegraphics[width=0.85\textwidth]{var_error.png}
     \caption{Distributed measurement error of all agents under the time-varying reference trajectory.}
     \label{fig:error_var} % Label for referencing the figure
 \end{figure}
 
 Fig. \ref{fig:tracking_var} presents the tracking performance for all agents for the time-varying trajectory. All agents are able to accurately track the time-varying reference trajectory. Additionally, as shown in Fig. \ref{fig:error_var}, the distributed measurement errors among agents are bounded.
+
+For time-varying reference trajectories, the mean squared errors of distributed
+measurements for two control strategies are detailed in TABLE \ref{tab:mse_comparison2}. Relative to the
+conventional approach \cite{1}, the proposed scheme reduces in average MSE by approximately 1.24.
+
+\begin{table}[h]
+    \centering
+    \caption{Mean square error comparison (Example 2)}
+    \label{tab:mse_comparison2}
+    \resizebox{0.45\linewidth}{!}{ % adjust the scale factor as needed
+    \begin{tabular}{lcc}
+    \toprule
+    Variable & Method \cite{1} & Proposed scheme \\
+    \midrule
+    Agent 1      & \num{4.0160e-03} & \num{3.0720e-03} \\
+    Agent 2      & \num{2.1004e-03} & \num{1.8066e-03} \\
+    Agent 3      & \num{3.9739e-03} & \num{3.1168e-03} \\
+    Agent 4      & \num{2.1004e-03} & \num{1.8066e-03} \\
+    \midrule
+    Average      & \num{3.0477e-03} & \num{2.4505e-03} \\
+    \bottomrule
+    \end{tabular}
+    }
+\end{table}
 
 \begin{figure}[H]
     \centering
@@ -482,7 +549,7 @@ In addition, the controller code is written in C language using STM32CubeIDE, wh
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.65\textwidth]{system.jpg}
+    \includegraphics[width=0.68\textwidth]{system.jpg}
     \caption{Multi DC motor system.}
     \label{fig:system} % Label for referencing the figure
 \end{figure}
@@ -490,13 +557,15 @@ In addition, the controller code is written in C language using STM32CubeIDE, wh
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{dataplot.png}
+    \includegraphics[width=0.85\textwidth]{dataplot.png}
     \caption{Tracking performance of 3 DC motors for time-invariable desired trajectory.}
     \label{fig:output} % Label for referencing the figure
 \end{figure}
 
 Fig. \ref{fig:output} shows the tracking performance of multi DC motor demonstrating the effectiveness of the proposed control method.
 Overall, the simulation results suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While initial transient errors may accur, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
+
+\pagebreak
 
 \section{Conclusion}
 

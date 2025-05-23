@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.1)  18 MAY 2025 03:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.1)  23 MAY 2025 00:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -339,23 +339,81 @@ Loading lettrine.cfg
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lettrine/lettrine.cfg)
 \Lettrine@tweaks=\toks33
 \Llist@everypar=\toks34
-) (./mfasmc.aux)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/siunitx/siunitx.sty
+Package: siunitx 2025-02-27 v3.4.6 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count305
+\l__siunitx_number_exponent_fixed_int=\count306
+\l__siunitx_number_min_decimal_int=\count307
+\l__siunitx_number_min_integer_int=\count308
+\l__siunitx_number_round_precision_int=\count309
+\l__siunitx_number_lower_threshold_int=\count310
+\l__siunitx_number_upper_threshold_int=\count311
+\l__siunitx_number_group_first_int=\count312
+\l__siunitx_number_group_size_int=\count313
+\l__siunitx_number_group_minimum_int=\count314
+\l__siunitx_angle_tmp_dim=\dimen278
+\l__siunitx_angle_marker_box=\box62
+\l__siunitx_angle_unit_box=\box63
+\l__siunitx_compound_count_int=\count315
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/translations/translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count316
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+\l__siunitx_table_tmp_box=\box64
+\l__siunitx_table_tmp_dim=\dimen279
+\l__siunitx_table_column_width_dim=\dimen280
+\l__siunitx_table_integer_box=\box65
+\l__siunitx_table_decimal_box=\box66
+\l__siunitx_table_uncert_box=\box67
+\l__siunitx_table_before_box=\box68
+\l__siunitx_table_after_box=\box69
+\l__siunitx_table_before_dim=\dimen281
+\l__siunitx_table_carry_dim=\dimen282
+\l__siunitx_unit_tmp_int=\count317
+\l__siunitx_unit_position_int=\count318
+\l__siunitx_unit_total_int=\count319
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen283
+\ar@mcellbox=\box70
+\extrarowheight=\dimen284
+\NC@list=\toks35
+\extratabsurround=\skip64
+\backup@length=\skip65
+\ar@cellbox=\box71
+))
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 33.
+ (./mfasmc.aux)
 \openout1 = `mfasmc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 -- Lines per column: 40 (approximate, difference = 5.40143pt).
 Package caption Info: Begin \AtBeginDocument code.
@@ -364,44 +422,48 @@ Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count305
-\scratchdimen=\dimen278
-\scratchbox=\box62
-\nofMPsegments=\count306
-\nofMParguments=\count307
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count308
-\MPscratchDim=\dimen279
-\MPnumerator=\count309
-\makeMPintoPDFobject=\count310
-\everyMPtoPDFconversion=\toks36
+\scratchcounter=\count320
+\scratchdimen=\dimen285
+\scratchbox=\box72
+\nofMPsegments=\count321
+\nofMParguments=\count322
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count323
+\MPscratchDim=\dimen286
+\MPnumerator=\count324
+\makeMPintoPDFobject=\count325
+\everyMPtoPDFconversion=\toks37
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-))
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 33.
+
 
 [1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 79.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 81.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 79.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 79.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 [2]
-<diagram.png, id=20, 1973.87437pt x 930.97812pt>
+<diagram.png, id=20, 2131.965pt x 1199.48125pt>
 File: diagram.png Graphic file (type png)
 <use diagram.png>
 Package pdftex.def Info: diagram.png  used on input line 126.
-(pdftex.def)             Requested size: 412.80157pt x 194.68724pt.
+(pdftex.def)             Requested size: 387.0pt x 217.72757pt.
 
 
 [3 <./diagram.png>]
@@ -412,80 +474,83 @@ Package pdftex.def Info: diagram.png  used on input line 126.
 <communication.png, id=34, 622.325pt x 366.36874pt>
 File: communication.png Graphic file (type png)
 <use communication.png>
-Package pdftex.def Info: communication.png  used on input line 296.
-(pdftex.def)             Requested size: 232.19843pt x 136.69473pt.
+Package pdftex.def Info: communication.png  used on input line 309.
+(pdftex.def)             Requested size: 154.80157pt x 91.13354pt.
 
 
 [6 <./communication.png>]
-<inv_tracking.png, id=39, 3011.25pt x 1505.625pt>
+<inv_tracking.png, id=39, 2910.875pt x 1606.0pt>
 File: inv_tracking.png Graphic file (type png)
 <use inv_tracking.png>
-Package pdftex.def Info: inv_tracking.png  used on input line 432.
-(pdftex.def)             Requested size: 464.39685pt x 232.19778pt.
+Package pdftex.def Info: inv_tracking.png  used on input line 445.
+(pdftex.def)             Requested size: 438.60315pt x 241.96785pt.
 
 
 [7 <./inv_tracking.png (PNG copy)>]
-<inv_error.png, id=44, 3011.25pt x 1505.625pt>
+<inv_error.png, id=44, 2910.875pt x 1606.0pt>
 File: inv_error.png Graphic file (type png)
 <use inv_error.png>
-Package pdftex.def Info: inv_error.png  used on input line 444.
-(pdftex.def)             Requested size: 474.71906pt x 237.34396pt.
-<var_tracking.png, id=45, 3011.25pt x 1505.625pt>
+Package pdftex.def Info: inv_error.png  used on input line 457.
+(pdftex.def)             Requested size: 438.60315pt x 241.96785pt.
+
+
+[8 <./inv_error.png (PNG copy)>]
+<var_tracking.png, id=53, 2910.875pt x 1606.0pt>
 File: var_tracking.png Graphic file (type png)
 <use var_tracking.png>
-Package pdftex.def Info: var_tracking.png  used on input line 455.
-(pdftex.def)             Requested size: 475.75049pt x 237.87236pt.
-<var_error.png, id=46, 3011.25pt x 1505.625pt>
+Package pdftex.def Info: var_tracking.png  used on input line 498.
+(pdftex.def)             Requested size: 438.60315pt x 241.96785pt.
+<var_error.png, id=54, 2910.875pt x 1606.0pt>
 File: var_error.png Graphic file (type png)
 <use var_error.png>
-Package pdftex.def Info: var_error.png  used on input line 463.
-(pdftex.def)             Requested size: 474.71906pt x 237.34396pt.
+Package pdftex.def Info: var_error.png  used on input line 506.
+(pdftex.def)             Requested size: 438.60315pt x 241.96785pt.
 
 
-[8 <./inv_error.png (PNG copy)> <./var_tracking.png (PNG copy)>]
-<diagram.jpg, id=50, 426.8748pt x 238.0092pt>
+[9 <./var_tracking.png (PNG copy)> <./var_error.png (PNG copy)>]
+<diagram.jpg, id=58, 426.8748pt x 238.0092pt>
 File: diagram.jpg Graphic file (type jpg)
 <use diagram.jpg>
-Package pdftex.def Info: diagram.jpg  used on input line 472.
+Package pdftex.def Info: diagram.jpg  used on input line 539.
 (pdftex.def)             Requested size: 387.0pt x 215.78972pt.
-<system.jpg, id=51, 364.7226pt x 272.6988pt>
+<system.jpg, id=59, 364.7226pt x 272.6988pt>
 File: system.jpg Graphic file (type jpg)
 <use system.jpg>
-Package pdftex.def Info: system.jpg  used on input line 485.
-(pdftex.def)             Requested size: 335.39685pt x 250.77357pt.
+Package pdftex.def Info: system.jpg  used on input line 552.
+(pdftex.def)             Requested size: 350.87622pt x 262.34544pt.
 
 
-[9 <./var_error.png (PNG copy)> <./diagram.jpg>]
-<dataplot.png, id=55, 1606.0pt x 803.0pt>
+[10 <./diagram.jpg>]
+<dataplot.png, id=63, 1606.0pt x 803.0pt>
 File: dataplot.png Graphic file (type png)
 <use dataplot.png>
-Package pdftex.def Info: dataplot.png  used on input line 493.
-(pdftex.def)             Requested size: 464.39685pt x 232.19012pt.
+Package pdftex.def Info: dataplot.png  used on input line 560.
+(pdftex.def)             Requested size: 438.60315pt x 219.30022pt.
 
 
-[10 <./system.jpg> <./dataplot.png (PNG copy)>]
+[11 <./system.jpg> <./dataplot.png (PNG copy)>]
 
-[11]
+[12]
 
-[12] (./mfasmc.aux)
+[13] (./mfasmc.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5749 strings out of 473190
- 98680 string characters out of 5715801
- 495963 words of memory out of 5000000
- 28934 multiletter control sequences out of 15000+600000
- 592594 words of font info for 97 fonts, out of 8000000 for 9000
+ 10235 strings out of 473190
+ 228471 string characters out of 5715801
+ 594852 words of memory out of 5000000
+ 33378 multiletter control sequences out of 15000+600000
+ 596023 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,12n,93p,1237b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (12 pages, 1359351 bytes).
+ 79i,12n,93p,1237b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on mfasmc.pdf (13 pages, 1467067 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
+ 150 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
