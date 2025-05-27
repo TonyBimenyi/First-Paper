@@ -45,7 +45,7 @@ Data-driven control, model-free adaptive sliding mode control, nonlinear multi-a
 
 \section{Introduction}\label{section:1}
 
-Due to the excellent capabilities and coordination efficiency of distributed multi-agent systems (MASs) in various applications such as sensor networks, transportation systems, agriculture monitoring and industrial process systems \cite{1,2,3}, MASs have attracted significant attention. Over the past few years, one of the main challenges for collaborative control \cite{4,5,6} is to handle consensus problem. It means that all agents can follow the same trajectory from different initial values. However, traditional model-based control strategies are not suitable for complex systems that are difficult to model accurately. 
+Due to the capabilities and coordination efficiency, distributed multi-agent systems (MASs) excel in applications such as sensor networks, transportation, agriculture monitoring, and indutrial process. This has attracted significant attention to MAS \cite{1,2,3}. Over the past few years, one of the main challenges for collaborative control \cite{4,5,6} is to handle consensus problem. In particular, it enables all agents to converge on the same reference trajectory despite varying initial values, enhancing system robustness. However, traditional model-based control strategies are not suitable for complex systems that are difficult to model accurately. 
 
 Despite their effectiveness in certain scenarios, traditional control strategies \cite{10,11,12,13} heavily depend on precise system models, and the modeling process becomes increasingly challenging as technology grows rapidly. Under such circumstances, it becomes difficult to solve practical problems using the above schemes. In modern industrial environments, vast amounts of process information often containing implicit and complex dynamic behaviors of the system are continuously generated and stored during operation. As a result, there has been a growing interest in alternative control methods that rely on data modeling. 
 
@@ -71,7 +71,7 @@ Inspired by the above discussions, this paper proposes a data-driven model-free 
 
 
     The following sections will outline the remaining content of this paper:
-    section II provides preliminaries and problem formulation, Section III presents The main results, Section IV shows simulation results and performance analysis, demonstrating the effectiveness of the proposed method under distinct operating conditions. At the end, conclusions are summarized in Section V.
+    Section II provides preliminaries and problem formulation, Section III presents The main results, Section IV shows simulation results and performance analysis, demonstrating the effectiveness of the proposed method under distinct operating conditions. At the end, conclusions are summarized in Section V.
 % -----------------------------------------------------------------------------
 
 
@@ -115,7 +115,7 @@ The distributed measurement error of \(\xi_i(k)\) for $N$ agents is established 
 \end{equation}
 if the agent $ i $ can receive data from the leader, then $d_i=1$; otherwise, $d_i=0$. Additionally, $y_d(k)$ represents the reference trajectory. 
 
-Remark 2: The CFDL technique requires no prior knowledge about the system dynamic model. Moreover, the dynamic behavior of time-varying PPD may be highly complex and difficult to verify. 
+Remark 2: The CFDL technique requires no prior knowledge about the system dynamic model, making it highly suitable for distributed multi-agent systems. In addition, such methods excel in handling complex systems where modeling is impractical.   Moreover, the dynamic behavior of time-varying PPD may be highly complex, which is challenging to verify. Thus, data-driven control method is employed to adaptively study the dynamic behavior, thereby ensuring effective control performance.
  
 
 \section{Main Results}
@@ -565,7 +565,9 @@ In addition, the controller code is written in C language using STM32CubeIDE, wh
 Fig. \ref{fig:output} shows the tracking performance of multi DC motor demonstrating the effectiveness of the proposed control method.
 Overall, the simulation results suggest that the proposed control system is capable of tracking a constant desired trajectory for multiple agents. While initial transient errors may accur, the system eventually reaches a steady-state condition with minimal tracking error. The variations in tracking performance among the agents highlight the potential influence of individual characteristics and external factors.
 
-\pagebreak
+The distributed errors for three DC motors result in mean squared errors of \(1.0840 \times 10^{-3}\), \(1.5036 \times 10^{-3}\), and \(1.4887 \times 10^{-3}\), respectively. The average of \(1.3588 \times 10^{-3}\) demonstrates the effectiveness of the proposed control method in practical applications. Meanwhile, the method consistently maintains mean squared error around \(10^{-3}\).
+
+In summary, the proposed control approach is validated through both simulation and experimental results, which ensure accurate consensus tracking for MASs. The tracking performance is related to parameters such as $\rho$, $\omega$, $\sigma$, $\alpha$, and the sampling period. However, the algorithm ability to address system uncertainties can be enhanced by appropriately increasing $\rho$ and $\omega$. Furthermore, it is necessary to make precise adjustments to other parameters, such as $\Gamma_i$ and $\tau_s$, to maintain bounded distributed measurement errors and achieve accurate performance. The experimental results further confirm the practical applicability of the proposed control strategy in a real-world multi DC motor system.
 
 \section{Conclusion}
 
