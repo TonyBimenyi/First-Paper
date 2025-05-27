@@ -128,11 +128,9 @@ This section is devided in two parts. The first part introduces the model-free a
     \label{fig:diagram} % Label for referencing the figure
 \end{figure}
 
+\subsection{Model-Free Adaptive Sliding Mode Controller Design}
 
-\subsection{Model-Free Adaptive Controller Design}
-
-
-Consider the following PPD criterion function, for the above consensus tracking objective \(\phi_i(k)\):
+Consider the following PPD criterion function for the parameter woth unknown dynamics in (\ref{model 2}):
 \begin{equation}
     \label{model 4}
     J(\phi_i(k)) = | \Delta y_i(k) - \phi_i(k)  \Delta u_i(k-1)|^2 + \mu |\phi_i(k) - \hat{\phi}_i(k-1)|^2\
@@ -156,9 +154,7 @@ The following distributed MFAC algorithm is presented:
 \end{equation}
 where \(\rho\) \(\in\) (0,1) is a step-size constant, which is added to make (\ref{model eq:mfac}) general. 
 
-\subsection{Sliding Mode Controller Design}
-
-To design the sliding mode controller for the system, the sliding surface function is given by:
+To design the sliding mode controller, the sliding surface function is given by:
 \begin{equation}
     \label{model eq:sms}
     s_i(k) = \alpha \xi_i(k) - \xi_i(k-1)
@@ -201,7 +197,7 @@ Additionally, the switching control law $ \Delta u_{i,\text{SM}}^s(k) $ is prese
     \Delta u_{i,\text{SM}}^s(k) = \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2}\tau_s sign(s_i(k))
 \end{equation}
 
-As a consequence, taking into considaration both(\ref{model eq:equivalent_control}), (\ref{model eq:u}) and (\ref{model eq:reaching_law}), the controller is summarized as follows:
+As a consequence, taking into consideration (\ref{model eq:equivalent_control}), (\ref{model eq:u}) and (\ref{model eq:reaching_law}), the controller is summarized as follows:
 \begin{align}
     \label{model eq:sm_controller}
     u_{i,\text{SM}}(k) =\ & u_{i,\text{SM}}(k-1) +  \frac{\omega \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg( \frac{\xi_i(k)+ \sum_{j \in N_i}a_{ij} \Delta y_j(k) + d_i \Delta y_d(k+1)}{\sum_{j \in N_i}a_{ij}+d_i} \quad \nonumber  \\
@@ -215,7 +211,7 @@ Subsequently, the final MFASMC input is:
 \end{equation}
 where the parameter \(\Gamma_i\) is a gain factor.
 
-The main results of the proposed control methodology are presented. The model-free adaptive controller design is introduced, followed by the sliding mode controller design. The stability analysis is provided to ensure the boundedness of the distributed measurement error and the effectiveness of the proposed approach.
+% The main results of the proposed control methodology are presented. The model-free adaptive controller design is introduced, followed by the sliding mode controller design. The stability analysis is provided to ensure the boundedness of the distributed measurement error and the effectiveness of the proposed approach.
 
 \subsection{Stability Analysis}
 
@@ -302,7 +298,7 @@ Therefore, the following result will be given as
 In summary, both the parameter estimation $\hat{\phi}_i(k)$ and the measurement error $\xi_i(k)$ remain bounded under the proposed adaptive sliding mode control scheme. The condition $0 < h_0 < h_i(k) < \frac{\omega C_0}{2\sqrt{\sigma}} < 1$ ensures that the adaptive parameters are stable, thereby enabling stability and effectiveness of the distributed controller. This completes the proof.
 
 
-Remark 3: Distinct from the consensus tracking control schemes used in the existing literature, this paper proposes a model-free adaptive sliding mode control strategy for MASs. For the purpose of attaining the reference trajectory tracking, the CFDL technique is employed alongside a novel sliding surface. Specifically, regardless of the nonlinear and time-varying dynamics of agents, the proposed methodology ensures that distributed measurement error remains bounded, thereby achieving precise speed regulation.
+Remark 3: Unlike the consensus tracking control schemes used in the existing literature, this paper proposes a model-free adaptive sliding mode control strategy for MASs. In this approach, the CFDL technique is employed alongside a novel sliding surface, relying solely on data for the purpose of attaining the reference trajectory tracking. Specifically, regardless of the nonlinear and time-varying dynamics of agents, the proposed methodology ensures that distributed measurement error remains bounded, thereby achieving precise speed regulation.
 
 \begin{figure}[H]
     \centering
@@ -375,9 +371,9 @@ Remark 3: Distinct from the consensus tracking control schemes used in the exist
 
 % \subsection{Data Processing Method}
 
-This section describes the usefulness of the provided control approach, which is validated by numerical simulations and physical experiments results. 
+This section describes the usefulness of the provided control approach, which is validated by both numerical simulations and physical experiments results.
 
-The motor speed is measured in revolutions per second $(r/s)$ based on encoder measurements and the sampling interval $t$. The total number of encoder counts per revolution is calculated as $ rT=4N_{e}R{r} $, where $N_e$ is the encoder line count equal to 13, $R_r$ is the reduction ratio equal to 20 and the factor of 4 accounts for quadrature encoding. The number of rotations, $N_r$ is determined using $N_r = \frac{m}{rT}$, with $m$ representing the total encoder count. The output data model of each agent is governed by:
+The DC brushed motors operate at 12V with a no-load speed of 293±21RPM and a gear ratio of 20, providing increased torque. Hall encoders with 13 pulses per revolution are used to capture rotor motion. The motor speed is measured in revolutions per second $(r/s)$ based on encoder measurements and the sampling interval $t$. The total number of encoder counts per revolution is calculated as $ rT=4N_{e}R{r} $, where $N_e$ is the encoder line count equal to 13, $R_r$ is the reduction ratio equal to 20 and the factor of 4 accounts for quadrature encoding. The number of rotations, $N_r$ is determined using $N_r = \frac{m}{rT}$, with $m$ representing the total encoder count. The output data model of each agent is governed by:
 
 % The speed of the motor is then derived as:
 
@@ -401,7 +397,7 @@ The motor speed is measured in revolutions per second $(r/s)$ based on encoder m
 \[
 y_i(k+1) = 0.5 y_i(k) u_i(k) + \frac{6m}{rT} - a_i y_i(k)^{p_i} + 0.45, \quad i = 1, 2, 3, 4
 \]
-where the agent-specific parameters are:
+where the parameters corresponding to each agent are:
 \[
 a_i = \begin{cases} 
 0.03 & \text{if } i=1 \\
@@ -416,7 +412,7 @@ p_i = \begin{cases}
 \end{cases}
 \]
 
-in this scenario, noting that the four agents have different dynamics, the parameters \(a_i\) and \(p_i\) are set to different values for each agent. In addition, they are given only to generate the I/O data for the MASs. 
+Noting that the multi-agent systems are heterogeneous, with four agents having different dynamic models. In addition, these models are not used in the control design but only serve to generate the I/O data required for the MAS simulations; further details of the models are not disclosed. 
 
 As illustrated in Fig. 2, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. The Laplacian matrix of the graph is given as follows:
 
@@ -542,7 +538,7 @@ conventional approach \cite{1}, the proposed scheme reduces in average MSE by ap
 \end{figure}
 
 To verify the proposed consensus tracking control methodology, the experimental validation is conducted using a multi DC motor system, as illustrated in Fig. \ref{fig:system}. The system consists of three DC motors equipped with Hall encoders and reduction
-gears, an STM32F407 main control chip, two motor drive modules, and an LCD display module. The microcontroller unit (MCU) STM32F407ZGT6 is used for high-resolution pulse width modulation (PWM) output generation to achieve precise motor speed control. The timer module is utilized for this purpose.
+gears, an STM32F407 main control chip, two motor drive modules, and an LCD display module. The microcontroller unit STM32F407ZGT6 is used for high-resolution pulse width modulation output generation to achieve precise motor speed control. The timer module is utilized for this purpose.
 
 In addition, the controller code is written in C language using STM32CubeIDE, while STM32CubeMX is used for pin configuration. The main purpose of the experiment is to ensure that the three motors accurately track the reference trajectory:
 % \[ y_d(k)=0.5\sin(0.07\pi(k))+0.7\cos(0.04\pi(k)) \]
@@ -567,7 +563,7 @@ Overall, the simulation results suggest that the proposed control system is capa
 
 The distributed errors for three DC motors result in mean squared errors of \(1.0840 \times 10^{-3}\), \(1.5036 \times 10^{-3}\), and \(1.4887 \times 10^{-3}\), respectively. The average of \(1.3588 \times 10^{-3}\) demonstrates the effectiveness of the proposed control method in practical applications. Meanwhile, the method consistently maintains mean squared error around \(10^{-3}\).
 
-In summary, the proposed control approach is validated through both simulation and experimental results, which ensure accurate consensus tracking for MASs. The tracking performance is related to parameters such as $\rho$, $\omega$, $\sigma$, $\alpha$, and the sampling period. However, the algorithm ability to address system uncertainties can be enhanced by appropriately increasing $\rho$ and $\omega$. Furthermore, it is necessary to make precise adjustments to other parameters, such as $\Gamma_i$ and $\tau_s$, to maintain bounded distributed measurement errors and achieve accurate performance. The experimental results further confirm the practical applicability of the proposed control strategy in a real-world multi DC motor system.
+Remark 5: In summary, the proposed control approach is validated through both simulation and experimental results, which ensure accurate consensus tracking for MASs. The tracking performance is related to parameters such as $\rho$, $\omega$, $\sigma$, $\alpha$, and the sampling period. However, the algorithm ability to address system uncertainties can be enhanced by appropriately increasing $\rho$ and $\omega$. Furthermore, it is necessary to make precise adjustments to other parameters, such as $\Gamma_i$ and $\tau_s$, to maintain bounded distributed measurement errors and achieve accurate performance. The experimental results further confirm the practical applicability of the proposed control strategy in a real-world multi DC motor system.
 
 \section{Conclusion}
 
