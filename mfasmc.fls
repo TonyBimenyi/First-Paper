@@ -205,12 +205,12 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
-INPUT ./inv_tracking.png
-INPUT ./inv_tracking.png
-INPUT ./inv_tracking.png
-INPUT ./inv_tracking.png
-INPUT ./inv_tracking.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
+INPUT ./inv_tracking.png
+INPUT ./inv_tracking.png
+INPUT ./inv_tracking.png
+INPUT ./inv_tracking.png
+INPUT ./inv_tracking.png
 INPUT ./inv_error.png
 INPUT ./inv_error.png
 INPUT ./inv_error.png

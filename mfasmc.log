@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.1)  28 MAY 2025 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.1)  28 MAY 2025 18:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -459,21 +459,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 [2]
-<diagram.png, id=20, 2131.965pt x 1267.73625pt>
+<diagram.png, id=20, 2195.20125pt x 1197.47375pt>
 File: diagram.png Graphic file (type png)
 <use diagram.png>
 Package pdftex.def Info: diagram.png  used on input line 126.
-(pdftex.def)             Requested size: 438.60315pt x 260.79678pt.
+(pdftex.def)             Requested size: 438.60315pt x 239.25296pt.
 
 
-[3]
+[3 <./diagram.png>]
 
-[4 <./diagram.png>]
+[4]
 
 [5]
-
-[6]
-<communication.png, id=37, 622.325pt x 366.36874pt>
+<communication.png, id=34, 622.325pt x 366.36874pt>
 File: communication.png Graphic file (type png)
 <use communication.png>
 Package pdftex.def Info: communication.png  used on input line 305.
@@ -482,14 +480,16 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 37
  (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-<inv_tracking.png, id=38, 2910.875pt x 1606.0pt>
+
+[6 <./communication.png>]
+<inv_tracking.png, id=39, 2910.875pt x 1606.0pt>
 File: inv_tracking.png Graphic file (type png)
 <use inv_tracking.png>
 Package pdftex.def Info: inv_tracking.png  used on input line 419.
 (pdftex.def)             Requested size: 438.60315pt x 241.96785pt.
 
 
-[7 <./communication.png>]
+[7 <./inv_tracking.png (PNG copy)>]
 <inv_error.png, id=44, 2910.875pt x 1606.0pt>
 File: inv_error.png Graphic file (type png)
 <use inv_error.png>
@@ -497,47 +497,45 @@ Package pdftex.def Info: inv_error.png  used on input line 431.
 (pdftex.def)             Requested size: 438.60315pt x 241.96785pt.
 
 
-[8 <./inv_tracking.png (PNG copy)>]
-
-[9 <./inv_error.png (PNG copy)>]
-<var_tracking.png, id=57, 2910.875pt x 1606.0pt>
+[8 <./inv_error.png (PNG copy)>]
+<var_tracking.png, id=54, 2910.875pt x 1606.0pt>
 File: var_tracking.png Graphic file (type png)
 <use var_tracking.png>
 Package pdftex.def Info: var_tracking.png  used on input line 470.
 (pdftex.def)             Requested size: 438.60315pt x 241.96785pt.
-<var_error.png, id=58, 2910.875pt x 1606.0pt>
+<var_error.png, id=55, 2910.875pt x 1606.0pt>
 File: var_error.png Graphic file (type png)
 <use var_error.png>
 Package pdftex.def Info: var_error.png  used on input line 478.
 (pdftex.def)             Requested size: 438.60315pt x 241.96785pt.
 
 
-[10 <./var_tracking.png (PNG copy)> <./var_error.png (PNG copy)>]
-<diagram.jpg, id=62, 426.8748pt x 238.0092pt>
+[9 <./var_tracking.png (PNG copy)> <./var_error.png (PNG copy)>]
+<diagram.jpg, id=59, 426.8748pt x 238.0092pt>
 File: diagram.jpg Graphic file (type jpg)
 <use diagram.jpg>
 Package pdftex.def Info: diagram.jpg  used on input line 512.
 (pdftex.def)             Requested size: 387.0pt x 215.78972pt.
-<system.jpg, id=63, 364.7226pt x 272.6988pt>
+<system.jpg, id=60, 364.7226pt x 272.6988pt>
 File: system.jpg Graphic file (type jpg)
 <use system.jpg>
 Package pdftex.def Info: system.jpg  used on input line 525.
 (pdftex.def)             Requested size: 350.87622pt x 262.34544pt.
 
 
-[11 <./diagram.jpg>]
-<dataplot.png, id=67, 1606.0pt x 803.0pt>
+[10 <./diagram.jpg>]
+<dataplot.png, id=64, 1606.0pt x 803.0pt>
 File: dataplot.png Graphic file (type png)
 <use dataplot.png>
 Package pdftex.def Info: dataplot.png  used on input line 533.
 (pdftex.def)             Requested size: 438.60315pt x 219.30022pt.
 
 
-[12 <./system.jpg> <./dataplot.png (PNG copy)>]
+[11 <./system.jpg> <./dataplot.png (PNG copy)>]
 
-[13]
+[12]
 
-[14] (./mfasmc.aux)
+[13] (./mfasmc.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -546,16 +544,16 @@ L3 programming layer <2025-01-18>
 Here is how much of TeX's memory you used:
  10262 strings out of 473190
  228888 string characters out of 5715801
- 593854 words of memory out of 5000000
+ 594852 words of memory out of 5000000
  33401 multiletter control sequences out of 15000+600000
  596844 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,13n,93p,1237b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (14 pages, 1491996 bytes).
+Output written on mfasmc.pdf (13 pages, 1490345 bytes).
 PDF statistics:
- 158 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 155 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
