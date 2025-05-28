@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1748337186.57959 "/Users/apple/Documents/PAPERS/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1748337187.92408 0
-  "/Users/apple/Documents/PAPERS/First-Paper/mfasmc.tex" 1748337186.38004 49319 af83c3a5663fce8cffc79993fb2e3df4 ""
+["pdflatex"] 1748428333.50165 "/Users/apple/Documents/PAPERS/First-Paper/mfasmc.tex" "mfasmc.pdf" "mfasmc" 1748428335.11711 0
+  "/Users/apple/Documents/PAPERS/First-Paper/mfasmc.tex" 1748428331.90221 48858 a55230c65403900e9ae104d197e424d0 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -108,16 +108,16 @@
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1746111347 3345732 20ce0379798f61e609be20f3b5c54aea ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "communication.png" 1747931765.33578 46571 a30c06218b6e2161ea8490b4300d681c ""
-  "dataplot.png" 1747503216.12444 64381 2df7685dee2592f55e56002765152479 ""
+  "dataplot.png" 1748425717.30449 64011 ac3c37c7244a523ee6601d80c381c5ee ""
   "diagram.jpg" 1746090841.65293 174560 1ec1d90c7a614cfe14f4de13c60cee83 ""
-  "diagram.png" 1747983661.7162 188970 e7ac2340a6bd3fe3d677946532bec935 ""
+  "diagram.png" 1748428303.61801 203362 d102f3ebe14b4c23003271fcb95dcd49 ""
   "inv_error.png" 1747926322.89654 131306 2524c6969d6b8d867487b8fe2ec0f03b ""
-  "inv_tracking.png" 1747983557.62627 101396 cf8df7e3538746626272ff5a95313ed7 ""
-  "mfasmc.aux" 1748337187.84345 5508 238e5fbc28809a4a94668dbd1a014147 "pdflatex"
-  "mfasmc.tex" 1748337186.38004 49319 af83c3a5663fce8cffc79993fb2e3df4 ""
+  "inv_tracking.png" 1748423337.08028 135505 4be8935c671705103012c1f84d038269 ""
+  "mfasmc.aux" 1748428335.04468 5529 5ad8a770108a7efbedb7067f5601a0cd "pdflatex"
+  "mfasmc.tex" 1748428331.90221 48858 a55230c65403900e9ae104d197e424d0 ""
   "system.jpg" 1746090841.66315 284345 2e63d27a6282be46dcff4ad0511d988c ""
   "var_error.png" 1747983557.61978 95199 513f012cd2cc1683d833f2826a5ab64b ""
-  "var_tracking.png" 1747983557.61123 145937 8e19fc508079e431a0c48e424b80abfa ""
+  "var_tracking.png" 1748423337.06919 148415 b0f678f8de53941e0a040499ba0e8212 ""
   (generated)
   "mfasmc.aux"
   "mfasmc.log"
