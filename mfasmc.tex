@@ -286,13 +286,13 @@ Subsequently, take $ 0<h_0<h_i(k)<\frac{\omega C_0}{2\sqrt{\sigma}}<1 $ into con
     |\xi_i(k+1)| \leq \ & |1-h_i(k)(1-\frac{1}{ \alpha })| |\xi_i(k)| + |g_i(k)| \quad \nonumber \\
     \leq \ & |1-h_i(k)(1-\frac{1}{\alpha })| |\xi_i(k)| + g_0(k) \quad \nonumber \\
     \vdots \nonumber \\
-    \leq \ & 1-h_0(1-\frac{1}{\alpha })^k |\xi_i(k)| + \frac{g_0(1-(1-h_0(1-\frac{1}{\alpha}))^2)}{h_0(1-\frac{1}{ \alpha})}
+    \leq \ & 1-h_0(1-\frac{1}{\alpha })^k |\xi_i(0)| + \frac{g_0(1-(1-h_0(1-\frac{1}{\alpha}))^2)}{h_0(1-\frac{1}{ \alpha})}
 \end{align}
 
 Therefore, the following result will be given as
 \begin{equation}
     \label{model:lim_fin}
-    \lim_{k \to \infty} \xi_i(k+1) = \frac{g_0}{h_0(1-\frac{1}{\alpha})} = \frac{\alpha g_0}{(\alpha-1)h_0}
+    \lim_{k \to \infty} \xi_i(k) = \frac{g_0}{h_0(1-\frac{1}{\alpha})} = \frac{\alpha g_0}{(\alpha-1)h_0}
 \end{equation}
 
 In summary, both the parameter estimation $\hat{\phi}_i(k)$ and the measurement error $\xi_i(k)$ remain bounded under the proposed adaptive sliding mode control scheme. The condition $0 < h_0 < h_i(k) < \frac{\omega C_0}{2\sqrt{\sigma}} < 1$ ensures that the adaptive parameters are stable, thereby enabling stability and effectiveness of the distributed controller. This completes the proof.
