@@ -47,7 +47,7 @@ Data-driven control, model-free adaptive sliding mode control, nonlinear multi-a
 
 % Due to the capabilities and coordination efficiency, distributed multi-agent systems (MASs) are widely applied in numerous fields such as sensor networks, transportation, agriculture, and industrial process systems, which has attracted significant attention to MASs \cite{1,2,3}. Over the past few years, one of the main challenges for collaborative control \cite{4,5,6} is to handle consensus problem. In particular, it enables all agents to converge on the same reference trajectory despite varying initial values, which improves the performance and reliability of the system. However, traditional model-based control strategies are not suitable for complex systems that are difficult to model accurately. 
 
-Distributed multi-agent systems (MASs) have been extensively studied and applied in numerous domains, including sensor networks, transportation, agriculture, and industrial automation systems, driven by the superior coordination and efficiency \cite{1,2,3}. The fundamental challenge in addressing effective cooperative control lies in achieving distributed consensus, enabling all agents to synchronize to a common trajectory despite diverse initial states \cite{4,5,6}. Nevertheless, conventional model-based control strategies often prove inadequate for complex system dynamics, necessitating advanced distributed coordination approaches to ensure reliable performance. 
+Multi-agent systems (MASs) have been extensively studied and applied in numerous domains, including sensor networks, transportation, agriculture, and industrial automation systems, driven by their superior coordination and efficiency \cite{1,2,3}. The fundamental challenge in addressing effective cooperative control lies in achieving distributed consensus, enabling all agents to synchronize to a common trajectory despite diverse initial states \cite{4,5,6}. Nevertheless, traditional model-based control strategies often prove inadequate for complex system dynamics, necessitating advanced distributed coordination approaches to ensure reliable performance. 
 
 Despite their effectiveness in certain scenarios, traditional control strategies \cite{10,11,12,13} heavily depend on precise system models, and the modeling process becomes increasingly challenging as technology grows rapidly. Under such circumstances, it becomes difficult to solve practical problems using the above schemes. In modern industrial environments, vast amounts of process information often containing implicit and complex dynamic behaviors of the system are continuously generated and stored during operation. As a result, there has been a growing interest in alternative control methods that rely on data modeling. 
 
@@ -99,7 +99,7 @@ Assumption 2: The system (\ref{model 1}) satisfies the generalized Lipschitz con
 
 % Under Assumptions 1 and 2, the unknown agent dynamics (\ref{model 1}) can be transformed into the following dynamic linearization model and then the distributed control law will be designed based on it:
 
-Remark 1: The assumptions above are general. Assumption 1 is a general condition for controller design. Assumption 2 implies that the system input rate constrains the system output rate, which is satisfied in many practical systems.
+Remark 1: The assumptions above are general and commonly adopted in data-driven control. Specifically, Assumption 1 is a general condition for controller design. Assumption 2 implies that the system input variation rate constrains the rate of change of the system output. This assumption ensures that the system response to fast changing inputs remains stable and bounded, which is crucial for the design of adaptive control strategies.
 
 Assumption 3: The communication graph $ \mathcal{G} $ is strongly connected, ensuring that each follower can directly receive information from at least one leader.
 
@@ -117,12 +117,12 @@ The distributed measurement error of \(\xi_i(k)\) for $N$ agents is established 
 \end{equation}
 if the agent $ i $ can receive data from the leader, then $d_i=1$; otherwise, $d_i=0$. Additionally, $y_d(k)$ represents the reference trajectory. 
 
-Remark 2: The CFDL technique requires no prior knowledge about the system dynamic model, making it highly suitable for distributed multi-agent systems. In addition, such methods are effective in handling complex systems where modeling is impractical. Moreover, the dynamic behavior of time-varying PPD may be highly complex, which is challenging to verify. Thus, a data-driven control method is employed to adaptively study the dynamic behavior, thereby ensuring effective control performance.
+Remark 2: The CFDL technique requires no prior knowledge about the system dynamic model, making it highly suitable for distributed multi-agent systems, which often exhibit complex, nonlinear, and time-varying dynamics that are difficult to model accurately due to the heterogeneous agents. In addition, CFDL is effective in handling complex systems where modeling is impractical. Moreover, the dynamic behavior of time-varying PPD may be highly complex, which is challenging to verify. Consequently, a data-driven control method is employed to adaptively study the dynamic behavior, which ensures effective control performance.
  
 
 \section{Main Results}
 
-This section is devided in two parts. The first part introduces the model-free adaptive controller design, which is based on the CFDL technique. The second part introduces the sliding mode controller design, which is formulated based on the distributed measurement error. The overall block diagram of the proposed control scheme is shown in Fig. \ref{fig:diagram}, which is illustrates the system control process.
+This section is devided in two parts. The first part introduces the model-free adaptive controller design, which is based on the CFDL technique. The second part introduces the sliding mode controller design, which is formulated based on the distributed measurement error. The overall block diagram of the proposed control scheme is shown in Fig. \ref{fig:diagram}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{diagram.png}
@@ -147,7 +147,7 @@ By utilizing the optimal condition $ \frac{\partial J(\phi_i(k))}{\partial \phi_
     \label{reset}
     \hat{\phi}_i(k) = \hat{\phi}_i(1),  \text{ if }  |\hat{\phi}_i(k) | \leq \epsilon \ or \ sign(\hat{\phi}_i(k)) \neq  sign(\hat{\phi}_i(1))
 \end{equation}
-herein, $\eta \in (0,1)$, $\mu > 0$ represents a positive weight factor. Additionally, $\epsilon$ is a small positive number. Finally, $\hat{\phi}_i(k)$ signifies the estimated value of $\phi_i(k)$.
+herein, $\eta \in (0,1)$, $\mu > 0$ represents a positive weight factor. Additionally, $\epsilon$ is a small positive number and $\hat{\phi}_i(k)$ signifies the estimated value of $\phi_i(k)$.
 
 The following distributed MFAC algorithm is presented:
 \begin{equation}
@@ -179,7 +179,7 @@ wherein $\Delta y_j(k+1)$ is replaced with $ \Delta y_j(k) $ because the data at
 % \end{align}
 
 
-Therefore, considering ($ \ref{model eq:sms}) $, with the assistance of reaching law $ s_i(k+1) = 0 $, the following equivalent control law can be derived.
+Therefore, with the assistance of reaching law $ s_i(k+1) = 0 $, the following equivalent control law can be derived.
 
 \begin{equation}
     \label{model eq:equivalent_control}
@@ -206,7 +206,7 @@ As a consequence, taking into consideration (\ref{model eq:equivalent_control}),
     - \ & \frac{\xi_i(k)}{\alpha(\displaystyle \sum_{j \in N_i}a_{ij}+d_i)} + \tau_s sign(s_i(k)) \bigg)
 \end{align}
     
-Subsequently, the final MFASMC input is:
+Subsequently, the final input is:
 \begin{equation}
     \label{model eq:mfasmc}
     u_i(k) = u_{i,\text{MFA}}(k) + \Gamma_i  u_{i,\text{SM}}(k)
@@ -217,16 +217,19 @@ where the parameter \(\Gamma_i\) is a gain factor.
 
 \subsection{Stability Analysis}
 
-Theorem 1: For the system (\ref{model 1}) satisfying assumptions 1 and 2, using  the designed algorithms (\ref{model eq:ppd_parameter}) along with the reset law (\ref{reset}), the sliding surface (\ref{model eq:sms}) and controller (\ref{model eq:sm_controller}) can ensure the boundedness of $ \hat{\phi}_i(k) $. Simultaneously, the distributed measurement error remains bounded. This result holds under the condition $ 0<h_0<h_i(k)<\frac{\omega C_0}{2 \sqrt{\sigma}} <1  $, which guarantees the proper behavior of the function hi(k). The functions used therein are given by: 
-\[
-\begin{cases} 
-    h_i(k) = \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \\
-    g_i(k) = (1 - h_i(k))\left( \sum_{j \in N_i} a_{ij} + d_i \right)\Delta y_d(k+1) - h_i(k)\left( \sum_{j \in N_i} a_{ij} + d_i \right)\tau_s\, \text{sign}(s_i(k)) \\
-    |g_i(k)| < g_0
-\end{cases}
-\]
+Theorem 1: For the system (\ref{model 1}) satisfying assumptions 1-3, using  the designed algorithms (\ref{model eq:ppd_parameter}) along with the reset law (\ref{reset}), the sliding surface (\ref{model eq:sms}) and controller (\ref{model eq:sm_controller}) can ensure the boundedness of $ \hat{\phi}_i(k) $. Simultaneously, the distributed measurement error remains bounded.
 
-Proof: The proof is devided into two parts.
+
+% This result holds under the condition $ 0<h_0<h_i(k)<\frac{\omega C_0}{2 \sqrt{\sigma}} <1  $, which guarantees the proper behavior of the function hi(k). The functions used therein are given by: 
+% \[
+% \begin{cases} 
+%     h_i(k) = \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \\
+%     g_i(k) = (1 - h_i(k))\left( \sum_{j \in N_i} a_{ij} + d_i \right)\Delta y_d(k+1) - h_i(k)\left( \sum_{j \in N_i} a_{ij} + d_i \right)\tau_s\, \text{sign}(s_i(k)) \\
+%     |g_i(k)| < g_0
+% \end{cases}
+% \]
+
+Proof: The proof is divided into two parts, which are addressed respectively.
 
 Part i: Define $\tilde{\phi}_i(k) = \hat{\phi}_i(k) - \phi_i(k)$. Using the PPD estimation algorithm ($\ref{model eq:ppd_parameter}$), the following result is derived:
 \begin{align}
@@ -251,7 +254,7 @@ Because of $ |\phi_i(k)| < \bar{d} $, and $ |\Delta \phi_i(k)| < 2 \bar{d} $, th
     \label{model:absolute}
     |\tilde{\phi}_i(k)| \leq \ & q_1|\tilde{\phi}_i(k-1)| + 2 \bar{d} \quad \nonumber \\
     \leq \ & q_1^2|\tilde{\phi}_i(k-2)| + 2 q_1\bar{d} + 2\bar{d} \quad \nonumber \\
-    \vdots \nonumber \\
+    \vdots \ & \quad \nonumber \\
     \leq \ & q_1^{k-1}|\tilde{\phi}_i(1)| + \frac{2 \bar{d}}{1-q_1}(1-q_1^{k-1})
 \end{align} 
 which implies $ \tilde{\phi}_i(k) $ is bounded. Since the boundedness of $ \phi_i(k) $ is guaranteed by Lemma 1. 
@@ -294,13 +297,13 @@ Subsequently, take $ 0<h_0<h_i(k)<\frac{\omega C_0}{2\sqrt{\sigma}}<1 $ into con
 Therefore, the following result will be given as
 \begin{equation}
     \label{model:lim_fin}
-    \lim_{k \to \infty} \xi_i(k) = \frac{g_0}{h_0(1-\frac{1}{\alpha})} = \frac{\alpha g_0}{(\alpha-1)h_0}
+    \lim_{k \to \infty} \xi_i(k) =  \frac{\alpha g_0}{(\alpha-1)h_0}
 \end{equation}
 
-In summary, both the parameter estimation $\hat{\phi}_i(k)$ and the measurement error $\xi_i(k)$ remain bounded under the proposed adaptive sliding mode control scheme. The condition $0 < h_0 < h_i(k) < \frac{\omega C_0}{2\sqrt{\sigma}} < 1$ ensures that the adaptive parameters are stable, thereby enabling stability and effectiveness of the distributed controller. This completes the proof.
+In summary, both the parameter estimation $\hat{\phi}_i(k)$ and the measurement error $\xi_i(k)$ remain bounded under the proposed adaptive sliding mode control scheme. The condition $0 < h_0 < h_i(k) < \frac{\omega C_0}{2\sqrt{\sigma}} < 1$ ensures that the adaptive parameters are stable, thereby enabling effective performance of the distributed controller. This completes the proof.
 
 
-Remark 3: Unlike the consensus tracking control schemes used in the existing literature, this paper proposes a model-free adaptive sliding mode control strategy for MASs. In this approach, the CFDL technique is employed alongside a novel sliding surface, relying solely on data for the purpose of attaining the reference trajectory tracking. Specifically, regardless of the nonlinear and time-varying dynamics of agents, the proposed methodology ensures that distributed measurement error remains bounded, thereby achieving precise speed regulation.
+Remark 3: Unlike the consensus tracking control schemes used in the existing literature, this paper proposes a model-free adaptive sliding mode control strategy for MASs. The introduced approach leverages the CFDL technique alongside a novel sliding surface, relying solely on data to accurately track the reference trajectory tracking. 
 
 \begin{figure}[H]
     \centering
