@@ -376,9 +376,7 @@ Remark 3: Unlike the consensus tracking control schemes used in the existing lit
 
 % \subsection{Data Processing Method}
 
-This section describes the usefulness of the provided control approach, which is validated by both numerical simulations and physical experiments results.
-
-The DC brushed motors operate at 12V with a no-load speed of 293±21RPM and a gear ratio of 20, providing increased torque. Hall encoders with 13 pulses per revolution are used to capture rotor motion. The motor speed is measured in revolutions per second $(r/s)$ based on encoder measurements and the sampling interval $t$. The total number of encoder counts per revolution is calculated as $ rT=4N_{e}R{r} $, where $N_e$ is the encoder line count equal to 13, $R_r$ is the reduction ratio equal to 20 and the factor of 4 accounts for quadrature encoding. The number of rotations, $N_r$ is determined using $N_r = \frac{m}{rT}$, with $m$ representing the total encoder count. The output data model of each agent is governed by:
+This section describes the usefulness of the provided control approach, which is validated by both numerical simulations and physical experiments results. The DC brushed motors operate at 12V with a no-load speed of 293±21RPM and a gear ratio of 20, providing increased torque. Hall encoders with 13 pulses per revolution are used to capture rotor motion. The motor speed is measured in revolutions per second $(r/s)$ based on encoder measurements and the sampling interval $t$. The total number of encoder counts per revolution is calculated as $ rT=4N_{e}R{r} $, where $N_e$ is the encoder line count equal to 13, $R_r$ is the reduction ratio equal to 20. The number of rotations is determined using $N_r = \frac{m}{rT}$, with $m$ representing the total encoder count. The output data model of each agent is governed by:
 \[
     y_i(k+1) = 0.5 y_i(k) + b_i u_i(k) - 0.02 y_i(k)^{p_i} + 0.45, \quad i = 1, 2, 3, 4,
 \]
@@ -395,9 +393,7 @@ p_i = \begin{cases}
 \end{cases}
 \]
 
-Noting that the multi-agent systems are heterogeneous, with four agents having different dynamic models. In addition, these models are not used in the control design but only serve to generate the I/O data required for the MAS simulations; further details of the models are not disclosed. 
-
-As illustrated in Fig. 2, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. The Laplacian matrix of the graph is given as follows:
+Noting that the multi-agent systems are heterogeneous, with four agents having different dynamic models. In addition, these models are not used in the control design but only serve to generate the I/O data required for the MAS simulations. As illustrated in Fig. 2, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. The Laplacian matrix of the graph is given as follows:
 
 \[
     L = \begin{bmatrix}
@@ -411,18 +407,11 @@ with \( D = \text{diag}(1, 0, 1, 0) \).
 
 
 
-Example 1: In this example, the reference trajectory is time-invariant value signal $ y_d(k) = 0.6 $.
-% \[
-% y_d(k) = 0.5 \sin\left(\frac{k \pi}{30}\right) + 0.3  \cos\left(\frac{k \pi}{10}\right)
-% \]
-
-
-
-The initial parameters are chosen as \(u_i(1)=0\), \(y_i(1)=0\) and \(\hat{\phi}_i(0)=1 \) for all agents in this simulation, \(\Gamma_{1}=\Gamma_{3}=0.45\) and \(\Gamma_{2}=\Gamma_{4}=0.15\), with \(\tau_s=10^{-5}\), \(m=600\), $rT = 1024 $, \(\eta=1\), \(\mu=0.005\), other parameters are given as \(\rho=7.5\), \(\lambda=350\), $ \omega = 10 $, $ \sigma=95 $, \(\alpha=15\) with \(\epsilon=10^{-5}\).
+Example 1: In this example, the reference trajectory is time-invariant value signal $ y_d(k) = 0.6 $. The initial parameters are chosen as \(u_i(1)=0\), \(y_i(1)=0\) and \(\hat{\phi}_i(0)=1 \) for all agents in this simulation, \(\Gamma_{1}=\Gamma_{3}=0.45\) and \(\Gamma_{2}=\Gamma_{4}=0.15\), with \(\tau_s=10^{-5}\), \(m=600\), $rT = 1024 $, \(\eta=1\), \(\mu=0.005\), other parameters are given as \(\rho=7.5\), \(\lambda=350\), $ \omega = 10 $, $ \sigma=95 $, \(\alpha=15\) with \(\epsilon=10^{-5}\).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85 \textwidth]{inv_tracking.png}
-    \caption{Tracking performance of all agents under the time-invarying reference trajectory.}
+    \caption{Tracking performance.}
     \label{fig:tracking_inv} % Label for referencing the figure
 \end{figure}
 
