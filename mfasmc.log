@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.1)  28 JUN 2025 16:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.1)  30 JUN 2025 16:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -483,46 +483,46 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 37
  (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-<inv_tracking.png, id=38, 2910.875pt x 1606.0pt>
+<inv_tracking.png, id=38, 1455.4375pt x 803.0pt>
 File: inv_tracking.png Graphic file (type png)
 <use inv_tracking.png>
 Package pdftex.def Info: inv_tracking.png  used on input line 413.
-(pdftex.def)             Requested size: 438.60315pt x 241.96785pt.
+(pdftex.def)             Requested size: 438.60315pt x 241.99236pt.
 
 
 [7 <./communication.png>]
-<inv_error.png, id=44, 2910.875pt x 1606.0pt>
+<inv_error.png, id=44, 1455.4375pt x 803.0pt>
 File: inv_error.png Graphic file (type png)
 <use inv_error.png>
-Package pdftex.def Info: inv_error.png  used on input line 425.
-(pdftex.def)             Requested size: 438.60315pt x 241.96785pt.
+Package pdftex.def Info: inv_error.png  used on input line 423.
+(pdftex.def)             Requested size: 438.60315pt x 241.99236pt.
 
 
 [8 <./inv_tracking.png (PNG copy)> <./inv_error.png (PNG copy)>]
 
 [9]
-<var_tracking.png, id=57, 2910.875pt x 1606.0pt>
+<var_tracking.png, id=57, 1455.4375pt x 803.0pt>
 File: var_tracking.png Graphic file (type png)
 <use var_tracking.png>
-Package pdftex.def Info: var_tracking.png  used on input line 464.
-(pdftex.def)             Requested size: 438.60315pt x 241.96785pt.
-<var_error.png, id=58, 2910.875pt x 1606.0pt>
+Package pdftex.def Info: var_tracking.png  used on input line 462.
+(pdftex.def)             Requested size: 438.60315pt x 241.99236pt.
+<var_error.png, id=58, 1455.4375pt x 803.0pt>
 File: var_error.png Graphic file (type png)
 <use var_error.png>
-Package pdftex.def Info: var_error.png  used on input line 472.
-(pdftex.def)             Requested size: 438.60315pt x 241.96785pt.
+Package pdftex.def Info: var_error.png  used on input line 470.
+(pdftex.def)             Requested size: 438.60315pt x 241.99236pt.
 
 
 [10 <./var_tracking.png (PNG copy)> <./var_error.png (PNG copy)>]
 <diagram.jpg, id=62, 426.8748pt x 238.0092pt>
 File: diagram.jpg Graphic file (type jpg)
 <use diagram.jpg>
-Package pdftex.def Info: diagram.jpg  used on input line 506.
+Package pdftex.def Info: diagram.jpg  used on input line 504.
 (pdftex.def)             Requested size: 387.0pt x 215.78972pt.
 <system.jpg, id=63, 364.7226pt x 272.6988pt>
 File: system.jpg Graphic file (type jpg)
 <use system.jpg>
-Package pdftex.def Info: system.jpg  used on input line 519.
+Package pdftex.def Info: system.jpg  used on input line 517.
 (pdftex.def)             Requested size: 350.87622pt x 262.34544pt.
 
 
@@ -530,7 +530,7 @@ Package pdftex.def Info: system.jpg  used on input line 519.
 <dataplot.png, id=67, 1606.0pt x 803.0pt>
 File: dataplot.png Graphic file (type png)
 <use dataplot.png>
-Package pdftex.def Info: dataplot.png  used on input line 527.
+Package pdftex.def Info: dataplot.png  used on input line 525.
 (pdftex.def)             Requested size: 438.60315pt x 219.30022pt.
 
 
@@ -553,7 +553,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  79i,13n,93p,1237b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mfasmc.pdf (14 pages, 1489094 bytes).
+Output written on mfasmc.pdf (14 pages, 1249269 bytes).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)
  92 compressed objects within 1 object stream

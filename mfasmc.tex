@@ -416,14 +416,12 @@ Example 1: In this example, the reference trajectory is time-invariant value sig
 \end{figure}
 
 
-Fig.~\ref{fig:tracking_inv} demonstrates the tracking performance of all agents under the proposed control scheme for the case of a time-invariant reference signal. It can be observed that the agents effectively follow the reference trajectory, which is set to a constant value of 0.6, with negligible steady-state error and without overshoot.
-Moreover, Fig.~\ref{fig:error_inv} illustrates the distributed measurement error, which remains bounded within the range of [-0.02, 0.02], indicating accuracy of the control strategy. These results confirm that the controller maintains stability.
-
+Fig.~\ref{fig:tracking_inv} demonstrates for the time-invariant reference signal. It can be observed that all agents accurately converge to the reference trajectory. Moreover, Fig.~\ref{fig:error_inv} illustrates the distributed measurement errors, which remain bounded within the range of [-0.02, 0.02], indicating accuracy of the proposed control strategy. 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{inv_error.png}
-    \caption{Distributed measurement error of all agents under the time-invarying reference trajectory.}
+    \caption{Distributed measurement errors.}
     \label{fig:error_inv} % Label for referencing the figure
 \end{figure}
 
@@ -470,7 +468,7 @@ Example 2: The expression for the reference trajectory is:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{var_error.png}
-    \caption{Distributed measurement error of all agents under the time-varying reference trajectory.}
+    \caption{Distributed measurement errors.}
     \label{fig:error_var} % Label for referencing the figure
 \end{figure}
 
