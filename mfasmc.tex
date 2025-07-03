@@ -49,6 +49,8 @@ Data-driven control, model-free adaptive sliding mode control, nonlinear multi-a
 
 % Multi-agent systems (MASs) have been extensively studied and applied in numerous domains, including sensor networks, transportation, agriculture, and industrial automation systems, driven by their superior coordination and efficiency \cite{1,2,3}. The fundamental challenge in addressing effective cooperative control lies in achieving distributed consensus, enabling all agents to synchronize to a common trajectory despite diverse initial states \cite{4,5,6}. Nevertheless, traditional model-based control strategies often prove inadequate for complex system dynamics, necessitating advanced distributed coordination approaches to ensure reliable performance. 
 
+Multi-agent systems (MASs) are composed of multiple interconnected agents that interact and cooperate to achieve a common objective. MASs present notable advantages in terms of decision-making, fault tolerance, and adaptability to the dynamic environments. Due to the above characteristics, MASs have gained widespread attention in both theoretical and practical applications such as sensor networks, transportation, agriculture, and industrial automation systems \cite{1,2,3}. One of the fundamental challenges in multi-agent coordination is the distributed consensus problem, which aims to enable all agents to synchronize to a common trajectory despite diverse initial states \cite{4,5,6}. However, traditional model-based control strategies often prove inadequate for handling complex system dynamics, necessitating advanced distributed coordination approaches to ensure reliable convergence and accurate performance. 
+
 Despite their effectiveness in certain scenarios, traditional control strategies \cite{10,11,12,13} heavily depend on precise system models, and the modeling process becomes increasingly challenging as technology grows rapidly. Under such circumstances, it becomes difficult to solve practical problems using the above schemes. In modern industrial environments, vast amounts of process information often containing implicit and complex dynamic behaviors of the system are continuously generated and stored during operation. As a result, there has been a growing interest in alternative control methods that rely on data modeling. 
 
 Therefore, how to use this data to achieve system consensus control has become a powerful new topic. The data-driven control \cite{17,18,19,20} refers to control systems utilizing system I/O data solely. Various data-based approaches have been developed, including model-free adaptive control, iterative learning control, virtual reference feedback tuning \cite{21}, PID control \cite{22} and others. Among these, the model-free adaptive control approach \cite{23,24,25} has been proposed, and has a great significance in addressing the aforementioned challenges. The design process relies solely on I/O data of the system, significantly avoiding the reliance on mathematical models. The algorithm has proven effective in practical domains such as motor systems, chemical industries, and machinery, demonstrating the adaptability and usefulness of the algorithm. 
@@ -73,7 +75,7 @@ Inspired by the above discussions, this paper proposes a data-driven model-free 
 
 
     The following sections will outline the remaining content of this paper:
-    Section II provides the preliminaries and problem formulation, Section III presents the main results, Section IV shows simulation results and performance analysis, demonstrating the effectiveness of the proposed method under distinct operating conditions. At the end, conclusions are summarized in Section V.
+    Section II provides the preliminaries and problem formulation. The main results are discussed in Section III. Section IV shows the simulation and performance analysis, demonstrating the effectiveness of the proposed method under distinct operating conditions. At the end, conclusions are summarized in Section V.
 % -----------------------------------------------------------------------------
 
 
@@ -81,6 +83,7 @@ Inspired by the above discussions, this paper proposes a data-driven model-free 
 \subsection{Directed Graph Theory}
 
 \indent The directed graph $ \mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathcal{A}) $ is employed to describe the information exchange between agents. Here, $ \mathcal{A} = [a_{ij}] \in \mathbb{R}^{N \times N} $ represents the adjacency matrix, $ \mathcal{V}=\{v_1, v_2,\dots,v_N\} $ is the set of vertices, and $ \mathcal{E} = [(v_j,v_i)|v_i \in \mathcal{V} ] \subseteq \mathcal{V} \times \mathcal{V}$ is the set of edges. Moreover, $ \mathcal{N}(i) = \{j \in \mathcal{V} |(i,j) \in \mathcal{E}\} $ denotes the neighbor set of agent $ i $, where $ a_{i j} \neq 0$. No self-loop is allowed in this article, which means $(i, i) \notin \mathcal{E}$ for any $ i \in \mathcal{V} $, $ a_{ii}=0$. Furthermore, the degree matrix $ K = diag(k_1,\dots,k_N)$. If $ k_i > 0$, agent $ i $ can directly obtain the information from the leader. The Laplacian matrix $ L $ is defined as $ L = (\mathcal{D}-\mathcal{A})$, here $\mathcal{D} = diag({d_1,\dots,d_N})$ and $d_i=\sum_{j=1}^{N} a_{i j}$ denotes the in-degree matrix. Moreover, the graph is strongly connected if the path exists between every pair of vertices.
+
 
 \subsection{Problem Formulation}
 
@@ -122,13 +125,14 @@ Remark 2: The CFDL technique requires no prior knowledge about the system dynami
 
 \section{Main Results}
 
-This section is devided in two parts. The first part introduces the model-free adaptive controller design, which is based on the CFDL technique. The second part introduces the sliding mode controller design, which is formulated based on the distributed measurement error. The overall block diagram of the proposed control scheme is shown in Fig. \ref{fig:diagram}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{diagram.png}
+    \includegraphics[width=0.7\textwidth]{diagram.png}
     \caption{Block diagram.}
     \label{fig:diagram} % Label for referencing the figure
 \end{figure}
+
+This section is devided in two parts. The first part introduces the model-free adaptive controller design, which is based on the CFDL technique. The second part introduces the sliding mode controller design, which is formulated based on the distributed measurement error. The overall block diagram of the proposed control scheme is shown in Fig. \ref{fig:diagram}.
 
 \subsection{Model-Free Adaptive Sliding Mode Controller Design}
 
@@ -149,12 +153,15 @@ By utilizing the optimal condition $ \frac{\partial J(\phi_i(k))}{\partial \phi_
 \end{equation}
 herein, $\eta \in (0,1)$, $\mu > 0$ represents a positive weight factor. Additionally, $\epsilon$ is a small positive number and $\hat{\phi}_i(k)$ signifies the estimated value of $\phi_i(k)$.
 
-The following distributed MFAC algorithm is presented:
+To design the MFAC control algorithm, the pseudo partial derivative \(\hat{\phi}_i(k)\) is estimated using the update law (\ref{model eq:ppd_parameter}) and utilized to compute the control input. Subsequently, the follwoing MFAC algorithm is implemented:
+
 \begin{equation}
     \label{model eq:mfac}
     u_{i,\text{MFA}}(k) = u_{i,\text{MFA}}(k - 1) + \frac{\rho \hat{\phi}_i(k)}{\lambda + \hat{\phi}_i(k)^2} \xi_i(k)
 \end{equation}
-where \(\rho\) \(\in\) (0,1) is a step-size constant, which is added to make (\ref{model eq:mfac}) general. 
+where \(\rho \in (0,1)\) is a step-size constant to ensure stability and convergence.
+
+This algorithm iteratively adjusts the control input based on the estimated PPD and measurement error to achieve effective tracking.
 
 To design the sliding mode controller, the sliding surface function is given by:
 \begin{equation}
@@ -285,7 +292,17 @@ By combining ($ \ref{model eq:ppd_parameter} $) with ($ \ref{model eq:xi_next} $
     + \ &  d_i \Delta y_d(k+1) \bigg) - \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \bigg( \sum_{j \in N_i}a_{ij} + d_i \bigg) \tau_s \operatorname{sign}(s_i(k))
 \end{align}
 
-Subsequently, take $ 0<h_0<h_i(k)<\frac{\omega C_0}{2\sqrt{\sigma}}<1 $ into consideration, where $ \phi_i(k) < C_0 $ and $ |g_i(k)|<g_0 $, the inequality is obtained by taking the absolute value of each term of ($ \ref{model eq:xi_next_proof} $).
+Subsequently, take $ 0<h_0<h_i(k)<\frac{\omega C_0}{2\sqrt{\sigma}}<1 $ into consideration, wherein
+ \[
+    \begin{cases} 
+        \phi_i(k) < C_0 \\
+        h_i(k) = \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \\
+        g_i(k) = (1 - h_i(k))\left( \sum_{j \in N_i} a_{ij} + d_i \right)\Delta y_d(k+1) - h_i(k)\left( \sum_{j \in N_i} a_{ij} + d_i \right)\tau_s\, \text{sign}(s_i(k)) \\
+        |g_i(k)| < g_0
+    \end{cases}
+    \]
+
+The following inequality is obtained by taking the absolute value of each term of ($ \ref{model eq:xi_next_proof} $).
 \begin{align}
     \label{model:absolute2}
     |\xi_i(k+1)| \leq \ & |1-h_i(k)(1-\frac{1}{ \alpha })| |\xi_i(k)| + |g_i(k)| \quad \nonumber \\
@@ -378,7 +395,7 @@ Remark 3: Unlike the consensus tracking control schemes used in the existing lit
 
 This section describes the usefulness of the provided control approach, which is validated by both numerical simulations and physical experiments results. The DC brushed motors operate at 12V with a no-load speed of 293±21RPM and a gear ratio of 20, providing increased torque. Hall encoders with 13 pulses per revolution are used to capture rotor motion. The motor speed is measured in revolutions per second $(r/s)$ based on encoder measurements and the sampling interval $t$. The total number of encoder counts per revolution is calculated as $ rT=4N_{e}R{r} $, where $N_e$ is the encoder line count equal to 13, $R_r$ is the reduction ratio equal to 20. The number of rotations is determined using $N_r = \frac{m}{rT}$, with $m$ representing the total encoder count. The output data model of each agent is governed by:
 \[
-    y_i(k+1) = 0.5 y_i(k) + b_i u_i(k) - 0.02 y_i(k)^{p_i} + 0.45, \quad i = 1, 2, 3, 4,
+y_i(k+1) = 0.5 y_i(k) + {\{b_i\}} u_i(k) - 0.02 y_i(k)^{\{p_i\}} + 0.45,
 \]
 where the parameters corresponding to each agent are:
 \[
@@ -410,7 +427,7 @@ with \( D = \text{diag}(1, 0, 1, 0) \).
 Example 1: In this example, the reference trajectory is time-invariant value signal $ y_d(k) = 0.6 $. The initial parameters are chosen as \(u_i(1)=0\), \(y_i(1)=0\) and \(\hat{\phi}_i(0)=1 \) for all agents in this simulation, \(\Gamma_{1}=\Gamma_{3}=0.45\) and \(\Gamma_{2}=\Gamma_{4}=0.15\), with \(\tau_s=10^{-5}\), \(m=600\), $rT = 1024 $, \(\eta=1\), \(\mu=0.005\), other parameters are given as \(\rho=7.5\), \(\lambda=350\), $ \omega = 10 $, $ \sigma=95 $, \(\alpha=15\) with \(\epsilon=10^{-5}\).
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85 \textwidth]{inv_tracking.png}
+    \includegraphics[width=0.9 \textwidth]{inv_tracking.png}
     \caption{Tracking performance.}
     \label{fig:tracking_inv} % Label for referencing the figure
 \end{figure}
@@ -420,7 +437,7 @@ Fig.~\ref{fig:tracking_inv} demonstrates the tracking performance for the time-i
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{inv_error.png}
+    \includegraphics[width=0.9\textwidth]{inv_error.png}
     \caption{Distributed measurement errors.}
     \label{fig:error_inv} % Label for referencing the figure
 \end{figure}
@@ -459,7 +476,7 @@ Example 2: The expression for the reference trajectory is:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{var_tracking.png}
+    \includegraphics[width=0.95\textwidth]{var_tracking.png}
     \caption{Tracking performance of all agents under the time-varying reference trajectory.}
     \label{fig:tracking_var} % Label for referencing the figure
 \end{figure}
@@ -467,7 +484,7 @@ Example 2: The expression for the reference trajectory is:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{var_error.png}
+    \includegraphics[width=0.95\textwidth]{var_error.png}
     \caption{Distributed measurement errors.}
     \label{fig:error_var} % Label for referencing the figure
 \end{figure}
