@@ -126,18 +126,20 @@ if the agent $ i $ can receive data from the leader, then $d_i=1$; otherwise, $d
 
 \section{Main Results}
 
+This section is devided in two parts. The first part introduces the model-free adaptive controller design, which is based on the CFDL technique. The second part introduces the sliding mode controller design, which is formulated based on the distributed measurement error. The overall block diagram of the proposed control scheme is shown in Fig. \ref{fig:diagram}.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{diagram.png}
+    \includegraphics[width=0.8\textwidth]{diagram.png}
     \caption{Block diagram.}
     \label{fig:diagram} % Label for referencing the figure
 \end{figure}
 
-This section is devided in two parts. The first part introduces the model-free adaptive controller design, which is based on the CFDL technique. The second part introduces the sliding mode controller design, which is formulated based on the distributed measurement error. The overall block diagram of the proposed control scheme is shown in Fig. \ref{fig:diagram}.
+
 
 \subsection{Model-Free Adaptive Sliding Mode Controller Design}
 
-Consider the following PPD criterion function for the parameter with unknown dynamics in (\ref{model 2}):
+Consider the following PPD criterion function for the parameter with unknown dynamics in (\ref{model 2}): 
 \begin{equation}
     \label{model 4}
     J(\phi_i(k)) = | \Delta y_i(k) - \phi_i(k)  \Delta u_i(k-1)|^2 + \mu |\phi_i(k) - \hat{\phi}_i(k-1)|^2\
@@ -321,7 +323,7 @@ Therefore, the following result will be given as
 In summary, both the parameter estimation $\hat{\phi}_i(k)$ and the measurement error $\xi_i(k)$ remain bounded under the proposed adaptive sliding mode control scheme. The condition $0 < h_0 < h_i(k) < \frac{\omega C_0}{2\sqrt{\sigma}} < 1$ ensures that the adaptive parameters are stable, thereby enabling effective performance of the distributed controller. This completes the proof.
 
 
-Remark 3: Unlike the consensus tracking control schemes used in the existing literature, this paper proposes a model-free adaptive sliding mode control strategy for MASs. The introduced approach leverages the CFDL technique alongside a novel sliding surface, relying solely on data to accurately track the reference trajectory tracking. 
+% Remark 3: Unlike the consensus tracking control schemes used in the existing literature, this paper proposes a model-free adaptive sliding mode control strategy for MASs. The introduced approach leverages the CFDL technique alongside a novel sliding surface, relying solely on data to accurately track the reference trajectory tracking. 
 
 \begin{figure}[H]
     \centering
@@ -396,20 +398,20 @@ Remark 3: Unlike the consensus tracking control schemes used in the existing lit
 
 This section describes the usefulness of the provided control approach, which is validated by both numerical simulations and physical experiments results. The DC brushed motors operate at 12V with a no-load speed of 293±21RPM and a gear ratio of 20, providing increased torque. Hall encoders with 13 pulses per revolution are used to capture rotor motion. The motor speed is measured in revolutions per second $(r/s)$ based on encoder measurements and the sampling interval $t$. The total number of encoder counts per revolution is calculated as $ rT=4N_{e}R{r} $, where $N_e$ is the encoder line count equal to 13, $R_r$ is the reduction ratio equal to 20. The number of rotations is determined using $N_r = \frac{m}{rT}$, with $m$ representing the total encoder count. The output data model of each agent is governed by:
 \[
-y_i(k+1) = 0.5 y_i(k) + {\{b_i\}} u_i(k) - 0.02 y_i(k)^{\{p_i\}} + 0.45,
+y_i(k+1) = 0.5 y_i(k) + {b_i} u_i(k) - 0.02 y_i(k)^{p_i} + 0.45,
 \]
-where the parameters corresponding to each agent are:
-\[
-b_i = \begin{cases} 
-    \frac{6m}{rT} & \text{if } i=1, 3 \\
-    \frac{5.75m}{rT} & \text{if } i=2, 4
-\end{cases}
-\qquad
-p_i = \begin{cases} 
-3 & \text{if } i=1, 3 \\
-2 & \text{if } i=2, 4
-\end{cases}
-\]
+% where the parameters corresponding to each agent are:
+% \[
+% b_i = \begin{cases} 
+%     \frac{6m}{rT} & \text{if } i=1, 3 \\
+%     \frac{5.75m}{rT} & \text{if } i=2, 4
+% \end{cases}
+% \qquad
+% p_i = \begin{cases} 
+% 3 & \text{if } i=1, 3 \\
+% 2 & \text{if } i=2, 4
+% \end{cases}
+% \]
 
 Noting that the multi-agent systems are heterogeneous, with four agents having different dynamic models. In addition, these models are not used in the control design but only serve to generate the I/O data required for the MAS simulations. As illustrated in Fig. 2, the virtual leader is designated as vertex 0. It can be observed that only agents 1 and 3 can receive information from the leader, forming a strongly connected communication graph. The Laplacian matrix of the graph is given as follows:
 
@@ -425,7 +427,7 @@ with \( D = \text{diag}(1, 0, 1, 0) \).
 
 
 
-\textbf{Example 1:} In this example, the reference trajectory is a time-invariant signal \( y_d(k) = 0.6 \). The initial parameters are chosen as \( u_i(1) = 0 \), \( y_i(1) = 0 \), and \( \hat{\phi}_i(1) = 1 \) for all agents in this simulation. The control gains are set as \( \Gamma_{1} = \Gamma_{3} = 0.45 \) and \( \Gamma_{2} = \Gamma_{4} = 0.15 \). Other parameters are \( \tau_s = 10^{-5} \), \( m = 600 \), \( r_T = 1024 \), \( \eta = 1 \), \( \mu = 0.005 \), \( \rho = 7.5 \), \( \lambda = 350 \), \( \omega = 10 \), \( \sigma = 95 \), \( \alpha = 15 \), and \( \epsilon = 10^{-5} \).
+\textbf{Example 1:} In this example, the reference trajectory is a time-invariant signal \( y_d(k) = 0.6 \). The initial parameters are chosen as \( u_i(1) = 0 \), \( y_i(1) = 0 \), and \( \hat{\phi}_i(1) = 1 \) for all agents in this simulation. The control gains are set as \( \Gamma_{1} = \Gamma_{3} = 0.45 \) and \( \Gamma_{2} = \Gamma_{4} = 0.15 \). The system model parameters include $[b_1,b_2,b_3,b_4] = [\frac{6m}{rT},\frac{5.75m}{rT},\frac{6m}{rT},\frac{5.75m}{rT}]$ and $[p_1,p_2,p_3,p_4] = [3,2,3,2], m = 600, r_T = 1024$. Other parameters are \( \tau_s = 10^{-5} \), \( \eta = 1 \), \( \mu = 0.005 \), \( \rho = 7.5 \), \( \lambda = 350 \), \( \omega = 10 \), \( \sigma = 95 \), \( \alpha = 15 \), and \( \epsilon = 10^{-5} \).
 
 \begin{figure}[H]
     \centering
@@ -546,7 +548,7 @@ Overall, the simulation results suggest that the proposed control system is capa
 
 The distributed errors for three DC motors result in mean squared errors of \(1.0840 \times 10^{-3}\), \(1.5036 \times 10^{-3}\), and \(1.4887 \times 10^{-3}\), respectively. The average of \(1.3588 \times 10^{-3}\) demonstrates the effectiveness of the proposed control method in practical applications. Meanwhile, the method consistently maintains mean squared error around \(10^{-3}\).
 
-\textbf{Remark 4:}The tracking performance is related to the key design parameters, including $\rho$, $\omega$, $\sigma$, $\alpha$, and the sampling period. However, the algorithm ability to address system uncertainties can be enhanced by appropriately increasing $\rho$ and $\omega$. Furthermore, it is necessary to make precise adjustments to other parameters, such as $\Gamma_i$ and $\tau_s$, to achieve accurate performance.
+\textbf{Remark 3:}The tracking performance is related to the key design parameters, including $\rho$, $\omega$, $\sigma$, $\alpha$, and the sampling period. However, the algorithm ability to address system uncertainties can be enhanced by appropriately increasing $\rho$ and $\omega$. Furthermore, it is necessary to make precise adjustments to other parameters, such as $\Gamma_i$ and $\tau_s$, to achieve accurate performance.
 
 \section{Conclusion}
 
