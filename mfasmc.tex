@@ -65,11 +65,13 @@ Inspired by the above discussions, this paper proposes a data-driven model-free 
 
 \begin{enumerate}
 
-    \item This paper establishes the model-free adaptive sliding mode control approach, which enables consensus tracking in nonlinear MASs, even under system uncertainties and unknown dynamics.
+    \item A novel distributed sliding surface is proposed, incorporating neighboring agents process information. This design guarantees the boundedness of distributed measurement errors and enhances system convergence through a newly designed stability mechanism. Compared to existing methods that rely on known or partially known dynamics, the offered approach achieves distributed adaptive sliding mode coordination without requiring system models, resulting in faster convergence speed and improved perrformance.
+
+    \item A data-driven model-free adaptive sliding mode control algorithm is developed, integrating the CFDL technique with sliding mode robustness. This proposed design enables effective consensus tracking of nonlinear MASs and improves dynamic response. Unlike existing model-free adaptive methods limited to single-agent or input-affine systems, the proposed approach extends to distributed nonlinear systems, achieving faster convergence without prior model knowledge.
     
-    \item The method utilizes CFDL to construct equivalent data models based purely on input-output data. This allows for the systematic design of controllers for each agent without requiring internal system knowledge, making it highly practical for real-time applications.
+    \item A refined PPD estimation algorithm is applied, allowing each agent to construct a real-time data model using only input-output data. In contrast to existing model-free adaptive controll based methods, this work integrates PPD estimation within distributed sliding mode control, ensuring parameter boundedness and maintaining adaptive performance under nonlinear and time-varying environments, contributing to faster adaptation and system stability.
     
-    \item A novel distributed sliding surface is developed using neighboring agent process data. This structure ensures the boundedness of measurement errors and enhances the robustness and convergence of the system through a designed stability mechanism.
+    
 
 \end{enumerate}
 
@@ -223,7 +225,7 @@ where the parameter \(\Gamma_i\) is a gain factor.
 
 \subsection{Stability Analysis}
 
-Theorem 1: For the system (\ref{model 1}) satisfying assumptions 1-3, using  the designed algorithms (\ref{model eq:ppd_parameter}) along with the reset law (\ref{reset}), the sliding surface (\ref{model eq:sms}) and controller (\ref{model eq:sm_controller}) can ensure the boundedness of $ \hat{\phi}_i(k) $. Simultaneously, the distributed measurement error remains bounded.
+\textbf{Theorem 1:}: For the system (\ref{model 1}) satisfying assumptions 1-3, using  the designed algorithms (\ref{model eq:ppd_parameter}) along with the reset law (\ref{reset}), the sliding surface (\ref{model eq:sms}) and controller (\ref{model eq:sm_controller}) can ensure the boundedness of $ \hat{\phi}_i(k) $. Simultaneously, the distributed measurement error remains bounded.
 
 
 % This result holds under the condition $ 0<h_0<h_i(k)<\frac{\omega C_0}{2 \sqrt{\sigma}} <1  $, which guarantees the proper behavior of the function hi(k). The functions used therein are given by: 
@@ -235,7 +237,7 @@ Theorem 1: For the system (\ref{model 1}) satisfying assumptions 1-3, using  the
 % \end{cases}
 % \]
 
-Proof: The proof is divided into two parts, which are addressed respectively.
+Proof: The proof is divided into two parts, which prove the boundedness of \( \tilde{\phi}_i(k) \), and ensure that \( \xi_i(k) \) remains bounded, respectively.
 
 Part i: Define $\tilde{\phi}_i(k) = \hat{\phi}_i(k) - \phi_i(k)$. Using the PPD estimation algorithm ($\ref{model eq:ppd_parameter}$), the following result is derived:
 \begin{align}
@@ -295,7 +297,7 @@ Subsequently, take $ 0<h_0<h_i(k)<\frac{\omega C_0}{2\sqrt{\sigma}}<1 $ into con
  \[
     \begin{cases} 
         \phi_i(k) < C_0 \\
-        h_i(k) = \frac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \\
+        h_i(k) = \dfrac{\omega \phi_i(k) \hat{\phi}_i(k)}{\sigma + \hat{\phi}_i(k)^2} \\
         g_i(k) = (1 - h_i(k))\left( \sum_{j \in N_i} a_{ij} + d_i \right)\Delta y_d(k+1) - h_i(k)\left( \sum_{j \in N_i} a_{ij} + d_i \right)\tau_s\, \text{sign}(s_i(k)) \\
         |g_i(k)| < g_0
     \end{cases}
@@ -423,7 +425,8 @@ with \( D = \text{diag}(1, 0, 1, 0) \).
 
 
 
-Example 1: In this example, the reference trajectory is time-invariant value signal $ y_d(k) = 0.6 $. The initial parameters are chosen as \(u_i(1)=0\), \(y_i(1)=0\) and \(\hat{\phi}_i(0)=1 \) for all agents in this simulation, \(\Gamma_{1}=\Gamma_{3}=0.45\) and \(\Gamma_{2}=\Gamma_{4}=0.15\), with \(\tau_s=10^{-5}\), \(m=600\), $rT = 1024 $, \(\eta=1\), \(\mu=0.005\), other parameters are given as \(\rho=7.5\), \(\lambda=350\), $ \omega = 10 $, $ \sigma=95 $, \(\alpha=15\) with \(\epsilon=10^{-5}\).
+\textbf{Example 1:} In this example, the reference trajectory is a time-invariant signal \( y_d(k) = 0.6 \). The initial parameters are chosen as \( u_i(1) = 0 \), \( y_i(1) = 0 \), and \( \hat{\phi}_i(1) = 1 \) for all agents in this simulation. The control gains are set as \( \Gamma_{1} = \Gamma_{3} = 0.45 \) and \( \Gamma_{2} = \Gamma_{4} = 0.15 \). Other parameters are \( \tau_s = 10^{-5} \), \( m = 600 \), \( r_T = 1024 \), \( \eta = 1 \), \( \mu = 0.005 \), \( \rho = 7.5 \), \( \lambda = 350 \), \( \omega = 10 \), \( \sigma = 95 \), \( \alpha = 15 \), and \( \epsilon = 10^{-5} \).
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9 \textwidth]{inv_tracking.png}
@@ -432,7 +435,7 @@ Example 1: In this example, the reference trajectory is time-invariant value sig
 \end{figure}
 
 
-Fig.~\ref{fig:tracking_inv} demonstrates the tracking performance for the time-invariant reference signal. It can be observed that all agents accurately converge to the reference trajectory. Moreover, Fig.~\ref{fig:error_inv} illustrates the distributed measurement errors, which remain bounded within the range of [-0.02, 0.02], indicating accuracy of the proposed control strategy. 
+Fig.~\ref{fig:tracking_inv} demonstrates that the proposed scheme achieves superior control performance compared to method \cite{1}. As show in the above figure, the proposed method ensures faster convergence, smaller overshoot, and improved steady-state tracking accuracy. While method \cite{1} exhibits the oscillations and slower response in transcient phase, this highlights the stronger adaptability and robustness of the proposed method. Moreover, Fig.~\ref{fig:error_inv} illustrates the distributed measurement errors, which remain bounded within the range of [-0.02, 0.02], indicating accuracy of the proposed control strategy. 
 
 \begin{figure}[H]
     \centering
@@ -470,25 +473,25 @@ To quantitatively evaluate the advantages of the developed method, the mean squa
 
 % \pagebreak
 
-Example 2: The expression for the reference trajectory is:
+\textbf{Example 2:} The expression for the reference trajectory is:
 \[ y_d(k)=0.6\sin(0.07\pi(k))+0.6\cos(0.04\pi(k)), k \in [0, 200] \]
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{var_tracking.png}
-    \caption{Tracking performance of all agents under the time-varying reference trajectory.}
+    \caption{Tracking performance.}
     \label{fig:tracking_var} % Label for referencing the figure
 \end{figure}
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{var_error.png}
+    \includegraphics[width=0.9\textwidth]{var_error.png}
     \caption{Distributed measurement errors.}
     \label{fig:error_var} % Label for referencing the figure
 \end{figure}
 
-Fig. \ref{fig:tracking_var} presents the tracking performance for the time-varying trajectory. All agents are able to accurately track the reference trajectory. Additionally, as shown in Fig. \ref{fig:error_var} the distributed measurement errors among agents are bounded. For time-varying reference trajectories, the mean squared errors of distributed measurements for two control strategies are detailed in TABLE \ref{tab:mse_comparison_example2}. Relative to the conventional approach \cite{1}, the proposed scheme reduces in average MSE by approximately 1.16.
+Fig. \ref{fig:tracking_var} presents the tracking performance for the time-varying trajectory. All agents successfully track accurately the reference trajectory. Compared to the existing method \cite{1}, the proposed scheme achieves the faster response, reduced steady-state error, and improved tracking accuracy. As highlighted, the proposed approach closely follows the reference trajectory, whereas method \cite{1} exhibit the deviations and slower error convergence. Additionally, as shown in Fig. \ref{fig:error_var} the distributed measurement errors among agents are bounded. Therefore, the proposed method demonstrates superior adaptability under time-varying conditions, ensuring high-performance tracking. For time-varying reference trajectories, the mean squared errors of distributed measurements for two control strategies are detailed in TABLE \ref{tab:mse_comparison_example2}. Relative to the conventional approach \cite{1}, the proposed scheme reduces in average MSE by approximately 1.16.
 
 \begin{table}[H]
     \centering
@@ -533,7 +536,7 @@ In addition, the controller code is written in C language using STM32CubeIDE, wh
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{dataplot.png}
+    \includegraphics[width=0.8\textwidth]{dataplot.png}
     \caption{Tracking performance.}
     \label{fig:output} % Label for referencing the figure
 \end{figure}
@@ -543,7 +546,7 @@ Overall, the simulation results suggest that the proposed control system is capa
 
 The distributed errors for three DC motors result in mean squared errors of \(1.0840 \times 10^{-3}\), \(1.5036 \times 10^{-3}\), and \(1.4887 \times 10^{-3}\), respectively. The average of \(1.3588 \times 10^{-3}\) demonstrates the effectiveness of the proposed control method in practical applications. Meanwhile, the method consistently maintains mean squared error around \(10^{-3}\).
 
-Remark 4:The tracking performance is related to the key design parameters, including $\rho$, $\omega$, $\sigma$, $\alpha$, and the sampling period. However, the algorithm ability to address system uncertainties can be enhanced by appropriately increasing $\rho$ and $\omega$. Furthermore, it is necessary to make precise adjustments to other parameters, such as $\Gamma_i$ and $\tau_s$, to achieve accurate performance.
+\textbf{Remark 4:}The tracking performance is related to the key design parameters, including $\rho$, $\omega$, $\sigma$, $\alpha$, and the sampling period. However, the algorithm ability to address system uncertainties can be enhanced by appropriately increasing $\rho$ and $\omega$. Furthermore, it is necessary to make precise adjustments to other parameters, such as $\Gamma_i$ and $\tau_s$, to achieve accurate performance.
 
 \section{Conclusion}
 
